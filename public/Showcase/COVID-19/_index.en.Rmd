@@ -644,3 +644,20 @@ dbDisconnect(SQLcon)
 
 ---
 <p><font color="gray">**Working with a DB in R** section is an adaptation of [the NHS-R Community](https://nhsrcommunity.com/) [**Database Connections in R**](https://nhsrcommunity.com/learn-r/workshops/database-connections-in-r-webinar/) webinar created and run by [Chris Mainey](https://www.mainard.co.uk/).</font></p>
+
+---
+TRICKS AND TIPS
+
+Here you will find Xaringan presentations illustrating various tricks and tips for working in R.
+
+Import Data to R is the first big hurdle when dealing with data in R. You are most likely to have looked at, organised and examined your data files in Excel. Here is a compendious Xaringan presentation showing how to import .csv and .xlsx data files into R that will help you get going.
+
+ - Import csv and Excel spreadsheet data files:
+
+https://importdata2r.netlify.app
+
+Plotting time series could be a tricky task. Here are a few tips that will help you add the reference time points to enrich your time series visualisation. 
+
+- Plot time series using ggplot2:
+
+https://tsggplot.netlify.app
