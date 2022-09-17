@@ -1,0 +1,35 @@
+baseURL = "https://introtor.netlify.app/"
+languageCode = "en-US"
+defaultContentLanguage = "en"
+
+title = "Introduction to R"
+theme = "hugo-theme-learn"
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= true
+
+[params]
+  editURL = "https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/"
+  description = "Introduction to R"
+  author = "Tatjana Kecojevic"
+  showVisitedLinks = true
+  disableBreadcrumb = false
+  disableNextPrev = false
+
+[params.logo]
+url = "logo.jpg"
+
+[outputs]
+#home = [ "HTML", "RSS", "JSON"]
+home = ["HTML"]
+
+[Languages]
+[Languages.en]
+title = "Introduction to R"
+weight = 1
+languageName = "English"
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fab fa-fw fa-github'></i>GitHub"
+identifier = "ds"
+url = "https://github.com/TanjaKec"
+weight = 10

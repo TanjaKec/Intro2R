@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.75.1" />
+    <meta name="description" content="Data Literacy in R">
+<meta name="author" content="Tatjana Kecojevic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>Data Wrangling :: Data Literacy in R</title>
+
+    
+    <link href="/css/nucleus.css?1605427046" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1605427046" rel="stylesheet">
+    <link href="/css/hybrid.css?1605427046" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1605427046" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1605427046" rel="stylesheet">
+    <link href="/css/auto-complete.css?1605427046" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1605427046" rel="stylesheet">
+    <link href="/css/theme.css?1605427046" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1605427046" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1605427046"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"> </script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/module2/datawrangling/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <!DOCTYPE html>
+<html>
+<body>
+<IMG SRC="/images/logo.png" ALT="DataTeka" WIDTH=100 HEIGHT=100>
+
+</body>
+</html>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1605427046"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1605427046"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1605427046"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/general/" title="About the workshop" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/">
+          <b>1. </b>About the workshop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/whatlearn/" title="General Overview" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/whatlearn/">
+          General Overview
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/instructor/" title="Meet the Instructor" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/instructor/">
+          Meet the Instructor
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/syllabus/" title="Indicative Syllabus" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/syllabus/">
+          Indicative Syllabus
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/" title="Module 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/">
+          <b>2. </b>Module 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/datawrangling/" title="Data Wrangling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/datawrangling/">
+          Data Wrangling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/whatisr/" title="What is R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/whatisr/">
+          What is R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/installr/" title="Install R/RStudio" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/installr/">
+          Install R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/principlesvisualisation/" title="Principles of Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/principlesvisualisation/">
+          Principles of Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/visualisation/" title="Data Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/visualisation/">
+          Data Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/git-and-github/" title="Git and GitHub" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/git-and-github/">
+          Git and GitHub
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/spatialda/" title="Spatial Data Analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/spatialda/">
+          Spatial Data Analysis
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/rstudioide/" title="RStudio IDE" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/rstudioide/">
+          RStudio IDE
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/user/" title="How to use R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/user/">
+          How to use R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/statsconcepts/" title="Basic Stats Concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/statsconcepts/">
+          Basic Stats Concepts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/datatypes/" title="Data Types" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/datatypes/">
+          Data Types
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/importexport/" title="Import Data to R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/importexport/">
+          Import Data to R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/rmarkdown/" title="Reproducibility" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/rmarkdown/">
+          Reproducibility
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/" title="Module 2" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/module2/">
+          <b>3. </b>Module 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/datawrangling/" title="Data Wrangling" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/module2/datawrangling/">
+          Data Wrangling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/principlesvisualisation/" title="Principles of Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/principlesvisualisation/">
+          Principles of Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/visualisation/" title="Data Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/visualisation/">
+          Data Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/spatialda/" title="Spatial Data Analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/spatialda/">
+          Spatial Data Analysis
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/" title="Showcases" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/">
+          <b>6. </b>Showcases
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/covid-19/" title="COVID-19" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/covid-19/">
+          COVID-19
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/airpolution/" title="Air Pollution" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/airpolution/">
+          Air Pollution
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/tricks_tips/" title="Tricks and Tips" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/tricks_tips/">
+          Tricks and Tips
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/TanjaKec"><i class='fab fa-fw fa-github'></i>GitHub</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download matcornic/hugo-theme-learn on GitHub">Download</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn" data-icon="octicon-star" data-show-count="true" aria-label="Star matcornic/hugo-theme-learn on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork matcornic/hugo-theme-learn on GitHub">Fork</a>
+
+    <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/module2/DataWrangling/_index.en.html" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Introduction to R</a> > <a href='/module2/'>Module 2</a> > Data Wrangling
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Data Wrangling
+            </h1>
+          
+
+        
+
+
+
+
+	
+
+
+<p><strong>How do we do it?</strong> 🤔</p>
+<p><img src="/day2/DataWrangling/images/Program_HW.png?width=40pc" /></p>
+<p>This diagram is taken from the <a href="https://r4ds.had.co.nz/">R for Data Science</a> book by <a href="https://twitter.com/statgarrett">Garrett Grolemund</a> and <a href="https://twitter.com/hadleywickham">Hadley Wickham</a>, which it is a great resource for learning R. There is a whole community built around it and you could join it and start learning together: <a href="https://www.rfordatasci.com/">R4DS online learning community</a>.</p>
+<p><strong>Dataset</strong></p>
+<p>To learn and practise how to organise data we will use a <code>gapminder</code> data set available from the <code>gapminder</code> package in R. This dataset is put into R by <a href="https://jennybryan.org/">Jennifer Bryan</a> from a tank of data sets available from <a href="https://www.gapminder.org">Gapminder</a>.</p>
+<p><a href="https://www.gapminder.org">Gapminder</a> is an independent Swedish foundation that helps to promote sustainable global development by collecting and analysing relevant data and by developing and designing teaching/learning tools. <a href="https://en.wikipedia.org/wiki/Gapminder_Foundation">Gapminder</a> was founded in Sweden by <a href="https://en.wikipedia.org/wiki/Hans_Rosling">Hans Rosling</a> who was a mastermind for distinctive and insightful storytelling about global development using visual animation.</p>
+<p>You can see Hans in action in this <a href="https://www.bbc.co.uk/programmes/p02q33dg">BBC documentary</a> <a href="https://www.youtube.com/watch?v=cdf0k545yDA">The joy of Stats</a> available on <a href="https://www.youtube.com">YouTube</a>.</p>
+<p><strong>Gapminder Data</strong></p>
+<p>For each of 142 countries, the package provides values for life expectancy, GDP per capita, and population, every five years, from 1952 to 2007.</p>
+<p>Before you can take a look at this data set first run the folowing code</p>
+<pre><code># install necessary packages:
+install.packages(&quot;dplyr&quot;, repos = &quot;http://cran.us.r-project.org&quot;)
+install.packages(&quot;ggplot2&quot;, repos = &quot;http://cran.us.r-project.org&quot;)
+install.packages(&quot;gapminder&quot;, repos = &quot;http://cran.us.r-project.org&quot;)</code></pre>
+<pre class="r"><code># have a look at the data 
+head(gapminder::gapminder)</code></pre>
+<pre><code>## # A tibble: 6 x 6
+##   country     continent  year lifeExp      pop gdpPercap
+##   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+## 1 Afghanistan Asia       1952    28.8  8425333      779.
+## 2 Afghanistan Asia       1957    30.3  9240934      821.
+## 3 Afghanistan Asia       1962    32.0 10267083      853.
+## 4 Afghanistan Asia       1967    34.0 11537966      836.
+## 5 Afghanistan Asia       1972    36.1 13079460      740.
+## 6 Afghanistan Asia       1977    38.4 14880372      786.</code></pre>
+
+<div class="notices note" ><p>💡Note that there are 6 columns, each of which we call a variable.</p>
+</div>
+
+<p><strong>Description</strong>: Excerpt of the Gapminder data on life expectancy, GDP per capita, and population by country.</p>
+<p>The main data frame gapminder has <strong>1704 rows</strong> and <strong>6 variables</strong>:
+- <strong>country</strong>: factor with 142 levels
+- <strong>continent</strong>: factor with 5 levels
+- <strong>year</strong>: ranges from 1952 to 2007 in increments of 5 years
+- <strong>lifeExp</strong>: life expectancy at birth, in years
+- <strong>pop</strong>: population
+- <strong>gdpPercap</strong>: GDP per capita</p>
+<pre class="r"><code>gapminder::gapminder[1:3,]</code></pre>
+<pre><code>## # A tibble: 3 x 6
+##   country     continent  year lifeExp      pop gdpPercap
+##   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+## 1 Afghanistan Asia       1952    28.8  8425333      779.
+## 2 Afghanistan Asia       1957    30.3  9240934      821.
+## 3 Afghanistan Asia       1962    32.0 10267083      853.</code></pre>
+<p>1st look at the data using the following functions: <span style="color:red"><code>dim()</code></span> &amp; <span style="color:dim"><code>head()</code></span></p>
+<pre class="r"><code>library(gapminder)
+dim(gapminder)</code></pre>
+<pre><code>## [1] 1704    6</code></pre>
+<pre class="r"><code>head(gapminder, n=10)</code></pre>
+<pre><code>## # A tibble: 10 x 6
+##    country     continent  year lifeExp      pop gdpPercap
+##    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+##  1 Afghanistan Asia       1952    28.8  8425333      779.
+##  2 Afghanistan Asia       1957    30.3  9240934      821.
+##  3 Afghanistan Asia       1962    32.0 10267083      853.
+##  4 Afghanistan Asia       1967    34.0 11537966      836.
+##  5 Afghanistan Asia       1972    36.1 13079460      740.
+##  6 Afghanistan Asia       1977    38.4 14880372      786.
+##  7 Afghanistan Asia       1982    39.9 12881816      978.
+##  8 Afghanistan Asia       1987    40.8 13867957      852.
+##  9 Afghanistan Asia       1992    41.7 16317921      649.
+## 10 Afghanistan Asia       1997    41.8 22227415      635.</code></pre>
+<p>Can you tell what each of the two functions does?!</p>
+<p>Do we have the information about the structure of the data? 🤔 We can examine the structure using <span style="color:red"><code>str()</code></span> function, but the <strong>output could look messy</strong> and hard to follow if the data set is big. 🤪</p>
+<pre class="r"><code>str(gapminder) </code></pre>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    1704 obs. of  6 variables:
+##  $ country  : Factor w/ 142 levels &quot;Afghanistan&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ continent: Factor w/ 5 levels &quot;Africa&quot;,&quot;Americas&quot;,..: 3 3 3 3 3 3 3 3 3 3 ...
+##  $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
+##  $ lifeExp  : num  28.8 30.3 32 34 36.1 ...
+##  $ pop      : int  8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...
+##  $ gdpPercap: num  779 821 853 836 740 ...</code></pre>
+<hr />
+<p><strong>The <code>dplyr</code> Package</strong></p>
+<p>The <span style="color:red"><strong><code>dplyr</code></strong></span> provides a “grammar” (the verbs) for data manipulation and for operating on data frames in a tidy way. The key operator and the essential verbs are:</p>
+<p><span style="color:red">%&gt;%</span>: the “pipe” operator used to connect multiple verb actions together into a pipeline.</p>
+<p><span style="color:red">select()</span>: return a subset of the columns of a data frame.</p>
+<p><span style="color:red">mutate()</span>: add new variables/columns or transform existing variables.</p>
+<p><span style="color:red">filter()</span>: extract a subset of rows from a data frame based on logical conditions.</p>
+<p><span style="color:red">arrange()</span>: reorder rows of a data frame according to single or multiple variables.</p>
+<p><span style="color:red">summarise() / summarize()</span>: reduce each group to a single row by calculating aggregate measures.</p>
+<p>We can have a look at the data and its structure by using the <span style="color:red"><code>glimpse()</code></span> function from the <code>dplyr</code> package.</p>
+<pre class="r"><code>suppressPackageStartupMessages(library(dplyr))
+glimpse(gapminder) </code></pre>
+<pre><code>## Observations: 1,704
+## Variables: 6
+## $ country   &lt;fct&gt; Afghanistan, Afghanistan, Afghanistan, Afghanistan, Af…
+## $ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, …
+## $ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, …
+## $ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854…
+## $ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 148803…
+## $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.…</code></pre>
+
+<div class="notices note" ><p>🤓💡: Notice how we can prevent display of the messages that appear when uploading the packages by using, in this case, <!-- raw HTML omitted -->suppressPackageStartupMessages()<!-- raw HTML omitted -->!</p>
+</div>
+
+<p>Now we have the <code>dplyr</code> package uploaded, let us learn its verbs. 😇</p>
+<hr />
+<p><strong>The pipeline operater:</strong> <span style="color:red"><code>%&gt;%</code></span></p>
+<p><strong>Left Hand Side (LHS)</strong> <span style="color:red"><code>%&gt;%</code></span> <strong>Right Hand Side (RHS)</strong></p>
+<p><span style="color:red">x %&gt;% f(…, y)</span></p>
+<p><span style="color:red"> f(x,y)</span></p>
+<p>The “pipe” **passes the result of the *LHS as the 1st operator argument of the function on the RHS**.</p>
+<pre>
+<span style="color:red">3 %>% sum(4)</span>      <==>      <span style="color:red">  sum(3, 4)</span>
+</pre>
+<p><span style="color:red"><code>%&gt;%</code></span> is very practical for chaining together multiple <span style="color:red"><code>dplyr</code></span> functions in a sequence of operations.</p>
+<hr />
+<p><strong>Pick variables by their names:</strong> <span style="color:red"><code>select()</code></span>,</p>
+<p><img src="images/select().png" width="450px" /></p>
+<ul>
+<li><p><span style="color:red"><code>starts_with(&quot;X&quot;)</code></span> every name that starts with “X”.</p></li>
+<li><p><span style="color:red"><code>ends_with(&quot;X&quot;)</code></span> every name that ends with “X”.</p></li>
+<li><p><span style="color:red"><code>contains(&quot;X&quot;)</code></span> every name that contains “X”.</p></li>
+<li><p><span style="color:red"><code>matches(&quot;X&quot;)</code></span> every name that matches “X”, where “X” can be a regular expression.</p></li>
+<li><p><span style="color:red"><code>num_range(&quot;x&quot;, 1:5)</code></span> the variables named x01, x02, x03, x04, x05.</p></li>
+<li><p><span style="color:red"><code>one_of(x)</code></span> =&gt; every name that appears in x, which should be a character vector.</p></li>
+</ul>
+<hr />
+<p>👉 Practice ⏰💻: Select your variables</p>
+<ol style="list-style-type: decimal">
+<li><p>that ends with letter <code>p</code></p></li>
+<li><p>starts with letter <code>co</code>. Try to do this selection using base R.</p></li>
+</ol>
+<p>😃🙌 Solutions:</p>
+<pre class="r"><code>gm_pop_gdp &lt;- select(gapminder, ends_with(&quot;p&quot;))
+head(gm_pop_gdp, n = 1)</code></pre>
+<pre><code>## # A tibble: 1 x 3
+##   lifeExp     pop gdpPercap
+##     &lt;dbl&gt;   &lt;int&gt;     &lt;dbl&gt;
+## 1    28.8 8425333      779.</code></pre>
+<pre class="r"><code>gm_cc &lt;- select(gapminder, starts_with(&quot;co&quot;))
+head(gm_cc, n = 1)</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   country     continent
+##   &lt;fct&gt;       &lt;fct&gt;    
+## 1 Afghanistan Asia</code></pre>
+<p>of course all of this could be done using <strong>base R</strong> for example:</p>
+<pre class="r"><code>gm_cc &lt;- gapminder[c(&quot;country&quot;, &quot;continent&quot;)]</code></pre>
+<p>but it’s less intuitive and often requires more typing.</p>
+<hr />
+<p><strong>Create new variables of existing variables:</strong> <span style="color:red"><code>mutate()</code></span></p>
+<p><img src="images/mutate().png" width="400px" /></p>
+<p>It will allow you to add to the data frame <code>df</code> a new column, <code>z</code>, which is the multiplication of the columns <code>x</code> and <code>y</code>: <code>mutate(df, z = x * y)</code>.
+If we would like to observe <code>lifeExp</code> measured in months we could create a new column <code>lifeExp_month</code>:</p>
+<pre class="r"><code>gapminder2 &lt;- mutate(gapminder, LifeExp_month = lifeExp * 12) 
+head(gapminder2, n = 2)</code></pre>
+<pre><code>## # A tibble: 2 x 7
+##   country     continent  year lifeExp     pop gdpPercap LifeExp_month
+##   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;   &lt;int&gt;     &lt;dbl&gt;         &lt;dbl&gt;
+## 1 Afghanistan Asia       1952    28.8 8425333      779.          346.
+## 2 Afghanistan Asia       1957    30.3 9240934      821.          364.</code></pre>
+<hr />
+<p><strong>Pick observations by their values:</strong> <span style="color:red"><code>filter()</code></span>
+<img src="images/filter().png" width="450px" /></p>
+<p>There is a set of logical operators in <strong>R</strong> that you can use inside <code>filter()</code>:</p>
+<ul>
+<li><code>x &lt; y</code>: <code>TRUE</code> if <code>x</code> is less than <code>y</code></li>
+<li><code>x &lt;= y</code>: <code>TRUE</code> if <code>x</code> is less than or equal to <code>y</code></li>
+<li><code>x == y</code>: <code>TRUE</code> if <code>x</code> equals <code>y</code></li>
+<li><code>x != y</code>: <code>TRUE</code> if <code>x</code> does not equal <code>y</code></li>
+<li><code>x &gt;= y</code>: <code>TRUE</code> if <code>x</code> is greater than or equal to <code>y</code></li>
+<li><code>x &gt; y</code>: <code>TRUE</code> if <code>x</code> is greater than <code>y</code></li>
+<li><code>x %in% c(a, b, c)</code>: <code>TRUE</code> if <code>x</code> is in the vector <code>c(a, b, c)</code></li>
+<li><code>is.na(x)</code>: Is <code>NA</code></li>
+<li><code>!is.na(x)</code>: Is not <code>NA</code></li>
+</ul>
+<hr />
+<p>👉 Practice ⏰💻: Filter your data</p>
+<p>Use <code>gapminder2</code> <code>df</code> to filter:</p>
+<ol style="list-style-type: decimal">
+<li><p>only European countries and save it as <code>gapmEU</code></p></li>
+<li><p>only European countries from 2000 onward and save it as <code>gapmEU21c</code></p></li>
+<li><p>rows where the life expectancy is greater than 80</p></li>
+</ol>
+<p>Don’t forget to <strong>use <code>==</code> instead of <code>=</code></strong>! and
+Don’t forget the quotes <strong><code>&quot;&quot;</code></strong></p>
+<p>😃🙌 Solutions:</p>
+<pre class="r"><code>gapmEU &lt;- filter(gapminder2, continent == &quot;Europe&quot;) 
+head(gapmEU, 2)</code></pre>
+<pre><code>## # A tibble: 2 x 7
+##   country continent  year lifeExp     pop gdpPercap LifeExp_month
+##   &lt;fct&gt;   &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;   &lt;int&gt;     &lt;dbl&gt;         &lt;dbl&gt;
+## 1 Albania Europe     1952    55.2 1282697     1601.          663.
+## 2 Albania Europe     1957    59.3 1476505     1942.          711.</code></pre>
+<pre class="r"><code>gapmEU21c &lt;- filter(gapminder2, continent == &quot;Europe&quot; &amp; year &gt;= 2000)
+head(gapmEU21c, 2)</code></pre>
+<pre><code>## # A tibble: 2 x 7
+##   country continent  year lifeExp     pop gdpPercap LifeExp_month
+##   &lt;fct&gt;   &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;   &lt;int&gt;     &lt;dbl&gt;         &lt;dbl&gt;
+## 1 Albania Europe     2002    75.7 3508512     4604.          908.
+## 2 Albania Europe     2007    76.4 3600523     5937.          917.</code></pre>
+<pre class="r"><code>filter(gapminder2, lifeExp &gt; 80)</code></pre>
+<hr />
+<p><strong>Reorder the rows:</strong> <span style="color:red"><code>arrange()</code></span>
+is used to reorder rows of a <strong>d</strong>ata <strong>f</strong>rame (df) according to one of the variables/columns.</p>
+<p><img src="images/arrange().png" width="300px" /></p>
+<ul>
+<li><p>If you pass <code>arrange()</code> a character variable, <strong>R</strong> will rearrange the rows in alphabetical order according to values of the variable.</p></li>
+<li><p>If you pass a factor variable, <strong>R</strong> will rearrange the rows according to the order of the levels in your factor (running <code>levels()</code> on the variable reveals this order).</p></li>
+</ul>
+<hr />
+<p>👉 Practice ⏰💻: Arranging your data
+1) Arrange countries in <code>gapmEU21c</code> <code>df</code> by life expectancy in ascending and descending order.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Using <code>gapminder df</code></li>
+</ol>
+<ul>
+<li><p>Find the records with the smallest population</p></li>
+<li><p>Find the records with the largest life expectancy.</p></li>
+</ul>
+<p>😃🙌 Solution 1):</p>
+<pre class="r"><code>gapmEU21c_h2l &lt;- arrange(gapmEU21c, lifeExp)
+head(gapmEU21c_h2l, 2)</code></pre>
+<pre><code>## # A tibble: 2 x 7
+##   country continent  year lifeExp      pop gdpPercap LifeExp_month
+##   &lt;fct&gt;   &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;         &lt;dbl&gt;
+## 1 Turkey  Europe     2002    70.8 67308928     6508.          850.
+## 2 Romania Europe     2002    71.3 22404337     7885.          856.</code></pre>
+<pre class="r"><code>gapmEU21c_l2h &lt;- arrange(gapmEU21c, desc(lifeExp)) # note the use of desc()
+head(gapmEU21c_l2h, 2)</code></pre>
+<pre><code>## # A tibble: 2 x 7
+##   country     continent  year lifeExp     pop gdpPercap LifeExp_month
+##   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;   &lt;int&gt;     &lt;dbl&gt;         &lt;dbl&gt;
+## 1 Iceland     Europe     2007    81.8  301931    36181.          981.
+## 2 Switzerland Europe     2007    81.7 7554661    37506.          980.</code></pre>
+<p>😃🙌 Solution 2):</p>
+<pre class="r"><code>arrange(gapminder, pop)</code></pre>
+<pre><code>## # A tibble: 1,704 x 6
+##    country               continent  year lifeExp   pop gdpPercap
+##    &lt;fct&gt;                 &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt; &lt;int&gt;     &lt;dbl&gt;
+##  1 Sao Tome and Principe Africa     1952    46.5 60011      880.
+##  2 Sao Tome and Principe Africa     1957    48.9 61325      861.
+##  3 Djibouti              Africa     1952    34.8 63149     2670.
+##  4 Sao Tome and Principe Africa     1962    51.9 65345     1072.
+##  5 Sao Tome and Principe Africa     1967    54.4 70787     1385.
+##  6 Djibouti              Africa     1957    37.3 71851     2865.
+##  7 Sao Tome and Principe Africa     1972    56.5 76595     1533.
+##  8 Sao Tome and Principe Africa     1977    58.6 86796     1738.
+##  9 Djibouti              Africa     1962    39.7 89898     3021.
+## 10 Sao Tome and Principe Africa     1982    60.4 98593     1890.
+## # … with 1,694 more rows</code></pre>
+<pre class="r"><code>arrange(gapminder, desc(lifeExp))</code></pre>
+<pre><code>## # A tibble: 1,704 x 6
+##    country          continent  year lifeExp       pop gdpPercap
+##    &lt;fct&gt;            &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;     &lt;int&gt;     &lt;dbl&gt;
+##  1 Japan            Asia       2007    82.6 127467972    31656.
+##  2 Hong Kong, China Asia       2007    82.2   6980412    39725.
+##  3 Japan            Asia       2002    82   127065841    28605.
+##  4 Iceland          Europe     2007    81.8    301931    36181.
+##  5 Switzerland      Europe     2007    81.7   7554661    37506.
+##  6 Hong Kong, China Asia       2002    81.5   6762476    30209.
+##  7 Australia        Oceania    2007    81.2  20434176    34435.
+##  8 Spain            Europe     2007    80.9  40448191    28821.
+##  9 Sweden           Europe     2007    80.9   9031088    33860.
+## 10 Israel           Asia       2007    80.7   6426679    25523.
+## # … with 1,694 more rows</code></pre>
+<p><strong>Collapse many values down to a single summary:</strong> <span style="color:red"><code>summarise()</code></span></p>
+<p><img src="images/summarise().png" width="450px" /></p>
+<p>The syntax of summarise() is simple and consistent with the other verbs included in the <code>dplyr</code> package.</p>
+<ul>
+<li><p>uses the same syntax as <code>mutate()</code>, but the resulting dataset consists of a single row instead of an entire new column in the case of <code>mutate()</code>.</p></li>
+<li><p>builds a new dataset that contains only the summarising statistics.</p></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Objective</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>basic</td>
+<td><code>sum(x)</code></td>
+<td>Sum of vector x</td>
+</tr>
+<tr class="even">
+<td>centre</td>
+<td><code>mean(x)</code></td>
+<td>Mean (average) of vector x</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>median(x)</code></td>
+<td>Median of vector x</td>
+</tr>
+<tr class="even">
+<td>spread</td>
+<td><code>sd(x)</code></td>
+<td>Standard deviation of vector x</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>quantile(x, probs)</code></td>
+<td>Quantile of vector x</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>range(x)</code></td>
+<td>Range of vector x</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>diff(range(x)))</code></td>
+<td>Width of the range of vector x</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>min(x)</code></td>
+<td>Min of vector x</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>max(x)</code></td>
+<td>Max of vector x</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>abs(x)</code></td>
+<td>Absolute value of a number x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>👉 Practice ⏰💻: Use <code>summarise()</code>:</p>
+<ol style="list-style-type: decimal">
+<li><p>to print out a summary of gapminder containing two variables: max_lifeExp and max_gdpPercap.</p></li>
+<li><p>to print out a summary of gapminder containing two variables: mean_lifeExp and mean_gdpPercap.</p></li>
+</ol>
+<p>😃🙌 Solution: Summarise your data</p>
+<pre class="r"><code>summarise(gapminder, max_lifeExp = max(lifeExp), max_gdpPercap = max(gdpPercap))</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   max_lifeExp max_gdpPercap
+##         &lt;dbl&gt;         &lt;dbl&gt;
+## 1        82.6       113523.</code></pre>
+<pre class="r"><code>summarise(gapminder, mean_lifeExp = mean(lifeExp), mean_gdpPercap = mean(gdpPercap))</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   mean_lifeExp mean_gdpPercap
+##          &lt;dbl&gt;          &lt;dbl&gt;
+## 1         59.5          7215.</code></pre>
+<hr />
+<p><strong>Subsetting:</strong> <span style="color:red"><code>group_by()</code></span></p>
+<p>dplyr’s <code>group_by()</code> function enables you to group your data. It allows you to create a separate df that splits the original df by a variable.</p>
+<p>The function <code>summarise()</code> can be combined with <code>group_by()</code>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Objective</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Position</td>
+<td>first()</td>
+<td>First observation of the group</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>last()</td>
+<td>Last observation of the group</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>nth()</td>
+<td>n-th observation of the group</td>
+</tr>
+<tr class="even">
+<td>Count</td>
+<td>n()</td>
+<td>Count the number of rows</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>n_distinct()</td>
+<td>Count the number of distinct observations</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>👉 Practice ⏰💻: Subset your data</p>
+<ol style="list-style-type: decimal">
+<li>Identify how many countries are given in gapminder data for each continent.</li>
+</ol>
+<p>😃🙌 Solution:</p>
+<pre class="r"><code>gapminder %&gt;%
+     group_by(continent) %&gt;%
+     summarise(n_distinct(country))</code></pre>
+<pre><code>## # A tibble: 5 x 2
+##   continent `n_distinct(country)`
+##   &lt;fct&gt;                     &lt;int&gt;
+## 1 Africa                       52
+## 2 Americas                     25
+## 3 Asia                         33
+## 4 Europe                       30
+## 5 Oceania                       2</code></pre>
+<hr />
+<p><strong>Let’s <code>%&gt;%</code> all up!</strong></p>
+<p>You can try to get into the habit of using a shortcut for the pipe operator
+<img src="images/pipe_short_cut.png" width="450px" style="display: block; margin: auto;" /></p>
+<p>🗣👥 Confer with your neighbours:
+What relationship do you expect to see between population size (<code>pop</code>) and life expectancy (<code>lifeExp</code>)?</p>
+<p><em>Look what this code produces</em></p>
+<pre class="r"><code>gapminder_pipe &lt;- gapminder %&gt;%
+  filter(continent == &quot;Europe&quot; &amp; year ==  2007) %&gt;%
+  mutate(pop_e6 = pop / 1000000)
+plot(gapminder_pipe$pop_e6, gapminder_pipe$lifeExp, cex = 0.5, col = &quot;red&quot;)</code></pre>
+<p><img src="/module2/DataWrangling/_index.en_files/figure-html/unnamed-chunk-24-1.png" width="576" style="display: block; margin: auto;" /></p>
+<hr />
+<p><strong><code>tidyr</code></strong></p>
+<p>The <code>tidyr</code> can help you to create <strong>tidy data</strong>. Tidy data is data where:</p>
+<ul>
+<li>Every <strong>column</strong> is a <strong>variable</strong></li>
+<li>Every <strong>row</strong> is an <strong>observation</strong></li>
+<li>Every <strong>cell</strong> is a <strong>single value</strong></li>
+</ul>
+<p><img src="images/tidyr.png" width="450px" /></p>
+<p>The <code>tidyr</code> package embraces the <strong>principles of tidy data</strong> and provides the standard key functionalities to organise data values within a dataset.</p>
+<p><a href="http://hadley.nz/">Hadley Wickham</a> the author of the <code>tidyr</code> package talks in his paper <a href="https://vita.had.co.nz/papers/tidy-data.pdf">Tidy Data</a> about the importance of the data cleaning process and structuring datasets to facilitate data analysis.</p>
+<p>Real datasets, that you are most likely to download from <a href="https://data.gov.rs/" class="uri">https://data.gov.rs/</a> or any other open source data platform, would often violate the three precepts of tidy data in all kinds of different ways:</p>
+<ul>
+<li>Variables would not have their names and column headers are values.</li>
+<li>A number of variables are stored in one column</li>
+<li>A single variable is stored in several columns</li>
+<li>Same information stored multiple times as different variables</li>
+</ul>
+<p>to name a few.</p>
+<p>To illustrate this, let us go back onto <a href="https://data.gov.rs/" class="uri">https://data.gov.rs/</a> and access <a href="https://data.gov.rs/sr/datasets/kvalitet-vazduha-2017/">Kvalitet Vazduha 2017</a>. In particular, we want to access <a href="http://data.sepa.gov.rs/dataset/ca463c44-fbfa-4de9-9a75-790995bf2830/resource/74516688-5fb5-47b2-becc-6b6e31a24d80/download/2017-no2.csv">2017-NO2.csv</a> data.</p>
+<pre class="r"><code>## If you don&#39;t have tidyr installed yet, uncomment and run the line below
+#install.packages(&quot;tidyr&quot;)
+library(tidyr)
+# access 2017-NO2.csv data
+no2 &lt;- read.csv(&quot;http://data.sepa.gov.rs/dataset/ca463c44-fbfa-4de9-9a75-790995bf2830/resource/74516688-5fb5-47b2-becc-6b6e31a24d80/download/2017-no2.csv&quot;,
+                stringsAsFactors = FALSE, 
+                fileEncoding = &quot;latin1&quot;)
+# have a look at the data
+glimpse(no2)</code></pre>
+<pre><code>## Observations: 365
+## Variables: 8
+## $ Datum                   &lt;chr&gt; &quot;01.01.2017&quot;, &quot;02.01.2017&quot;, &quot;03.01.2017&quot;…
+## $ Novi.Sad.SPENS.NO2      &lt;dbl&gt; 22.89, 32.94, 14.86, 22.73, 20.89, 10.47…
+## $ Beograd.Mostar.NO2      &lt;dbl&gt; 28.83, 39.12, 25.20, 28.48, 27.82, 41.91…
+## $ Beograd.Vraèar.NO2      &lt;dbl&gt; 182.84, 244.56, 147.49, 159.12, 124.16, …
+## $ Beograd.Zeleno.brdo.NO2 &lt;dbl&gt; 36.32, 36.68, 27.00, 35.15, 24.92, 8.27,…
+## $ Kragujevac..NO2         &lt;dbl&gt; 38.92, 43.50, 40.17, 45.44, 43.04, 34.55…
+## $ U.ice..NO2              &lt;dbl&gt; 49.84, 50.34, 36.35, 49.07, 33.33, 39.88…
+## $ Ni..IZJZ.Ni...NO2       &lt;dbl&gt; 18.61, 22.87, 15.68, 21.97, 21.68, 12.11…</code></pre>
+<p>It shows that this data set has <code>365</code> observations and <code>8</code> variables. Nonetheless, we need to consider what type of information we have here:</p>
+<ul>
+<li><code>date</code> NO2 measurement taken: given in a single column -&gt; ✅ tidy🙂</li>
+<li><code>places</code> where NO2 measurement was taken: given in several columns -&gt; ❎ tidy🙁</li>
+<li><code>NO2</code> measurements: given in several columns -&gt; ❎ tidy🙁</li>
+</ul>
+<p>Hmmm… 🤔 This doesn’t look tidy at all 😳</p>
+<p>This data is about measurement level of NO2(µg/m3) in several different towns/places, which means that NO2 is our main response variable. The way in which this variable is given in this data is certainly not tidy. It defeats the key principles of tidy data: <strong>Every column is a variable</strong> and furthermore, <strong>Every row is <span style="color:orangered">NOT</span> an observation</strong>.</p>
+<p>It appears that this data has <code>8</code> variables, but we have realised that there are only <code>3</code>: <code>date</code>, <code>place</code> and <code>no2</code>. To tidy it, we need to <strong>stack it</strong> by turning columns into rows. We are happy with the variable <code>date</code> and it should remain as a single column, the other <code>7</code> columns we want to convert into two variables: <code>place</code> and <code>no2</code>.</p>
+<p>To make <em>wide format</em> data into <em>tall format</em> we have to turn columns into rows using <code>gather()</code> function.</p>
+<p><img src="images/gather.png" width="450px" /></p>
+<p>We will create variable <code>place</code> in which we will hold the headers as given in the columns 2:8. The values inside those columns will be saved in the new variable <code>no2</code>.</p>
+<pre class="r"><code>new_no2 &lt;- no2 %&gt;%
+  gather(&quot;place&quot;, &quot;no2&quot;, -Datum, factor_key = TRUE) # stack all columns apart from `Datum`
+glimpse(new_no2)</code></pre>
+<pre><code>## Observations: 2,555
+## Variables: 3
+## $ Datum &lt;chr&gt; &quot;01.01.2017&quot;, &quot;02.01.2017&quot;, &quot;03.01.2017&quot;, &quot;04.01.2017&quot;, &quot;0…
+## $ place &lt;fct&gt; Novi.Sad.SPENS.NO2, Novi.Sad.SPENS.NO2, Novi.Sad.SPENS.NO2…
+## $ no2   &lt;dbl&gt; 22.89, 32.94, 14.86, 22.73, 20.89, 10.47, 9.58, 15.99, 14.…</code></pre>
+<p>Let us see the names of the places</p>
+<pre class="r"><code>new_no2 %&gt;%
+     group_by(place) %&gt;%
+     summarise(n())</code></pre>
+<pre><code>## # A tibble: 7 x 2
+##   place                   `n()`
+##   &lt;fct&gt;                   &lt;int&gt;
+## 1 Novi.Sad.SPENS.NO2        365
+## 2 Beograd.Mostar.NO2        365
+## 3 Beograd.Vraèar.NO2        365
+## 4 Beograd.Zeleno.brdo.NO2   365
+## 5 Kragujevac..NO2           365
+## 6 U.ice..NO2                365
+## 7 Ni..IZJZ.Ni...NO2         365</code></pre>
+<p>Those names look very messy. We could use function from <a href="https://stringr.tidyverse.org"><code>stringr</code></a> package <code>str_sub()</code>. To begin with let’s remove <span style="color:orangered">.NO2</span> at the end of each name.</p>
+<pre class="r"><code>## If you don&#39;t have stringr installed yet, uncomment and run the line below
+#install.packages(&quot;stringr&quot;)
+library(stringr)
+new_no2$place &lt;- new_no2$place %&gt;% 
+    str_sub(end = -5)
+glimpse(new_no2)</code></pre>
+<pre><code>## Observations: 2,555
+## Variables: 3
+## $ Datum &lt;chr&gt; &quot;01.01.2017&quot;, &quot;02.01.2017&quot;, &quot;03.01.2017&quot;, &quot;04.01.2017&quot;, &quot;0…
+## $ place &lt;chr&gt; &quot;Novi.Sad.SPENS&quot;, &quot;Novi.Sad.SPENS&quot;, &quot;Novi.Sad.SPENS&quot;, &quot;Nov…
+## $ no2   &lt;dbl&gt; 22.89, 32.94, 14.86, 22.73, 20.89, 10.47, 9.58, 15.99, 14.…</code></pre>
+<pre class="r"><code>new_no2 %&gt;%
+    group_by(place) %&gt;%
+    summarise(n())</code></pre>
+<pre><code>## # A tibble: 7 x 2
+##   place               `n()`
+##   &lt;chr&gt;               &lt;int&gt;
+## 1 Beograd.Mostar        365
+## 2 Beograd.Vraèar        365
+## 3 Beograd.Zeleno.brdo   365
+## 4 Kragujevac.           365
+## 5 Ni..IZJZ.Ni..         365
+## 6 Novi.Sad.SPENS        365
+## 7 U.ice.                365</code></pre>
+<p>It still doesn’t look right. 😟 This could be a tedious job. 😥 It is no wonder that many data analysts grumble about time spent on the process of cleaning and preparing the data. It could be a very long and time consuming process, but the more you do it and the more experience you gain the easier and less painful it gets.</p>
+<p>Perhaps, you can try to explore other available packages in R that could help you with organising your data into your ideal format. To give you an idea we will show you how it can easily be done when using <code>forcats::fct_recode()</code> function.</p>
+<pre class="r"><code>## If you don&#39;t have forcats installed yet, uncomment and run the line below
+#install.packages(&quot;forcats&quot;)
+library(forcats)
+new_no2 &lt;- no2 %&gt;%
+  gather(&quot;place&quot;, &quot;no2&quot;, -Datum, factor_key = TRUE) %&gt;% # stack all columns apart from `Datum`
+  mutate(place = fct_recode(place, 
+                            &quot;NS_Spens&quot; = &quot;Novi.Sad.SPENS.NO2&quot;,
+                            &quot;BG_Most&quot; = &quot;Beograd.Mostar.NO2&quot;,
+                            &quot;BG_Vracar&quot; = &quot;Beograd.Vraèar.NO2&quot;, 
+                            &quot;BG_ZelenoBrdo&quot; = &quot;Beograd.Zeleno.brdo.NO2&quot;, 
+                            &quot;KG&quot; = &quot;Kragujevac..NO2&quot;, 
+                            &quot;NI&quot; = &quot;Ni..IZJZ.Ni...NO2&quot;,
+                            &quot;UZ&quot; = &quot;U.ice..NO2&quot;))
+glimpse(new_no2)</code></pre>
+<pre><code>## Observations: 2,555
+## Variables: 3
+## $ Datum &lt;chr&gt; &quot;01.01.2017&quot;, &quot;02.01.2017&quot;, &quot;03.01.2017&quot;, &quot;04.01.2017&quot;, &quot;0…
+## $ place &lt;fct&gt; NS_Spens, NS_Spens, NS_Spens, NS_Spens, NS_Spens, NS_Spens…
+## $ no2   &lt;dbl&gt; 22.89, 32.94, 14.86, 22.73, 20.89, 10.47, 9.58, 15.99, 14.…</code></pre>
+
+<div class="notices note" ><p>By now, you should have gained enough knowledge in using R to give you the necessary confidence to start exploring other functions of the <!-- raw HTML omitted --><!-- raw HTML omitted -->tidyr<!-- raw HTML omitted --><!-- raw HTML omitted --> package. You should not stop there, but go beyond and explore the whole of the <!-- raw HTML omitted --><!-- raw HTML omitted -->tidyverse<!-- raw HTML omitted --><!-- raw HTML omitted --> opinionated collection of R packages for data science. 😇🎶</p>
+</div>
+
+<p>To learn more about <strong>tidy data in r</strong> check <a href="https://garrettgman.ithuthe%20b.io/tidying/">Data Tidying</a> section from the famous <a href="https://garrettgman.github.io">Data Science with R</a> by <a href="https://resources.rstudio.com/authors/garrett-grolemund">Garrett Grolemund</a></p>
+
+<div class="notices tip" ><p>Have you tried learning data science by posting your questions and discussing it with other people within the R community? 👥💻📊📈🗣 <!-- raw HTML omitted -->RStudio Community<!-- raw HTML omitted --></p>
+</div>
+
+<hr />
+<p><strong>YOUR TURN 👇</strong></p>
+<p>Practise by doing the following set of exercises:</p>
+<ol style="list-style-type: decimal">
+<li><p>Install and upload the <code>rattle</code> package and see what it does.</p></li>
+<li><p>Create a new R script file to explore <code>weatherAUS</code> dataset.</p></li>
+</ol>
+<ol style="list-style-type: lower-roman">
+<li><p><code>select()</code> variable: <code>MinTemp</code>, <code>MaxTemp</code>, <code>Rainfall</code> and <code>Sunshine</code> by <em>pipping</em> the dataset into `dplyr::select() function.</p></li>
+<li><p>produce a <em>summary</em> using <code>base::summary()</code> function of these numeric values.</p></li>
+<li><p>within this selection filter only those observations where <code>Rainfall &gt;= 1</code> and save the results into the computer’s memory (ie. save the results as an object).</p></li>
+<li><p>Try to think of how else you can use other <code>dplyr</code> verbs on this <code>weatherAUS</code> dataset. Write your question first, before embarking on typing the code.</p></li>
+<li><p>Write a short report on what visualisation you think would be interesting to produce for this <code>weatherAUS</code> dataset and why?</p></li>
+</ol>
+<hr />
+<p><strong>Useful Links</strong></p>
+<p><a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">Data Wrangling cheat sheet</a></p>
+<p><a href="https://4.files.edl.io/b9e2/07/12/19/142839-a23788fb-1d3a-4665-9dc4-33bfd442c296.pdf">Data Transformation with dplyr cheat sheet</a></p>
+<hr />
+<p>© 2020 Tatjana Kecojevic</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/module2/" title="Module 2"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/module2/principlesvisualisation/" title="Principles of Visualisation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1605427046"></script>
+    <script src="/js/perfect-scrollbar.min.js?1605427046"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1605427046"></script>
+    <script src="/js/jquery.sticky.js?1605427046"></script>
+    <script src="/js/featherlight.min.js?1605427046"></script>
+    <script src="/js/highlight.pack.js?1605427046"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1605427046"></script>
+    <script src="/js/learn.js?1605427046"></script>
+    <script src="/js/hugo-learn.js?1605427046"></script>
+
+    <link href="/mermaid/mermaid.css?1605427046" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1605427046"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105947713-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

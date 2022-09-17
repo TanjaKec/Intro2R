@@ -1,0 +1,179 @@
+---
+date: "2016-04-09T16:50:16+02:00"
+title: M R var vs A E var
+output: 
+  learnr::tutorial
+weight: 2
+---
+
+## Measured Response Variable vs Attribute Explanatory Variable
+
+There are many cases to which this data analysis situation is applicable. For example, if you would like to investigate if there is a gender pay gup in an organisation or if a chemical engineer wants to compare the hardness of five blends of paint you would conduct MvsA DA to reach a conclusion.
+
+The focus of investigation is the response variable for which we seek to descrbe its variability and its causes. We use the explanatory variable to explore if its behaviour influences the changes in the response variable, ie. does the responds variable responds to the changes in the explanatory variable? We seek to find out if the variability in the response variable can be explained by the explanatory variable.
+
+As in this data analysis situation focal point of our attention is the measured response variable, we put our focus on to its distribution. Since we investigate influence on its behaviours caused by the change in the attribute explanatory variable we apply the following underlying concept:
+
+> There is a relationship between a measured response and an attribute explanatory variable if the average value of the response is dependent on the level of the attribute explanatory variable.
+
+For the case of the measured response variable versis the attribute expplanatory variable with two levels (M vs A(2)), this can be illustrated graphically by plotting the statistical distribution of the response variable for the two attribute levels as below:
+
+![](/module1/StatsConcepts/images/MvAMethodology.png?width=40pc)
+
+**There is no link:**
+> Given a measured response and an attribute explanatory variable with two levels, red (attribute level 1) & blue (attribute level 2). If the statistical distribution of the response variable for attribute level 1 and attribute level 2 are exactly the same then the level of the attribute variable has no influence on the value response, there is no relationship. 
+
+**There is a link:**
+> Given a measured response and an attribute explanatory variable with two levels, red (attribute level 1) & blue (attribute level 2). If the statistical distribution of the response variable for attribute level 1 and attribute level 2 have different means then the level of the attribute variable does influence the response variable.  
+
+#### Illustrative Example:
+
+- **Response Variable:** Amount Spent on Clothes per month
+
+- **Attribute Explanatory Variable:**	Gender (Male/Female)
+
+If Males and Females *have the same* ‘spending on clothes’ *characteristics* then the average amounts spent monthly by Males and by Female should be *the same*.
+
+If Male and Females *have different* ‘spending on clothes’ *characteristics* then the average amount spent monthly by Males and Female would be *different*.  
+
+The definition uses the concept of a statistical distribution and the idea that the total population can be split into two or more sub-populations according to the level of the attribute. (i.e. in the illustrative example a population of Males and a population of Females). Then comparing the distributions and asking are they the same (no relationship) or do they differ in the means (there is a relationship).
+
+{{% notice note %}}
+It is sufficient to require equal means for no connection and unequal means for a connection irrespective of the shape/structure of the distributions.
+{{% /notice %}}
+
+### Working wih sample data
+
+The concepts above provide a clear framework for analysis.  Working with sample data, which by definition is imperfect information and subject to sampling error, makes working with sample data more problematical. The analyst need to ask the key question is the sample data providing evidence of a real connection or is it a consequence of sampling error?
+
+The common data analysis methodology introduced in the previous section provides a well defined methodology for working with sample data.  
+
+The basic question to be answered is:
+Is there a connection/link between the response variable and the explanatory variable?
+
+{{% notice warning %}}
+This requires a definition of what is meant by connection/link.
+{{% /notice %}}
+
+> The Initial Data Analysis **I.D.A.** is a set of simple descriptive procedures that enable the data analyst to make one of three judgements:
+>
+> i.	There is clearly no link between the response variable and the explanatory variable.
+>
+> ii.	There is clearly a link between the response variable and the explanatory variable.
+>
+> iii.	The sample evidence is unclear using these simple descriptive methods that more advanced methods are required to resolve the issue.  In which case Further Data Analysis (FDA) is required.
+
+> The resulting conclusions from the further data analysis **F.D.A.** can be one of two options:
+> 
+> a)	The outcome of the analysis suggests that there is no connection/link/relationship between the response variable and the explanatory variable, and then the analysis is complete.
+>
+> b)	The outcome of the analysis suggests that the level of the explanatory variable influences on the response variable, (i.e. there is a connection/link/relationship), then to complete the analysis the nature of the connection needs to be described.
+
+```txt
+To complete the data analysis the analyst needs to know how to perform the following three stages:
+
+ -	What is the Initial Data analysis and how to interpret it
+ -	How to perform the further data analysis if required
+ -	How to describe the nature of any connection discovered.
+``` 
+
+### The Initial Data Analysis
+
+In general the Initial Data Analysis consists of constructing the mean value and a boxplot of the response variable for each level of the Attribute explanatory variable. Given a data sample the problem is how to construct the required means and boxplots.
+
+#### Case Study: Share Price Study
+
+Statistical data are usually organised as tables. Each row of the table represents an observation, whilst a column represent a variable.
+
+A business analyst is studying share prices of companies from three different business sectors. As part of the study a random sample (n=60) of companies was selected and the following data was collected:
+
+| **Variable**    | **Description** |
+|-------------|-----------------------------------------------|
+| **Share_Price**	|	The market value of a company share |
+| **Profit**			| The company annual profit |
+| **RD**				  | Company annual spending on research and development |
+| **Turnover** 		|	Company annual total revenue| 
+| **Competition**	|	A variable coded: | 
+|					        |- **0** if the company operates in a very competitive market |
+|					        |- **1** if the company has a great deal of monopoly power |
+| **Sector**			|A variable coded: |
+|				  	      |- **1** if the company operates in the IT business sector |
+|					        |- **2** if the company operates in the Finance business sector |
+|				    	    |- **3** if the company operates in the Pharmaceutical business sector |
+| **Type**  	    |		A variable coded: |
+|					        |- **0** if the company does business mainly in Europe |
+|					        |- **1** if the company trades globally |
+
+First, we need to access this data in R. We will start by creating a new project the 'MvA_2' within which we will keep all relevant scripts (.R), R-Markdown (.Rmd), data files and so on. 
+
+
+Go to **File | New Project... | New Directory** in the directory name box type in the suggested name of the project and tick the box **open in new session**. Click on the "**Create Project**" button. Open a new script ile: 
+
+![New Script](/module3/MvA/images/NewScript_MvsA.png?width=40pc)
+
+and start coding.
+
+Open the data:
+
+```{r, warnings=FALSE, message=FALSE}
+suppressPackageStartupMessages(library(dplyr))
+# read csv file
+companyd <- read.csv("https://tanjakec.github.io/mydata/SHARE_PRICE.csv", header=T)
+# have a look at the first few raws and the summary of data
+head(companyd)
+# When applied to an object of class data.frame, summary shows descriptive statistics (Mean, SD, etc.)
+summary(companyd)
+glimpse(companyd)
+```
+
+{{% notice warning %}}
+Does everything seem okay? Can you notice a problem?
+{{% /notice %}}
+
+The problem is that the variables: 'Comparison', 'Sector' and 'Type' are attribute variables and Currently they have been recognised as integer type. To encode a measured variable as an attribute variable we can use function `as.factor(variable_name)`.
+
+```{r}
+companyd[, 5] <- as.factor(companyd[, 5])
+companyd[, 6] <- as.factor(companyd[, 6])
+companyd[, 7] <- as.factor(companyd[, 7])
+# command lines for scanning your dataset quickly
+summary(companyd)
+glimpse(companyd)
+```
+
+{{% notice note %}}
+Note that the form of the value returned by `summary` depends on the class of its argument. The matrix and data frame methods return a matrix of class "table", obtained by applying summary to each column and collating the results.
+{{% /notice %}}
+
+Let us start our Share Price data analysis by familiarising with data and chacking individual summary for measured variables.
+```{r}
+sapply(companyd[,1:4], summary)
+# To focus on the center of the distributions for 
+# the masured variables you can ask only
+# for the rows showing mean and median to be displayed. 
+sapply(companyd[,1:4], summary)[3:4, ]
+# To observe spread of the data we can use standard deviation and/or Inter Quartile Range
+sapply(companyd[,1:4], sd) 
+sapply(companyd[,1:4], IQR)
+```
+
+Let us explore the distributions of the variables visually using the appropriate graphs. As we have discussed in the previous sections, we usualy use piechart or a barplot if you like to graph an attribute variable.
+
+```{r}
+barplot(table(companyd[, 5]), xlab="Commpetition", ylab="frequency")
+barplot(table(companyd[, 7]), xlab="Type", ylab="frequency")
+pie(table(companyd[, 6]), labels=names(companyd$Sector), col=c(3, 7, 5), main="Sector") 
+```
+
+We have learnt that histogram is appropriate to graphically explore a measured variable.
+
+```{r}
+hist(companyd[, 1], xlab="Share Price", main="Histogram of Share Price", col="gray")
+```
+
+## YOUR TURN 👇
+
+1) Go to the portals with open data (global: gapminder, national: office of national statistics, or local) and see if you can find data that is interesting for you to explore. Write down what interesting features you are expecting to see and suggest types of the visualistions that could be used to illustrate them.  
+
+-----------------------------
+© 2020 Tatjana Kecojevic

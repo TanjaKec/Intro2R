@@ -1,0 +1,2168 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.60.1" />
+    <meta name="description" content="Data Literacy in R">
+<meta name="author" content="Tatjana Kecojevic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>t-test &amp; one-way ANOVA :: Data Literacy in R</title>
+
+    
+    <link href="/css/nucleus.css?1587747440" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1587747440" rel="stylesheet">
+    <link href="/css/hybrid.css?1587747440" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1587747440" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1587747440" rel="stylesheet">
+    <link href="/css/auto-complete.css?1587747440" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1587747440" rel="stylesheet">
+    <link href="/css/theme.css?1587747440" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1587747440" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1587747440"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"> </script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/showcases/mva/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <!DOCTYPE html>
+<html>
+<body>
+<IMG SRC="/images/logo.png" ALT="DataTeka" WIDTH=100 HEIGHT=100>
+
+</body>
+</html>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1587747440"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1587747440"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1587747440"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/general/" title="About the course" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/">
+          <b>1. </b>About the course
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/whatlearn/" title="General Overview" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/whatlearn/">
+          General Overview
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/instructor/" title="Meet the Instructor" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/instructor/">
+          Meet the Instructor
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/syllabus/" title="Indicative Syllabus" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/syllabus/">
+          Indicative Syllabus
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/" title="Module 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/">
+          <b>2. </b>Module 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/whatisr/" title="What is R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/whatisr/">
+          What is R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/installr/" title="Install R/RStudio" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/installr/">
+          Install R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/git-and-github/" title="Git and GitHub" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/git-and-github/">
+          Git and GitHub
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/rstudioide/" title="RStudio IDE" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/rstudioide/">
+          RStudio IDE
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/user/" title="How to use R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/user/">
+          How to use R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/statsconcepts/" title="Basic Stats Concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/statsconcepts/">
+          Basic Stats Concepts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/datatypes/" title="Data Types" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/datatypes/">
+          Data Types
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/importexport/" title="Import Data to R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/importexport/">
+          Import Data to R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/rmarkdown/" title="Reproducibility" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/rmarkdown/">
+          Reproducibility
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/" title="Module 2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/">
+          <b>3. </b>Module 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/datawrangling/" title="Data Wrangling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/datawrangling/">
+          Data Wrangling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/principlesvisualisation/" title="Principles of Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/principlesvisualisation/">
+          Principles of Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/visualisation/" title="Data Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/visualisation/">
+          Data Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/spatialda/" title="Spatial Data Analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/spatialda/">
+          Spatial Data Analysis
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/module2/spatialda/images/mokrin/" title="" class="dd-item ">
+        <a href="/module2/spatialda/images/mokrin/">
+        
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module3/" title="Module 3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module3/">
+          <b>4. </b>Module 3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module3/damethodology/" title="Data Analysis Methodology" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module3/damethodology/">
+          Data Analysis Methodology
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module3/mva/" title="t-test &amp; one-way ANOVA" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module3/mva/">
+          t-test &amp; one-way ANOVA
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module3/mvm/" title="Regression" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module3/mvm/">
+          Regression
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/" title="Showcases" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/showcases/">
+          <b>5. </b>Showcases
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/mva/" title="t-test &amp; one-way ANOVA" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/showcases/mva/">
+          t-test &amp; one-way ANOVA
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/mvm/" title="Regression" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/mvm/">
+          Regression
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/airpolution/" title="Air Quality" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/airpolution/">
+          Air Quality
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/showcases/airpolution/images/mokrin/" title="" class="dd-item ">
+        <a href="/showcases/airpolution/images/mokrin/">
+        
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/TanjaKec"><i class='fab fa-fw fa-github'></i>GitHub</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download matcornic/hugo-theme-learn on GitHub">Download</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn" data-icon="octicon-star" data-show-count="true" aria-label="Star matcornic/hugo-theme-learn on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork matcornic/hugo-theme-learn on GitHub">Fork</a>
+
+    <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/Showcases/MvA/_index.en.html" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Data Literacy in R</a> > <a href='/showcases/'>Showcases</a> > t-test & one-way ANOVA
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              t-test &amp; one-way ANOVA
+            </h1>
+          
+
+        
+
+
+
+
+	
+
+
+<p><strong>Measured Response Variable vs Attribute Explanatory Variable</strong></p>
+<p>There are many cases where this data analysis situation is applicable. For example, if you would like to investigate if there is a gender pay gap in an organisation or if a chemical engineer wants to compare the hardness of five blends of paint you would conduct MvsA DA to reach a conclusion.</p>
+<p>The focus of investigation is the response variable for which we seek to describe its variability and its causes. We use the explanatory variable to explore if its behaviour influences the changes in the response variable, i.e. does the response variable respond to the changes in the explanatory variable? We seek to find out if the variability in the response variable can be explained by the explanatory variable.</p>
+<p>As in this data analysis situation the focal point of our attention is the measured response variable, we focus on its distribution. Since we investigate the influence on its behaviours caused by the change in the attribute explanatory variable, we apply the following underlying concept:</p>
+<blockquote>
+<p>There is a relationship between a measured response and an attribute explanatory variable if the average value of the response is dependent on the level of the attribute explanatory variable.</p>
+</blockquote>
+<p>In the case of the measured response variable versus the attribute explanatory variable with two levels (M vs A(2)), this can be illustrated graphically by plotting the statistical distribution of the response variable for the two attribute levels as below:</p>
+<p><img src="/module1/StatsConcepts/images/MvAMethodology.png?width=40pc" /></p>
+<p><strong>There is no link:</strong></p>
+<blockquote>
+<p>Given a measured response and an attribute explanatory variable with two levels, red (attribute level 1) &amp; blue (attribute level 2), if the statistical distribution of the response variable for attribute level 1 and attribute level 2 are exactly the same, then the level of the attribute variable has no influence on the value response, there is no relationship.</p>
+</blockquote>
+<p><strong>There is a link:</strong></p>
+<blockquote>
+<p>Given a measured response and an attribute explanatory variable with two levels, red (attribute level 1) &amp; blue (attribute level 2), if the statistical distribution of the response variable for attribute level 1 and attribute level 2 have different means, then the level of the attribute variable does influence the response variable.</p>
+</blockquote>
+<p><strong>Illustrative Example:</strong></p>
+<ul>
+<li><p><strong>Response Variable:</strong> Amount Spent on Clothes per month</p></li>
+<li><p><strong>Attribute Explanatory Variable:</strong> Gender (Male/Female)</p></li>
+</ul>
+<p>If Males and Females <em>have the same</em> ‘spending on clothes’ <em>characteristics</em> then the average amounts spent monthly by Males and by Females should be <em>the same</em>.</p>
+<p>If Male and Females <em>have different</em> ‘spending on clothes’ <em>characteristics</em> then the average amount spent monthly by Males and Females would be <em>different</em>.</p>
+<p>The definition uses the concept of a statistical distribution and the idea that the total population can be split into two or more sub-populations according to the level of the attribute. (i.e. in the illustrative example a population of Males and a population of Females). Then comparing the distributions and asking are they the same (no relationship) or do they differ in the means (there is a relationship).</p>
+
+<div class="notices note" ><p>It is sufficient to require equal means for no connection and unequal means for a connection irrespective of the shape/structure of the distributions.</p>
+</div>
+
+<hr />
+<p><strong>Working wih sample data</strong></p>
+<p>The concepts above provide a clear framework for analysis. Working with sample data, which by definition is imperfect information and subject to sampling error, makes working with sample data more problematical. The analyst needs to ask the key question “is the sample data providing evidence of a real connection or is it a consequence of sampling error?”</p>
+<p>The common data analysis methodology introduced in the previous section provides a well defined methodology for working with sample data.</p>
+<p>The basic question to be answered is:
+Is there a connection/link between the response variable and the explanatory variable?</p>
+
+<div class="notices warning" ><p>This requires a definition of what is meant by connection/link.</p>
+</div>
+
+<blockquote>
+<p>The Initial Data Analysis <strong>IDA</strong> is a set of simple descriptive procedures that enable the data analyst to make one of three judgements:</p>
+<ol style="list-style-type: lower-roman">
+<li><p>There is clearly no link between the response variable and the explanatory variable.</p></li>
+<li><p>There is clearly a link between the response variable and the explanatory variable.</p></li>
+<li><p>The sample evidence is unclear using these simple descriptive methods and more advanced methods are required to resolve the issue. In which case Further Data Analysis (FDA) is required.</p></li>
+</ol>
+</blockquote>
+<blockquote>
+<p>The resulting conclusions from the further data analysis <strong>FDA</strong> can be one of two options:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>The outcome of the analysis suggests that there is no connection/link/relationship between the response variable and the explanatory variable, and then the analysis is complete.</p></li>
+<li><p>The outcome of the analysis suggests that the level of the explanatory variable influences the response variable, (i.e. there is a connection/link/relationship), then to complete the analysis the nature of the connection needs to be described.</p></li>
+</ol>
+</blockquote>
+<pre class="txt"><code>To complete the data analysis the analyst needs to know how to perform the following three stages:
+
+ -  What is the Initial Data analysis and how to interpret it
+ -  How to perform the further data analysis if required
+ -  How to describe the nature of any connection discovered.</code></pre>
+<hr />
+<p><strong>The Initial Data Analysis</strong></p>
+<p>In general the Initial Data Analysis consists of constructing the mean value and a boxplot of the response variable for each level of the Attribute explanatory variable. Given a data sample the problem is how to construct the required means and boxplots.</p>
+<p><strong>Case Study: Share Price Study</strong></p>
+<p>Statistical data is usually organised as a table. Each row of the table represents an observation, whilst a column represents a variable.</p>
+<p>A business analyst is studying share prices of companies from three different business sectors. As part of the study a random sample (n=60) of companies was selected and the following data was collected:</p>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Variable</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Share_Price</strong></td>
+<td>The market value of a company share (£)</td>
+</tr>
+<tr class="even">
+<td><strong>Profit</strong></td>
+<td>The company annual profit (£1.000.000)</td>
+</tr>
+<tr class="odd">
+<td><strong>RD</strong></td>
+<td>Company annual spending on research and development (£1.000)</td>
+</tr>
+<tr class="even">
+<td><strong>Turnover</strong></td>
+<td>Company annual total revenue (£1.000.000)</td>
+</tr>
+<tr class="odd">
+<td><strong>Competition</strong></td>
+<td>A variable coded:</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>- <strong>0</strong> if the company operates in a very competitive market</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>- <strong>1</strong> if the company has a great deal of monopoly power</td>
+</tr>
+<tr class="even">
+<td><strong>Sector</strong></td>
+<td>A variable coded:</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>- <strong>1</strong> if the company operates in the IT business sector</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>- <strong>2</strong> if the company operates in the Finance business sector</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>- <strong>3</strong> if the company operates in the Pharmaceutical business sector</td>
+</tr>
+<tr class="even">
+<td><strong>Type</strong></td>
+<td>A variable coded:</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>- <strong>0</strong> if the company does business mainly in Europe</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>- <strong>1</strong> if the company trades globally</td>
+</tr>
+</tbody>
+</table>
+<p>First, we need to access this data in R. We will start by creating a new project the ‘DAM’ within which we will keep all relevant scripts (.R), R-Markdown (.Rmd), data files and so on.</p>
+<p>Go to <strong>File | New Project… | New Directory</strong> in the directory name box type in the suggested name of the project and tick the box <strong>open in new session</strong>. Click on the “<strong>Create Project</strong>” button. Open a new script:</p>
+<p><img src="/module3/MvA/images/NewScript_MvsA.png?width=40pc" /></p>
+<p>and start coding.</p>
+<p>Open the data:</p>
+<pre class="r"><code>suppressPackageStartupMessages(library(dplyr))
+# read csv file
+companyd &lt;- read.csv(&quot;https://tanjakec.github.io/mydata/SHARE_PRICE.csv&quot;, header=T)
+# have a look at the first few rows and the summary of data
+head(companyd)</code></pre>
+<pre><code>##   Share_Price Profit    RD Turnover Competition Sector Type
+## 1         880  161.3 152.6    320.9           1      3    0
+## 2         862  170.5 118.3    306.3           1      3    0
+## 3         850  140.7 110.6    279.5           1      3    0
+## 4         840  115.7  87.2    193.2           1      3    0
+## 5         838  107.9  75.1    182.4           1      3    0
+## 6         825  138.8 116.2    265.2           1      3    1</code></pre>
+<pre class="r"><code># When applied to an object of class data.frame, the summary shows descriptive statistics (Mean, SD, etc.)
+summary(companyd)</code></pre>
+<pre><code>##   Share_Price        Profit             RD            Turnover    
+##  Min.   :101.0   Min.   :  2.90   Min.   : 39.20   Min.   : 30.3  
+##  1st Qu.:501.2   1st Qu.: 59.73   1st Qu.: 75.78   1st Qu.:112.3  
+##  Median :598.5   Median : 88.85   Median : 90.60   Median :173.5  
+##  Mean   :602.8   Mean   : 84.76   Mean   : 89.64   Mean   :170.2  
+##  3rd Qu.:739.8   3rd Qu.:106.62   3rd Qu.:104.15   3rd Qu.:216.6  
+##  Max.   :880.0   Max.   :170.50   Max.   :152.60   Max.   :323.3  
+##   Competition      Sector       Type    
+##  Min.   :0.0   Min.   :1   Min.   :0.0  
+##  1st Qu.:0.0   1st Qu.:1   1st Qu.:0.0  
+##  Median :0.5   Median :2   Median :0.5  
+##  Mean   :0.5   Mean   :2   Mean   :0.5  
+##  3rd Qu.:1.0   3rd Qu.:3   3rd Qu.:1.0  
+##  Max.   :1.0   Max.   :3   Max.   :1.0</code></pre>
+<pre class="r"><code>glimpse(companyd)</code></pre>
+<pre><code>## Observations: 60
+## Variables: 7
+## $ Share_Price &lt;int&gt; 880, 862, 850, 840, 838, 825, 808, 806, 801, 799, 783, 77…
+## $ Profit      &lt;dbl&gt; 161.3, 170.5, 140.7, 115.7, 107.9, 138.8, 102.0, 102.7, 1…
+## $ RD          &lt;dbl&gt; 152.6, 118.3, 110.6, 87.2, 75.1, 116.2, 91.3, 100.4, 113.…
+## $ Turnover    &lt;dbl&gt; 320.9, 306.3, 279.5, 193.2, 182.4, 265.2, 212.0, 170.3, 2…
+## $ Competition &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, …
+## $ Sector      &lt;int&gt; 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, …
+## $ Type        &lt;int&gt; 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, …</code></pre>
+
+<div class="notices warning" ><p>Does everything seem okay? Can you notice a problem?</p>
+</div>
+
+<p>The problem is that the variables: ‘Comparison’, ‘Sector’ and ‘Type’ are attribute variables and currently they have been recognised as integer type. To encode a measured variable as an attribute variable we can use function <code>as.factor(variable_name)</code>.</p>
+<pre class="r"><code>companyd[, 5] &lt;- as.factor(companyd[, 5])
+companyd[, 6] &lt;- as.factor(companyd[, 6])
+companyd[, 7] &lt;- as.factor(companyd[, 7])
+# command lines for scanning your dataset quickly
+summary(companyd)</code></pre>
+<pre><code>##   Share_Price        Profit             RD            Turnover     Competition
+##  Min.   :101.0   Min.   :  2.90   Min.   : 39.20   Min.   : 30.3   0:30       
+##  1st Qu.:501.2   1st Qu.: 59.73   1st Qu.: 75.78   1st Qu.:112.3   1:30       
+##  Median :598.5   Median : 88.85   Median : 90.60   Median :173.5              
+##  Mean   :602.8   Mean   : 84.76   Mean   : 89.64   Mean   :170.2              
+##  3rd Qu.:739.8   3rd Qu.:106.62   3rd Qu.:104.15   3rd Qu.:216.6              
+##  Max.   :880.0   Max.   :170.50   Max.   :152.60   Max.   :323.3              
+##  Sector Type  
+##  1:20   0:30  
+##  2:20   1:30  
+##  3:20         
+##               
+##               
+## </code></pre>
+<pre class="r"><code>glimpse(companyd)</code></pre>
+<pre><code>## Observations: 60
+## Variables: 7
+## $ Share_Price &lt;int&gt; 880, 862, 850, 840, 838, 825, 808, 806, 801, 799, 783, 77…
+## $ Profit      &lt;dbl&gt; 161.3, 170.5, 140.7, 115.7, 107.9, 138.8, 102.0, 102.7, 1…
+## $ RD          &lt;dbl&gt; 152.6, 118.3, 110.6, 87.2, 75.1, 116.2, 91.3, 100.4, 113.…
+## $ Turnover    &lt;dbl&gt; 320.9, 306.3, 279.5, 193.2, 182.4, 265.2, 212.0, 170.3, 2…
+## $ Competition &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, …
+## $ Sector      &lt;fct&gt; 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, …
+## $ Type        &lt;fct&gt; 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, …</code></pre>
+
+<div class="notices note" ><p>Note that the form of the value returned by <!-- raw HTML omitted -->summary<!-- raw HTML omitted --> depends on the class of its argument. The matrix and data frame methods return a matrix of class “table”, obtained by applying summary to each column and collating the results.</p>
+</div>
+
+<p>Let us start our Share Price data analysis by familiarising ourselves with data and checking individual summary for measured variables.</p>
+<pre class="r"><code>sapply(companyd[,1:4], summary)</code></pre>
+<pre><code>##         Share_Price    Profit      RD Turnover
+## Min.       101.0000   2.90000  39.200  30.3000
+## 1st Qu.    501.2500  59.72500  75.775 112.3500
+## Median     598.5000  88.85000  90.600 173.5000
+## Mean       602.7833  84.76333  89.645 170.1567
+## 3rd Qu.    739.7500 106.62500 104.150 216.6000
+## Max.       880.0000 170.50000 152.600 323.3000</code></pre>
+<pre class="r"><code># To focus on the center of the distributions for 
+# the measured variables you can ask only
+# for the rows showing mean and median to be displayed. 
+sapply(companyd[,1:4], summary)[3:4, ]</code></pre>
+<pre><code>##        Share_Price   Profit     RD Turnover
+## Median    598.5000 88.85000 90.600 173.5000
+## Mean      602.7833 84.76333 89.645 170.1567</code></pre>
+<pre class="r"><code># To observe spread of the data we can use standard deviation and/or Inter Quartile Range
+sapply(companyd[,1:4], sd) </code></pre>
+<pre><code>## Share_Price      Profit          RD    Turnover 
+##   177.28461    37.76443    24.13231    75.72712</code></pre>
+<pre class="r"><code>sapply(companyd[,1:4], IQR)</code></pre>
+<pre><code>## Share_Price      Profit          RD    Turnover 
+##     238.500      46.900      28.375     104.250</code></pre>
+<p>Let us explore the distributions of the variables visually using the appropriate graphs. As we have discussed in the previous sections, we usually use a piechart or a barplot if you like to graph an attribute variable.</p>
+<pre class="r"><code>barplot(table(companyd[, 5]), xlab=&quot;Competition&quot;, ylab=&quot;frequency&quot;)</code></pre>
+<p><img src="/module3/MvA/_index.en_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="r"><code>barplot(table(companyd[, 7]), xlab=&quot;Type&quot;, ylab=&quot;frequency&quot;)</code></pre>
+<p><img src="/module3/MvA/_index.en_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
+<pre class="r"><code>pie(table(companyd[, 6]), labels=names(companyd$Sector), col=c(3, 7, 5), main=&quot;Sector&quot;) </code></pre>
+<p><img src="/module3/MvA/_index.en_files/figure-html/unnamed-chunk-4-3.png" width="672" /></p>
+<p>We have learnt that a histogram is appropriate to graphically explore a measured variable.</p>
+<pre class="r"><code>hist(companyd[, 1], xlab=&quot;Share Price&quot;, main=&quot;Histogram of Share Price&quot;, col=&quot;gray&quot;)</code></pre>
+<p><img src="/module3/MvA/_index.en_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>To see the density smoothing of the histogram, on your histogram you will plot the probability density rather than the freqeuncy of the measured variable, over which you can superimpose a kernel density smoothing line.</p>
+<pre class="r"><code>hist(companyd[, 1], xlab=&quot;Share Price&quot;, main=&quot;Histogram of Share Price&quot;, col=&quot;gray&quot;, prob=T)
+lines(density(companyd[, 1]), col=&quot;red&quot;)</code></pre>
+<p><img src="/module3/MvA/_index.en_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>You can also have the kernel density smoothing as an individual plot.</p>
+<pre class="r"><code>par(mfrow=c(2, 2))  # splits the graph window into 2 rows and 2 columns
+plot(density(companyd[,1]), main=&quot;Density Function of Share Price&quot;)
+plot(density(companyd[,2]), main=&quot;Density Function of Profit&quot;)
+plot(density(companyd[,3]), main=&quot;Density Function of R&amp;D&quot;)
+plot(density(companyd[,4]), main=&quot;Density Function of Turnover&quot;)</code></pre>
+<p><img src="/module3/MvA/_index.en_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<hr />
+<p><strong>M vs A(2) Data Analysis</strong></p>
+<p>Exploratory analysis of the individual variables is an important part of the DA process as a way to familiarise with data and identify any anomalies that may be contained within the individual variables. However, the most exciting part of Data Analysis is the exploration of the possible relationships between the variables and statistical modelling that we use in this part of the DA process.</p>
+<p>The main focus in this study is <em>the study of share prices of companies from three different business sectors</em>, ultimately this will help us to identify the <strong>response</strong> variable for this study which is <strong>Share_Price</strong> that is a <strong>measured</strong> type. In this section we are learning how to investigate a possible relationship between measured response and attribute with two levels of explanatory variable. In this study there are two attribute variables with two levels: <strong>Competition</strong> and <strong>Type</strong> and both of those attribute variable seem reasonable to use as explanatory variables.</p>
+<p>We will start the investigation for the case: <strong>Share_Price</strong> vs <strong>Competition</strong>.</p>
+<p>Using data analysis methodology for M v A(2)</p>
+<p><img src="/module1/StatsConcepts/images/MvAMethodology.png?width=40pc" /></p>
+<p>We first need to conduct the IDA For this part of the analysis we need to obtain the descriptive statistics and their visualisations in terms of the boxplots.</p>
+<p><em>Step 1:</em> Obtain the descriptive statistic of the response variable split down by each level of the attribute explanatory variable:</p>
+<ul>
+<li>Providing the average value of ‘Share_Price’ for all the companies who operate in a very competitive market (code 0) and the average value of ‘Share_Price’ for all companies that have a great deal of monopoly power (code 1).</li>
+</ul>
+<pre class="r"><code>with(companyd, tapply(Share_Price, Competition, summary))</code></pre>
+<pre><code>## $`0`
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   101.0   479.8   527.0   530.0   588.5   777.0 
+## 
+## $`1`
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   240.0   647.5   703.5   675.5   804.8   880.0</code></pre>
+<pre class="r"><code>with(companyd, tapply(Share_Price, Competition, sd))</code></pre>
+<pre><code>##        0        1 
+## 149.3169 175.2078</code></pre>
+<pre class="r"><code>with(companyd, tapply(Share_Price, Competition, IQR))   </code></pre>
+<pre><code>##      0      1 
+## 108.75 157.25</code></pre>
+<p>Once we get the required statistics, we need to interpret these descriptive statistics of the two sub-distributions in order to make a conclusion about their equality, i.e. similarity, as we are working with sample data. In other words, based on the statistics obtained, we need to answer the following question: Are the sub-distributions the same or different?</p>
+
+<div class="notices note" ><p>Descriptive statistics describe data – it summarises and organises all of the collected data into something manageable and simple to understand. Yet, it could be difficult to interpret, unless you are very in tune and familiar with the variables you are observing. If you already have some prior knowledge about the subject matter you will most likely know what to expect to see and the interpretation of the statistics will not be so troublesome. However, we can always convert those statistics to a visual form which is simpler to digest and understand.</p>
+</div>
+
+<p>Graphical visualisation of the two sub-distributions might help to answer this question! <strong>Boxplots</strong> are the standard graphical method of displaying this sort of data. <strong>Boxplots</strong> enable both the difference in means relative to their spreads (variability) to be assessed.</p>
+<pre class="r"><code>#par(mfrow=c(1,1))
+boxplot(Share_Price ~ Competition, data = companyd, boxwex = 0.25, main=&quot;Share Price vs Competition&quot;, xlab =&quot;Share_Price&quot;, ylab =&quot;Competition&quot;, col=c(&quot;palegreen3&quot;, &quot;orchid3&quot;), horizontal=T) </code></pre>
+<p><img src="/module3/MvA/_index.en_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>From the obtained descriptive statistics visualised by the Boxplots the means are 530.00 for the companies which operate in a very competitive market and 675.50 for the companies that have a great deal of monopoly power. The key question now is:</p>
+<p>Is the difference between the two means (£675.50 – £530.00 = £145.50) indicating a real difference or is this difference one that could have occurred by chance as a result of sampling error?</p>
+<p>This is a complex question but by matching the means and the boxplots obtained in the analysis against the boxplots for the three possible model outcomes discussed earlier when talking about methodology used form MvA(2), a suitable decision can be made. For the example <code>Share_Price</code> vs <code>Competition</code> given above the analytical process is described below:</p>
+<p>By matching the boxplots against the three model outcomes illustrated in the data analysis methodology diagram, the absolute difference (as above of £145.50) has limited value in isolation because the interpretation depends also on the variability of the sample data. The variability of the sample data is measured in terms of the standard deviation, and represented in the boxplot as the inter-quartile range (IQR) as the width of the box. In this graphical display the boxplot enables both the difference in means relative to their spreads (variability) to be assessed. If the two boxplots appear to be one of top of the other, then the difference is consistent with sampling error. If, however the difference is such that the boxplots appear to be well separated, then the difference is indicative of a real difference in means and suggests that a connection/relationship is present. The in-between situation is a matter of judgement but if the means are different, and the boxes of the boxplots overlap considerably then this is indicative of the need for further data analysis.</p>
+<p>From the sample evidence following Data Analysis Methodology, we can draw the conclusion that the market value of a company’s shares does depend on the competition within which the company operates. The average share price for the companies which operate in a very competitive market is £530.00, while for those that are operating with a great deal of monopoly power, it is £145.50 more.</p>
+<p>The outcome of the IDA has led us to the above conclusion skipping the FDA stage.</p>
+<p><img src="/module1/StatsConcepts/images/DAMethodology.png?width=40pc" /></p>
+<p>We recognised that this common methodology has three stages:</p>
+<ol style="list-style-type: decimal">
+<li>The Initial Data Analysis</li>
+<li>The Further Data Analysis</li>
+<li>Describing the Relationship</li>
+</ol>
+<p>and that the Further Data Analysis stage may or may not be required, depending on the outcome of the ‘Initial Data Analysis’ at Stage 1. By conducting the analysis for <code>Share_Price</code> vs <code>Competition</code>, we have also realised that Stage 3 ‘Describing the Relationship’ is dependent upon establishing that a link exists between the response variable and the explanatory variable.</p>
+<p>We will move further and learn how to conduct the Further Data Analysis required for this particular data analysis situation.</p>
+<hr />
+<p><strong>Further Data Analysis</strong></p>
+<p>If the Initial Data Analysis is inconclusive then ‘Further Data Analysis’ is required. This further data analysis seeks to answer the question:</p>
+<blockquote>
+<p>Does the sample evidence support the viewpoint that there is no connection between the response variable and the explanatory variable, or does it support the view that there is a link?</p>
+</blockquote>
+<p>Further Data Analysis is procedure that enables a decision to be made, based on the sample evidence, as to one of
+two outcomes:</p>
+<ul>
+<li>There is no relationship</li>
+<li>There is a relationship</li>
+</ul>
+<p>These statistical procedures are called <strong>hypothesis tests</strong>, which essentially provide <strong>a decision rule for choosing between one of the two outcomes</strong> “There is no relationship” or “There is a relationship” based on the sample evidence.</p>
+<p>This chapter we will discuss the mechanics of the application of the hypothesis test, and not attempt to discuss the underlying theory.</p>
+<p>All hypothesis tests are carried out in four stages:</p>
+<ul>
+<li>Stage 1: Specifying the hypotheses.</li>
+<li>Stage 2: Defining the test parameters and the decision rule.</li>
+<li>Stage 3: Examining the sample evidence.</li>
+<li>Stage 4: The conclusions.</li>
+</ul>
+<p>The data analysis situation Measured v Attribute requires two different hypothesis tests, one hypothesis test for the situation where the attribute explanatory variable has exactly two levels, and a different hypothesis test for the situation where the attribute explanatory variable has three or more levels.</p>
+<hr />
+<p><strong>HYPOTHESIS TEST: Measured Reponse v Attribute Explanatory Variable with exactly two levels</strong></p>
+<p>In the section above we started to investigate “does the explanatory variable <em>Competition</em> influence the response variable <em>Share_Price</em>?” The implication being does market value of the companies’ shares depend on the competitiveness of the market within which they operate. Based on the sample evidence we were able to draw a conclusion about the nature of this relationship by conducting only the IDA.</p>
+<p>Let us suppose that the IDA was inconclusive and that FDA is needed in order to draw a conclusion about the relationship between the <em>Share_Price</em> and <em>Competition</em>.</p>
+<p>For this data analysis situation (MvA(2)) the required further analysis is the <strong>Student’s t-test</strong>.</p>
+<p>The four stages are:</p>
+<ul>
+<li><p><strong>Stage 1</strong>: Define the hypotheses:</p>
+<ul>
+<li><span class="math inline">\(H_0: \mu_1 = \mu_2\)</span></li>
+<li><span class="math inline">\(H_1: \mu_1 \ne \mu_2\)</span></li>
+</ul></li>
+<li><p><strong>Stage 2</strong>: Defining the test parameters and the decision rule</p></li>
+</ul>
+<p>For the ‘M vs A’ problem, what is required to help decide based on the sample evidence between the two options H0 &amp; H1 is a measure of the relative separation of the boxplots. This relative measure should consider the difference between the two means and the variability of the data for both levels of the attribute. This measure of the relative separation of the boxplots should take into account the means and the standard deviations of the two samples.</p>
+<p>An agreed decision rule can be formulated that specifies that if this relative measure of the separation of the boxplots is greater than a threshold value then there is a connection, otherwise there is no evidence to support a link.</p>
+<p>Such a measure of the relative separation of the boxplots exists and is called the ‘Student’s t Ratio’. The value of the <strong>t-ratio</strong> calculated from the sample data is normally called <span class="math inline">\(t_{calc}\)</span> to emphasis the fact that it is calculated from sample data.</p>
+<blockquote>
+<p>A decision rule can now be formulated using the <span class="math inline">\(t_calc\)</span> value. The bigger the <span class="math inline">\(t_calc\)</span> value the larger the separation between the boxplots and the more likely it is that there is a link between the response variable and the explanatory variable. The decision rule specifies the range of values that can be taken to be consistent with <span class="math inline">\(H_0\)</span>, i.e. no connection. If the <span class="math inline">\(t_calc\)</span> is outside that range then the decision rule is specifying that the sample data is consistent with <span class="math inline">\(H_1\)</span>, namely with there being a connection.</p>
+</blockquote>
+<p>The problem now is how to specify the agreed limits. <a href="https://en.wikipedia.org/wiki/William_Sealy_Gosset">W. S Gossett (1876-1937)</a> who wrote under the pseudonym of “Student” proposed the t-ratio in a paper published in 1908. He also evaluated the statistical distribution of the t-ratio to enable these threshold values to be obtained. This test procedure is called a hypothesis test and the test described is commonly referred to as <strong>the student’s t-test</strong>.</p>
+<p>The agreed procedure for setting up the decision rule uses the distribution of the t-ratio and splits the area under the distribution into the proportions 2½% - 95% - 2½% giving the threshold value called <span class="math inline">\(t_{crit}\)</span>.</p>
+<ul>
+<li><p>If <span class="math inline">\(t_{calc}\)</span> value is <strong>numerically between</strong> the range <span class="math inline">\(-t_{crit}\)</span> &amp; <span class="math inline">\(+t_{crit}\)</span> then the decision rule is flagging <span class="math inline">\(H_0\)</span>. Supporting the viewpoint that <strong>there is no relationship</strong>.</p></li>
+<li><p>If <span class="math inline">\(t_{calc}\)</span> value is <strong>numerically outside</strong> the range <span class="math inline">\(-t_{crit}\)</span> &amp; <span class="math inline">\(+t_{crit}\)</span> then the decision rule is flagging <span class="math inline">\(H_1\)</span>. Supporting the viewpoint that <strong>there is a relationship</strong>.</p></li>
+</ul>
+<p>The value <span class="math inline">\(t_{crit}\)</span> depends upon the sample size, through a measure called <strong>Degrees of Freedom</strong> (<strong>df</strong>). The hypothesis test described above is called the student’s <strong>t-test</strong> and is <strong>a two tailed test using the 5% level of significance</strong>.</p>
+
+<div class="notices info" ><p>Reference to the tables of the percentage points of the student’s t distribution will show that one of the tabulations is the two tailed test at the 5% level of significance. The value obtained from the statistical tables will be referred to as <!-- raw HTML omitted -->(t_{crit})<!-- raw HTML omitted -->.</p>
+</div>
+
+<p><img src="/module3/MvA/images/t-test.png?width=40pc" /></p>
+<p>As we now realise, this stage calculates two key pieces of information, the value of <span class="math inline">\(t_{calc}\)</span> as calculated from the sample data and the degrees of freedom. The degrees of freedom are required to enable the numerical value of <span class="math inline">\(t_{crit}\)</span> to be looked up in the statistical tables or simply in R using the <code>qt(alpha, df)</code> function.</p>
+<ul>
+<li><strong>Stage 3</strong>: Doing the calculations:</li>
+</ul>
+<p>In practice this means using the sample data to calculate two things:</p>
+<blockquote>
+<p>The numerical value of <span class="math inline">\(t_{calc}\)</span> and the value of the degrees of freedom (<strong>df</strong>). This provides all the information to complete the test, the df figure enables the precise value of t_calc to be looked in the statistical tables or directly obtained in R. Once this value is known, the conclusion results?? by applying mechanically the decision rule as seen above:</p>
+<ul>
+<li><p>If <span class="math inline">\(t_{calc}\)</span> value is numerically between the range <span class="math inline">\(-t_{crit}\)</span> &amp; <span class="math inline">\(+t_{crit}\)</span> then the decision rule is flagging <span class="math inline">\(H_0\)</span>. There is no relationship.</p></li>
+<li><p>If <span class="math inline">\(t_{calc}\)</span> value is numerically outside the range <span class="math inline">\(-t_{crit}\)</span> &amp; <span class="math inline">\(+t_{crit}\)</span> then the decision rule is flagging <span class="math inline">\(H_1\)</span>.
+There is a relationship.</p></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Stage 4</strong>: The conclusions.</li>
+</ul>
+<p>This final stage requires a statement of the outcome in terms of the original problem specification.</p>
+<hr />
+<p><strong>FDA: <code>Share_Price vs Competition</code></strong></p>
+<p>Let us obtain the output for t-test for <code>Share_Price vs Competition</code>.</p>
+<pre class="r"><code>t.test(Share_Price~Competition, data=companyd)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Share_Price by Competition
+## t = -3.4619, df = 56.578, p-value = 0.001028
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -229.67541  -61.32459
+## sample estimates:
+## mean in group 0 mean in group 1 
+##        530.0333        675.5333</code></pre>
+<p>In the output above we can see the statistics for the model that has been fitted: Share_Price Vs Competition. For this sample the t_calc is -3.4619 (<span class="math inline">\(t_{calc}=-3.46\)</span>) and the degrees of freedom are 56.578 (<span class="math inline">\(df=56\)</span>). Those are the two numbers that we need from this output that will enable us to test the hypotheses.</p>
+<p>In order to test the hypothesis we need to obtain the critical value of the student’s t-ratio for <span class="math inline">\(df=56\)</span>, thus we want the <span class="math inline">\(t_{crit}\)</span>. We use the <code>qt(p, df)</code> function in R, which stands for quantile of t distribution. Alternatively, you can use the statistical tables.</p>
+<p>This is a two-tailed test of 5 percent significant level (thus, <span class="math inline">\(p = 1 - 0.5 / 2\)</span>), so the critical value of Student’s t is:</p>
+<pre class="r"><code>qt(0.975, 56.578)</code></pre>
+<pre><code>## [1] 2.002789</code></pre>
+<p>This means that in order to reject the null hypothesis our test statistic needs to be bigger than <span class="math inline">\(t_{crit}=2.00\)</span>, and hence conclude that there is a relationship between the two variables used in the analysis. <span class="math inline">\(t_{calc}=-3.46 &lt; t_{crit}=2.00\)</span> =&gt; <span class="math inline">\(H_1\)</span>, thus there is a relationship between the variables: Share_Price and Competition, hence DESCRIBE THE RELATIONSHIP!!!</p>
+
+<div class="notices note" ><p>This FDA was an unnecessary step in our DA for <!-- raw HTML omitted -->Share_Price vs Competition<!-- raw HTML omitted -->, as we were able to make a clear conclusion about the nature of the relationship by conducting IDA.<!-- raw HTML omitted --></p>
+</div>
+
+<hr />
+<p><strong>M vs A(&gt;2) Data Analysis</strong></p>
+<p>The example of the Initial Data Analysis above uses a two level attribute explanatory variable. The IDA for a measured response against an attribute explanatory variable with more than two levels is exactly the same, the interpretation is a little more difficult due to the larger number of levels but the principles are exactly the same.</p>
+<p>To make it as simple as possible, let us consider Data Analysis Methodology for the situation of M vs A(3).</p>
+<p><img src="/module3/MvA/images/DAM_MvA3.png?width=40pc" /></p>
+<p>A way of examining the boxplots is to focus on the two boxplots, with the smallest mean and the largest mean, and treat them as a two-level attribute variable.</p>
+<p><strong>Definition of connection/link:</strong></p>
+<p>To detect a connection/link between the response variable and the explanatory variable requires a clear definition of exactly what a connection/link is.</p>
+<p>The formal definition of no link is: <em>If the average value of the response variable is independent of the level of the attribute explanatory variable then the response variable and the attribute explanatory variable are independent (not connected).</em></p>
+<p>Conversely: <em>If the average value of the response variable is dependent on the level of the attribute explanatory variable then the attribute explanatory variable influences the value of the response variable, so the response variable and the attribute explanatory variable are connected.</em></p>
+<p>If the sample evidence is inconclusive then further data analysis is required.</p>
+<p>If further data analysis is required then it takes the form of a hypothesis test. The data analysis situation Measured v Attribute requires two different hypothesis tests. A hypothesis test for the data analysis situation where the attribute explanatory variable has exactly two levels has been discussed earlier in this chapter.</p>
+<p>A different hypothesis test is required for the situation where the attribute explanatory variable has three or more levels. The principles remain the same; if there is no connection then by definition all the true means will be the same, whilst if there is a connection then the means are likely to be different. The problem is exactly the same as with the two level attribute situation, namely, is the difference between the means large enough to suggest that there is a real difference, or is the difference a difference that could have occurred by pure chance? (The difference is within the limits of sampling error).</p>
+<p>Observing the output of the IDA used in data analysis methodology for MvA(&gt;2) we focus on the differences between the means of the response variable split by the levels of the attribute explanatory variable. Put simply, we check are the all boxplots on top of each other, which would indicate no relationship between the two variables, or is there at least one difference, indicating a clear relationship between the two variables. We need to ask: Is the separation sufficient to conclude that there is a connection?</p>
+<p>In exactly the same way as for the two level attribute explanatory variable, what is needed is <strong>a measure of the relative separation</strong> of the boxplots. If this relative measure is small then this is indicating very little separation and suggesting no connection. If this relative measure of separation is large then this is suggesting that there is a connection. The hypothesis test utilises such a measure and provides a way of deciding <strong>a threshold value</strong> for the relative measure of separation. If the value is smaller than the threshold then there is no connection, but if the relative measure is larger than the ‘threshold value’ then there is a connection.</p>
+<p><strong>The hypothesis test</strong></p>
+<p>Like all hypothesis tests, this particular test is carried out in four stages:</p>
+<ul>
+<li>Stage 1: Specifying the hypotheses.</li>
+<li>Stage 2: Defining the test parameters and the decision rule.</li>
+<li>Stage 3: Examining the sample evidence.</li>
+<li>Stage 4: The conclusions.</li>
+</ul>
+<p>We will start the investigation for the case: <code>Share_Price vs Sector</code>, variable coded:</p>
+<ul>
+<li>1 if the company operates in the IT business sector</li>
+<li>2 if the company operates in the Finance business sector</li>
+<li>3 if the company operates in the Pharmaceutical business sector</li>
+</ul>
+<p><code>We need to investigate if the market value of a company share depends upon the sector within which the company operates.</code></p>
+<p><strong>Stage 1:</strong> Specifying the hypotheses</p>
+<p>By definition, if there is no connection then all the population means are equal, whilst if there is a connection at least one of the means must be different, this defines the null and alternative hypotheses:</p>
+<ul>
+<li><span class="math inline">\(H_0: \mu_1 = \mu_2 = \mu_3\)</span><br />
+</li>
+<li><span class="math inline">\(H_1: \text{at least one mean is different.}\)</span></li>
+</ul>
+
+<div class="notices note" ><p>In the context of the example <!-- raw HTML omitted -->(\mu_1)<!-- raw HTML omitted --> is a mean value of a company share, which operates in the IT business sector, <!-- raw HTML omitted -->(\mu_2)<!-- raw HTML omitted --> is a mean value of a company share, which operates in the Finance business sector, etc.}</p>
+</div>
+
+<p><strong>Stage 2:</strong> Defining the test parameters and the decision rule.</p>
+<p>The decision rule is based on the <strong>F-ratio</strong>. The test procedure is called <strong>One-way Analysis of Variance</strong> and was originally devised by <em>R. A. Fisher</em>, who proposed the Analysis of Variance hypothesis test. The term F-ratio is a reference to Fisher.</p>
+
+<div class="notices note" ><p>Analysis of Variance is often abbreviated to ANOVA.</p>
+</div>
+
+<p><img src="/module3/MvA/images/F-ratio.png?width=40pc" /></p>
+<p><span class="math inline">\(F_{crit}\)</span> is the particular value of <strong>F</strong> that split the area under the distribution in the proportions 95% / 5%.</p>
+<p><strong>The decision rule is:</strong></p>
+<ul>
+<li><p>If the value of F_calc is between 0 and F_crit then conclude that **there is no link <span class="math inline">\((0 &lt; F_{calc} &lt; F_{crit})\)</span></p></li>
+<li><p>If the value of Fcalc is greater than Fcrit then conclude that on the basis of the sample evidence **there is a link <span class="math inline">\((F_{crit} &lt; F_{calc})\)</span></p></li>
+</ul>
+<p><strong>Stage 3:</strong> Examining the sample evidence.</p>
+<p>The <span class="math inline">\(F_{calc}\)</span> value, as with the <span class="math inline">\(t-{ratio}\)</span> is a relative measure of the separation of the boxplots.</p>
+<blockquote>
+<p>If the boxplots are nearly on top of each other, the <span class="math inline">\(F_{calc}\)</span> value would be small. The F-Ratio is defined in such a way that if the null hypothesis is true, i.e. all the means are equal then the <span class="math inline">\(F_{calc}\)</span> value is expected to be 1.</p>
+<p>If the boxplots are relatively well separated, the <span class="math inline">\(F_{calc}\)</span> value measures this relative separation, and the wider the separation the larger the <span class="math inline">\(F_{calc}\)</span> value.</p>
+<p>TThe decision rule is simply an agreed threshold value. If the <span class="math inline">\(F_{calc}\)</span> value is smaller than the threshold value then the agreement is that the sample evidence is consistent with no link. If the <span class="math inline">\(F_{calc}\)</span> value is larger than the threshold value the agreement is that the sample evidence is consistent with a link.</p>
+</blockquote>
+<p>To complete the test parameters the value of F_crit needs to be determined, and this depends on the amount of data contained within the sample. As with the t-ratio the sample size plays a role through the degrees of freedom. In the case of the F-ratio, there are two degrees of freedom, and these are used to look up the value of F_crit in the statistical tables or when using the R function <code>qf(p, df1, df2)</code>.</p>
+<p><strong>Stage 4:</strong> The conclusions</p>
+<hr />
+<p>Let us go back to our Worked Example: <code>Share_Price vs Sector</code> to put this “theory” into practice.</p>
+<p>First we obtain simple descriptive statistics of <code>Share_Price</code> for each of the three levels of <code>Sector</code> attribute variable:</p>
+<pre class="r"><code>with(companyd, tapply(Share_Price, Sector, summary))</code></pre>
+<pre><code>## $`1`
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   101.0   389.0   499.5   480.4   658.8   701.0 
+## 
+## $`2`
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   304.0   512.2   559.0   595.4   743.0   799.0 
+## 
+## $`3`
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   574.0   600.2   738.5   732.5   828.2   880.0</code></pre>
+<pre class="r"><code>with(companyd, tapply(Share_Price, Sector, sd))</code></pre>
+<pre><code>##        1        2        3 
+## 177.4745 143.3679 109.5322</code></pre>
+<pre class="r"><code>with(companyd, tapply(Share_Price, Sector, IQR))</code></pre>
+<pre><code>##      1      2      3 
+## 269.75 230.75 228.00</code></pre>
+<p>Are the means the same?</p>
+<p>The biggest difference is between group 3 and group 1. The smallest mean is for the company that operates in the IT business sector and the average value of the <code>Share_Price</code> of £480.40. The largest average is for the companies that operate in the Pharmaceutical business sector with the mean value of the ‘Share_Price’ of £732.60. Thus, the difference being (£732.60 - £480.40) = £252.20. Is this difference large enough to indicate a real difference or could it have arisen by pure chance from a sample where the true means are all equal?</p>
+
+<div class="notices tip" ><p>Use your acquired knowledge! What was the difference between the two levels in the previous analysis? What conclusion did we draw?</p>
+</div>
+
+<p>We also notice the difference in standard deviations: st.dev. of ‘Share_Price&quot; for ’Sector’ coded 1 is £177.47 and st.dev. of <code>Share_Price</code> for <code>Sector</code> coded 3 is £109.53. All of this indicate that we should examine the boxplots to get visual interpretation of the results above.</p>
+<pre class="r"><code>boxplot(Share_Price ~ Sector, data = companyd, boxwex = 0.25, main = &quot;Share Price vs Sector&quot;, xlab =&quot;Share_Price&quot;, ylab =&quot;Sector&quot;, col=c(&quot;palegreen3&quot;, &quot;orchid3&quot;, &quot;cornflowerblue&quot;), horizontal=T)</code></pre>
+<p><img src="/module3/MvA/_index.en_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>By examining the boxplots we can suggest that the information in the sample is inconclusive and more formal data analysis is required.</p>
+<hr />
+<p><strong>The Formal Data Analysis: The hypothesis test</strong> for <code>Share_Price vs Sector</code></p>
+<p><strong>Stage 1:</strong> Specifying the hypotheses (H0 &amp; H1)</p>
+<ul>
+<li><span class="math inline">\(H0: \mu_1 = \mu_2 = \mu_3\)</span><br />
+</li>
+<li><span class="math inline">\(H_1: \text{at least one mean is different}\)</span></li>
+</ul>
+<p><strong>Stage 2:</strong> Defining the test parameters and the decision rule</p>
+<p><img src="/module3/MvA/images/FDA_F-test.png?width=50pc" /></p>
+<p><strong>Stage 3:</strong> Examining the sample evidence</p>
+<p>To obtain the output in R for one-way ANOVA test used for MvA(&gt;2) we use the <code>oneway.test( )</code> function:</p>
+<pre class="r"><code>m1 &lt;- aov(Share_Price ~ Sector, data = companyd)
+summary(m1)</code></pre>
+<pre><code>##             Df  Sum Sq Mean Sq F value   Pr(&gt;F)    
+## Sector       2  637432  318716   14.93 6.12e-06 ***
+## Residuals   57 1216929   21350                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+
+<div class="notices info" ><p>Remember that we have used the <!-- raw HTML omitted -->summary( )<!-- raw HTML omitted --> function on the data.frame class object to obtain descriptive statistics of its variables. The function invokes particular methods which depend on the class of the first argument. The <!-- raw HTML omitted -->summary( )<!-- raw HTML omitted --> function is also used to produce summary results of the various model fitted functions.</p>
+</div>
+
+<p><span class="math inline">\(F_{calc}\)</span> from the sample data is <strong>14.93</strong>. Note that for F statistic we have two numbers for the degrees of freedom. The degrees of freedom <span class="math inline">\(df1=2.00\)</span> and <span class="math inline">\(df2=57\)</span> give us <span class="math inline">\(F_{crit}\)</span>:</p>
+<pre class="r"><code>F_crit &lt;- qf(0.95, 2, 57)
+F_crit</code></pre>
+<pre><code>## [1] 3.158843</code></pre>
+<p><span class="math inline">\(F_{calc} = 14.93 &gt; F_{crit} = 3.16 =&gt; accept H_1\)</span>, ie. ‘Share Price’ depends upon ‘Sector’ within which the company operates. The next question is <strong>how</strong>? Accepting <span class="math inline">\(H_1\)</span> means that the ANOVA-test indicates that at least one group is different from all the others. Who is different from who? We need to fully describe this relationship, by pointing out which groups are different from which.</p>
+<p>A Boxplot will often help you to recognise the obvious differences, but we have proceeded to do one-way ANOVA because those differences were not obvious. How to overcome this obstacle? We need a clear description of the relationship found, pointing out where the difference lays. To do this, we need a pairwise comparison between the groups, which in our case are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>1st with 2nd</th>
+<th>1st with 3rd</th>
+<th>2nd with 3rd</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(H_0: \mu_1 = \mu_2\)</span></td>
+<td><span class="math inline">\(H_0: \mu_1 = \mu_3\)</span></td>
+<td><span class="math inline">\(H_0: \mu_2 = \mu_3\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_1: \mu_1 \ne \mu_2\)</span></td>
+<td><span class="math inline">\(H_1: \mu_1 \ne \mu_3\)</span></td>
+<td><span class="math inline">\(H_1: \mu_2 \ne \mu_3\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>This can be done using <strong>The Tukey multiple comparison procedure</strong>, for which we use the <code>TukeyHSD( )</code> function.</p>
+
+<div class="notices note" ><p><!-- raw HTML omitted -->John Tukey<!-- raw HTML omitted --> is an eminent statistician of XX century. He is credited with the invention of many graphical and numerical methods. One of them being the well used box plot.</p>
+</div>
+
+<p><strong>The decision rule</strong>: Differences between Sectors are significant at 5% level if the confidence interval around the estimation of the difference does not contain zero.</p>
+<pre class="r"><code>TukeyHSD(m1)</code></pre>
+<pre><code>##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = Share_Price ~ Sector, data = companyd)
+## 
+## $Sector
+##       diff        lwr      upr     p adj
+## 2-1 115.00   3.809878 226.1901 0.0411140
+## 3-1 252.15 140.959878 363.3401 0.0000032
+## 3-2 137.15  25.959878 248.3401 0.0119886</code></pre>
+<p>This can be visualised by a plot of the list:</p>
+<pre class="r"><code>plot(TukeyHSD(m1))</code></pre>
+<p><img src="/module3/MvA/_index.en_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>Looking at the output above and the plot of those 95% CI’s we can see that none of them contains the value of zero. The implication of this is that for all three pairwise comparisons we acept H1. Looking at the output of the descriptive statistics we can conclude: <span class="math inline">\(\mu_1 &lt; \mu_2 &lt; \mu_3\)</span>. Now we can make the conclusion for our analysis.</p>
+<p><strong>Stage 4:</strong> The conclusions.</p>
+<p>Based on the sample evidence there is a relationship between ‘Share Price’ and ‘Sector’. Companies operating in the IT business sector on average have the smallest value of the share price, which is 489.4 units. For the companies operating in the finance business sector the average value of the share price is 595.4 units. The largest average value of the share price is for the companies operating in the pharmaceutical sector, which is 732.6 units.</p>
+<p>Based on the sample evidence there is a relationship between ‘Share Price’ and ‘Sector’. Companies operating in the IT business sector on average have the smallest value of the share price, which is £489.40. For the companies operating in the finance business sector the average value of the share price is £595.40. The largest average value of the share price is for the companies operating in the pharmaceutical sector of around £732.60.</p>
+<hr />
+<p><strong>YOUR TURN</strong> 👇</p>
+<ol style="list-style-type: decimal">
+<li>Investigate the nature of the relationship in Share Price Study data for <code>Share_Price vs Type</code>.</li>
+</ol>
+<hr />
+<p>© 2020 Tatjana Kecojevic</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/showcases/" title="Showcases"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/showcases/mvm/" title="Regression" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1587747440"></script>
+    <script src="/js/perfect-scrollbar.min.js?1587747440"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1587747440"></script>
+    <script src="/js/jquery.sticky.js?1587747440"></script>
+    <script src="/js/featherlight.min.js?1587747440"></script>
+    <script src="/js/highlight.pack.js?1587747440"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1587747440"></script>
+    <script src="/js/learn.js?1587747440"></script>
+    <script src="/js/hugo-learn.js?1587747440"></script>
+
+    <link href="/mermaid/mermaid.css?1587747440" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1587747440"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105947713-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

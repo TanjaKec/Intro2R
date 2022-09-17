@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.60.1" />
+    <meta name="description" content="DS Bootcamp in R">
+<meta name="author" content="Tatjana Kecojevic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>Day 2 :: DS Bootcamp in R</title>
+
+    
+    <link href="/css/nucleus.css?1580901423" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1580901423" rel="stylesheet">
+    <link href="/css/hybrid.css?1580901423" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1580901423" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1580901423" rel="stylesheet">
+    <link href="/css/auto-complete.css?1580901423" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1580901423" rel="stylesheet">
+    <link href="/css/theme.css?1580901423" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1580901423" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1580901423"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/day2/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <!DOCTYPE html>
+<html>
+<body>
+<IMG SRC="/images/logo.png" ALT="DataTeka" WIDTH=100 HEIGHT=100>
+
+</body>
+</html>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1580901423"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1580901423"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1580901423"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/general/" title="About the course" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/">
+          <b>1. </b>About the course
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/whatlearn/" title="General Overview" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/whatlearn/">
+          General Overview
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/instructor/" title="Meet the Instructor" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/instructor/">
+          Meet the Instructor
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/syllabus/" title="Indicative Syllabus" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/syllabus/">
+          Indicative Syllabus
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/" title="Module 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/">
+          <b>2. </b>Module 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/whatisr/" title="What is R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/whatisr/">
+          What is R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/installr/" title="Install R/RStudio" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/installr/">
+          Install R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/rstudioide/" title="RStudio IDE" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/rstudioide/">
+          RStudio IDE
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/user/" title="How to use R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/user/">
+          How to use R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/statsconcepts/" title="Basic Stats Concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/statsconcepts/">
+          Basic Stats Concepts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/datatypes/" title="Data Types" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/datatypes/">
+          Data Types
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/importexport/" title="Import Data to R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/importexport/">
+          Import Data to R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/rmarkdown/" title="Reproducibility" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/rmarkdown/">
+          Reproducibility
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/principlesvisualisation/" title="Introduction to Visualisation Principles" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/principlesvisualisation/">
+          Principles of Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/day2/" title="Day 2" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/day2/">
+          <b>3. </b>Day 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/day2/datawrangling/" title="Data Wrangling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/day2/datawrangling/">
+          Data Wrangling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/day2/visualisation/" title="Data Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/day2/visualisation/">
+          Data Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/day2/spatialda/" title="Spatial Data Analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/day2/spatialda/">
+          Spatial Data Analysis
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/day2/spatialda/images/mokrin/" title="" class="dd-item ">
+        <a href="/day2/spatialda/images/mokrin/">
+        
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/TanjaKec"><i class='fab fa-fw fa-github'></i>GitHub</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download matcornic/hugo-theme-learn on GitHub">Download</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn" data-icon="octicon-star" data-show-count="true" aria-label="Star matcornic/hugo-theme-learn on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork matcornic/hugo-theme-learn on GitHub">Fork</a>
+
+    <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/day2/_index.en.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/'>DS Bootcamp in R</a> > Day 2
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+
+
+	<h3 id="module-2">Module 2</h3>
+<h2 id="data-wrangling-and-visualising-data">Data Wrangling and Visualising Data</h2>
+<h5 id="in-this-module-you-will-learn-some-of-the-fundamental-techniques-for-data-exploration-and-transformation-through-the-use-of-the-dplyr-package-this-tidy-verse-package-helps-make-your-exploration-intuitive-to-write-and-easy-to-read-you-will-learn-dplyrs-key-verbs-for-data-manipulation-that-will-help-you-uncover-and-shape-the-information-within-the-data-that-is-easy-to-turn-into-informative-plots-through-the-use-of-grammar-of-graphics-plotting-concepts-implemented-in-the-ggplot2-package-you-will-be-able-create-meaningful-exploratory-plots-you-will-develop-understanding-about-the-way-in-which-you-should-be-able-to-think-about-necessary-data-transformations-and-summaries-that-can-lead-to-an-informative-visualisation-you-will-learn-how-to-create-static-maps-and-interactive-maps-with-geolocated-data-by-using-the-most-popular-packages-in-the-r-gis-community-simple-features-and-leaflet">In this module you will learn some of the fundamental techniques for data exploration and transformation through the use of the dplyr package. This tidy verse package helps make your exploration intuitive to write and easy to read. You will learn dplyr’s key verbs for data manipulation that will help you uncover and shape the information within the data that is easy to turn into informative plots. Through the use of grammar of graphics plotting concepts implemented in the ggplot2 package, you will be able create meaningful exploratory plots. You will develop understanding about the way in which you should be able to think about necessary data transformations and summaries that can lead to an informative visualisation. You will learn how to create static maps and interactive maps with geolocated data by using the most popular packages in the R GIS community: simple features and leaflet.</h5>
+<h4 id="what-you-will-learn">What you will learn:</h4>
+<ul>
+<li>dplyr’s key data manipulation verbs: select, mutate, filter, arrange and summarise/summarize</li>
+<li>to aggregate data by groups</li>
+<li>to chain data manipulation operations using the pipe operator</li>
+<li>to specify ggplot2 building blocks and combine them to create graphical display</li>
+<li>about the philosophy that guides ggplot2: grammatical elements (layers) and aesthetic mappings.</li>
+<li>visualising data with maps</li>
+</ul>
+<hr>
+<p>© 2019 Tatjana Kecojevic</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+            </div> 
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/module1/principlesvisualisation/" title="Introduction to Visualisation Principles"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/day2/datawrangling/" title="Data Wrangling" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1580901423"></script>
+    <script src="/js/perfect-scrollbar.min.js?1580901423"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1580901423"></script>
+    <script src="/js/jquery.sticky.js?1580901423"></script>
+    <script src="/js/featherlight.min.js?1580901423"></script>
+    <script src="/js/highlight.pack.js?1580901423"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1580901423"></script>
+    <script src="/js/learn.js?1580901423"></script>
+    <script src="/js/hugo-learn.js?1580901423"></script>
+
+    <link href="/mermaid/mermaid.css?1580901423" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1580901423"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105947713-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,2505 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.75.1" />
+    <meta name="description" content="Data Literacy in R">
+<meta name="author" content="Tatjana Kecojevic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>Multiple Regression :: Data Literacy in R</title>
+
+    
+    <link href="/css/nucleus.css?1605356619" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1605356619" rel="stylesheet">
+    <link href="/css/hybrid.css?1605356619" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1605356619" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1605356619" rel="stylesheet">
+    <link href="/css/auto-complete.css?1605356619" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1605356619" rel="stylesheet">
+    <link href="/css/theme.css?1605356619" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1605356619" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1605356619"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"> </script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/module4/mlregression/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <!DOCTYPE html>
+<html>
+<body>
+<IMG SRC="/images/logo.png" ALT="DataTeka" WIDTH=100 HEIGHT=100>
+
+</body>
+</html>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1605356619"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1605356619"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1605356619"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/general/" title="About the workshop" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/">
+          <b>1. </b>About the workshop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/whatlearn/" title="General Overview" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/whatlearn/">
+          General Overview
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/instructor/" title="Meet the Instructor" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/instructor/">
+          Meet the Instructor
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/syllabus/" title="Indicative Syllabus" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/syllabus/">
+          Indicative Syllabus
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/" title="Module 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/">
+          <b>2. </b>Module 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/whatisr/" title="What is R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/whatisr/">
+          What is R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/installr/" title="Install R/RStudio" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/installr/">
+          Install R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/git-and-github/" title="Git and GitHub" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/git-and-github/">
+          Git and GitHub
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/rstudioide/" title="RStudio IDE" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/rstudioide/">
+          RStudio IDE
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/user/" title="How to use R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/user/">
+          How to use R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/statsconcepts/" title="Basic Stats Concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/statsconcepts/">
+          Basic Stats Concepts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/datatypes/" title="Data Types" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/datatypes/">
+          Data Types
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/importexport/" title="Import Data to R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/importexport/">
+          Import Data to R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/rmarkdown/" title="Reproducibility" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/rmarkdown/">
+          Reproducibility
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/" title="Module 2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/">
+          <b>3. </b>Module 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/datawrangling/" title="Data Wrangling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/datawrangling/">
+          Data Wrangling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/principlesvisualisation/" title="Principles of Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/principlesvisualisation/">
+          Principles of Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/visualisation/" title="Data Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/visualisation/">
+          Data Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/spatialda/" title="Spatial Data Analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/spatialda/">
+          Spatial Data Analysis
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module3/" title="Module 3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module3/">
+          <b>4. </b>Module 3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module3/damethodology/" title="Data Analysis Methodology" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module3/damethodology/">
+          Data Analysis Methodology
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module3/mva/" title="t-test &amp; one-way ANOVA" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module3/mva/">
+          t-test &amp; one-way ANOVA
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module3/mvm/" title="Regression" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module3/mvm/">
+          Regression
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module4/" title="Module 4" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/module4/">
+          <b>5. </b>Module 4
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module4/what_is_ml/" title="Machine Learning" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module4/what_is_ml/">
+          Machine Learning
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module4/resampling/" title="Resampling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module4/resampling/">
+          Resampling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module4/mlregression/" title="Multiple Regression" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/module4/mlregression/">
+          Multiple Regression
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module4/clasification/" title="Clasification" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module4/clasification/">
+          Clasification
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/" title="Showcases" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/">
+          <b>6. </b>Showcases
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/covid-19/" title="COVID-19" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/covid-19/">
+          COVID-19
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/airpolution/" title="Air Pollution" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/airpolution/">
+          Air Pollution
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/tricks_tips/" title="Tricks and Tips" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/tricks_tips/">
+          Tricks and Tips
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/TanjaKec"><i class='fab fa-fw fa-github'></i>GitHub</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download matcornic/hugo-theme-learn on GitHub">Download</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn" data-icon="octicon-star" data-show-count="true" aria-label="Star matcornic/hugo-theme-learn on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork matcornic/hugo-theme-learn on GitHub">Fork</a>
+
+    <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/module4/MLRegression/_index.en.html" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Introduction to R</a> > <a href='/module4/'>Module 4</a> > Multiple Regression
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Multiple Regression
+            </h1>
+          
+
+        
+
+
+
+
+	
+
+
+<p>In the previous section we have learn about <em>simple linear regression</em> as a very simple tool for predicting quantitative measured response variable. Its simple application, easy interpretation and predictive capabilities make it one of the most popular approach for supervised learning. Developing good understanding of the linear regression serves as a solid base for learning how to use and adopt other more sophisticating modelling procedures in the context of machine learning.</p>
+<p>
+<font color="black" face="Verdana, Geneva, sans-serif" size="+1.5"><strong>Additive Model</strong></font>
+</p>
+<p>The basic idea in regression modelling is that there is a phenomenon of interest whose behaviour we seek to account for or explain. For example a company may be interested in why its sales figures have followed a particular pattern; or Government officials may be interested in explaining the behaviour of unemployment statistics.</p>
+<p>Let the phenomenon of interest be denoted by <span class="math inline">\(Y\)</span>; as discussed in the previous sections, <span class="math inline">\(Y\)</span> is also known as the response variable, or the dependent variable. The fundamental nature of <span class="math inline">\(Y\)</span> is that it displays variability and it is this inherent variability that the data analyst seeks to explain by using regression modelling. Intuitively, if we can account for a large amount of the movements in <span class="math inline">\(Y\)</span> then in some sense this is <em>good</em>. Conversely, if we put forward an argument which explains only a very small amount of the behaviour of the phenomenon of interest then in some sense this is <em>bad</em>.</p>
+<p>In trying to explain, or account for, the behaviour of <span class="math inline">\(Y\)</span> we often build a regression model. As a first step in building such a model we specify a set of variables, called the explanatory or predictor variables, that we believe to be important in explaining the behaviour of, or the variability in, <span class="math inline">\(Y\)</span>. Specifying this set of variables is in effect the first step in developing as the data analysts our viewpoint, our model, our theory. As such we are entitled to ask where such a viewpoint comes from - for example, it may be the logical outcome of some theoretical argument or it may be a replication of a previous study.</p>
+
+<div class="notices warning" ><p>💡 We do well to remember that this statement of a model is a viewpoint, a belief, a theory and need not be correct, i.e. true.</p>
+</div>
+
+<p>Indeed, it is the very essence of regression model validation to judge if a viewpoint, a belief, a theory is in any sense acceptable. So, when developing a regression model all we argue is: <span class="math inline">\(Y = f(X_1, X_2, X_3, … , X_k)\)</span>, which represents a belief that the response variable <span class="math inline">\(Y\)</span> depends upon a set of <span class="math inline">\(k\)</span> explanatory variables <span class="math inline">\((X_1, X_2, X_3,… , X_k)\)</span>.</p>
+<p>Specifying a set of variables is not in itself a complete model. We have to be prepared to indicate and argue more precisely how the explanatory variables are supposed to relate to <span class="math inline">\(Y\)</span>: that is, we must specify the functional form that links the set of variables to <span class="math inline">\(Y\)</span>. The simplest relationship is a linear relationship or a straight line. As we have already learnt for a single explanatory variable, <span class="math inline">\(X_1\)</span>, this is given by:</p>
+<ul>
+<li><span class="math inline">\(Y = b_0 + b_1X_1\)</span> (Within this structure it is important that <span class="math inline">\(b_0\)</span> and <span class="math inline">\(b_1\)</span> can be interpreted clearly.)</li>
+</ul>
+<p>and for a set of <span class="math inline">\(k\)</span>-variables this is given by:</p>
+<ul>
+<li><span class="math inline">\(Y = b_0 + b_1X_1 + b_2X_2 +... + b_kX_k\)</span> (Within this structure it is important that <span class="math inline">\(b_0, b_1, b_2,… , b_k\)</span> can be interpreted clearly.)</li>
+</ul>
+<p>Those linear models specified so far are <strong>exact</strong> or <strong>deterministic</strong>. Such structures do not represent statistical problems. The very nature of statistical data is that there is inherent variability in that there is some part of the responses variable that we cannot explain. Thus there is a random element whose behaviour is by nature and definition unpredictable. We know that a random component is going to impact on <span class="math inline">\(Y\)</span>, but we do not know the size or sign of such random happenings.</p>
+<p>This random/stochastic part of the model is captured as follows:</p>
+<ul>
+<li><p><span class="math inline">\(Y = b_0 + b_1X_1 + e\)</span>, for a single explanatory variable model, and</p></li>
+<li><p><span class="math inline">\(Y = b_0 + b_1X_1 + b_2X_2 + ... + b_kX_k + e\)</span>, for the general <span class="math inline">\(k\)</span> explanatory variable model</p></li>
+</ul>
+<p>where <span class="math inline">\(e\)</span> is also known as the error term.</p>
+
+<div class="notices warning" ><p>💡 These expressions need to be fully understood and the role and significance of the random/stochastic element has to be fully recognised.</p>
+</div>
+
+<p>In order to complete the specification of the statistical regression model some assumption has to be made about the underlying process that produces <span class="math inline">\(e\)</span>. The standard approach is to adopt the following distribution structure:</p>
+<p><span class="math inline">\(e \sim N(0,\sigma^2)\)</span>, with the error term from a normal distribution with a mean of <span class="math inline">\(0\)</span>, and a variance of <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Knowing this, we should now be in a position to understand and identify the structure of the standard <strong>multiple linear regression model</strong>.</p>
+<p>
+<font color="black" face="Verdana, Geneva, sans-serif" size="+1.5"><strong>Prior Knowledge</strong></font>
+</p>
+<p>As a statement of belief, the specified model just suggests a list of important explanatory variable within a linear structure. We need to be willing to take an extra conceptual step by specifying our expectation on how the individual explanatory variables are connected to the response variable. We should make assertions about</p>
+<ol style="list-style-type: lower-roman">
+<li>the expected sign of each slope (or marginal response coefficient) for each explanatory variable?</li>
+<li>the expected size of each slope?</li>
+</ol>
+<p>Again knowledge of these two potential tricky areas are connected to theoretical arguments and often the results of previous similar studies. Such knowledge is sometimes called <strong>prior knowledge</strong>, or <strong>prior views</strong>.</p>
+<p>In order to give a viewpoint some evidential or empirical support a sample of data has to be collected and the model has to be put to a scrutany of the rigour diagnostic checking – that is the proposed theory has to be tested against the available evidence. It needs to be fully understood that the model developed so far is no more than a belief.</p>
+<p>We may believe passionately that <span class="math inline">\(Y\)</span> is caused by the structure put forward but we do not know the structure in that we do not know the values of the <span class="math inline">\(b\)</span> parameters. These <span class="math inline">\(b\)</span> values are held to exist and have particular true numerical values which we do not know what they are. In an attempt to give our model that reflects our viewpoint empirical content the we use pertinent data. On the basis of the information contained in this particular data the we have to estimate the <span class="math inline">\(b\)</span> values and draw valid conclusions about the nature of the true but unknown underlying structure which is claimed to be responsible for the behaviour of <span class="math inline">\(Y\)</span>.</p>
+<p>
+<font color="black" face="Verdana, Geneva, sans-serif" size="+1.5"><strong>Building a Model</strong></font>
+</p>
+<p>The sample, of size <span class="math inline">\(n\)</span>, evidence is seen as coming from the following structure:</p>
+<p><span class="math display">\[Y_i = b_0 + b_1X_{i1} + b_2X_{i2} + b_3X_{i3} + … + b_kX_{ik} + e_i, \;\;\;\;\; where \;\; i=1, 2, ...n\]</span>
+Selecting a sample by definition means that we have imperfect information, that is we do not have information on the whole population or we do not see the whole picture. We only see a, possibly disjoint, part of the whole picture and thus taking a sample gives obvious difficulties in making sense of what we can see. Taking a sample introduces an interpretation problem of trying to say something sensible about the whole picture, the true model, from part of the picture.</p>
+<p>The data handling process involves two major steps, namely:</p>
+<ol style="list-style-type: lower-roman">
+<li>model estimation and<br />
+</li>
+<li>model validation</li>
+</ol>
+<p><strong>Model Estimation</strong></p>
+<p>As we have discussed, the model developed so far is a viewpoint. It represents our view as to the true underlying structure of the world. We believe that this structure exists but unfortunately, we do not know the values of the parameters. These parameters are held to exist but their true values are unknown. Hence there is a need to develop estimates of the true but unknown parameters. These estimates are based on a sample of data and it is to be hoped that they are in some sense acceptable, i.e. good.</p>
+<p>The most common estimating approach is the <strong>principle of Ordinary Least Squares</strong> (<strong>OLS</strong>). As we have already learnt, this idea is easiest to understand when there is only one explanatory variable and the problem can be easily depicted with a scatter diagram onto which we can superimpose the line of the best fit. This process of finding the line of best fit has been programmed in R through the <code>lm()</code> function. Problems involving more than one explanatory variable are handled in a similar fashion. As part of the model fitting process R produces a great deal of output which should be used to judge the validity, or usefulness, of the fitted model.</p>
+<p><strong>Model Validation</strong></p>
+<p>On deriving coefficient estimates from a sample of data we end up with a fitted regression model. We must now take this estimated model and ask a series of questions to decide whether or not our estimated model is good or bad. That is, we have to subject the fitted model to a set of tests designed to check the validity of the model, which is in effect a test of our viewpoint.</p>
+<p><strong>Test a)</strong>: Does the fitted model make sense?</p>
+<p>This type of testing is based on the <em>prior knowledge</em>. We need to be in a position to judge if the parameter estimates are meaningful. This comes in two guises:</p>
+<ol style="list-style-type: lower-roman">
+<li>Do the estimated coefficients have the correct <strong>sign</strong>?</li>
+<li>Do the estimated coefficients have the correct <strong>size</strong>?</li>
+</ol>
+<p>This test assesses if the <em>marginal response coefficients</em> display both the correct signs and sizes. To assist the analyst with these issues theoretical reasoning and information gained from past studies should be used. For example, if one was relating sales to advertising then a positive connection would be expected and a simple plot of sales against advertising would reveal information concerning the direction and strength of any sample relationship. Similarly, in a study of sales against price then a negative relationship would be expected. The issue of “correct size” is normally more troublesome. Possibly some clue as to size can be gleaned from similar, past studies and this can be compared with the current estimated values.</p>
+<p>By way of addressing this test the modeller may adopt the following approach:</p>
+<ol style="list-style-type: decimal">
+<li>Fit a regression model for each of the explanatory variables one at a time. Check each one for Test a).</li>
+<li>Fit a regression model to all of the explanatory variables together. Check each explanatory variable for Test a).</li>
+<li>Check if Test a) from 1) and 2) are consistent. If <em>Yes</em> then great? 😅; if <em>No</em> then…? 😟</li>
+</ol>
+<p><strong>Test b) <span class="math inline">\(R^2 / R^2_{adjusted}\)</span></strong>: Overall is the model a good fit?</p>
+<p>The coefficient of determination, <span class="math inline">\(R^2\)</span>, is a single number that measures the extent to which the set of explanatory variables can explain, or account for, the variability in <span class="math inline">\(Y\)</span>. That is, how well does the set of explanatory variables explain the behaviour of the phenomenon we are trying to understand. It is looking at the set of explanatory variables as a whole and is making no judgement about the contribution or importance of any individual explanatory variable. By construction <span class="math inline">\(R^2\)</span> is constrained to lie in the following range:</p>
+<p><span class="math display">\[0\%  &lt;---------- \;\; R^2 \;\; ----------&gt;  100\%\]</span></p>
+<p>Intuitively the closer <span class="math inline">\(R^2\)</span> is to <span class="math inline">\(100\%\)</span> then the better is the model in the sense that the set of explanatory variables can explain a lot of the variability in <span class="math inline">\(Y\)</span>. Conversely, a value of <span class="math inline">\(R^2\)</span> close to <span class="math inline">\(0\)</span> implies a weak, i.e. poor model in that the set of explanatory variables can only account for a limited amount of the behaviour of <span class="math inline">\(Y\)</span>. But what about non-extreme values of <span class="math inline">\(R^2\)</span>?</p>
+<p>The adequacy of <span class="math inline">\(R^2\)</span> can be judged both formally and informally.</p>
+<p>The formal test is given by the result:</p>
+<p><span class="math inline">\(H_0: R^2 = 0\)</span> (that is, the set of explanatory variables are <em>insignificant</em>, or in other words: useless)
+<span class="math inline">\(H_1: R^2 &gt; 0\)</span> (that is, at least one explanatory variable is <em>significant</em>, or in other words: important)</p>
+<p>and the appropriate test statistic is such that <span class="math inline">\(F_{calc} \sim F(k, (n-(k+1)))\)</span>, obtained using a data set of size <span class="math inline">\(n\)</span> for a fitted model with <span class="math inline">\(k\)</span> number of explanatory variables.</p>
+<p>The mechanics of an <strong>F-test</strong> are as follows:</p>
+<ul>
+<li><p>Two vital pieces of information are required for an F-test: <span class="math inline">\(F_{calc}\)</span> and <span class="math inline">\(F_{crit}\)</span>.</p></li>
+<li><p><span class="math inline">\(F_{calc}\)</span> is displayed within the R’s standard output. <span class="math inline">\(F_{crit}\)</span> however is a figure derived from degrees of freedom elements and a designated level of significance. For hypothesis testing the <span class="math inline">\(5\%\)</span> significance (<span class="math inline">\(\alpha = 5\%\)</span>) level is commonly used. The degrees of freedom elements are</p>
+<ol style="list-style-type: lower-roman">
+<li><em>Regression</em>: number of explanatory variables in the model.</li>
+<li><em>Error</em>: number of observations minus the number of estimated <span class="math inline">\(b\)</span> coefficients in the fitted regression model.</li>
+</ol></li>
+<li><p>The all important <strong>decision making rule</strong> is: if <span class="math inline">\(F_{calc}\)</span> is less than <span class="math inline">\(F_{crit}\)</span> then the null hypothesis <span class="math inline">\(H_0\)</span> is accepted; if <span class="math inline">\(F_{calc}\)</span> is larger than <span class="math inline">\(F_{crit}\)</span> then the alternate hypothesis <span class="math inline">\(H_1\)</span> is accepted:</p>
+<p>if <span class="math inline">\(F_{calc} &lt; F_{crit} =&gt; H_0\)</span></p>
+<p>if <span class="math inline">\(F_{calc} &gt; F_{crit} =&gt; H_1\)</span></p></li>
+</ul>
+<p><img src="/module4/MLRegression/images/F-test.png?width=30pc" /></p>
+<p>This formal test involves a rather weak alternative hypothesis, which says only that <span class="math inline">\(R^2\)</span> is significantly bigger than <span class="math inline">\(0\)</span>. If <span class="math inline">\(H_1\)</span> is accepted we will have to make a judgement, without the aid of any further formal test, about the usefulness of <span class="math inline">\(R^2\)</span> and hence the model being studied.</p>
+<p><strong><span class="math inline">\(R^2 Adjusted\)</span></strong></p>
+<p><span class="math inline">\(R^2\)</span> can also be used in comparing competing models. If two or more models have been put forward to explain the same response variable then a reasonable rule is to rank the explanatory power of the models in terms of their <span class="math inline">\(R^2\)</span> values. Thus the model with the highest <span class="math inline">\(R^2\)</span> value would be the best model.</p>
+<p>The information gathered form the individual regressions carried out in <em>Test a)</em> can be used to give an initial judgement and ranking of the relative importance of the various explanatory variables.</p>
+<p>However this rule should be used carefully. It is a valid rule when the competing models have the same number of explanatory variables. It is not valid when comparing models that have different numbers of explanatory variables. It is intuitively obvious that a model with more explanatory variables will have a better chance of explaining the <span class="math inline">\(Y\)</span> variable than a model with fewer variables.Thus the highest <span class="math inline">\(R^2\)</span> rule is biased in favour of those models with more explanatory variables even when some of these explanatory variables are not very useful. In an attempt to redress the imbalance when comparing models with different numbers of explanatory variables a different version of <span class="math inline">\(R^2\)</span> called <span class="math inline">\(R^2_{adjusted}\)</span> has been developed as follows:</p>
+<p><span class="math display">\[\bar{R}^2 = 1 - \frac{(n-1)}{(n-(k+1))}(1-R^2)\]</span>
+💡 Note that mathematically adopted way of writing <span class="math inline">\(R^2_{adjusted}\)</span> is <span class="math inline">\(\bar{R}^2\)</span>.</p>
+<p>By examining <span class="math inline">\(\bar{R}^2\)</span> it can be seen that when <span class="math inline">\(k\)</span> goes up it is possible for the value of <span class="math inline">\(\bar{R}^2\)</span> to fall. Thus this statistic gives a better way of comparing models with different values for <span class="math inline">\(k\)</span>. s before the rule for comparing models is straightforward: <strong>choose the model with the highest <span class="math inline">\(\bar{R}^2\)</span></strong>.</p>
+<p><strong>Test c) t-tests</strong>: Individually are the explanatory variables important?</p>
+<p>Using <span class="math inline">\(R^2\)</span> to judge the goodness of the set of explanatory variables does not tell us anything about the importance of any one single explanatory variable. Just because a set of variables is important does not necessarily mean that each individual variable is contributing towards explaining the behaviour of <span class="math inline">\(Y\)</span>. What is needed is a test than enables us to check the validity of each variable one at a time. Such a test procedure is available as follows:</p>
+<ul>
+<li><span class="math inline">\(H_0: b_i = 0\)</span> (explanatory variable <span class="math inline">\(i\)</span> is not important)</li>
+<li><span class="math inline">\(H_1: b_i &lt; 0\)</span> (explanatory variable <span class="math inline">\(i\)</span> has a positive influence) or
+<span class="math inline">\(H_1: b_i &gt; 0\)</span> (explanatory variable <span class="math inline">\(i\)</span> has a negative influence) or
+<span class="math inline">\(H_1: b_i \neq 0\)</span> (explanatory variable <span class="math inline">\(i\)</span> has an influence)</li>
+</ul>
+<p>The appropriate <span class="math inline">\(H_1\)</span> for any particular variable is crucially connected with the prior view as to the nature of the connection between any one proposed explanatory variable and the response variable.</p>
+<p>The appropriate test statistic involves a <strong>t-test</strong> based on <span class="math inline">\((n-(k+1))\)</span> degrees of freedom.</p>
+<p>The critical region, denoted by <span class="math inline">\(H_1\)</span>, is crucially dependent upon the nature of the alternate hypothesis as put forward by the data analyst. <span class="math inline">\(t_{calc}\)</span> is generated from the R output. <span class="math inline">\(t_{crit}\)</span> is a combination of the Degrees of Freedom from Error and the level of test significance. <span class="math inline">\(t_{crit}\)</span> is the benchmark helping to determine whether one accepts or rejects the <em>null</em> Hypothesis.</p>
+<p>If <span class="math inline">\(t_calc\)</span> lies in the critical region then the <em>alternative</em> hypothesis is accepted and the modeller accepts that the explanatory variable does have an influence on the behaviour of <span class="math inline">\(Y\)</span>. If this is not the case and <span class="math inline">\(t_calc\)</span> lies in the <span class="math inline">\(H_0\)</span> area, the modeller accepts that the explanatory variable is useless and that it should be eliminated from the model.</p>
+<p>The hypothesis testing methodology typically adopts the <span class="math inline">\(\alpha = 5\%\)</span> level of significance and can be illustrated as follows:</p>
+<p><img src="/module4/MLRegression/images/t-test_regression.png?width=25pc" /></p>
+<p>Once all the variables have been individually analysed a further regression command should be given on all remaining acceptable explanatory variables in order to ascertain the best fitted model.</p>
+<p>Some of the decision making outcomes form the series of <strong>t-test</strong> may be uncomfortable in terms of the information form other tests and we may have to experiment with various competing fitted models using subtle combinations of prior views, <span class="math inline">\(R^2\)</span>, <span class="math inline">\(\bar{R}^2\)</span> values, and <span class="math inline">\(F\)</span>, <span class="math inline">\(t-test\)</span> outcomes before selecting a best model or a set of equally good models.</p>
+<p>There are many other, more sophisticated, tests that can be used to judge the validity, i.e. usefulness of a fitted regression model. Before we get familiar with them and in order to appreciate their practicality and effectiveness we will conduct an analysis for fitting multiple regression model based on the procedure explained above.</p>
+<p>
+<font color="black" face="Verdana, Geneva, sans-serif" size="+1.5"><strong>Case Study</strong></font>
+</p>
+<p><strong><code>carData::Salaries</code></strong>: The 2008-09 nine-month academic salary for Assistant Professors, Associate Professors and Professors in a college in the U.S. The data were collected as part of the on-going effort of the college’s administration to monitor salary differences between male and female faculty members.</p>
+<p><strong>Format:</strong> A data frame with 397 observations on the following 6 variables:</p>
+<ul>
+<li><code>rank</code>: a factor with levels:
+<ul>
+<li>AssocProf</li>
+<li>AsstProf</li>
+<li>Prof</li>
+</ul></li>
+<li><code>discipline</code>: a factor with levels:
+<ul>
+<li>A (“theoretical” departments) or</li>
+<li>B (“applied” departments)</li>
+</ul></li>
+<li><code>yrs.since.phd</code>: years since PhD</li>
+<li><code>yrs.service</code>: years of service</li>
+<li><code>sex</code>: a factor with levels
+<ul>
+<li>Female</li>
+<li>Male</li>
+</ul></li>
+<li><code>salary</code>: nine-month salary, in dollars</li>
+</ul>
+<p>First set of questions is:</p>
+<ul>
+<li>which of the measured variable is the response variable?</li>
+<li>which are the explanatory variables?</li>
+<li>are the explanatory variables measured or attribute, or a mixture of both?</li>
+</ul>
+<p>Considering that the data is collected for the purpose of the analysis of academic salary we are going to identify <code>salary</code> as the response variable. The rest of the variables we can use as possible factors that can influence the behaviour of the response variable.</p>
+<p>In a “standard” regression approach assumes modelling a relationship between measured response and measured explanatory variables.</p>
+<p><strong>Dummy Variables</strong></p>
+<p>As we have learnt previously, attribute variables are vectors of class factor in R. This vector is encoded numerically, with information about the levels of the variable saved in the levels attribute.</p>
+<pre class="r"><code># If you don&#39;t have carData installed yet, uncomment and run the line below
+# install.packages(carData)
+library(carData)
+data(Salaries)
+attach(Salaries)
+class(sex)</code></pre>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
+<pre class="r"><code>unclass(sex)</code></pre>
+<pre><code>##   [1] 2 2 2 2 2 2 2 2 2 1 2 2 2 2 2 2 2 2 2 1 2 2 2 2 1 2 2 2 2 2 2 2 2 2 1 1 2
+##  [38] 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 1 2 2 2 2 2 2 2 2 2 2 1 2 2 2 2 1 2 2 2 2 2
+##  [75] 2 2 2 2 2 2 2 2 2 2 1 2 2 2 2 2 1 2 2 2 2 2 2 2 2 2 2 2 2 1 2 2 2 2 2 2 2
+## [112] 2 2 2 1 2 2 2 2 1 2 2 2 1 2 2 2 1 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+## [149] 1 2 2 2 2 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 2 2 2 2 2
+## [186] 2 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 2 2 2
+## [223] 2 2 2 2 2 2 2 2 1 1 2 1 2 2 2 1 2 2 2 2 2 2 2 1 2 2 2 2 2 2 2 1 1 2 2 2 2
+## [260] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+## [297] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 2 2 2 2 2 2 1 2 2 2 2 2 2 2 2 1
+## [334] 2 1 2 2 2 2 2 2 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 2 2 1 2 2 2 2 2 2 2 2
+## [371] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+## attr(,&quot;levels&quot;)
+## [1] &quot;Female&quot; &quot;Male&quot;</code></pre>
+<p>Note, that the <code>unclass()</code> function removes the attributes of the <code>sex</code> variable above and prints it using default print method, allowing for easier examination of the internal structure of the object.</p>
+<p>However, when using attribute variable in a linear regression model it would make no sense to treat it as a measured explanatory variable because of its numeric levels. In the context of linear modelling we need to code them to represent the levels of the attribute.</p>
+<p>Two-level attribute variables are very easy to code. We simply create an <strong>indicator</strong> or <strong>dummy</strong> variable that takes on two possible <em>dummy</em> numerical values. Consider the <code>sex</code> indicator variable. We can code this using a dummy variable <span class="math inline">\(d\)</span>:
+<span class="math display">\[\begin{equation}
+  d=\left\{
+  \begin{array}{@{}ll@{}}
+    0, &amp; \text{if female} \\
+    1, &amp; \text{if male}
+  \end{array}\right.
+\end{equation}\]</span></p>
+
+<div class="notices warning" ><p>💡 This is the default coding used in R. Zero value is assigned to the level which is first alphabetically, unless it is changed by using the <!-- raw HTML omitted -->releveld()<!-- raw HTML omitted --> function for example, or by specifying the levels of the factor variable specifically.</p>
+</div>
+
+<p>For a simple regression model of <code>salary</code> verses <code>sex</code>:</p>
+<p><span class="math display">\[salary = b_0 + b_1sex + e,\]</span></p>
+<p>this results in the model</p>
+<p><span class="math display">\[\begin{equation}
+  salary_i = b_0 + b_1sex_i + e_i=\left\{
+  \begin{array}{@{}ll@{}}
+    b_0 + b_1 \times 1 + e_i = b_0 + b_1 + e_i, &amp; \text{if the person is male} \\
+    b_0 + b_1 \times 0 + e_i = b_0 + e_i, &amp; \text{if the person is female}
+  \end{array}\right.
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(b_0\)</span> can be interpreted as the average <span class="math inline">\(\text{salary}\)</span> for females, and <span class="math inline">\(b_0 + b_1\)</span> as the average <span class="math inline">\(\text{salary}\)</span> for males. The value of <span class="math inline">\(b_1\)</span> represents the average difference in <span class="math inline">\(\text{salary}\)</span> between females and males.</p>
+<p>We can conclude that dealing with an attribute variable with two levels in a linear model is straight forward. In this case, a dummy variable indicates whether an observation has a particular characteristic: yes/no. We can observe it as a “switch” in a model, as this dummy variable can only assume the values 0 and 1, where 0 indicates the absence of the effect, and 1 indicates the presence. The values 0/1 can be seen as off/on.</p>
+<p>The way in which R codes dummy variables is controlled by the <em><strong>contrast</strong></em> option:</p>
+<pre class="r"><code>options(&quot;contrasts&quot;)</code></pre>
+<pre><code>## $contrasts
+##         unordered           ordered 
+## &quot;contr.treatment&quot;      &quot;contr.poly&quot;</code></pre>
+<p>The output points out the conversion of the factor into appropriate set of contrasts. In particular, the first one: for unordered factors, and the second one: the order for order factors. The former one is applicable in our context.</p>
+<p>To explicitly identify the coding of the factor, i.e. dummy variable used by R, we can use the <code>contrasts()</code> function.</p>
+<pre class="r"><code>contrasts(sex)</code></pre>
+<pre><code>##        Male
+## Female    0
+## Male      1</code></pre>
+<pre class="r"><code>contrasts(discipline)</code></pre>
+<pre><code>##   B
+## A 0
+## B 1</code></pre>
+<pre class="r"><code>contrasts(rank)</code></pre>
+<pre><code>##           AssocProf Prof
+## AsstProf          0    0
+## AssocProf         1    0
+## Prof              0    1</code></pre>
+<p>Note that applied “contr.treatment” conversion takes only the value 0 or 1 and that for an attribute variable with k levels it will create k-1 dummy variables. One can argue that the printout of the function could have been more informative by putting indexed letter d as a header for each of the printed columns. For example:</p>
+<ul>
+<li>attribute variable <code>sex</code>, where k=2</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>attribute</th>
+<th><span class="math inline">\(d\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Female</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Male</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>attribute variable <code>rank</code>, where k=3</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>attribute</th>
+<th><span class="math inline">\(d_1\)</span></th>
+<th><span class="math inline">\(d_2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AsstProf</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>AssocProf</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Prof</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>There are many different ways of coding attribute variables besides the dummy variable approach explained here. All of these different approaches lead to equivalent model fits, what differ are the coefficients, i.e. model parameters as they require different interpretations, arranged to measure particular contrasts. This 0/1 coding implemented in R’s default <strong><code>contr.treatment</code></strong> contrast offers straightforward interpretation of the associated parameter in the model, which often is not the case when implementing other contrasts.</p>
+<p><strong>Interpreting coefficients of attribute variables</strong></p>
+<p>In the case of measured predictors, we are comfortable with the interpretation of the linear model coefficient as a <em>slope</em>, which tells us what is a <em>unit increase in the response variable, i.e. outcome per unit increase in the explanatory variable</em>. This is not necessarily the right interpretation for attribute explanatory variables.</p>
+<pre class="r"><code># average salary values for each sex group
+suppressPackageStartupMessages(library(dplyr))
+Salaries %&gt;% 
+    select(salary, sex) %&gt;%   
+    group_by(sex) %&gt;% 
+    summarise(mean=mean(salary))</code></pre>
+<pre><code>## # A tibble: 2 x 2
+##   sex       mean
+##   &lt;fct&gt;    &lt;dbl&gt;
+## 1 Female 101002.
+## 2 Male   115090.</code></pre>
+<p>If we obtain mean of the salary for each sex group we will get that for female professors average salary is <span class="math inline">\(\$101,002\)</span> and for male professors the average of <span class="math inline">\(\$115,090\)</span>. That is, a difference of <span class="math inline">\(\$14,088\)</span>. If we now look at the parameters of the regression model for <code>salary</code> vs <code>sex</code> where female are coded as zero and male as one we get exactly same information, implying that the coefficient is the estimated difference in average between the two groups.</p>
+<pre class="r"><code># regression model 
+lm(salary ~  sex)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = salary ~ sex)
+## 
+## Coefficients:
+## (Intercept)      sexMale  
+##      101002        14088</code></pre>
+<p>For more on this topic check the following link: <a href="https://www.andrew.cmu.edu/user/achoulde/94842/lectures/lecture10/lecture10-94842.html#interpreting-coefficients-of-factor-variables">Categorical variables and interaction terms in linear regression</a></p>
+<p><strong>Fitting a Moultivariate Regression Model</strong></p>
+<p>We are interested in the extent to which variation in the response variable <code>salary</code> is associated with variation in the explanatory variables available in the <code>Salaries</code> data set, that is we want to fit a multiple linear regression model to the given data. The model we wish to construct should be plentiful enough to explain relations in the data and at the same time simple enough to understand, explain to others, and use.</p>
+<p>For the convenience we will adopt the following notation:</p>
+<ul>
+<li><span class="math inline">\(y\)</span>: <code>salary</code></li>
+<li><span class="math inline">\(x_1\)</span>: <code>yrs.since.phd</code></li>
+<li><span class="math inline">\(x_2\)</span>: <code>yrs.service</code></li>
+<li><span class="math inline">\(x_3\)</span>: <code>discipline</code></li>
+<li><span class="math inline">\(x_4\)</span>: <code>sex</code></li>
+<li><span class="math inline">\(x_5\)</span>: <code>rank</code></li>
+</ul>
+<p>Generally, in multiple regression we have a continuous response variable and two or more continuous explanatory variables, however in this dataset we have three attribute variables that we wish to include as the explanatory variables in the model.</p>
+<p>Next, we need to specify the model that embodies our mechanistic understanding of the
+factors involved and the way that they are related to the response variable. It would make sense to expect that all of the available <span class="math inline">\(x\)</span> variables may impact the behaviour of <span class="math inline">\(y\)</span>, thus the model we wish to built should reflect our view point, i.e. <span class="math inline">\(y = f(x_2, x_2, x_3, x_4, x_5)\)</span>:</p>
+<p><span class="math display">\[y = b_0 + b_1x_1 + b_2x_2 + b_3x_3 + b_4x_4 + b_5x_5 + e\]</span>
+Our view point states a belief that all explanatory variables have positive impact on the response. For example, more years in service will cause higher salary.</p>
+<p>The object now is to determine the values of the parameters in the model that lead to <strong>the best fit of the model to the data</strong>. That is, we not only trying to estimate the parameters of the model, but we are also seeking for the minimal adequate model to describe the data.</p>
+
+<div class="notices tip" ><p>The best model is the model that produces the least unexplained variation following the principle of parsimony rather than complexity. That is the model should have as few parameters as possible, subject to the constraint that the parameters in the model should all be statistically significant.</p>
+</div>
+
+<p>For regression modelling in R we use the <code>lm()</code> function, that fits a linear model assuming normal errors and constant variance. We specify the model by a formula that uses arithmetic operators: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> and <code>^</code> which enable different functionalities from their ordinary ones. But, before we dive into statistical modelling of the given data, we will <strong>Get to Know Your Data</strong>.</p>
+<p>Examining multivariate data intrinsically more challenging when examining univariate and bivariate data. To get the most indepth vision into multivariate data behaviour we cunstruct scatterplot matrices that enable display of pairwise relationships. In R, the scatterplot matrices are composed by the <code>pairs()</code> function, which comes as a part of the default <code>graphics</code> package. Since we wish to include attribute variables in our analysis we are going to use the <code>GGally::ggpairs()</code> function that produces a pairwise comparison of multivariate data for both data types: measured and attribute.</p>
+<pre class="r"><code># If you don&#39;t have GGally installed yet, uncomment and run the line below
+# install.packages(GGally)
+suppressPackageStartupMessages(library(GGally))
+ggpairs(Salaries)</code></pre>
+<p><img src="/module4/MLRegression/_index.en_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>It is an information rich visualisation that includes pairwise relationships of all the variables we want to consider for our model. By focusing on the last column of the plots, we can notice influence from all explanatory variables onto the response, expect maybe for <code>disscipline</code> and <code>sex</code>. We also notice unbalanced representation of the groups for variables <code>rank</code> and <code>sex</code>, but for the purpose of our practice in fitting a multi factor model this isn’t that problematic. We need to be especially concerned with the extent of correlations between the explanatory variables and what is of particular interest to us is the high multicollinearity between <code>rank</code>, <code>yrs.since.phd</code> and <code>yrs.service</code>, which happens when the variables are highly linearly related.
+As a consequence, we will need to keep an eye on the significance of using all of those variables in the model.</p>
+<p><strong>Fitting the Model</strong></p>
+<p>There are no fixed rules when fitting a linear modelles, but there are adopted standards that have proven to work well in practice. We start off by fitting a maximal model then simplifying it by removing non-significant explanatory variables. This needs to be done with caution, making sure that the simplifications make good scientific sense, and do not lead to significant reductions in explanatory power. Although this should be adopted strategy for fitting a model it is not a warrant in finding all the important structures in a complex data frame.</p>
+<p>We can summarise our model building procedure algorithm as following:</p>
+<ol style="list-style-type: lower-roman">
+<li>Fit the <strong>maximal model</strong> that includes all the variables
+<ul>
+<li>Check the overall significance of the model by checking how big is the <span class="math inline">\(R^2\)</span>/<span class="math inline">\(\bar{R}^2\)</span>. If statistically significant, carry on with the model fitting procedure, otherwise stop (F-test).</li>
+</ul></li>
+<li>Remove the least significant terms <strong>one at the time</strong>
+<ul>
+<li>Check variables’ <span class="math inline">\(t_{calculated}\)</span> values and perform one or two tail <em>t-test</em> in accordance to your prior view</li>
+<li>If the deletion causes an insignificant increase in <span class="math inline">\(\bar{R}^{2}\)</span> leave that term out of the model</li>
+</ul></li>
+<li>Keep removing terms from the model until the model contains nothing but significant terms.</li>
+</ol>
+<pre class="r"><code># model_1 &lt;- lm(salary ~ yrs.since.phd + yrs.service + discipline + sex + rank, data = Salaries) #long handed way
+model_1 &lt;- lm(salary ~ ., data = Salaries) #full stop, . , implies: all other variables in data that do not already appear in the formula
+summary(model_1)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = salary ~ ., data = Salaries)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -65248 -13211  -1775  10384  99592 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    65955.2     4588.6  14.374  &lt; 2e-16 ***
+## rankAssocProf  12907.6     4145.3   3.114  0.00198 ** 
+## rankProf       45066.0     4237.5  10.635  &lt; 2e-16 ***
+## disciplineB    14417.6     2342.9   6.154 1.88e-09 ***
+## yrs.since.phd    535.1      241.0   2.220  0.02698 *  
+## yrs.service     -489.5      211.9  -2.310  0.02143 *  
+## sexMale         4783.5     3858.7   1.240  0.21584    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 22540 on 390 degrees of freedom
+## Multiple R-squared:  0.4547, Adjusted R-squared:  0.4463 
+## F-statistic:  54.2 on 6 and 390 DF,  p-value: &lt; 2.2e-16</code></pre>
+<ol style="list-style-type: lower-roman">
+<li>Overall is the model a good fit? How big is the <span class="math inline">\(R^2\)</span>/<span class="math inline">\(\bar{R}^2\)</span>?</li>
+</ol>
+<p>The <span class="math inline">\(R^2 = 45.47\%\)</span> and the <span class="math inline">\(\bar{R}^2 = 44.63\%\)</span> are well above the value of zero allowing us to accept this as a valid model without having to formally test it to assess its statistical significance. It manages to explain almost halph of the variability un the response variable <code>salary</code>.</p>
+<ol start="2" style="list-style-type: lower-roman">
+<li>Individually are the explanatory variables important?</li>
+</ol>
+<p>We identify <code>sex</code> explanatory variable as clearly not significant, which is in line with the conclusion we could draw from the boxplot in the pairwise comparison plot for <code>salary</code> vs. <code>sex</code>. We will remove it to begin the process of model simplification.</p>
+<pre class="r"><code>#model_1 &lt;- lm(salary ~ yrs.since.phd + yrs.service + discipline + sex + rank, data = Salaries) # long handed way
+model_2 &lt;- update(model_1,~. - sex) # refitting by removing the least significant term
+summary(model_2)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = salary ~ rank + discipline + yrs.since.phd + yrs.service, 
+##     data = Salaries)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -65244 -13498  -1455   9638  99682 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    69869.0     3332.1  20.968  &lt; 2e-16 ***
+## rankAssocProf  12831.5     4147.7   3.094  0.00212 ** 
+## rankProf       45287.7     4236.7  10.689  &lt; 2e-16 ***
+## disciplineB    14505.2     2343.4   6.190 1.52e-09 ***
+## yrs.since.phd    534.6      241.2   2.217  0.02720 *  
+## yrs.service     -476.7      211.8  -2.250  0.02497 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 22550 on 391 degrees of freedom
+## Multiple R-squared:  0.4525, Adjusted R-squared:  0.4455 
+## F-statistic: 64.64 on 5 and 391 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>We note slight reduction in <span class="math inline">\(\bar{R^2}\)</span> from <span class="math inline">\(44.63\%\)</span> to <span class="math inline">\(44.55\%\)</span> which we can regard as an insignificant decrease. The next we need to check the coefficient and assess for the effect of the remaining variables. We identify <em>yrs.since.phd</em> and <em>yrs.service</em> as the least influential in explaining the variability of <em>salary</em>. To illustrate how to formally assess their effect we will conduct the <em>t-test</em> for the <em>yrs.since.phd</em> variable:</p>
+<ul>
+<li><span class="math inline">\(H_0: b_{ysp} = 0\)</span></li>
+<li><span class="math inline">\(H_1: b_{ysp} &gt; 0\)</span></li>
+</ul>
+<p>=========================</p>
+<ul>
+<li>If <span class="math inline">\(t_{calc} &lt; t_{crit} =&gt; H_0\)</span></li>
+<li>If <span class="math inline">\(t_{calc} &gt; t_{crit} =&gt; H_1\)</span></li>
+</ul>
+<pre class="r"><code>qt(0.95, 391)</code></pre>
+<pre><code>## [1] 1.64876</code></pre>
+<p>As <span class="math inline">\(t_{calc} = 2.217 &gt; t_{crit} = 1.64876 =&gt; H_1\)</span> we will keep the remaining variable and stop with the model simplification and focus on its interpretation.</p>
+<p>We can take a closer look at the coefficients of our fitted model:</p>
+<pre class="r"><code>coef(model_2)</code></pre>
+<pre><code>##   (Intercept) rankAssocProf      rankProf   disciplineB yrs.since.phd 
+##    69869.0110    12831.5375    45287.6890    14505.1514      534.6313 
+##   yrs.service 
+##     -476.7179</code></pre>
+<p>The structure of our final fitted model is:</p>
+<p><span class="math display">\[y = b_0 + b_1x_1 + b_2x_2 + b_3x_3 + b_4x_4 + e,\]</span>
+where</p>
+<ul>
+<li><span class="math inline">\(y\)</span>: <code>salary</code></li>
+<li><span class="math inline">\(x_1\)</span>: <code>yrs.since.phd</code></li>
+<li><span class="math inline">\(x_2\)</span>: <code>yrs.service</code></li>
+<li><span class="math inline">\(x_3\)</span>: <code>discipline</code></li>
+<li><span class="math inline">\(x_4\)</span>: <code>rank</code></li>
+</ul>
+<p>We can take a closer look at the coefficients of our fitted model:</p>
+<pre class="r"><code>coef(model_2)</code></pre>
+<pre><code>##   (Intercept) rankAssocProf      rankProf   disciplineB yrs.since.phd 
+##    69869.0110    12831.5375    45287.6890    14505.1514      534.6313 
+##   yrs.service 
+##     -476.7179</code></pre>
+<p>Examining the output we can realise that <code>R</code> has created tree “sub” dummy variables for the variable <code>rank</code>:
+<span class="math display">\[
+dr_1 =
+  \begin{cases}
+   1 &amp; \text{rank is AsstProf} \\
+   0       &amp; \text{for rank is not AsstProf}
+  \end{cases}
+\]</span></p>
+<p><span class="math display">\[
+dr_2 =
+  \begin{cases}
+   1 &amp; \text{rank is AssocProf} \\
+   0       &amp; \text{rank is not AssocProf}
+  \end{cases}
+\]</span></p>
+<p><span class="math display">\[
+dr_3 =
+  \begin{cases}
+   1 &amp; \text{rank is Prof} \\
+   0       &amp; \text{rank is not Prof}
+  \end{cases}
+\]</span></p>
+<p>It has chosen to use the model:
+<span class="math display">\[
+y = b_0 + b_1dr_2 + b_2dr_3 + b_3d_1 + b_4x_1 + b_5x_2 + e,
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(y\)</span> is <code>salary</code></li>
+<li><span class="math inline">\(x_1\)</span> is <code>yrs.since.phd</code></li>
+<li><span class="math inline">\(x_2\)</span> is <code>yrs.servic</code></li>
+<li><span class="math inline">\(dr_2\)</span> and <span class="math inline">\(dr_3\)</span> are the dummy variables define above for the purpose of coding variable <code>rank</code></li>
+<li><span class="math inline">\(d_1\)</span> is a dummy variable used in coding of variable <code>discipline</code> as explained earlier</li>
+</ul>
+<p>Note that <code>R</code> doesn’t need to use <code>dr_1</code>, to create three models it only needs two dummy variables since it is using <code>dr_1</code> as a reference level, also known as the <em>base line</em>. This subsequently allows <code>R</code> to create three models in respect to <code>rank</code> variable:</p>
+<ul>
+<li>AsstProf: <span class="math inline">\(y = b_0 + b_3d_1 + b_4x_1 + b_5x_2 + e\)</span></li>
+<li>AsstProf: <span class="math inline">\(y = (b_0 + b_1) + b_3d_1 + b_4x_1 + b_5x_2 + e\)</span></li>
+<li>Prof: <span class="math inline">\(y = (b_0 + b_2) + b_3d_1 + b_4x_1 + b_5x_2 + e\)</span></li>
+</ul>
+<p>telling us that:</p>
+<ul>
+<li><span class="math inline">\(b_0\)</span> is average salary for Assistant Professor who works in a “theoretical” department and <span class="math inline">\(b_0 + b_3\)</span> average salary for Assistant Professor who works in an “applied” department</li>
+<li><span class="math inline">\((b_0 + b_1)\)</span> is average salary for Associate Professor who works in a “theoretical” department and <span class="math inline">\((b_0 + b_1) + b_3\)</span> average salary for Associate Professor who works in an “applied” department</li>
+<li><span class="math inline">\((b_0 + b_2)\)</span> is average salary for Professor who works in a “theoretical” department and <span class="math inline">\((b_0 + b_2) + b_3\)</span> average salary for Professor who works in an “applied” department</li>
+</ul>
+<p>Learning this we can make an interpretation of our final fitted model as following:</p>
+<ul>
+<li>For every year since PhD (<code>yrs.since.phd</code>) on average salary (<code>salary</code>) will go up by <span class="math inline">\(\$534.63\)</span> assuming the rest of the variables are fixed in the model.</li>
+<li>For every year in service (<code>yrs.service</code>) on average salary (<code>salary</code>) will go down by <span class="math inline">\(\$476.72\)</span> assuming the rest of the variables are fixed in the model.</li>
+<li>Average salary of a Assistant Professor (<code>rank: AsstProf</code>) who works in a “theoretical” department is <span class="math inline">\(\$69,869.01\)</span> and who works in an “applied” department is <span class="math inline">\(\$84,374.16\)</span>; This can vary for the number of years in service and since PhD</li>
+<li>Average salary of aAssociate Professor (<code>rank: AssocProf</code>) who works in a “theoretical” department is <span class="math inline">\(\$82,700.55\)</span> and who works in an “applied” department is <span class="math inline">\(\$97,205.70\)</span>; This can vary for the number of years in service and since PhD</li>
+<li>Average salary of a Professor (<code>rank: Prof</code>) who works in a “theoretical” department is <span class="math inline">\(\$115,156.70\)</span> and who works in an “applied” department is <span class="math inline">\(\$129,661.90\)</span>; This can vary for the number of years in service and since PhD</li>
+</ul>
+<p>This model explain around <span class="math inline">\(45\%\)</span> of the variability in the response variable <code>salary</code>.</p>
+<p>Adding <code>~ 0</code> to <code>lm()</code> formula enables <code>R</code> to suppress the intercept. Note that if we remove the intercept, then we can directly obtain all “three intercepts” without a base level to fit the final fitted model:</p>
+<pre class="r"><code>model_2_1 &lt;- lm(salary ~  0 + rank + discipline + yrs.since.phd + yrs.service)
+summary(model_2_1)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = salary ~ 0 + rank + discipline + yrs.since.phd + 
+##     yrs.service)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -65244 -13498  -1455   9638  99682 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## rankAsstProf   69869.0     3332.1  20.968  &lt; 2e-16 ***
+## rankAssocProf  82700.5     3916.7  21.115  &lt; 2e-16 ***
+## rankProf      115156.7     4350.9  26.467  &lt; 2e-16 ***
+## disciplineB    14505.2     2343.4   6.190 1.52e-09 ***
+## yrs.since.phd    534.6      241.2   2.217   0.0272 *  
+## yrs.service     -476.7      211.8  -2.250   0.0250 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 22550 on 391 degrees of freedom
+## Multiple R-squared:  0.9638, Adjusted R-squared:  0.9633 
+## F-statistic:  1736 on 6 and 391 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>
+<font color="black" face="Verdana, Geneva, sans-serif" size="+1.5"><strong>Adding a Complexity</strong></font>
+</p>
+<p>So far we have seen that by fitting an additive regression model to the data we wish to to identify and understand how the value of a dependent response variable changes when any one of the independent explanatory variables is changed while the other independent variables stay the same. This is a restrictive form of a model as it only allows for linear relationships between the response and the explanatory variables and the way in which one explanatory variable affects the response is the same for any value of the other explanatory variables used in the model.</p>
+<p>We need to add a flexibility to accommodate for those limitations that will allow:</p>
+<ul>
+<li>the use of linear models for <strong>non-linear relationships</strong> and</li>
+<li>in which the effect of one explanatory variable can be different for different values of the other explanatory variable by introducing the concept of <strong>interaction</strong></li>
+</ul>
+<p>that command more complexity into the multivariate regression model.</p>
+<p>
+<font color="black" face="Verdana, Geneva, sans-serif" size="+1.5"><strong>Case Study: The Quality of red Bordeaux Vintages</strong></font>
+</p>
+<p>To illustrate multivariate model fitting procedure with interactions we are going to use <a href="https://raw.githubusercontent.com/egarpor/handy/master/datasets/wine.csv"><code>wine.csv</code></a> available from <a href="https://bookdown.org/egarpor/PM-UC3M/lm-i-lab-wine.html">Eduardo García Portugués’s book: Notes for Predictive Modeling</a>. The dataset is formed by the auction Price of 27 red Bordeaux vintages, five vintage descriptors (WinterRain, AGST, HarvestRain, Age, Year), and the population of France in the year of the vintage, FrancePop.</p>
+<ul>
+<li><code>Year</code>: year in which grapes were harvested to make wine.</li>
+<li><code>Price</code>: logarithm of the average market price for Bordeaux vintages according to 1990–1991 auctions. The price is relative to the price of the 1961 vintage, regarded as the best one ever recorded.</li>
+<li><code>WinterRain</code>: winter rainfall (in mm).</li>
+<li><code>AGST</code>: Average Growing Season Temperature (in Celsius degrees).</li>
+<li><code>HarvestRain</code>: harvest rainfall (in mm).</li>
+<li><code>Age</code>: age of the wine measured as the number of years stored in a cask.</li>
+<li><code>FrancePop</code>: population of France at Year (in thousands).</li>
+</ul>
+<p>We would like to analyse the quality of a vintage that has been quantified as the price and make the interpretation of our statistical findings.</p>
+<p>We will familiarise with data by examining the pairwise plot.</p>
+<pre class="r"><code>wine = read.csv(&quot;https://raw.githubusercontent.com/egarpor/handy/master/datasets/wine.csv&quot;)
+summary(wine)</code></pre>
+<pre><code>##       Year          Price         WinterRain         AGST        HarvestRain   
+##  Min.   :1952   Min.   :6.205   Min.   :376.0   Min.   :14.98   Min.   : 38.0  
+##  1st Qu.:1960   1st Qu.:6.508   1st Qu.:543.5   1st Qu.:16.15   1st Qu.: 88.0  
+##  Median :1967   Median :6.984   Median :600.0   Median :16.42   Median :123.0  
+##  Mean   :1967   Mean   :7.042   Mean   :608.4   Mean   :16.48   Mean   :144.8  
+##  3rd Qu.:1974   3rd Qu.:7.441   3rd Qu.:705.5   3rd Qu.:17.01   3rd Qu.:185.5  
+##  Max.   :1980   Max.   :8.494   Max.   :830.0   Max.   :17.65   Max.   :292.0  
+##       Age          FrancePop    
+##  Min.   : 3.00   Min.   :43184  
+##  1st Qu.: 9.50   1st Qu.:46856  
+##  Median :16.00   Median :50650  
+##  Mean   :16.19   Mean   :50085  
+##  3rd Qu.:22.50   3rd Qu.:53511  
+##  Max.   :31.00   Max.   :55110</code></pre>
+<pre class="r"><code>ggpairs(wine)</code></pre>
+<p><img src="/module4/MLRegression/_index.en_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>We notice perfect relationship between the variables <code>Yeear</code> and <code>Age</code>, which is to expect since for this data collected in 1983 Age is calculated as: <code>Age</code> = 1983 - <code>Year</code>. Since <code>Age</code> will be easier to interpret, we are going to remove <code>Year</code> from the analysis. There is a strong relationship between <code>Year</code>, ie. <code>Age</code> and <code>FrancePop</code> and since we want to impose our viewpoint that the total population does not influence the quality of wine we’re not going to consider this variable in the model. We are going to investigate possible interactions between the rainfalls and growing season temperature which in <code>R</code> will create automatically when we use the <code>*</code> operator.</p>
+<p>We start with the most complicated model that includes the highest-order interaction. Note that in R we will have to specify the three-way interaction, which will automatically add all combinations of two-way interactions.</p>
+<pre class="r"><code>model1 &lt;- lm(Price ~ WinterRain + AGST + HarvestRain + Age + WinterRain * AGST * HarvestRain, data = wine)
+summary(model1)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = Price ~ WinterRain + AGST + HarvestRain + Age + 
+##     WinterRain * AGST * HarvestRain, data = wine)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.35058 -0.19462 -0.02645  0.17194  0.52079 
+## 
+## Coefficients:
+##                               Estimate Std. Error t value Pr(&gt;|t|)   
+## (Intercept)                  8.582e+00  1.924e+01   0.446   0.6609   
+## WinterRain                  -1.858e-02  2.896e-02  -0.642   0.5292   
+## AGST                        -1.748e-01  1.137e+00  -0.154   0.8795   
+## HarvestRain                 -4.713e-02  1.540e-01  -0.306   0.7631   
+## Age                          2.476e-02  8.288e-03   2.987   0.0079 **
+## WinterRain:AGST              1.272e-03  1.712e-03   0.743   0.4671   
+## WinterRain:HarvestRain       7.836e-05  2.600e-04   0.301   0.7665   
+## AGST:HarvestRain             3.059e-03  9.079e-03   0.337   0.7401   
+## WinterRain:AGST:HarvestRain -5.446e-06  1.540e-05  -0.354   0.7278   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.2833 on 18 degrees of freedom
+## Multiple R-squared:  0.8621, Adjusted R-squared:  0.8007 
+## F-statistic: 14.06 on 8 and 18 DF,  p-value: 2.675e-06</code></pre>
+<p>The model explains well over <span class="math inline">\(80\%\)</span> of variability and is clearly a strong model, but the key question is can we simplify it. We will start the process of this model simplification by removing the three-way interaction as it is clearly not significant.</p>
+<pre class="r"><code>model2 &lt;- update(model1, ~. -WinterRain:AGST:HarvestRain, data =wine)
+summary(model2)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = Price ~ WinterRain + AGST + HarvestRain + Age + 
+##     WinterRain:AGST + WinterRain:HarvestRain + AGST:HarvestRain, 
+##     data = wine)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.35245 -0.19452  0.01643  0.17289  0.51420 
+## 
+## Coefficients:
+##                          Estimate Std. Error t value Pr(&gt;|t|)   
+## (Intercept)             2.980e+00  1.066e+01   0.279  0.78293   
+## WinterRain             -9.699e-03  1.408e-02  -0.689  0.49930   
+## AGST                    1.542e-01  6.383e-01   0.242  0.81168   
+## HarvestRain             6.496e-03  2.610e-02   0.249  0.80610   
+## Age                     2.441e-02  8.037e-03   3.037  0.00678 **
+## WinterRain:AGST         7.490e-04  8.420e-04   0.890  0.38484   
+## WinterRain:HarvestRain -1.350e-05  7.338e-06  -1.840  0.08144 . 
+## AGST:HarvestRain       -1.032e-04  1.520e-03  -0.068  0.94656   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.2767 on 19 degrees of freedom
+## Multiple R-squared:  0.8611, Adjusted R-squared:  0.8099 
+## F-statistic: 16.83 on 7 and 19 DF,  p-value: 6.523e-07</code></pre>
+<p>The <span class="math inline">\(\bar{R}^2\)</span> has slightly increased in value. Next, we remove the least significant two-way interaction term.</p>
+<pre class="r"><code>model3 &lt;- update(model2, ~. -AGST:HarvestRain, data = wine)
+summary(model3)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = Price ~ WinterRain + AGST + HarvestRain + Age + 
+##     WinterRain:AGST + WinterRain:HarvestRain, data = wine)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.35424 -0.19343  0.01176  0.17161  0.51218 
+## 
+## Coefficients:
+##                          Estimate Std. Error t value Pr(&gt;|t|)   
+## (Intercept)             3.518e+00  6.946e+00   0.507  0.61802   
+## WinterRain             -1.017e-02  1.195e-02  -0.851  0.40488   
+## AGST                    1.218e-01  4.138e-01   0.294  0.77147   
+## HarvestRain             4.752e-03  4.553e-03   1.044  0.30901   
+## Age                     2.451e-02  7.710e-03   3.179  0.00472 **
+## WinterRain:AGST         7.769e-04  7.166e-04   1.084  0.29119   
+## WinterRain:HarvestRain -1.342e-05  7.059e-06  -1.902  0.07174 . 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.2697 on 20 degrees of freedom
+## Multiple R-squared:  0.8611, Adjusted R-squared:  0.8194 
+## F-statistic: 20.66 on 6 and 20 DF,  p-value: 1.35e-07</code></pre>
+<p>Again, it is reassuring to notice an increase in the <span class="math inline">\(\bar{R}^2\)</span>, but we still simplify the model further by removing another least significant two-way interaction term.</p>
+<pre class="r"><code>model4 &lt;- update(model3, ~. -WinterRain:AGST, data = wine)
+summary(model4)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = Price ~ WinterRain + AGST + HarvestRain + Age + 
+##     WinterRain:HarvestRain, data = wine)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -0.5032 -0.1934  0.0109  0.1771  0.4621 
+## 
+## Coefficients:
+##                          Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)            -3.812e+00  1.598e+00  -2.386 0.026553 *  
+## WinterRain              2.747e-03  9.471e-04   2.900 0.008560 ** 
+## AGST                    5.586e-01  9.495e-02   5.883 7.71e-06 ***
+## HarvestRain             4.717e-03  4.572e-03   1.032 0.313877    
+## Age                     2.785e-02  7.094e-03   3.926 0.000774 ***
+## WinterRain:HarvestRain -1.349e-05  7.088e-06  -1.903 0.070835 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.2708 on 21 degrees of freedom
+## Multiple R-squared:  0.8529, Adjusted R-squared:  0.8179 
+## F-statistic: 24.35 on 5 and 21 DF,  p-value: 4.438e-08</code></pre>
+<p>There is an insignificantly decrease in <span class="math inline">\(\bar{R}^2\)</span>. We notice <code>HarvestRain</code> now being the least significant term, but as it is used for the <code>WinterRain:HarvestRain</code> interaction, which is significant at <span class="math inline">\(\alpha = 5\%\)</span> we will need to keep it. However, as the concept of parsimony prefers a model without interactions to a model containing interactions between variables, we will remove the remaining interaction term and see if it significantly affects explanatory power of the model.</p>
+<pre class="r"><code>model5 &lt;- update(model4, ~. -WinterRain:HarvestRain, data = wine)
+summary(model5)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = Price ~ WinterRain + AGST + HarvestRain + Age, data = wine)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.46024 -0.23862  0.01347  0.18601  0.53443 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -3.6515703  1.6880876  -2.163  0.04167 *  
+## WinterRain   0.0011667  0.0004820   2.420  0.02421 *  
+## AGST         0.6163916  0.0951747   6.476 1.63e-06 ***
+## HarvestRain -0.0038606  0.0008075  -4.781 8.97e-05 ***
+## Age          0.0238480  0.0071667   3.328  0.00305 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.2865 on 22 degrees of freedom
+## Multiple R-squared:  0.8275, Adjusted R-squared:  0.7962 
+## F-statistic: 26.39 on 4 and 22 DF,  p-value: 4.057e-08</code></pre>
+<p>The <span class="math inline">\(\bar{R}^2\)</span> is reduced by around <span class="math inline">\(2\%\)</span>, but it has all significant terms and it is easier to interpret. For those reasons and in the spirit of parsimony that argues that a model should be as simple as possible we can suggest that this should be regarded as the best final fitted model.</p>
+<p>With realise that for the large numbers of explanatory variables, and many interactions and non-linear terms, the process of model simplification can take a very long time. There are many algorithms for automatic variable selection that can help to chose the variables to include in a regression model. <strong>Stepwise</strong> regression and <strong>Best Subsets</strong> regression are two of the more common variable selection methods.</p>
+<p>The <em>stepwise</em> procedure starts from the saturated model (or the maximal model, whichever is
+appropriate) through a series of simplifications to the minimal adequate model. This progression is made on the basis of deletion tests: F tests, AIC, t-tests or chi-squared tests that assess the significance of the increase in deviance that results when a given term is removed from the
+current model.</p>
+<p>The <em>best subset</em> regression (<em>BREG</em>), also known as “all possible regressions”, as the name of the procedure indicates it fits a separate least squares regression for each possible combination of the <span class="math inline">\(p\)</span> predictors, i.e. explanatory variables. After fitting all of the models, BREG then displays the best fitted models with one explanatory variable, two explanatory variables, three explanatory variables, and so on. Usually, either adjusted R-squared or Mallows Cp is the criterion for picking the best fitting models for this process. The result is a display of the best fitted models of different sizes up to the full/maximal model and the final fitted model can be selected by comparing the displayed the models based on the criteria of persimoney.</p>
+<p>“These methods frequently are abused by naive researchers who seek to interpret the order of
+entry of variables into the regression equation as an index of their ‘‘importance.’’ This practice
+is potentially misleading.” <a href="https://socialsciences.mcmaster.ca/jfox/Books/Companion/">J. Fox and S. Weisberg book: An R Companion to Applied Regression, Third Edition, Sage (2019)</a></p>
+<hr />
+<p>In general, it is used for regression analysis using measured explanatory variables. However, often when building multiple regression models we don’t wont to be limited to the choice of only measured explanatory variables. That is, we want to be able to include attribute explanatory variables in the model too.</p>
+<hr />
+<p><strong>Useful links:</strong></p>
+<ul>
+<li><p><a href="https://statisticsbyjim.com/regression/interpret-r-squared-regression/#:~:text=R%2Dsquared%20evaluates%20the%20scatter,multiple%20determination%20for%20multiple%20regression.&amp;text=R%2Dsquared%20is%20the%20percentage,that%20a%20linear%20model%20explains.">How To Interpret R-squared in Regression Analysis</a></p></li>
+<li><p><a href="https://socialsciences.mcmaster.ca/jfox/Courses/SPIDA/dummy-regression-notes.pdf">Dummy-Variable Regression</a></p></li>
+</ul>
+<p>-<a href="http://www.stat.yale.edu/Courses/1997-98/101/linreg.htm">Least-Squares Regression</a></p>
+<ul>
+<li><a href="http://facweb.cs.depaul.edu/sjost/csc423/documents/f-test-reg.htm">The F-test for Linear Regression</a>
+-<a href="http://www.science.smith.edu/~jcrouser/SDS293/labs/lab8-r.html">Best Subset</a></li>
+</ul>
+<p>
+<font color="black" face="Verdana, Geneva, sans-serif" size="+1.5"><strong>Summary</strong></font>
+</p>
+<p>For problems ranging from bioinformatics to marketing, many analysts desire to develop “classifiers” instead of developing predictive models</p>
+<p>Data to practice:</p>
+<p><a href="https://www.kdnuggets.com/datasets/index.html" class="uri">https://www.kdnuggets.com/datasets/index.html</a></p>
+<p><a href="http://archive.ics.uci.edu/ml/index.php" class="uri">http://archive.ics.uci.edu/ml/index.php</a></p>
+<hr />
+<p><strong>Further Reading</strong></p>
+<p>Claeskens, G. and Hjort, N.L. (2008) Model Selection and Model Averaging, Cambridge University
+Press, Cambridge.</p>
+<p>Fox, J. (2002) An R and S-Plus Companion to Applied Regression, Sage, Thousand Oaks, CA.</p>
+<hr />
+<p><strong>YOUR TURN 👇</strong></p>
+<ol style="list-style-type: decimal">
+<li>Go back to <code>Saloaries</code> data Case Study:</li>
+</ol>
+<ol style="list-style-type: lower-roman">
+<li>Adding <code>~0</code> to <code>lm()</code> formula enables <code>R</code> to suppress the intercept. If we remove the intercept, then we can directly obtain all “three intercepts” without a reference leveltry to fit the following model:</li>
+</ol>
+<pre><code>model_2_1 &lt;- lm(salary ~  0 + rank + discipline + yrs.since.phd + yrs.service)
+summary(model_2_1)</code></pre>
+<ul>
+<li><p>Does this model differ from the previously fitted <code>model_2</code>? Provide justified explanation.</p></li>
+<li><p>Interpret the model.</p></li>
+</ul>
+<ol start="2" style="list-style-type: lower-roman">
+<li>Can the final fitted model developed for Salaries data Case Study be further simplified? Justify your answer.</li>
+</ol>
+<ol start="2" style="list-style-type: decimal">
+<li>Use <code>Prestige</code> data available from the <code>carData</code> package of datasets designed to accompany <a href="https://socialsciences.mcmaster.ca/jfox/Books/Companion/">J. Fox and S. Weisberg book: An R Companion to Applied Regression, Third Edition, Sage (2019)</a>. Fit a multivariate model that explains variation in the response variable <code>prestige</code>, explainig the resanos behind the steps taken with appropriate interpretation of the final fitted model.</li>
+</ol>
+<p><code>carData::Prestige</code>: The Canadian occupational prestige data, where the observations are occupations. Justification for treating the 102 occupations as a sample implicitly rests on the claim that they are “typical” of the population, at least with respect to the relationship between prestige and income.</p>
+<ul>
+<li><p><code>education</code>: Average education of occupational incumbents, years, in 1971.</p></li>
+<li><p><code>income</code>: Average income of incumbents, dollars, in 1971.</p></li>
+<li><p><code>women</code>: Percentage of incumbents who are women.</p></li>
+<li><p><code>prestige</code>: Pineo-Porter prestige score for occupation, from a social survey conducted in the mid-1960s.</p></li>
+<li><p><code>census</code>: Canadian Census occupational code.</p></li>
+<li><p><code>type</code>: Type of occupation. A factor with levels (note: out of order):</p>
+<ul>
+<li><code>bc</code>: Blue Collar</li>
+<li><code>prof</code>: Professional, Managerial, and Technical</li>
+<li><code>wc</code>: White Collar</li>
+</ul></li>
+</ul>
+<p>To practice multiple regression model fitting procedure we are going to use <code>Prestige</code> data available from the <code>carData</code> package of datasets designed to accompany <a href="https://socialsciences.mcmaster.ca/jfox/Books/Companion/">J. Fox and S. Weisberg book: An R Companion to Applied Regression, Third Edition, Sage (2019)</a>.</p>
+<p><strong><code>carData::data(Prestige)</code></strong>: The Canadian occupational prestige data.
+Although there are many more occupations in the Canadian census, these 102 do not constitute a random sample from the larger population of occupations. Justification for treating the 102 occupations as a sample implicitly rests on the claim that they are “typical” of
+the population, at least with respect to the relationship between prestige and income.</p>
+<p>Data on the prestige and other characteristics of</p>
+<p><a href="https://www.theguardian.com/data" class="uri">https://www.theguardian.com/data</a></p>
+<p><a href="https://data.cdrc.ac.uk/search/field_tags/tutorial-1679/type/dataset?sort_by=changed" class="uri">https://data.cdrc.ac.uk/search/field_tags/tutorial-1679/type/dataset?sort_by=changed</a></p>
+<p><a href="https://data.cdrc.ac.uk/dataset/introduction-spatial-data-analysis-and-visualisation-r" class="uri">https://data.cdrc.ac.uk/dataset/introduction-spatial-data-analysis-and-visualisation-r</a></p>
+<hr />
+<p>© 2020 Tatjana Kecojevic</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/module4/resampling/" title="Resampling"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/module4/clasification/" title="Clasification" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1605356619"></script>
+    <script src="/js/perfect-scrollbar.min.js?1605356619"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1605356619"></script>
+    <script src="/js/jquery.sticky.js?1605356619"></script>
+    <script src="/js/featherlight.min.js?1605356619"></script>
+    <script src="/js/highlight.pack.js?1605356619"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1605356619"></script>
+    <script src="/js/learn.js?1605356619"></script>
+    <script src="/js/hugo-learn.js?1605356619"></script>
+
+    <link href="/mermaid/mermaid.css?1605356619" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1605356619"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105947713-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

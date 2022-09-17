@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.75.1" />
+    <meta name="description" content="Data Literacy in R">
+<meta name="author" content="Tatjana Kecojevic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>Air Pollution :: Data Literacy in R</title>
+
+    
+    <link href="/css/nucleus.css?1605429144" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1605429144" rel="stylesheet">
+    <link href="/css/hybrid.css?1605429144" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1605429144" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1605429144" rel="stylesheet">
+    <link href="/css/auto-complete.css?1605429144" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1605429144" rel="stylesheet">
+    <link href="/css/theme.css?1605429144" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1605429144" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1605429144"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"> </script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/showcases/airpolution/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <!DOCTYPE html>
+<html>
+<body>
+<IMG SRC="/images/logo.png" ALT="DataTeka" WIDTH=100 HEIGHT=100>
+
+</body>
+</html>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1605429144"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1605429144"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1605429144"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/general/" title="About the workshop" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/">
+          <b>1. </b>About the workshop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/whatlearn/" title="General Overview" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/whatlearn/">
+          General Overview
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/instructor/" title="Meet the Instructor" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/instructor/">
+          Meet the Instructor
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/syllabus/" title="Indicative Syllabus" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/syllabus/">
+          Indicative Syllabus
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/" title="Intro to R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/">
+          <b>2. </b>Intro to R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/whatisr/" title="What is R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/whatisr/">
+          What is R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/installr/" title="Install R/RStudio" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/installr/">
+          Install R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/git-and-github/" title="Git and GitHub" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/git-and-github/">
+          Git and GitHub
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/rstudioide/" title="RStudio IDE" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/rstudioide/">
+          RStudio IDE
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/user/" title="How to use R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/user/">
+          How to use R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/statsconcepts/" title="Basic Stats Concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/statsconcepts/">
+          Basic Stats Concepts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/datatypes/" title="Data Types" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/datatypes/">
+          Data Types
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/importexport/" title="Import Data to R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/importexport/">
+          Import Data to R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/datawrangling/" title="Data Wrangling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/datawrangling/">
+          Data Wrangling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/principlesvisualisation/" title="Principles of Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/principlesvisualisation/">
+          Principles of Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/visualisation/" title="Data Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/visualisation/">
+          Data Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/spatialda/" title="Spatial Data Analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/spatialda/">
+          Spatial Data Analysis
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/rmarkdown/" title="Reproducibility" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/rmarkdown/">
+          Reproducibility
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/" title="Showcases" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/showcases/">
+          <b>6. </b>Showcases
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/airpolution/" title="Air Pollution" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/showcases/airpolution/">
+          Air Pollution
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/tricks_tips/" title="Tricks and Tips" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/tricks_tips/">
+          Tricks and Tips
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/covid-19/" title="Case Study: how to use R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/covid-19/">
+          Case Study: how to use R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/TanjaKec"><i class='fab fa-fw fa-github'></i>GitHub</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download matcornic/hugo-theme-learn on GitHub">Download</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn" data-icon="octicon-star" data-show-count="true" aria-label="Star matcornic/hugo-theme-learn on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork matcornic/hugo-theme-learn on GitHub">Fork</a>
+
+    <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/Showcases/AirPolution/_index.en.html" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Introduction to R</a> > <a href='/showcases/'>Showcases</a> > Air Pollution
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Air Pollution
+            </h1>
+          
+
+        
+
+
+
+
+	
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/datatables-binding/datatables.js"></script>
+<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
+
+
+<p>This is a data analysis report about air pollution in Belgrade with an explanation of the R code used. Data that will be used for the analysis comes from the stations, which are set up by an independent initiative <a href="https://vazduhgradjanima.rs">Vazduh Gradjanima</a>.</p>
+<hr />
+<p><strong>Reading and organising data</strong></p>
+<p>We will start the analysis by uploading the necessary packages and data into R.</p>
+<p>If you have not got the packages used in the following code, you will need to uncomment the first few lines (delete the <code>#</code> symbol) in the code below.</p>
+<pre class="r"><code>&gt; #install.packages(&quot;rmarkdown&quot;)
+&gt; #install.packages(&quot;leaflet&quot;)
+&gt; #install.packages(&quot;lubridate&quot;)
+&gt; #install.packages(&quot;dplyr&quot;)
+&gt; #install.packages(&quot;tidyverse&quot;)
+&gt; #install.packages(&quot;DT&quot;)
+&gt; 
+&gt; library(leaflet)
+&gt; suppressPackageStartupMessages(library(lubridate))
+&gt; suppressPackageStartupMessages(library(dplyr))
+&gt; suppressPackageStartupMessages(library(tidyverse))
+&gt; 
+&gt; # read data
+&gt; mydata &lt;- read.csv(&#39;https://vazduhgradjanima.rs/files/data.csv&#39;, 
++                     header=T, 
++                     na.strings=c(&quot;&quot;,&quot;NA&quot;),
++                     stringsAsFactor = FALSE) </code></pre>
+<p>It is always a good idea to have a look at data you upload, before you start using it for your analysis.</p>
+<pre class="r"><code>&gt; # scan data
+&gt; glimpse(mydata)</code></pre>
+<pre><code>## Observations: 29,426
+## Variables: 11
+## $ timestamp    &lt;chr&gt; &quot;2019-10-13T14:00:00Z&quot;, &quot;2019-10-13T15:00:00Z&quot;, &quot;2019-10…
+## $ device_id    &lt;chr&gt; &quot;qr0Kde0VpQOQLCQNrFyIZWfy&quot;, &quot;qr0Kde0VpQOQLCQNrFyIZWfy&quot;, …
+## $ device_title &lt;chr&gt; &quot;Klimerko Krunska&quot;, &quot;Klimerko Krunska&quot;, &quot;Klimerko Krunsk…
+## $ location     &lt;chr&gt; &quot;44.80868072883205,20.465567163036557&quot;, &quot;44.808680728832…
+## $ pm10         &lt;dbl&gt; 20.5, 13.5, 22.0, 25.5, 34.0, 33.5, 31.5, 50.0, 51.5, 43…
+## $ humidity     &lt;dbl&gt; 30.62500, 33.50000, 37.45000, 41.15000, 44.07500, 44.875…
+## $ pm1          &lt;dbl&gt; 13.0, 11.0, 15.5, 20.5, 22.0, 23.0, 22.0, 31.0, 32.0, 27…
+## $ pm2.5        &lt;dbl&gt; 17.0, 11.5, 19.0, 25.5, 31.0, 32.0, 30.0, 41.0, 44.0, 38…
+## $ pressure     &lt;dbl&gt; 1006.000, 1006.000, 1006.000, 1006.750, 1007.000, 1007.0…
+## $ temperature  &lt;dbl&gt; 29.100, 28.025, 26.325, 25.000, 23.950, 23.475, 22.750, …
+## $ uv.index     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …</code></pre>
+<p>We can do some tweaking, by removing a few variables and separating day from time and creating separate columns for latitude and longitude variables.</p>
+<pre class="r"><code>&gt; ## remove 2nd and the last column
+&gt; mydata &lt;- mydata[, -c(2, 11)]
+&gt; # separate date from time
+&gt; mydata &lt;- separate(mydata, timestamp, c(&quot;date&quot;, &quot;time&quot;), sep = &quot;T&quot;)
+&gt; ## remove the last character from the `time` variable
+&gt; mydata$time &lt;- (str_sub(mydata$time, end = -2))
+&gt; ## separate lat and long
+&gt; mydata &lt;- separate(mydata, location , c(&quot;lat&quot;, &quot;lng&quot;), sep =&quot;,&quot;)
+&gt; # scan data
+&gt; glimpse(mydata)</code></pre>
+<pre><code>## Observations: 29,426
+## Variables: 11
+## $ date         &lt;chr&gt; &quot;2019-10-13&quot;, &quot;2019-10-13&quot;, &quot;2019-10-13&quot;, &quot;2019-10-13&quot;, …
+## $ time         &lt;chr&gt; &quot;14:00:00&quot;, &quot;15:00:00&quot;, &quot;16:00:00&quot;, &quot;17:00:00&quot;, &quot;18:00:0…
+## $ device_title &lt;chr&gt; &quot;Klimerko Krunska&quot;, &quot;Klimerko Krunska&quot;, &quot;Klimerko Krunsk…
+## $ lat          &lt;chr&gt; &quot;44.80868072883205&quot;, &quot;44.80868072883205&quot;, &quot;44.8086807288…
+## $ lng          &lt;chr&gt; &quot;20.465567163036557&quot;, &quot;20.465567163036557&quot;, &quot;20.46556716…
+## $ pm10         &lt;dbl&gt; 20.5, 13.5, 22.0, 25.5, 34.0, 33.5, 31.5, 50.0, 51.5, 43…
+## $ humidity     &lt;dbl&gt; 30.62500, 33.50000, 37.45000, 41.15000, 44.07500, 44.875…
+## $ pm1          &lt;dbl&gt; 13.0, 11.0, 15.5, 20.5, 22.0, 23.0, 22.0, 31.0, 32.0, 27…
+## $ pm2.5        &lt;dbl&gt; 17.0, 11.5, 19.0, 25.5, 31.0, 32.0, 30.0, 41.0, 44.0, 38…
+## $ pressure     &lt;dbl&gt; 1006.000, 1006.000, 1006.000, 1006.750, 1007.000, 1007.0…
+## $ temperature  &lt;dbl&gt; 29.100, 28.025, 26.325, 25.000, 23.950, 23.475, 22.750, …</code></pre>
+<p>We will check how many unique records each variable in our data has.</p>
+<pre class="r"><code>&gt; (uniq &lt;- unlist(lapply(mydata, function(x) length(unique(x)))))</code></pre>
+<pre><code>##         date         time device_title          lat          lng         pm10 
+##           93           24           26           26           26         3403 
+##     humidity          pm1        pm2.5     pressure  temperature 
+##         7572         2853         3245         1949         5291</code></pre>
+<p>To us it is most interesting to notice that we have <code>uniq[[3]] = 26</code> stations in total. Next, we’ll check if all of the stations are active, by examining the number of readings for each station.</p>
+<pre class="r"><code>&gt; # how many reading each station makes
+&gt; mydata %&gt;%
++   group_by(device_title) %&gt;%
++   summarise(no_readings = n()) %&gt;%
++   arrange(no_readings) %&gt;% 
++   DT::datatable()</code></pre>
+<div id="htmlwidget-1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26"],["Descon Klimerko Uciteljsko Naselje","Descon Klimerko Rex","Klimerko Senjak","Milovanovića Klimerko","Klimerko Stepa Stepanovic","Descon Klimerko Blok 70","Descon Klimerko Haklab","Klimerko Kalenić","Descon Klimerko Neimar","Klimerko Zvezdarska Šuma","Klimerko Arena","Descon Klimerko Zemun Karadjordjev trg","Klimerko Sava Centar","Descon Polyhedra","Klimerko Banovo Brdo","Descon Klimerko","Paxy Environment Sensors","Zagađenko","Klimerko Juzni Bulevar","Descon Klimerko Cerak","Descon Klimerko Zoo vrt","Klimerko Jerkovic","Descon Klimerko Smederevo","Descon Klimerko - Filmski grad","Даба Струмичка","Klimerko Krunska"],[1,2,156,206,214,217,311,489,756,973,1054,1069,1323,1327,1365,1367,1586,1644,1645,1816,1918,1947,1951,1988,1988,2113]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>device_title<\/th>\n      <th>no_readings<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>There are a couple of stations with only one or two readings. We will remove those stations form the data set and focus in our study only on the active stations.</p>
+<pre class="r"><code>&gt; # remove the inactive stations with only one or two readings using `filter()`
+&gt; mydata_new &lt;- mydata %&gt;%
++   filter(!device_title %in% c(&quot;Descon Klimerko Uciteljsko Naselje&quot;, &quot;Descon Klimerko Rex&quot;)) </code></pre>
+<hr />
+<p><strong>Mapping the stations</strong></p>
+<p>To see where the stations are allocated we will plot them on Google maps. We will use the <code>leaflet</code> package to do this and create a sub data with only a list of the stations and their positions.</p>
+<pre class="r"><code>&gt; # creating a dataframe with only names and lat &amp; lng for each station
+&gt; stations &lt;- data.frame(lapply(mydata_new[,c(3:5)], function(x) unique(x))) %&gt;% 
++             drop_na()
+&gt; # convert factor data type into numeric
+&gt; stations [, 2] &lt;- as.numeric(as.character(stations[,2]))
+&gt; stations [, 3] &lt;- as.numeric(as.character(stations[,3]))
+&gt; summary(stations)</code></pre>
+<pre><code>##                          device_title      lat             lng       
+##  Descon Klimerko               : 1    Min.   :44.27   Min.   :19.88  
+##  Descon Klimerko - Filmski grad: 1    1st Qu.:44.77   1st Qu.:20.42  
+##  Descon Klimerko Blok 70       : 1    Median :44.79   Median :20.46  
+##  Descon Klimerko Cerak         : 1    Mean   :44.75   Mean   :20.46  
+##  Descon Klimerko Haklab        : 1    3rd Qu.:44.80   3rd Qu.:20.48  
+##  Descon Klimerko Neimar        : 1    Max.   :44.84   Max.   :20.92  
+##  (Other)                       :17</code></pre>
+<p>Once we have the subset data we can plot it using the <code>leaflet</code> package as below.</p>
+<pre class="r"><code>&gt; library(leaflet)
+&gt; 
+&gt; minlat &lt;- min(stations$lat)
+&gt; maxlat &lt;- max(stations$lat)
+&gt; minlng &lt;- min(stations$lng)
+&gt; maxlng &lt;- max(stations$lng)
+&gt; 
+&gt; stations %&gt;% 
++   group_by(device_title, lat, lng) %&gt;% 
++   leaflet() %&gt;% 
++   addTiles() %&gt;%
++   fitBounds(~minlng, ~minlat, ~maxlng, ~maxlat) %&gt;% 
++   addCircles(lng = ~lng, lat = ~lat,
++              radius = 150, weight = 5, color = &quot;black&quot;,
++              fillColor = &quot;red&quot;, fillOpacity = 0.7,  
++              popup = ~paste(&quot;&lt;b&gt;&quot;, device_title)
++   ) </code></pre>
+<p><div id="htmlwidget-2" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addCircles","args":[[44.8086807288321,44.7934208625688,44.7717927,44.8101056777118,44.7517907410623,44.8381894711622,44.4479169464284,44.6590207523259,44.7501146474979,44.7964781646008,44.8059053116863,44.8247898319289,44.7956114951176,44.8262233741392,44.7788453,44.8023221800767,44.2719430585655,44.7719510120105,44.7591616907743,44.8029715,44.7938789777299,44.797249009396,44.7895872785844],[20.4655671630366,20.484244745508,20.4179957,20.4219843625797,20.4192099889217,20.4162849312121,20.6961055564194,20.9240896943999,20.4298409408873,20.5168476978046,20.42933311221,20.4614385359001,20.4949280454503,20.4559197429909,20.4845379,20.3961473330855,19.8813456565342,20.4111830302677,20.4867081998569,20.4747028,20.473176526626,20.4806416390608,20.4346574941109],150,null,null,{"interactive":true,"className":"","stroke":true,"color":"black","weight":5,"opacity":0.5,"fill":true,"fillColor":"red","fillOpacity":0.7},["<b> Klimerko Krunska","<b> Klimerko Juzni Bulevar","<b> Klimerko Banovo Brdo","<b> Klimerko Arena","<b> Descon Klimerko Cerak","<b> Descon Klimerko Zemun Karadjordjev trg","<b> Descon Klimerko","<b> Descon Klimerko Smederevo","<b> Descon Klimerko - Filmski grad","<b> Klimerko Zvezdarska Šuma","<b> Klimerko Sava Centar","<b> Zagađenko","<b> Descon Polyhedra","<b> Descon Klimerko Zoo vrt","<b> Klimerko Jerkovic","<b> Descon Klimerko Blok 70","<b> Milovanovića Klimerko","<b> Paxy Environment Sensors","<b> Klimerko Stepa Stepanovic","<b> Klimerko Kalenić","<b> Descon Klimerko Neimar","<b> Descon Klimerko Haklab","<b> Klimerko Senjak"],null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null,null]}],"fitBounds":[44.2719430585655,19.8813456565342,44.8381894711622,20.9240896943999,[]],"limits":{"lat":[44.2719430585655,44.8381894711622],"lng":[19.8813456565342,20.9240896943999]}},"evals":[],"jsHooks":[]}</script>
+Notice that there are a few stations outside of Belgrade. By clicking on their location points on the map, we can identify them and remove them from our data set, as we want to focus only on Belgrade’s stations.</p>
+<pre class="r"><code>&gt; mydata_bg &lt;- mydata %&gt;%
++   filter(!device_title %in% c(&quot;Milovanovića Klimerko&quot;, &quot;Descon Klimerko&quot;, &quot;Descon Klimerko Smederevo&quot;)) </code></pre>
+<p>Once removed, we will create a new map, by again creating sub dataframe with only stations we want to use in the analysis.</p>
+<pre class="r"><code>&gt; # creating a dataframe with only names and lat &amp; lng for each station
+&gt; stations &lt;- data.frame(lapply(mydata_bg[,c(3:5)], function(x) unique(x))) %&gt;% 
++   drop_na()
+&gt; # convert factor data type into numeric
+&gt; stations [, 2] &lt;- as.numeric(as.character(stations[,2]))
+&gt; stations [, 3] &lt;- as.numeric(as.character(stations[,3]))
+&gt; summary(stations)</code></pre>
+<pre><code>##                          device_title      lat             lng       
+##  Descon Klimerko - Filmski grad: 1    Min.   :44.75   Min.   :20.40  
+##  Descon Klimerko Blok 70       : 1    1st Qu.:44.78   1st Qu.:20.42  
+##  Descon Klimerko Cerak         : 1    Median :44.80   Median :20.46  
+##  Descon Klimerko Haklab        : 1    Mean   :44.79   Mean   :20.46  
+##  Descon Klimerko Neimar        : 1    3rd Qu.:44.81   3rd Qu.:20.48  
+##  Descon Klimerko Rex           : 1    Max.   :44.84   Max.   :20.52  
+##  (Other)                       :16</code></pre>
+<pre class="r"><code>&gt; # mapping the stations
+&gt; minlat &lt;- min(stations$lat)
+&gt; maxlat &lt;- max(stations$lat)
+&gt; minlng &lt;- min(stations$lng)
+&gt; maxlng &lt;- max(stations$lng)
+&gt; 
+&gt; stations %&gt;% 
++   group_by(device_title, lat, lng) %&gt;% 
++   leaflet() %&gt;% 
++   addTiles() %&gt;%
++   fitBounds(~minlng, ~minlat, ~maxlng, ~maxlat) %&gt;% 
++   addCircles(lng = ~lng, lat = ~lat,
++              radius = 150, weight = 5, color = &quot;black&quot;,
++              fillColor = &quot;red&quot;, fillOpacity = 0.7,  
++              popup = ~paste(&quot;&lt;b&gt;&quot;, device_title)) </code></pre>
+<div id="htmlwidget-3" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addCircles","args":[[44.8086807288321,44.7934208625688,44.7717927,44.8101056777118,44.7517907410623,44.8381894711622,44.7501146474979,44.7964781646008,44.8059053116863,44.8247898319289,44.7956114951176,44.8262233741392,44.7788453,44.8261921366176,44.8023221800767,44.7719510120105,44.7912658822079,44.7591616907743,44.8029715,44.7938789777299,44.797249009396,44.7895872785844],[20.4655671630366,20.484244745508,20.4179957,20.4219843625797,20.4192099889217,20.4162849312121,20.4298409408873,20.5168476978046,20.42933311221,20.4614385359001,20.4949280454503,20.4559197429909,20.4845379,20.456258794127,20.3961473330855,20.4111830302677,20.5076357750381,20.4867081998569,20.4747028,20.473176526626,20.4806416390608,20.4346574941109],150,null,null,{"interactive":true,"className":"","stroke":true,"color":"black","weight":5,"opacity":0.5,"fill":true,"fillColor":"red","fillOpacity":0.7},["<b> Klimerko Krunska","<b> Klimerko Juzni Bulevar","<b> Klimerko Banovo Brdo","<b> Klimerko Arena","<b> Descon Klimerko Cerak","<b> Descon Klimerko Zemun Karadjordjev trg","<b> Descon Klimerko - Filmski grad","<b> Klimerko Zvezdarska Šuma","<b> Klimerko Sava Centar","<b> Zagađenko","<b> Descon Polyhedra","<b> Descon Klimerko Zoo vrt","<b> Klimerko Jerkovic","<b> Descon Klimerko Rex","<b> Descon Klimerko Blok 70","<b> Paxy Environment Sensors","<b> Descon Klimerko Uciteljsko Naselje","<b> Klimerko Stepa Stepanovic","<b> Klimerko Kalenić","<b> Descon Klimerko Neimar","<b> Descon Klimerko Haklab","<b> Klimerko Senjak"],null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null,null]}],"fitBounds":[44.7501146474979,20.3961473330855,44.8381894711622,20.5168476978046,[]],"limits":{"lat":[44.7501146474979,44.8381894711622],"lng":[20.3961473330855,20.5168476978046]}},"evals":[],"jsHooks":[]}</script>
+<hr />
+<p><strong>Analysing the readings</strong></p>
+<p>In this section we will look through the readings and try to make some sense of it all.
+If you are not familiar with the information collected by the stations, ie. about the pm particles you can check the following link: <a href="https://www.irceline.be/en/documentation/faq/what-is-pm10-and-pm2.5" class="uri">https://www.irceline.be/en/documentation/faq/what-is-pm10-and-pm2.5</a>.</p>
+<hr />
+<p><strong>Number of readings per week days</strong></p>
+<p>The next chunk of code counts the number of readings per each week day, it shows it in a table and visualises it using the <code>ggplot2()</code> package.</p>
+<pre class="r"><code>&gt; mydata_bg %&gt;% 
++   mutate(wday = wday(date, label = TRUE)) %&gt;% 
++   group_by(wday) %&gt;% 
++   summarise(no_readings = n()) %&gt;% 
++   DT::datatable()</code></pre>
+<div id="htmlwidget-4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],[3809,3730,3542,3627,3683,3719,3792]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>wday<\/th>\n      <th>no_readings<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>&gt; mydata_bg %&gt;% 
++   mutate(wday = wday(date, label = TRUE)) %&gt;% 
++   ggplot(aes(x = wday, fill = wday)) +
++   geom_bar(color = &quot;black&quot;) +
++   xlab(&quot;week days readings&quot;) + 
++   scale_fill_brewer(palette = &quot;Dark2&quot;) + 
++   theme(legend.position = &quot;none&quot;) </code></pre>
+<p><img src="/Showcases/AirPolution/_index.en_files/figure-html/unnamed-chunk-11-2.png" width="672" /></p>
+<p><strong>Average concentration of particles each week day</strong></p>
+<pre class="r"><code>&gt; # mean pm2.5 per week day
+&gt; mydata_bg %&gt;% 
++   mutate(wday = wday(date, label = TRUE)) %&gt;% 
++   group_by(wday) %&gt;% 
++   summarise(mean_pm2.5 = mean(pm2.5, na.rm = TRUE)) %&gt;% 
++   ggplot(aes(x = wday, y = mean_pm2.5, fill = wday)) +
++   geom_bar(stat=&quot;identity&quot;, color = &quot;black&quot;) + 
++   theme(plot.title = element_text(size = 14, vjust = 2, hjust=0.5)) +
++   labs (title = &quot;average value of pm2.5 per week days&quot;, 
++         caption = &quot;Data from: https://vazduhgradjanima.rs&quot;, 
++         x = &quot;week days&quot;, y = &quot;average pm2.5&quot;) +
++   scale_fill_brewer(palette=&quot;Accent&quot;) + 
++   theme(legend.position=&quot;none&quot;)</code></pre>
+<p><img src="/Showcases/AirPolution/_index.en_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre class="r"><code>&gt; # mean pm10 per week day
+&gt; mydata_bg %&gt;% 
++   mutate(wday = wday(date, label = TRUE)) %&gt;% 
++   group_by(wday) %&gt;% 
++   summarise(mean_pm10 = mean(pm10, na.rm = TRUE)) %&gt;% 
++   ggplot(aes(x = wday, y = mean_pm10, fill = wday)) +
++   geom_bar(stat=&quot;identity&quot;, color = &quot;black&quot;) + 
++   theme(plot.title = element_text(size = 14, vjust = 2, hjust=0.5)) +
++   labs (title = &quot;average value of pm10 per week days&quot;, 
++         caption = &quot;Data from: https://vazduhgradjanima.rs&quot;, 
++         x = &quot;week days&quot;, y = &quot;average pm10&quot;) +
++   scale_fill_brewer(palette=&quot;Accent&quot;) + 
++   theme(legend.position=&quot;none&quot;) </code></pre>
+<p><img src="/Showcases/AirPolution/_index.en_files/figure-html/unnamed-chunk-12-2.png" width="672" />
+The previous two plots look very similar. It would be interesting to see the bars of the two plots next to each other.</p>
+<pre class="r"><code>&gt; mydata_new %&gt;% 
++   mutate(wday = wday(date, label = TRUE)) %&gt;% 
++   group_by(wday) %&gt;% 
++   summarise(mean_pm2.5 = mean(pm2.5, na.rm = TRUE), mean_pm10 = mean(pm10, na.rm = TRUE)) %&gt;% 
++   gather(&quot;pm_no&quot;, &quot;mean_pm&quot;, -wday, factor_key = TRUE) %&gt;% 
++   ggplot(aes(x = wday, y = mean_pm, fill = pm_no )) +
++   geom_bar(stat=&quot;identity&quot;, position = &quot;dodge&quot;, color = &quot;black&quot;) +
++   theme(plot.title = element_text(size = 14, vjust = 2, hjust=0.5)) +
++   labs (title = &quot;average value of pm2.5 and pm10 per week days&quot;, 
++         caption = &quot;Data from: https://vazduhgradjanima.rs&quot;, 
++         x = &quot;week days&quot;, y = &quot;average pm&quot;) +
++   scale_fill_brewer(palette=&quot;Set1&quot;) + 
++   theme(legend.position=&quot;bottom&quot;) </code></pre>
+<p><img src="/Showcases/AirPolution/_index.en_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><strong>Average concentration of particles each month</strong></p>
+<pre class="r"><code>&gt; mydata_bg %&gt;% 
++   mutate(mon = month(date, label = TRUE, abbr = TRUE)) %&gt;% 
++   group_by(mon) %&gt;% 
++   summarise(no_readings = n()) %&gt;% 
++   DT::datatable()</code></pre>
+<p><div id="htmlwidget-5" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5">{"x":{"filter":"none","data":[["1","2","3","4"],["Jan","Oct","Nov","Dec"],[3935,3310,9342,9315]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mon<\/th>\n      <th>no_readings<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+It would be better to have January showing after December, so we will reorder them.</p>
+<pre class="r"><code>&gt; # order monts Oct-Jan
+&gt; mydata_bg %&gt;% 
++     mutate(mon = month(date, label = TRUE, abbr = TRUE)) %&gt;% 
++     mutate(mon = factor(mon, levels=c(&quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;, &quot;Jan&quot;))) %&gt;%
++     group_by(mon) %&gt;% 
++     summarise(no_readings = n()) %&gt;% 
++   DT::datatable()</code></pre>
+<div id="htmlwidget-6" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6">{"x":{"filter":"none","data":[["1","2","3","4"],["Oct","Nov","Dec","Jan"],[3310,9342,9315,3935]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mon<\/th>\n      <th>no_readings<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>&gt; mydata_bg %&gt;% 
++   mutate(mon = month(date, label = TRUE, abbr = TRUE)) %&gt;% 
++   mutate(mon = factor(mon, levels=c(&quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;, &quot;Jan&quot;))) %&gt;%
++   group_by(mon) %&gt;% 
++   summarise(mean_pm2.5 = mean(pm2.5, na.rm = TRUE), mean_pm10 = mean(pm10, na.rm = TRUE)) %&gt;% 
++   gather(&quot;pm_no&quot;, &quot;mean_pm&quot;, -mon, factor_key = TRUE) %&gt;% 
++   ggplot(aes(x = mon, y = mean_pm, fill = pm_no )) +
++   geom_bar(stat=&quot;identity&quot;, position = &quot;dodge&quot;, color = &quot;black&quot;) +
++   coord_flip() +
++   theme(plot.title = element_text(size = 14, vjust = 2, hjust=0.5)) +
++   labs (title = &quot;average value of pm2.5 and pm10 per month&quot;, 
++         caption = &quot;Data from: https://vazduhgradjanima.rs&quot;, 
++         x = &quot;month&quot;, y = &quot;average pm&quot;) +
++   scale_fill_brewer(palette=&quot;Paired&quot;) + 
++   theme(legend.position=&quot;bottom&quot;) </code></pre>
+<p><img src="/Showcases/AirPolution/_index.en_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><strong>Average concentration of particles each hour</strong></p>
+<pre class="r"><code>&gt; mydata_bg %&gt;% 
++   group_by(time) %&gt;% 
++   summarise(no_readings = n()) %&gt;% 
++   DT::datatable()</code></pre>
+<div id="htmlwidget-7" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"],["00:00:00","01:00:00","02:00:00","03:00:00","04:00:00","05:00:00","06:00:00","07:00:00","08:00:00","09:00:00","10:00:00","11:00:00","12:00:00","13:00:00","14:00:00","15:00:00","16:00:00","17:00:00","18:00:00","19:00:00","20:00:00","21:00:00","22:00:00","23:00:00"],[1064,1062,1062,1046,1045,1058,1072,1087,1098,1106,1101,1094,1093,1085,1092,1083,1082,1079,1082,1080,1081,1085,1091,1074]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>time<\/th>\n      <th>no_readings<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>&gt; mydata_bg %&gt;% 
++   group_by(time) %&gt;%
++   summarise(mean_pm2.5 = mean(pm2.5, na.rm = TRUE), mean_pm10 = mean(pm10, na.rm = TRUE)) %&gt;% 
++   gather(&quot;pm_no&quot;, &quot;mean_pm&quot;, -time, factor_key = TRUE) %&gt;% 
++   ggplot(aes(x = time, y = mean_pm, fill = pm_no )) +
++   geom_bar(stat=&quot;identity&quot;, position = &quot;dodge&quot;, color = &quot;black&quot;) +
++   coord_flip() +
++   theme(plot.title = element_text(size = 14, vjust = 2, hjust=0.5)) +
++   labs (title = &quot;average value of pm2.5 and pm10 per hour&quot;, 
++         caption = &quot;Data from: https://vazduhgradjanima.rs&quot;, 
++         x = &quot;month&quot;, y = &quot;average pm&quot;) +
++   scale_fill_brewer(palette=&quot;Paired&quot;) + 
++   theme(legend.position=&quot;bottom&quot;) </code></pre>
+<p><img src="/Showcases/AirPolution/_index.en_files/figure-html/unnamed-chunk-17-2.png" width="672" /></p>
+<hr />
+<p><strong>Pressure and Humidity vs pm10</strong></p>
+<p>In this section we will try to investigate if the concentration of pm particles depens upon other factors such as pressure and humidity.</p>
+<p><strong>pm10 vs pressure</strong></p>
+<p>To investigate the relationship between air pressure and concentration of pm10 particles we will create a scatterplot:</p>
+<pre class="r"><code>&gt; mydata_bg %&gt;% 
++   drop_na() %&gt;% 
++   ggplot(aes(x = pressure, y = pm10)) +
++   geom_point(alpha = 0.2, shape = 20, col = &quot;steelblue&quot;, size = 2) + 
++   geom_smooth(method = &quot;lm&quot;, se = F, col = &quot;maroon3&quot;) + 
++   geom_smooth(method = &quot;loess&quot;, se = F, col = &quot;limegreen&quot;) + 
++   xlim(c(960, 1030)) + 
++   ylim(c(0, 500)) +
++   # give a title an label axes
++   labs(title = &quot;Pressure vs. pm10&quot;, 
++        x = &quot;pressure&quot;, y = &quot;pm10.&quot;) + 
++   
++   # modify the appearance
++   theme(legend.position = &quot;none&quot;, 
++         panel.border = element_rect(fill = NA, 
++                                     colour = &quot;black&quot;,
++                                     size = .75),
++         plot.title=element_text(hjust=0.5)) </code></pre>
+<p><img src="/Showcases/AirPolution/_index.en_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>The data is quite messy, with a number of very extreme readings, which is why we “chopped” the axis using the <code>xlim()</code> and the <code>ylim()</code> functions after checking the distributions of the two variables. This is a part of informal investigation of the possible relationship between <code>pm10</code> and <code>pressure</code>, and a more rigorous procedure should be adopted which is beyond the scope of module2’s lesson.</p>
+<p><strong>pm10 vs humidity</strong></p>
+<p>We will adopt the same approach to investigate a possible relationship between humidity and concentration of the pm10 particles.</p>
+<pre class="r"><code>&gt; mydata_bg %&gt;% 
++   drop_na() %&gt;% 
++   ggplot(aes(x = humidity, y = pm10)) +
++   geom_point(alpha = 0.2, shape = 20, col = &quot;steelblue&quot;, size = 2) + 
++   geom_smooth(method = &quot;lm&quot;, se = F, col = &quot;maroon3&quot;) + 
++   geom_smooth(method = &quot;loess&quot;, se = F, col = &quot;limegreen&quot;) + 
++   # give a title an label axes
++   labs(title = &quot;Humidity vs. pm10&quot;, 
++        x = &quot;humidity&quot;, y = &quot;pm10.&quot;) + 
++   
++   # modify the appearance
++   theme(legend.position = &quot;none&quot;, 
++         panel.border = element_rect(fill = NA, 
++                                     colour = &quot;black&quot;,
++                                     size = .75),
++         plot.title=element_text(hjust=0.5))</code></pre>
+<p><img src="/Showcases/AirPolution/_index.en_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>As a challenge try to use a scatterplot to investigate a possible relationship between the concentration of the <code>p10</code> particles and the <code>temperature</code>.</p>
+<p><strong>Happy R coding!!!</strong> 😃🙌💜</p>
+<hr />
+<p><strong>YOUR TURN 👇</strong></p>
+<p>Using ‘athlete_events.csv’ file available from <a href="https://github.com/TanjaKec/RMarkdown4RR" class="uri">https://github.com/TanjaKec/RMarkdown4RR</a>
+(inside the <code>data</code> folder) create a RMarkdown report which will:</p>
+<ol style="list-style-type: lower-roman">
+<li>Examine the structure of the data</li>
+<li>Select variables that end with letter <code>t</code> and start with letter <code>S</code></li>
+<li>Create Body Mass Index variable as <span class="math inline">\(kg/m^2\)</span> (hint: <span class="math inline">\(BMI = Weight / (Height/100)^2\)</span>)</li>
+<li>Filter from data:</li>
+</ol>
+<ul>
+<li>only Serbian teams and save it as <code>olympicSR</code></li>
+<li>only Serbian teams from 2000 onward and save it as <code>olympicSR21c</code>
+athletes whose weight is bigger than 100kg and height is over 2m (hint: <em>Don’t forget to use == instead of =! and Don’t forget the quotes &quot;&quot;</em>)</li>
+</ul>
+<ol start="22" style="list-style-type: lower-alpha">
+<li>Arrange Serbian athletes in <code>olympicSR21c</code>data frame by Height in ascending and descending order.</li>
+</ol>
+<ol start="6" style="list-style-type: lower-roman">
+<li>Using olympicSR df</li>
+</ol>
+<ul>
+<li>find the youngest athlete</li>
+<li>find the heaviest athlete</li>
+</ul>
+<ol start="7" style="list-style-type: lower-roman">
+<li>Use <code>summarise()</code>:</li>
+</ol>
+<ul>
+<li>to print out a summary of olypicSR df containing two variables: max_Age and max_BMI</li>
+<li>to print out a summary of olypicSR df containing two variables: mean_Age and mean_BMI</li>
+</ul>
+<ol start="8" style="list-style-type: lower-roman">
+<li>Remember:</li>
+</ol>
+<ul>
+<li>dplyr’s the <code>group_by()</code> function enables you to group your data. It allows you to create a separate df that splits the original df by a variable</li>
+<li>Function <code>datatable()</code> from DT package enables you to display as table on HTML page an R data object that can be filtered, arranged etc</li>
+</ul>
+<p>Knowing about the <code>group_by()</code> and <code>DT::datatable()</code> functions, find out number of medals for each of the exYU countrie team for 2016 olypic games?</p>
+<ul>
+<li>visualise your finding!</li>
+</ul>
+<hr />
+<p>© 2020 Tatjana Kecojevic</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/showcases/" title="Showcases"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/showcases/tricks_tips/" title="Tricks and Tips" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1605429144"></script>
+    <script src="/js/perfect-scrollbar.min.js?1605429144"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1605429144"></script>
+    <script src="/js/jquery.sticky.js?1605429144"></script>
+    <script src="/js/featherlight.min.js?1605429144"></script>
+    <script src="/js/highlight.pack.js?1605429144"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1605429144"></script>
+    <script src="/js/learn.js?1605429144"></script>
+    <script src="/js/hugo-learn.js?1605429144"></script>
+
+    <link href="/mermaid/mermaid.css?1605429144" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1605429144"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105947713-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

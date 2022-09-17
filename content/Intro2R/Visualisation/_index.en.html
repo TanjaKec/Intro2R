@@ -1,0 +1,419 @@
+---
+date: "2016-04-09T16:50:16+02:00"
+title: Data Visualisation
+output: 
+  learnr::tutorial
+weight: 11
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Most of you, if not all, will be familiar with creating graphs in Excel. Software such as Excel has a predefined set of menu options for plotting the data that is the focus of the end result: “pretty graph”. These types of menus assume data to be in a format ready for plotting, which when you get raw data is hardly the case. You are probably going to have to organise and wrangle your data to make it ready for effective visualisation.</p>
+<p><strong>The Grammar of Graphics</strong></p>
+<p>The <a href="http://vita.had.co.nz/papers/layered-grammar.html">grammar of graphics</a> enables a structured way of creating a plot by adding the components as layers, making it look effective and attractive.</p>
+<p>It enables you to specify building blocks of a plot and to combine them to create the graphical display that you want. There are 8 building blocks:</p>
+<ul>
+<li><p>data</p></li>
+<li><p>aesthetic mapping</p></li>
+<li><p>geometric object</p></li>
+<li><p>statistical transformations</p></li>
+<li><p>scales</p></li>
+<li><p>coordinate system</p></li>
+<li><p>position adjustments</p></li>
+<li><p>faceting</p></li>
+</ul>
+<p>Imagine talking about baking a cake and adding a cherry on the top. 🎂🍒 This philosophy has been built into the <a href="https://ggplot2.tidyverse.org/reference/"><code>ggplot</code></a> package by <a href="http://hadley.nz">Hadle Wickham</a> for creating elegant and complex plots in R.</p>
+<hr />
+<p><strong><code>ggplot2</code></strong></p>
+<p>Learning how to use the <code>ggplot2</code> package can be challenging, but the results are highly rewarding and just like R itself, it becomes easier the more you use it.</p>
+<p>{{% notice warning %}}
+Unlike base graphics, ggplot works with dataframes and not individual vectors.
+{{% /notice %}}</p>
+<p>The best way to master it is by practising. So let us create a first <code>ggplot</code>. 😃
+What we need to do is the following:</p>
+<ol style="list-style-type: lower-roman">
+<li>Wrangle the data in a format suitable for visualisation</li>
+<li>“Initialise” a plot with <code>ggplot()</code>:</li>
+</ol>
+<p><strong>ggplot(<span style="color:blue">dataframe</span>, aes(<span style="color:orangered">x = explanatory variable</span>, <span style="color:green">y = response variable</span>))</strong></p>
+<p>This will draw a blank ggplot, even though the x and y are specified. <code>ggplot</code> doesn’t assume the plot you meant to be drawn (a scatterplot). You only specify the data set and columns ie. variables to be used. Also note that the <code>aes( )</code> function is used to specify the x and y axes.</p>
+<ul>
+<li><ol start="3" style="list-style-type: lower-roman">
+<li>Add layers with <code>geom_</code> functions:</li>
+</ol></li>
+</ul>
+<p><strong>geom_point()</strong></p>
+<p>We will add points using a <strong>geom layer</strong> called <code>geom_point</code>.</p>
+<pre class="r"><code># load the packages
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(gapminder))
+suppressPackageStartupMessages(library(ggplot2))
+
+# wrangle the data (Can you remember what this code does?)
+gapminder_pipe &lt;- gapminder %&gt;%
+  filter(continent == &quot;Europe&quot; &amp; year ==  2007) %&gt;%
+  mutate(pop_e6 = pop / 1000000)
+
+# plot the data
+ggplot(gapminder_pipe, aes(x = pop_e6, y = lifeExp)) +
+  geom_point(col =&quot;red&quot;)</code></pre>
+<p><img src="/Intro2R/Visualisation/_index.en_files/figure-html/unnamed-chunk-1-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>{{% notice tip %}}
+🤓💡 <strong>Tip</strong>: You can use the following code template to make graphs with <strong>ggplot2</strong>:
+{{% /notice %}}</p>
+<pre><code>ggplot(data = &lt;DATA&gt;, (mapping = aes(&lt;MAPPINGS&gt;)) + 
+      &lt;GEOM_FUNCTION&gt;()</code></pre>
+<p><strong><span style="color:red">ggplot()</span> gallery</strong>
+Run the following code to see what graphs it will produce.</p>
+<pre class="r"><code>ggplot(data = gapminder, mapping = aes(x = lifeExp), binwidth = 10) +
+  geom_histogram()
+#
+ggplot(data = gapminder, mapping = aes(x = lifeExp)) +
+  geom_density()
+#
+ggplot(data = gapminder, mapping = aes(x = continent, color = continent)) +
+  geom_bar()
+#
+ggplot(data = gapminder, mapping = aes(x = continent, fill = continent)) +
+  geom_bar()</code></pre>
+<hr />
+<p>🗣👥 Confer with your neighbours:
+Does life expectancy depend upon population size?</p>
+<p><span class="math display">\[y = b_0 + b_1 x + e\]</span></p>
+<p>Run this code in your console to fit the model <code>pop</code> vs <code>lifeExp</code>.</p>
+<p>Pay attention to spelling, capitalization, and parentheses!</p>
+<pre class="r"><code>m1 &lt;- lm(gapminder_pipe$lifeExp ~ gapminder_pipe$pop_e6)
+summary(m1)</code></pre>
+<p><strong>Can you answer the question using the output of the fitted model?</strong></p>
+<pre class="r"><code>m1 &lt;- lm(gapminder_pipe$lifeExp ~ gapminder_pipe$pop_e6)
+summary(m1)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = gapminder_pipe$lifeExp ~ gapminder_pipe$pop_e6)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -6.324 -2.562  1.007  2.245  4.277 
+## 
+## Coefficients:
+##                        Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)           77.477421   0.721723 107.351   &lt;2e-16 ***
+## gapminder_pipe$pop_e6  0.008762   0.023779   0.368    0.715    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.025 on 28 degrees of freedom
+## Multiple R-squared:  0.004826,   Adjusted R-squared:  -0.03072 
+## F-statistic: 0.1358 on 1 and 28 DF,  p-value: 0.7153</code></pre>
+<hr />
+<p>👉 Practice ⏰💻: Use gapminder data.</p>
+<p>Does life expectancy depend upon the GDP per capita?</p>
+<ol style="list-style-type: decimal">
+<li><p>Have a glance at the data. (tip: <code>sample_n(df, n)</code>)</p></li>
+<li><p>Produce a scatterplot: what does it tell you?</p></li>
+<li><p>Fit a regression model: is there a relationship? How strong is it?
+Is the relationship linear? What conclusion(s) can you draw?</p></li>
+<li><p>What are the other questions you could ask and could you provide the answers to them?</p></li>
+</ol>
+<p>😃🙌 Solution: code Q1; sample</p>
+<pre class="r"><code>sample_n(gapminder, 30)</code></pre>
+<pre><code>## # A tibble: 30 x 6
+##    country       continent  year lifeExp      pop gdpPercap
+##    &lt;fct&gt;         &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+##  1 Myanmar       Asia       1992    59.3 40546538      347 
+##  2 Cambodia      Asia       1972    40.3  7450606      422.
+##  3 Argentina     Americas   1977    68.5 26983828    10079.
+##  4 Guinea-Bissau Africa     1972    36.5   625361      820.
+##  5 Angola        Africa     1977    39.5  6162675     3009.
+##  6 Uganda        Africa     1997    44.6 21210254      817.
+##  7 Thailand      Asia       1967    58.3 34024249     1295.
+##  8 Rwanda        Africa     1972    44.6  3992121      591.
+##  9 Myanmar       Asia       1952    36.3 20092996      331 
+## 10 Morocco       Africa     1977    55.7 18396941     2371.
+## # … with 20 more rows</code></pre>
+<p>We will add layers onto this scatterplot: <code>liveExp</code> vs <code>gdpPercap</code>. We want to superimpose regression line of the best fit and non-parametric loess line that depict a possible relationship between the two variables. That means we will have:</p>
+<ul>
+<li>1st layer: <strong>scatterplot</strong></li>
+<li>2nd layer: <strong>line of the best fit</strong></li>
+<li>3rd layer: <strong>loess curve</strong></li>
+</ul>
+<p>😃🙌 Solution: code Q2; Plot the data;</p>
+<pre class="r"><code>ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(alpha = 0.2, shape = 21, fill = &quot;blue&quot;, colour=&quot;black&quot;, size = 5) + # set transparency, shape, colour and size for points
+  geom_smooth(method = &quot;lm&quot;, se = F, col = &quot;maroon3&quot;) + # change the colour of line
+  geom_smooth(method = &quot;loess&quot;, se = F, col = &quot;limegreen&quot;) # change the colour of line</code></pre>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;
+## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="/Intro2R/Visualisation/_index.en_files/figure-html/unnamed-chunk-6-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>😃🙌 Solution: code Q3; simple regression model</p>
+<pre class="r"><code>my.model &lt;- lm(gapminder_pipe$lifeExp ~ gapminder_pipe$gdpPercap)
+summary(my.model)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = gapminder_pipe$lifeExp ~ gapminder_pipe$gdpPercap)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -2.79839 -1.30472  0.00807  1.33443  2.87766 
+## 
+## Coefficients:
+##                           Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)              7.227e+01  6.942e-01 104.113  &lt; 2e-16 ***
+## gapminder_pipe$gdpPercap 2.146e-04  2.514e-05   8.537  2.8e-09 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.598 on 28 degrees of freedom
+## Multiple R-squared:  0.7225, Adjusted R-squared:  0.7125 
+## F-statistic: 72.88 on 1 and 28 DF,  p-value: 2.795e-09</code></pre>
+<hr />
+<p><strong>Playing with the aesthetic:</strong> adding more layers to your <span style="color:red"><code>ggplot()</code></span></p>
+<p>Whenever possible you should strive to make your graph visually appealing and informative as discussed in the previous section <em>Principles of Visualisation</em>.</p>
+<p><strong>To change the title and axis labels use <span style="color:orangered">layer <code>labs</code></span></strong></p>
+<p><strong>labs(<span style="color:blue">title =</span> <span style="color:orangered"> “your title”</span>, <span style="color:blue">subtitle =</span> <span style="color:orangered"> “your subtitle”</span>, <span style="color:blue">y =</span> <span style="color:orangered"> “y label”</span>, <span style="color:blue">x =</span> <span style="color:orangered"> “x label”</span>, <span style="color:blue">caption =</span> <span style="color:orangered"> “graph’s caption”</span>)</strong></p>
+<pre class="r"><code>ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(alpha = 0.2, shape = 20, col = &quot;steelblue&quot;, size = 5) + 
+  geom_smooth(method = &quot;lm&quot;, se = F, col = &quot;maroon3&quot;) + 
+  geom_smooth(method = &quot;loess&quot;, se = F, col = &quot;limegreen&quot;) + 
+ 
+  # give a title an label axes
+  labs(title = &quot;GDP per Capita vs. Population Size&quot;, 
+        x = &quot;population&quot;, y = &quot;Life Exp.&quot;) + 
+  
+  # modify the appearance
+  theme(legend.position = &quot;none&quot;, 
+        panel.border = element_rect(fill = NA, 
+                                    colour = &quot;black&quot;,
+                                    size = .75),
+        plot.title=element_text(hjust=0.5)) + 
+  
+  # add the description
+  geom_text(x = 80000, y = 125, label = &quot;regression line&quot;, col = &quot;maroon3&quot;) +
+  geom_text(x = 90000, y = 75, label = &quot;smooth line&quot;, col = &quot;limegreen&quot;) </code></pre>
+<p><img src="/Intro2R/Visualisation/_index.en_files/figure-html/unnamed-chunk-8-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Note, that we have added text on the plot for the two lines and have edited the plot in terms of legend and its appearance.</p>
+<p>We could also annotate the plot by using:</p>
+<pre><code>annotate(&quot;text&quot;, x = 80000, y = 125 label = &quot;regression line&quot;, color = &quot;maroon3&quot;)</code></pre>
+<p>To learn more about how to modify the appearance of the theme go to <a href="https://ggplot2.tidyverse.org/reference/theme.html">ggplot’s theme page</a>.</p>
+<hr />
+<p><strong>Change the colour of the points to reflect categories of another, third variable.</strong></p>
+<pre class="r"><code>ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  
+  # change the colour of the points to reflect continent it belongs to; set transparency, shape, and size for points
+  geom_point(aes(col = continent), alpha = 0.5, shape = 20, size = 3) + 
+  
+  geom_smooth(method = &quot;lm&quot;, se = F, col = &quot;maroon3&quot;) + 
+  geom_smooth(method = &quot;loess&quot;, se = F, col = &quot;dodgerblue3&quot;) + 
+  labs (title= &quot;GDP per Capita vs. Population Size&quot;, 
+        x = &quot;population&quot;, y = &quot;Life Exp.&quot;) + 
+  theme(legend.position = &quot;right&quot;, 
+        panel.border = element_rect(fill = NA, 
+                                    colour = &quot;black&quot;,
+                                    size = .75),
+        plot.title=element_text(hjust=0.5)) + 
+  geom_text(x = 80000, y = 125, label = &quot;regression line&quot;, col = &quot;maroon3&quot;) + 
+  geom_text(x = 90000, y = 75, label = &quot;smooth line&quot;, col = &quot;dodgerblue3&quot;)</code></pre>
+<p><img src="/Intro2R/Visualisation/_index.en_files/figure-html/unnamed-chunk-9-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>{{% notice note %}}
+Note that the legend is added automatically. You can remove it by setting the <strong>legend.position</strong> to <code>none</code> from within a <code>theme()</code> function.
+{{% /notice %}}</p>
+<hr />
+<p><strong>Adjust the X and Y axis limits and change the X axis texts and its ticks’ location</strong></p>
+<pre class="r"><code>  ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(aes(col = continent), alpha = 0.5, shape = 20, size = 3) + 
+  geom_smooth(method = &quot;lm&quot;, se = F, col = &quot;maroon3&quot;) + 
+  geom_smooth(method = &quot;loess&quot;, se = F, col = &quot;dodgerblue3&quot;) + 
+  labs (title= &quot;GDP per Capita vs. Population Size&quot;, 
+        x = &quot;population&quot;, y = &quot;Life Exp.&quot;) + 
+  theme(legend.position = &quot;right&quot;, 
+        panel.border = element_rect(fill = NA, 
+                                    colour = &quot;black&quot;,
+                                    size = .75),
+        plot.title=element_text(hjust=0.5)) + 
+  geom_text(x = 48000, y = 90, label = &quot;regression line&quot;, col = &quot;maroon3&quot;) + 
+  geom_text(x = 70000, y = 75, label = &quot;smooth line&quot;, col = &quot;dodgerblue3&quot;) +
+  
+  # change the limits of the x &amp; y axis
+  xlim(c(0, 90000)) + 
+  ylim(c(25, 100)) </code></pre>
+<pre><code>## Warning: Removed 5 rows containing non-finite values (stat_smooth).
+
+## Warning: Removed 5 rows containing non-finite values (stat_smooth).</code></pre>
+<pre><code>## Warning: Removed 5 rows containing missing values (geom_point).</code></pre>
+<pre><code>## Warning: Removed 33 rows containing missing values (geom_smooth).</code></pre>
+<p><img src="/Intro2R/Visualisation/_index.en_files/figure-html/unnamed-chunk-10-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Note that the regression and smooth lines have changed their shapes 😳… all those warnings 😬 What’s going on?! 😲</p>
+<p>{{% notice warning %}}
+When using <code>xlim()</code> and <code>ylim()</code>, the points outside the specified range are deleted and are not considered while drawing the line using <code>geom_smooth()</code>. This feature might come in handy when you wish to know how the line of best fit would change when some extreme values or outliers are removed.
+{{% /notice %}}</p>
+<p>Thankfully, there is another way to change the limits of the axis without deleting the points by simply zooming in on the region of interest. This is done using <code>coord_cartesian()</code>. You can try to replace <code>xlim()</code> and <code>ylim()</code> commands in the previous code chunk with the code below to see what will happen.</p>
+<pre><code>coord_cartesian(xlim = c(0, 90000), ylim = c(25, 100))  # zooming in specified limits of the x &amp; y axis</code></pre>
+<p>You can set the breaks on the x axis and label them by using <code>scale_x_continuous()</code>. Similarly, can you can do it for the y axis?</p>
+<p>Try to play with changing the colour palette. For more options check <a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">Sequential, diverging and qualitative colour scales from colorbrewer.org</a>.</p>
+<p>These are build-in themes which control all non-data display. You should use <code>theme_bw()</code> to have a white background or <code>theme_dark()</code> for dark grey. For more build-in themes click <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">here</a>.</p>
+<pre class="r"><code>ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(aes(col = continent), alpha = 0.5, shape = 20, size = 3) + 
+  geom_smooth(method = &quot;lm&quot;, se = F, col = &quot;maroon3&quot;) + 
+  geom_smooth(method = &quot;loess&quot;, se = F, col = &quot;dodgerblue3&quot;) + 
+  labs (title= &quot;GDP per Capita vs. Population Size&quot;, 
+        x = &quot;population&quot;, y = &quot;Life Exp.&quot;) + 
+  theme(legend.position = &quot;right&quot;, 
+        panel.border = element_rect(fill = NA, 
+                                    colour = &quot;black&quot;,
+                                    size = .75),
+        plot.title=element_text(hjust=0.5)) + 
+  geom_text(x = 80000, y = 125, label = &quot;regression line&quot;, col = &quot;maroon3&quot;) + 
+  geom_text(x = 90000, y = 75, label = &quot;smooth line&quot;, col = &quot;dodgerblue3&quot;) +
+  
+  # change breaks and label them 
+  scale_x_continuous(breaks = seq(0, 120000, 20000), labels = c(&quot;0&quot;, &quot;20K&quot;, &quot;40K&quot;, &quot;60K&quot;, &quot;80K&quot;, &quot;100K&quot;, &quot;120K&quot;)) +
+
+  # change color palette
+  scale_colour_brewer(palette = &quot;Set1&quot;) + 
+
+  # white background theme
+  theme_bw()</code></pre>
+<p><img src="/Intro2R/Visualisation/_index.en_files/figure-html/unnamed-chunk-11-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>There is a <code>ggthemes</code> library of themes that will help you create stylish ggplot charts used by different journals like the Wall Street Journal or the Economist. See what other themes you can use by going to <a href="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/">this website</a></p>
+<pre class="r"><code>## If you don&#39;t have ggthemes installed yet, uncomment and run the line below
+#install.packages(&quot;ggthemes&quot;)
+library(ggthemes)
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(aes(col = continent), alpha = 0.5, shape = 20, size = 3) + 
+  geom_smooth(method = &quot;lm&quot;, se = F, col = &quot;darkred&quot;) + 
+  geom_smooth(method = &quot;loess&quot;, se = F, col = &quot;darkgreen&quot;) + 
+  labs (title= &quot;GDP per Capita vs. Population Size&quot;, 
+        x = &quot;population&quot;, y = &quot;Life Exp.&quot;) + 
+  theme(legend.position = &quot;right&quot;, 
+        panel.border = element_rect(fill = NA, 
+                                    colour = &quot;black&quot;,
+                                    size = .75),
+        plot.title=element_text(hjust=0.5)) + 
+  geom_text(x = 80000, y = 125, label = &quot;regression line&quot;, col = &quot;darkred&quot;) + 
+  geom_text(x = 90000, y = 75, label = &quot;smooth line&quot;, col = &quot;darkgreen&quot;) +
+  scale_x_continuous(breaks = seq(0, 120000, 20000), labels = c(&quot;0&quot;, &quot;20K&quot;, &quot;40K&quot;, &quot;60K&quot;, &quot;80K&quot;, &quot;100K&quot;, &quot;120K&quot;)) +
+
+  # Wall Street Journal theme
+  scale_colour_wsj() +
+  theme_wsj()</code></pre>
+<p><img src="/Intro2R/Visualisation/_index.en_files/figure-html/unnamed-chunk-12-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>You are ready to make publication-ready visualizations in R. 😎 You can go further and explore for yourself to see if you can produce BBC style ggplot charts like those used in the BBC’s data journalism. Check out the <a href="https://bbc.github.io/rcookbook/">BBC Visual and Data Journalism cookbook for R graphics</a>.</p>
+<hr />
+<p><strong>Lay out panels in a grid</strong></p>
+<p>Sometimes it might be hard to read one panel plot, like the one we have just created in which it is not very easy to see the points of each continent. To make it easier to follow and to understand the information you are trying to depict, it would be more effective to present different categories of the same information in a clear set of multi-panel plots. This is easy to do by applying powerful faceting functions of the <code>ggplot2</code>: <code>facet_wrap()</code> and <code>facet_grid()</code>.</p>
+<pre class="r"><code>ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(aes(col = continent), alpha = 0.5, shape = 20, size = 3) + 
+  geom_smooth(method = &quot;lm&quot;, se = F, col = &quot;darkred&quot;) + 
+  geom_smooth(method = &quot;loess&quot;, se = F, col = &quot;black&quot;) + 
+  labs (title= &quot;GDP per Capita vs. Population Size&quot;, 
+        x = &quot;population&quot;, y = &quot;Life Exp.&quot;) + 
+  theme(legend.position = &quot;right&quot;, 
+        panel.border = element_rect(fill = NA, 
+                                    colour = &quot;black&quot;,
+                                    size = .75),
+        plot.title=element_text(hjust=0.5)) + 
+  scale_x_continuous(breaks = seq(0, 120000, 20000), labels = c(&quot;0&quot;, &quot;20K&quot;, &quot;40K&quot;, &quot;60K&quot;, &quot;80K&quot;, &quot;100K&quot;, &quot;120K&quot;)) +
+  scale_colour_wsj() +
+  theme_wsj() +
+  
+  # forms a matrix of scatterplots for each continent
+  facet_grid(rows = vars(continent))</code></pre>
+<p><img src="/Intro2R/Visualisation/_index.en_files/figure-html/unnamed-chunk-13-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>The main difference between <code>facet_wrap()</code> and <code>facet_grid()</code> is that the former can string together ggplots in different facets using a single variable, while the latter can do it for more than one.</p>
+<p>{{% notice warning %}}
+Try to explore the two functions for yourself and see where it will take you.
+{{% /notice %}}</p>
+<hr />
+<p>💪 There is a challenge:</p>
+<ul>
+<li><p><code>dplyr</code>’s <code>group_by()</code> function enables you to group your data. It allows you to create a separate df that splits the original df by a variable</p></li>
+<li><p><code>boxplot()</code> function produces boxplot(s) of the given (grouped) values</p></li>
+</ul>
+<p>Knowing about the <code>group_by()</code> and the <code>boxplot()</code> functions and using <code>gapminder</code> data, can you compute the median life expectancy for the year 2007 by continent and visualise your result?</p>
+<p>😃🙌 Solution: code</p>
+<p>Let us look at the median life expectancy for each continent</p>
+<pre class="r"><code>gapminder %&gt;%
+    group_by(continent) %&gt;%
+    summarise(lifeExp = median(lifeExp))</code></pre>
+<pre><code>## # A tibble: 5 x 2
+##   continent lifeExp
+##   &lt;fct&gt;       &lt;dbl&gt;
+## 1 Africa       47.8
+## 2 Americas     67.0
+## 3 Asia         61.8
+## 4 Europe       72.2
+## 5 Oceania      73.7</code></pre>
+<p>😃🙌 Solution: graph</p>
+<pre class="r"><code># visualise the information
+library(&quot;ggplot2&quot;)
+ggplot(gapminder, aes(x = continent, y = lifeExp)) +
+  geom_boxplot(outlier.colour = &quot;hotpink&quot;) +
+  geom_jitter(position = position_jitter(width = 0.1, height = 0), alpha = .2) +
+  labs (title= &quot;Life Exp. vs. Continent&quot;, 
+        x = &quot;Continent&quot;, y = &quot;Life Exp.&quot;) +
+  theme(legend.position = &quot;none&quot;, 
+        panel.border = element_rect(fill = NA, 
+                                    colour = &quot;black&quot;,
+                                    size = .75),
+        plot.title=element_text(hjust=0.5))</code></pre>
+<p><img src="/Intro2R/Visualisation/_index.en_files/figure-html/unnamed-chunk-15-1.png" width="768" style="display: block; margin: auto;" /></p>
+<hr />
+<p><strong>Case study: NO2 2017 😁</strong></p>
+<p>Let’s try to combine everything we have learnt so far and practise using <a href="https://tanjakec.github.io/mydata/2017-no2.csv">2017-NO2.csv</a> data.</p>
+<pre class="r"><code>library(tidyr)
+library(forcats)
+no2 &lt;- read.csv(&quot;https://tanjakec.github.io/mydata/2017-no2.csv&quot;,
+                stringsAsFactors = FALSE, 
+                fileEncoding = &quot;latin1&quot;)
+new_no2 &lt;- no2 %&gt;%
+  gather(&quot;place&quot;, &quot;no2&quot;, -Datum, factor_key = TRUE) %&gt;% # stack all columns apart from `Datum`
+  mutate(place = fct_recode(place, 
+                            &quot;NS_Spens&quot; = &quot;Novi.Sad.SPENS.NO2&quot;,
+                            &quot;BG_Most&quot; = &quot;Beograd.Mostar.NO2&quot;,
+                            &quot;BG_Vracar&quot; = &quot;Beograd.Vraèar.NO2&quot;, 
+                            &quot;BG_ZelenoBrdo&quot; = &quot;Beograd.Zeleno.brdo.NO2&quot;, 
+                            &quot;KG&quot; = &quot;Kragujevac..NO2&quot;, 
+                            &quot;NI&quot; = &quot;Ni..IZJZ.Ni...NO2&quot;,
+                            &quot;UZ&quot; = &quot;U.ice..NO2&quot;))
+glimpse(new_no2)</code></pre>
+<pre><code>## Rows: 2,555
+## Columns: 3
+## $ Datum &lt;chr&gt; &quot;01.01.2017&quot;, &quot;02.01.2017&quot;, &quot;03.01.2017&quot;, &quot;04.01.2017&quot;, &quot;05.01.2…
+## $ place &lt;fct&gt; NS_Spens, NS_Spens, NS_Spens, NS_Spens, NS_Spens, NS_Spens, NS_S…
+## $ no2   &lt;dbl&gt; 22.89, 32.94, 14.86, 22.73, 20.89, 10.47, 9.58, 15.99, 14.46, 9.…</code></pre>
+<pre class="r"><code>new_no2 %&gt;% 
+  group_by(place) %&gt;% 
+  filter(!is.na(no2)) %&gt;% 
+  summarise(mean_no2 = mean(no2)) %&gt;% # !is.na(): is not NA; omits the missing values
+  ggplot(aes(x = place, y = mean_no2, fill = place)) + # fill: colours each bar differently   
+    geom_bar(stat = &quot;identity&quot;) +
+    xlab(&quot;Place&quot;) + 
+    scale_fill_brewer(palette = &quot;Dark2&quot;) + # colour scheme &quot;Dark2&quot;
+    theme(legend.position=&quot;bottom&quot;, 
+          axis.text.x = element_blank(),
+          axis.ticks.x = element_blank()) # </code></pre>
+<p><img src="/Intro2R/Visualisation/_index.en_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<hr />
+<p><strong>YOUR TURN 👇</strong></p>
+<p>Practise by doing the following set of exercises:</p>
+<ol style="list-style-type: decimal">
+<li><p>Choose a data set from <a href="https://data.gov.uk" class="uri">https://data.gov.uk</a> that is interesting to you. Import the dataset into R and examine what kinds of variables there are. What plots would you recommend using to help people get to know the dataset?</p></li>
+<li><p>Go back to NO2 2017 case study:</p></li>
+</ol>
+<ol style="list-style-type: lower-roman">
+<li><p>What are the questions you can ask based on the available information within the dataset?</p></li>
+<li><p>What plots would you recommend using to help to answer those questions?</p></li>
+<li><p>Create appropriate visualisations for i) &amp; ii)</p></li>
+</ol>
+<hr />
+<p><strong>Useful links:</strong></p>
+<p><a href="https://rstudio.com/resources/webinars/tidyverse-visualization-manipulation-basics-this-introduction-to-the-tidyverse-will-cover-several-best-practices-for-analyzing-data-with-r/">tidyverse, visualization, and manipulation basics</a></p>
+<p><a href="http://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html#introduction">Introduction to R graphics with ggplot2</a></p>
+<p><a href="https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf"><code>gglopt</code> cheat sheet</a></p>
+<p><a href="https://www.data-to-viz.com/">from Data to Viz</a></p>
+<p><a href="http://johnburnmurdoch.github.io/slides/r-ggplot/#/">An example from the Financial Times</a></p>
+<p><a href="https://bbc.github.io/rcookbook/">BBC Visual and Data Journalism cookbook for R graphics</a></p>
+<p><a href="http://johnburnmurdoch.github.io/slides/r-ggplot/#/">ggplot as a creativity engine</a></p>
+<hr />
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License.</a></p>

@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.60.1" />
+    <meta name="description" content="Data Literacy">
+<meta name="author" content="Tatjana Kecojevic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>Basic Stats Concepts :: Data Literacy</title>
+
+    
+    <link href="/css/nucleus.css?1580898367" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1580898367" rel="stylesheet">
+    <link href="/css/hybrid.css?1580898367" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1580898367" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1580898367" rel="stylesheet">
+    <link href="/css/auto-complete.css?1580898367" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1580898367" rel="stylesheet">
+    <link href="/css/theme.css?1580898367" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1580898367" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1580898367"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/day1/statsconcepts/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <!DOCTYPE html>
+<html>
+<body>
+<IMG SRC="/images/logo.png" ALT="DataTeka" WIDTH=100 HEIGHT=100>
+
+</body>
+</html>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1580898367"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1580898367"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1580898367"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/general/" title="About the course" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/">
+          <b>1. </b>About the course
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/whatlearn/" title="General Overview" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/whatlearn/">
+          General Overview
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/instructor/" title="Meet the Instructor" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/instructor/">
+          Meet the Instructor
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/syllabus/" title="Indicative Syllabus" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/syllabus/">
+          Indicative Syllabus
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/day1/" title="Day 1" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/day1/">
+          <b>2. </b>Day 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/day1/whatisr/" title="What is R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/day1/whatisr/">
+          What is R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/day1/installr/" title="Install R/RStudio" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/day1/installr/">
+          Install R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/day1/rstudioide/" title="RStudio IDE" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/day1/rstudioide/">
+          RStudio IDE
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/day1/user/" title="How to use R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/day1/user/">
+          How to use R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/day1/statsconcepts/" title="Basic Stats Concepts" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/day1/statsconcepts/">
+          Basic Stats Concepts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/day1/datatypes/" title="Data Types" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/day1/datatypes/">
+          Data Types
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/day1/importexport/" title="Import Data to R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/day1/importexport/">
+          Import Data to R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/day1/principlesvisualisation/" title="Introduction to Visualisation Principles" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/day1/principlesvisualisation/">
+          Principles of Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/" title="Module 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/">
+          <b>2. </b>Module 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/whatisr/" title="What is R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/whatisr/">
+          What is R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/installr/" title="Install R/RStudio" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/installr/">
+          Install R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/rstudioide/" title="RStudio IDE" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/rstudioide/">
+          RStudio IDE
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/user/" title="How to use R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/user/">
+          How to use R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/statsconcepts/" title="Basic Stats Concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/statsconcepts/">
+          Basic Stats Concepts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/datatypes/" title="Data Types" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/datatypes/">
+          Data Types
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/importexport/" title="Import Data to R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/importexport/">
+          Import Data to R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/principlesvisualisation/" title="Introduction to Visualisation Principles" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/principlesvisualisation/">
+          Principles of Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/TanjaKec"><i class='fab fa-fw fa-github'></i>GitHub</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download matcornic/hugo-theme-learn on GitHub">Download</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn" data-icon="octicon-star" data-show-count="true" aria-label="Star matcornic/hugo-theme-learn on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork matcornic/hugo-theme-learn on GitHub">Fork</a>
+
+    <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/day1/StatsConcepts/_index.en.markdown" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>DS Bootcamp in R</a> > <a href='/day1/'>Day 1</a> > Basic Stats Concepts
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+        <li><a href="#describing-variables">Describing Variables</a></li>
+        <li><a href="#the-concept-of-statistical-distribution">The Concept of Statistical Distribution</a></li>
+        <li><a href="#important-key-points">Important Key Points:</a></li>
+        <li><a href="#investigating-the-relationship-between-variables">Investigating the relationship between variables</a></li>
+        <li><a href="#da-methodology">DA Methodology</a></li>
+      </ul>
+    </li>
+    <li><a href="#your-turn-">YOUR TURN 👇</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Basic Stats Concepts
+            </h1>
+          
+
+        
+
+
+
+
+	<p>In this section you will be introduced to a set of concepts that enable data to be explored with the <strong>objective</strong></p>
+<ul>
+<li>of summarising and understanding the main features of the variables contained within the data and</li>
+<li>to investigate the nature of any linkages between the variables that may exist</li>
+</ul>
+<p>The starting point is to understand <strong>what data is</strong>.</p>
+<ul>
+<li>What is the <strong>population</strong>?</li>
+<li>Why do we use <strong>samples</strong>?</li>
+</ul>
+<p>Can you provide a formal definition of the population and the sample? 😁</p>
+<p><em>The population is the set of all people/objects of interest in the study being undertaken.</em></p>
+<p>In statistical terms the whole data set is called the <strong>population</strong>. This represents <strong>“Perfect Information”</strong>, however in practice it is often impossible to enumerate the whole population. The analyst therefore takes a sample drawn from the population and uses this information to make judgements (<strong>inferences</strong>) about the population.</p>
+<p>Clearly if the results of any analysis are based on a <strong>sample drawn from the population</strong>, then if the sample is going to have any validity, then the sample should be chosen in a way that is fair and reflects the structure of the population.</p>
+<p>The process of sampling to obtain a representative sample is a large area of statistical study. The simplest model of a representative sample is a <strong>&ldquo;random sample&rdquo;</strong>:</p>
+<p><em>A sample chosen in such a way that each item in the population has an equal chance of being included in the sample.</em></p>
+<p>As soon as sample data is used, the information contained within the sample is <em>“Imperfect”</em> and depends on the particular sample chosen. The <strong>key problem</strong> is to use this sample data to draw valid conclusions about the population with the knowledge of and taking into account the &lsquo;<em>error due to sampling</em>'.</p>
+<p>The importance of working with representative samples should be seriously considered; a good way to appreciate this importance is to see the consequences of using unrepresentative samples. A book by <a href="https://en.wikipedia.org/wiki/Darrell_Huff">Darrell Huff</a> called <a href="https://en.wikipedia.org/wiki/How_to_Lie_with_Statistics">How to Lie with Statistics</a>, published by <a href="https://www.penguin.co.uk/">Penguin</a> contains several anecdotes of unrepresentative samples and the consequences of treating them as representative.</p>
+<h4 id="data-analysis-using-sample-data">Data Analysis Using Sample Data</h4>
+<p>Usually the data will have been collected in response to some perceived problem, in the hope of being able to glean some pointers from this data that will be helpful in the analysis of the problem. Data is commonly presented to the data analyst in this way with a request to analyse the data.</p>
+<p>Before attempting to analyse any data, the analyst should:</p>
+<p>i)	Make sure that the problem under investigation is clearly understood, and that the objectives of the investigation have been clearly specified.</p>
+<p>ii)	Before any analysis is considered the analyst should make sure that the individual variables making up the data set are clearly understood.</p>
+<p><!-- raw HTML omitted -->The analyst must understand the data before attempting any analysis.<!-- raw HTML omitted --></p>
+<p>In the summary you should <!-- raw HTML omitted -->ask yourself<!-- raw HTML omitted -->:</p>
+<p>i) <strong>Do I understand the problem</strong> under investigation and are the objectives of the investigation clear?
+<em>The only way to obtain this information is to ask questions, and keep asking questions until satisfactory answers have been obtained.</em></p>
+<p>ii) Do I understand exactly <strong>what each variable is measuring/recording?</strong></p>
+<h3 id="describing-variables">Describing Variables</h3>
+<p>A starting point is to examine the characteristics of each individual variable in the data set.</p>
+<p>The way to proceed depends upon the type of variable being examined.</p>
+<p><strong>Classification of variable types</strong></p>
+<p>The variables can be one of two broad types:</p>
+<ul>
+<li><strong>Attribute variables</strong>: are variables that have their outcomes described in terms of their characteristics or attributes.</li>
+</ul>
+<ul>
+<li>gender</li>
+<li>days in a week</li>
+</ul>
+<p>A common way of handling attribute data is to give it a numerical code. Hence, we often refer to them as coded variables.</p>
+<ul>
+<li><strong>Measured variables</strong>: are  variables that have their outcomes taken from a numerical scale; the resulting outcome is expressed in numerical terms.</li>
+</ul>
+<ul>
+<li>weight</li>
+<li>age</li>
+</ul>
+<p>There are two types of measured variables, a measured variable that is measured on some continuous scale of measurement, e.g. a person’s height. This type of measured variable is called a <em>continuous variable</em>.  The other type of measured variable is a <em>discrete variable</em>. This results from counting; for example &lsquo;the number of passengers on a given flight&rsquo;.</p>
+<h3 id="the-concept-of-statistical-distribution">The Concept of Statistical Distribution</h3>
+<p><strong>The concept of statistical distribution is central to statistical analysis.</strong></p>
+<p>This concept relates to the population and conceptually assumes that we have perfect information, the exact composition of the population is known.</p>
+<p>The ideas and concepts for examining population data provide a framework for the way of examining data obtained from a sample. The Data Analyst classifies the variables as either attribute or measured and examines the statistical distribution of the particular sample variable from the sample data.<br>
+For an attribute variable the number of occurrences of each attribute is obtained, and for a measured variable the sample descriptive statistics describing the centre, width and symmetry of the distribution are calculated.</p>
+<p><strong>attribute:</strong>
+<!-- raw HTML omitted --></p>
+<p><strong>measured:</strong>
+<!-- raw HTML omitted --></p>
+<h4 id="what-does-the-distribution-show">What does the distribution show?</h4>
+<p>For an attribute variable it is very simple. We observe the frequency of occurrence of each level of the attribute variable as shown in the barplot above.</p>
+<p>For a measured variable the area under the curve from one value to another measures the relative proportion of the population having the outcome value in that range.</p>
+<p>A statistical distribution for a measured variable can be summarised using three key descriptions:</p>
+<ul>
+<li>the <!-- raw HTML omitted -->centre<!-- raw HTML omitted --> of the distribution;</li>
+<li>the <!-- raw HTML omitted -->width<!-- raw HTML omitted --> of the distribution;</li>
+<li>the <!-- raw HTML omitted -->symmetry<!-- raw HTML omitted --> of the distribution</li>
+</ul>
+<p>The  <!-- raw HTML omitted --><strong>common measures of the centre</strong><!-- raw HTML omitted --> of a distribution are the <strong>Mean</strong> (arithmetic average) and the <strong>Median</strong>. The <em>median value</em> of the variable is defined to be the particular value of the variable such that half the data values are less than the median value and half are greater.</p>
+<p>The <!-- raw HTML omitted --><strong>common measures of the width</strong><!-- raw HTML omitted --> of a distribution are the <strong>Standard Deviation</strong> and the <strong>Inter-Quartile Range</strong>. The <!-- raw HTML omitted -->Standard Deviation<!-- raw HTML omitted --> is the square root of the average squared deviation from the mean. Ultimately the standard deviation is a relative measure of spread (width), the larger the standard deviation the wider the distribution.  The <!-- raw HTML omitted -->inter-quartile range<!-- raw HTML omitted --> is the range over which the middle 50% of the data values varies.</p>
+<p>By analogy with the median it is possible to define the <!-- raw HTML omitted -->quartiles<!-- raw HTML omitted -->:</p>
+<ul>
+<li>Q1	is the value of the variable that divides the distribution 25% to the left and 75% to the right.</li>
+<li>Q2 	is the value of the variable that divides the distribution 50% to the left and 50% to the right.
+This is the median by definition.</li>
+<li>Q3 	is the value of the variable that divides the distribution 75% to the left and 25% to the right.</li>
+<li>The inter-quartile range is the value Q3 - Q1.</li>
+</ul>
+<p>The diagram below shows this pictorially:</p>
+<p><!-- raw HTML omitted --></p>
+<p>🤓💡 Conventionally the <strong>mean and standard deviation</strong> are given together as one pair of measures of location and spread, and the <strong>median and inter-quartile range</strong> as another pair of measures.</p>
+<p>There are a number of <!-- raw HTML omitted --><strong>measures of symmetry</strong><!-- raw HTML omitted -->; the simplest way to measure symmetry is to compare the mean and the median.  For a perfectly symmetric distribution the mean and the median will be exactly the same. This idea leads to the definition of Pearson's coefficient of Skewness as:</p>
+<p><code>Pearson's coefficient of Skewness = 3(mean - median) / standard deviation</code></p>
+<p>An alternative measure of Skewness is the Quartile Measure of Skewness defined as:</p>
+<p><code>Quartile Measure of Skewness  = [(Q1 - Q3) - (Q2 - Q1)]/(Q3 - Q1)</code></p>
+<h3 id="important-key-points">Important Key Points:</h3>
+<ul>
+<li>
+<p>What is Data?</p>
+</li>
+<li>
+<p>Variables</p>
+</li>
+<li>
+<p>Two types of variable:</p>
+<ul>
+<li>an attribute variable</li>
+<li>a measured variable</li>
+</ul>
+</li>
+<li>
+<p>The concept of Statistical Distribution:</p>
+<ul>
+<li>As applied to an attribute variable</li>
+<li>As applied to a measured variable</li>
+</ul>
+</li>
+<li>
+<p>Descriptive Statistics for a measured variable:</p>
+<ul>
+<li>Measures of Centre
+<ul>
+<li>Mean,  Median</li>
+</ul>
+</li>
+<li>Measures of Width:
+<ul>
+<li>Standard Deviation</li>
+<li>Inter-Quartile Range</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The descriptive statistics provide a numerical description of the key parameters of the distribution of a measured sample variable.</p>
+<h3 id="investigating-the-relationship-between-variables">Investigating the relationship between variables</h3>
+<p>One of the key steps required of the Data Analyst is to investigate the relationship between variables. This requires a further <strong>classification of the variables</strong> contained within the data, as either a <!-- raw HTML omitted --><strong>response</strong><!-- raw HTML omitted --> variable or an <!-- raw HTML omitted --><strong>explanatory</strong><!-- raw HTML omitted --> variable.</p>
+<p>A <strong>response</strong> variable is a variable that measures either directly or indirectly the objectives of the analysis.</p>
+<p>An <strong>explanatory</strong> variable is a variable that may influence the response variable.</p>
+<h4 id="bivariate-relationships">Bivariate Relationships</h4>
+<p>In general there are four different combinations of type of Response Variable and type of Explanatory Variable. These four combinations are shown below:</p>
+<p><img src="/day1/StatsConcepts/images/RelationshipMatrix.png?width=30pc" alt="Red variant"></p>
+<p>The starting point for any  <!-- raw HTML omitted -->investigation of the connections<!-- raw HTML omitted --> between a <strong>response</strong> variable and an <strong>explanatory</strong> variable starts with examining the variables, and defining the response variable, or response variables, and the explanatory variables.</p>
+<p>🤓💡: In large empirical investigations there may be a number of objectives and a number of response variables.</p>
+<p>The method for investigating the connections between a response variable and an explanatory variable depends on the type of variables. The methodology is different for combination as shown in the box above, and applying an inappropriate method causes problems. 💡⚡️😩</p>
+<h3 id="da-methodology">DA Methodology</h3>
+<p>The first step is to have a clear idea of what is meant by a connection between the response variable and the explanatory variable.  This will provide a framework for defining a <!-- raw HTML omitted -->Data-Analysis process<!-- raw HTML omitted --> to explore the connection between the two variables, and will utilise the ideas previously developed.</p>
+<p>The next step is to <!-- raw HTML omitted --><em>use some simple sample descriptive statistics to have a first look at the nature of the link between the variables</em><!-- raw HTML omitted -->.  This simple approach may allow the analyst to conclude that on the basis of the sample information there is strong evidence to support a link, or there is no evidence of a link, or that the simple approach is inconclusive and further more sophisticated data analysis is required. This step is called the <!-- raw HTML omitted --><strong>Initial Data Analysis</strong><!-- raw HTML omitted --> and sometimes abbreviated to <!-- raw HTML omitted --><strong>IDA</strong><!-- raw HTML omitted -->.</p>
+<p>If the Initial Data Analysis suggests that <!-- raw HTML omitted --><strong>Further Data Analysis</strong><!-- raw HTML omitted --> (<!-- raw HTML omitted --><strong>FDA</strong><!-- raw HTML omitted -->) is required, then this step seeks one of two conclusions:</p>
+<p>i)	The sample evidence is consistent with there being no link between the response variable and the explanatory variable.</p>
+<p>or</p>
+<p>ii)	The sample evidence is consistent with there being a link between the response variable and the explanatory variable.</p>
+<p>The outcome of the analysis is one of the two alternatives given above. If the outcome is that there is no evidence of a connection, then no further action is required by the analyst since the analysis is now complete.</p>
+<p>If however the outcome of the analysis is that there is evidence of a connection, then the nature of the connection between the two variables needs to be described.</p>
+<p>🤓💡 The <!-- raw HTML omitted --><strong>Data-Analysis Methodology</strong><!-- raw HTML omitted --> described above seeks to find the answer to the following key question:</p>
+<p>On the basis of the sample data is there evidence of a connection between the response variable and the explanatory variable?</p>
+<p>The outcome is one of two conclusions</p>
+<p>i)	No evidence of a relationship</p>
+<p>ii)	Yes there is evidence of a relationship, in which case the link needs to be described.</p>
+<p>This process can be represented diagrammatically as:</p>
+<p><img src="/day1/StatsConcepts/images/DAMethodology.png?width=40pc" alt="Red variant"></p>
+<p>For each of the four data analysis situations given, the data analyst needs to know what constitutes the Initial Data Analysis (I.D.A.) and how to undertake and interpret the I.D.A. If Further Data Analysis is required the analyst needs to know how to undertake and interpret the Further Data Analysis.</p>
+<h4 id="measured-vs-attribute2levels">Measured Vs Attribute(2-levels)</h4>
+<p>There is a relationship between a measured response and an attribute explanatory variable if the average value of the response is dependent on the level of the attribute explanatory variable.</p>
+<p>Given a measured response and an attribute explanatory variable with two levels, &ldquo;<!-- raw HTML omitted -->red<!-- raw HTML omitted -->&rdquo; &amp; &ldquo;<!-- raw HTML omitted -->blue<!-- raw HTML omitted -->&rdquo;. If the statistical distribution of the response variable for attribute level &ldquo;<!-- raw HTML omitted -->red<!-- raw HTML omitted -->&rdquo; and attribute level &ldquo;<!-- raw HTML omitted -->blue<!-- raw HTML omitted -->&rdquo; are exactly the same then the level of the attribute variable has no influence on the value response, there is no relationship.</p>
+<p>This can be illustrated as below:</p>
+<p><img src="/day1/StatsConcepts/images/MvAMethodology.png?width=40pc" alt="Red variant"></p>
+<h4 id="measured-vs-measured">Measured Vs Measured</h4>
+<p>The first step is to have a clear idea of what is meant by a connection between a measured response variable and a measured explanatory variable. Imagine a population under study consisting of a very large number of population members, and on each population member two measurements are made, the value of Y the response variable and the value of X the explanatory variable. For the whole population a graph of Y against X could be plotted conceptually.</p>
+<p>If the graph shows a perfect line, then there is quite clearly a link between Y and X. If the value of X is known, the exact value of Y can be read off the graph. This is an unlikely scenario in the data-analysis context, because this kind of relationship is a <em>deterministic relationship</em>. Deterministic means that if the value of X is known then the value of Y can be precisely determined from the relationship between Y and X.
+What is more likely to happen is that other variables may also have an influence on Y.</p>
+<p>If the nature of the link between Y and X is under investigation then this could be represented as:</p>
+<p><code>Y = f(X) + effect</code> of all other variables [effect of all other variables is commonly abbreviated to e]</p>
+<p>Considered the model:</p>
+<p><code>Y = f(X) + e</code>		[e is the effect of all other variables]</p>
+<p>The influence on the response variable Y can be thought of as being made up of two components:</p>
+<p>i) the component of Y that is explained by changes in the value of X, [the part due to changes in X through f(X)]</p>
+<p>ii)	the component of Y that is explained by changes in the other factors.  [the part not explained by changes in X]</p>
+<p>Or in more abbreviated forms the &lsquo;<!-- raw HTML omitted -->Variation in Y Explained by changes X<!-- raw HTML omitted -->&rsquo; or &lsquo;<!-- raw HTML omitted --><strong>Explained Variation</strong><!-- raw HTML omitted -->&rsquo; and the &lsquo;<!-- raw HTML omitted -->Variation in Y not explained by changes in X<!-- raw HTML omitted -->&rsquo; or the &lsquo;<!-- raw HTML omitted --><strong>Unexplained Variation</strong><!-- raw HTML omitted -->&rsquo;.</p>
+<p>In conclusion, the <em>Total Variation in Y</em> is made up of the two components:</p>
+<ul>
+<li>the &lsquo;Changes in Y Explained by changes in X&rsquo; and</li>
+<li>the &lsquo;Changes in Y not explained by changes in X&rsquo;</li>
+</ul>
+<p>Which may be written as:</p>
+<pre><code>`'The Total Variation in Y' = 'Explained Variation' + 'Unexplained Variation'`
+</code></pre>
+<p>🤓💡 The discussion started with the following idea:</p>
+<p>Y = f(X) + e</p>
+<p>And to quantify the strength of the link the influence on Y was broken down into two components:</p>
+<pre><code>'The Total Variation in Y' = 'Explained Variation' + 'Unexplained Variation'
+</code></pre>
+<p>This presents two issues:
+A:	Can a model of the link be made?
+B.	Can &lsquo;The Total Variation in Y&rsquo;, &lsquo;Explained Variation&rsquo; and the &lsquo;Unexplained Variation&rsquo; be measured?</p>
+<p>What do these quantities tell us?</p>
+<p>Maybe we can observe a proportion of the &lsquo;Explained Variation in Y&rsquo; over the &lsquo;Total Variation in Y&rsquo;.
+This ratio is always on the scale 0 to 1, but by convention is usually expressed as a percentage so is regarded as on the scale 0 to 100%.  It is called &lsquo;R Squared&rsquo; and interpretation of this ratio is as follows:</p>
+<p>R_sq: 0% (no link) &lt;&mdash;&mdash;&mdash;&mdash;&mdash; 50% (Statistical Link) &mdash;&mdash;&mdash;&mdash;&mdash;&gt; 100% (Perfect Link)</p>
+<p>The definition and interpretation of <code>R_sq</code> is a very important tool in the data analyst's tool kit for tracking connections between a measured response variable and a measured explanatory variable.</p>
+<p>We can put those ideas into our DA Methodology frameworks as shown below.</p>
+<p><img src="/day1/StatsConcepts/images/MvMMethodology.png?width=40pc" alt="Red variant"></p>
+<p>🤓💡 Note that you will hardly ever be in the situation in which R_sq would be so close to zero that would make you conclude that on the basis of the sample evidence used in IDA it is possible to conclude that there is no relationship between the two variables. If R_sq value is very small (for example around 2%) this would need to be further tested to conclude if it is statistically significant based on the sample evidence by applying FDA.</p>
+<h4 id="further-data-analysis">Further Data Analysis</h4>
+<p>If the <!-- raw HTML omitted -->&rsquo;<strong>Initial Data Analysis</strong>&lsquo;<!-- raw HTML omitted --> is <!-- raw HTML omitted --><em>inconclusive</em><!-- raw HTML omitted --> then <!-- raw HTML omitted -->&rsquo;<strong>Further Data Analysis</strong>&lsquo;<!-- raw HTML omitted --> is required.</p>
+<p>The &lsquo;Further Data Analysis&rsquo; is a procedure that enables a decision to be made, based on the sample evidence, as to one of two outcomes:</p>
+<ul>
+<li>There is no relationship</li>
+<li>There is a relationship</li>
+</ul>
+<p>These statistical procedures are called <!-- raw HTML omitted --><strong>hypothesis tests</strong><!-- raw HTML omitted -->, which essentially <!-- raw HTML omitted --><em>provide a decision rule for choosing between one of the two outcomes</em><!-- raw HTML omitted -->: &ldquo;There is no relationship&rdquo; or &ldquo;There is a relationship&rdquo; based on the sample evidence.</p>
+<p>All hypothesis tests are carried out in four stages:</p>
+<ul>
+<li>
+<p>Stage 1:		Specifying the hypotheses.</p>
+</li>
+<li>
+<p>Stage 2:		Defining the test parameters and the decision rule.</p>
+</li>
+<li>
+<p>Stage 3:		Examining the sample evidence.</p>
+</li>
+<li>
+<p>Stage 4:		The conclusions.</p>
+</li>
+</ul>
+<h5 id="statistical-models-used-in-fda">Statistical Models used in FDA</h5>
+<ul>
+<li>
+<p>Measured Response v Attribute Explanatory Variable with exactly two levels:</p>
+<ul>
+<li>t-test</li>
+</ul>
+</li>
+<li>
+<p>Measured Response v Attribute Explanatory Variable with more than two levels:</p>
+<ul>
+<li>One-Way ANOVA</li>
+</ul>
+</li>
+<li>
+<p>Measured Response v Measured Explanatory Variable</p>
+<ul>
+<li>Simple Regression Model</li>
+</ul>
+</li>
+<li>
+<p>Measured Response v Measured Explanatory Variable<strong>s</strong></p>
+<ul>
+<li>Multifactor Regression Model</li>
+</ul>
+</li>
+<li>
+<p>Attribute Response v Attribute Explanatory Variable</p>
+<ul>
+<li>Chi-Square Test of Independence</li>
+</ul>
+</li>
+</ul>
+<h2 id="your-turn-">YOUR TURN 👇</h2>
+<p>Make sure you can answer the following questions:</p>
+<ol>
+<li>
+<p>What are the underlying ideas that enable a relationship between two variables to be investigated?</p>
+</li>
+<li>
+<p>What is the purpose of summary statistics?</p>
+</li>
+<li>
+<p>What is the data analysis methodology for exploring the relationship between:</p>
+</li>
+</ol>
+<p>i) a measured response variable and an attribute explanatory variable?</p>
+<p>i) a measured response variable and a measured explanatory variable?</p>
+<hr>
+<p>© 2019 Tatjana Kecojevic</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/day1/user/" title="How to use R?"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/day1/datatypes/" title="Data Types" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1580898367"></script>
+    <script src="/js/perfect-scrollbar.min.js?1580898367"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1580898367"></script>
+    <script src="/js/jquery.sticky.js?1580898367"></script>
+    <script src="/js/featherlight.min.js?1580898367"></script>
+    <script src="/js/highlight.pack.js?1580898367"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1580898367"></script>
+    <script src="/js/learn.js?1580898367"></script>
+    <script src="/js/hugo-learn.js?1580898367"></script>
+
+    <link href="/mermaid/mermaid.css?1580898367" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1580898367"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105947713-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

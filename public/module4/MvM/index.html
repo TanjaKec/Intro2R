@@ -1,0 +1,2571 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.75.1" />
+    <meta name="description" content="Data Literacy in R">
+<meta name="author" content="Tatjana Kecojevic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>Regression :: Data Literacy in R</title>
+
+    
+    <link href="/css/nucleus.css?1602924342" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1602924342" rel="stylesheet">
+    <link href="/css/hybrid.css?1602924342" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1602924342" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1602924342" rel="stylesheet">
+    <link href="/css/auto-complete.css?1602924342" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1602924342" rel="stylesheet">
+    <link href="/css/theme.css?1602924342" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1602924342" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1602924342"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"> </script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/module4/mvm/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <!DOCTYPE html>
+<html>
+<body>
+<IMG SRC="/images/logo.png" ALT="DataTeka" WIDTH=100 HEIGHT=100>
+
+</body>
+</html>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1602924342"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1602924342"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1602924342"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/general/" title="About the course" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/">
+          <b>1. </b>About the course
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/whatlearn/" title="General Overview" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/whatlearn/">
+          General Overview
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/instructor/" title="Meet the Instructor" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/instructor/">
+          Meet the Instructor
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/syllabus/" title="Indicative Syllabus" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/syllabus/">
+          Indicative Syllabus
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/" title="Module 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/">
+          <b>2. </b>Module 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/whatisr/" title="What is R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/whatisr/">
+          What is R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/installr/" title="Install R/RStudio" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/installr/">
+          Install R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/git-and-github/" title="Git and GitHub" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/git-and-github/">
+          Git and GitHub
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/rstudioide/" title="RStudio IDE" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/rstudioide/">
+          RStudio IDE
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/user/" title="How to use R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/user/">
+          How to use R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/statsconcepts/" title="Basic Stats Concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/statsconcepts/">
+          Basic Stats Concepts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/datatypes/" title="Data Types" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/datatypes/">
+          Data Types
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/importexport/" title="Import Data to R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/importexport/">
+          Import Data to R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/rmarkdown/" title="Reproducibility" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/rmarkdown/">
+          Reproducibility
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/" title="Module 2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/">
+          <b>3. </b>Module 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/datawrangling/" title="Data Wrangling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/datawrangling/">
+          Data Wrangling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/principlesvisualisation/" title="Principles of Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/principlesvisualisation/">
+          Principles of Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/visualisation/" title="Data Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/visualisation/">
+          Data Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/spatialda/" title="Spatial Data Analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/spatialda/">
+          Spatial Data Analysis
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module3/" title="Module 3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module3/">
+          <b>4. </b>Module 3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module3/damethodology/" title="Data Analysis Methodology" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module3/damethodology/">
+          Data Analysis Methodology
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module3/mva/" title="t-test &amp; one-way ANOVA" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module3/mva/">
+          t-test &amp; one-way ANOVA
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module3/mvm/" title="Regression" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module3/mvm/">
+          Regression
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module4/" title="Module 4" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/module4/">
+          <b>5. </b>Module 4
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module4/what_is_ml/" title="Machine Learning" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module4/what_is_ml/">
+          Machine Learning
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module4/resampling/" title="Resampling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module4/resampling/">
+          Resampling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module4/mvm/" title="Regression" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/module4/mvm/">
+          Regression
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module4/clasification/" title="Clasification" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module4/clasification/">
+          Clasification
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/" title="Showcases" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/">
+          <b>6. </b>Showcases
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/covid-19/" title="COVID-19" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/covid-19/">
+          COVID-19
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/airpolution/" title="Air Pollution" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/airpolution/">
+          Air Pollution
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/tricks_tips/" title="Tricks and Tips" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/tricks_tips/">
+          Tricks and Tips
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/TanjaKec"><i class='fab fa-fw fa-github'></i>GitHub</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download matcornic/hugo-theme-learn on GitHub">Download</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn" data-icon="octicon-star" data-show-count="true" aria-label="Star matcornic/hugo-theme-learn on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork matcornic/hugo-theme-learn on GitHub">Fork</a>
+
+    <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/module4/MvM/_index.en.html" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Data Literacy in R</a> > <a href='/module4/'>Module 4</a> > Regression
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Regression
+            </h1>
+          
+
+        
+
+
+
+
+	
+
+
+<p>Earlier we looked at how to examine sample data to investigate the nature of any relationship that may exist between a measured response variable and an attribute explanatory variable. This section examines how to investigate the nature of any relationship that may exist between a measured response variable and a measured explanatory variable.</p>
+<p>The first step is to have a clear idea of what is meant by a connection between the response variable and the explanatory variable. The next step is to use some <strong>simple sample descriptive statistics</strong> to have a first look at the nature of the link between the response variable and the explanatory variable. This simple approach will lead to one of three conclusions, namely, on the basis of the sample information:</p>
+<ol style="list-style-type: lower-roman">
+<li>there is very strong evidence to support a link</li>
+<li>there is absolutely no evidence of any link</li>
+<li>the sample evidence is inconclusive and further more sophisticated data analysis is required</li>
+</ol>
+<p>This step is called the <strong>Initial Data Analysis</strong> or the <strong>IDA</strong>.</p>
+<p>If the IDA suggests that <strong>Further Data Analysis</strong> is required, then this step seeks one of two conclusions:</p>
+<ol style="list-style-type: lower-roman">
+<li>The sample evidence is consistent with there being no link between the response variable and the explanatory variable.</li>
+<li>The sample evidence is consistent with there being a link between the response variable and the explanatory variable.</li>
+</ol>
+<p>As we have already seen in the previous sections, this process can be represented diagrammatically as:</p>
+<p><img src="/module3/DAMethodology/images/DAMethodology.png?width=40pc" /></p>
+<p>The Data-Analysis Methodology seeks to find the answer to the following key question:</p>
+<ul>
+<li>On the basis of the sample data, is there evidence of a connection/link/relationship between the response variable and the explanatory variable?</li>
+</ul>
+<p>The final outcome is one of two conclusions:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>There is no evidence of a relationship, labelled as the ‘No’ outcome in the diagram above, in which case the analysis is finished.</p></li>
+<li><p>There is evidence of a relationship, labelled as the ‘Yes’ outcome in the diagram above, in which case the nature of the relationship needs to be described.</p></li>
+</ol>
+<p>The first step is to have a clear idea of what is meant by a connection between a measured response variable and a measured explanatory variable. Imagine a population under study consisting of a very large number of population members, and on each population member two measurements are made, the value of <span class="math inline">\(Y\)</span> the response variable and the value of <span class="math inline">\(X\)</span> the explanatory variable. For the whole population a graph of <span class="math inline">\(Y\)</span> against <span class="math inline">\(X\)</span> could be plotted conceptually. If the graph looked as in the diagram below, then there is quite clearly a link between Y and X. If the value of <span class="math inline">\(X\)</span> is known, the exact value of Y can be read off the graph. This is an unlikely scenario in the data-analysis context, because the relationship shown is a <strong>deterministic relationship</strong>. <em>Deterministic means that if the value of <span class="math inline">\(X\)</span> is known then the value of <span class="math inline">\(Y\)</span> can be precisely determined from the relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>.</em></p>
+<p><img src="/module3/MvM/images/deterministic_relationship.png?width=40pc" /></p>
+<hr />
+<p><strong>Scatter Plot</strong></p>
+<p>When analysing the relationship between the two measured variable we start off by creating a scatter plot. A scatter plot is a graph that shows one axis for the explanatory variable commonly known in the regression modelling as a predictor and labelled with <span class="math inline">\(X\)</span>, and one axis for the response variable, which is labelled with <span class="math inline">\(Y\)</span> and commonly known as the outcome variable. Thus, each point on the graph represents a single <span class="math inline">\((X, Y)\)</span> pair. The primary benefit is that the possible relationship between the two variables can be viewed and analysed with one glance and often the nature of a relationship can be determined quickly and easily.</p>
+<p>Let us consider a few scatter plots. The following graph represents a <strong>perfect linear relationship</strong>. All points lie exactly on a straight line. It is easy in this situation to determine the intercept and the slope, i.e. gradient and hence specify the exact mathematical link between the response variable <span class="math inline">\(Y\)</span> and the explanatory variable <span class="math inline">\(X\)</span>.</p>
+<p>-<strong>Graph 1</strong></p>
+<p><img src="/module3/MvM/images/Yes_perfect.png?width=30pc" /></p>
+<p>The relationship shown in <em>Graph 2</em> shows clearly that as the value of <span class="math inline">\(X\)</span> increases the value of <span class="math inline">\(Y\)</span> indecreases, but not exactly on a straight line as in the previous scatter plot. This is showing a statistical link, as the value of the explanatory variable <span class="math inline">\(X\)</span> increases the value of the response variable <span class="math inline">\(Y\)</span> also tends to increase. An explanation for this is that the response <span class="math inline">\(Y\)</span> may depend on a number of different variables, say <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, <span class="math inline">\(X_3\)</span>, <span class="math inline">\(X_4\)</span>, <span class="math inline">\(X_5\)</span>, <span class="math inline">\(X_6\)</span> etc. which could be written as:</p>
+<p><span class="math inline">\(Y = f(X_1, X_2, X_3, X_4, X_5, X_6, ...)\)</span></p>
+<p>-<strong>Graph 2</strong></p>
+<p><img src="/module3/MvM/images/Yes_50.png?width=30pc" /></p>
+<p>If the nature of the link between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span> is under investigation then this could be represented as:</p>
+<p><span class="math display">\[Y = f(X) + \text{effect of all other variables}\]</span></p>
+
+<div class="notices note" ><p>The effect of all other variables is commonly abbreviated to <!-- raw HTML omitted -->e<!-- raw HTML omitted -->.</p>
+</div>
+
+<p><em>Graph 1</em> shows a link where the effect of all the other variables is nil. The response <span class="math inline">\(Y\)</span> depends solely on the variable <span class="math inline">\(X\)</span>, <em>Graph 2</em> shows a situation where <span class="math inline">\(Y\)</span> depends on <span class="math inline">\(X\)</span> but the other variables also have an influence.</p>
+<p>Consider the model:</p>
+<p><span class="math display">\[Y = f(X) + e\]</span>
+Remember 😃, <span class="math inline">\(\text{e is the effect of all other variables}\)</span>!</p>
+<p>The influence on the response variable <span class="math inline">\(Y\)</span> can be thought of as being made up of two components:</p>
+<ol style="list-style-type: lower-roman">
+<li>the component of <span class="math inline">\(Y\)</span> that is explained by changes in the value of <span class="math inline">\(X\)</span>, [the part due to changes in <span class="math inline">\(X\)</span> through <span class="math inline">\(f(X)\)</span>]</li>
+<li>the component of <span class="math inline">\(Y\)</span> that is explained by changes in the other factors [the part not explained by changes in <span class="math inline">\(X\)</span>]</li>
+</ol>
+<p>Or in more abbreviated forms:</p>
+<ol style="list-style-type: lower-roman">
+<li>the <em>Variation in <span class="math inline">\(Y\)</span> Explained by changes <span class="math inline">\(X\)</span></em> or <strong>Explained Variation</strong> and</li>
+<li>the <em>Variation in <span class="math inline">\(Y\)</span> not explained by changes in <span class="math inline">\(X\)</span></em> or the <strong>Unexplained Variation</strong></li>
+</ol>
+<p>The Total Variation in <span class="math inline">\(Y\)</span> is made up of two components:</p>
+<ol style="list-style-type: decimal">
+<li><em>Changes in <span class="math inline">\(Y\)</span> Explained by changes in <span class="math inline">\(X\)</span></em> and the</li>
+<li><em>Changes in <span class="math inline">\(Y\)</span> not explained by changes in <span class="math inline">\(X\)</span></em></li>
+</ol>
+<p>Which may be written as:</p>
+<p><span class="math display">\[\text{The Total Variation in Y} = \text{Explained Variation} + \text{Unexplained Variation}\]</span></p>
+<p>In <em>Graph 1</em> the <strong>Unexplained Variation is nil</strong>, since the value of <span class="math inline">\(Y\)</span> is completely determined by the value of <span class="math inline">\(X\)</span>. In <em>Graph 2</em> the <strong>Explained Variation is large relative to the Unexplained Variation</strong>, since the value of <span class="math inline">\(Y\)</span> is very largely influenced by the value of <span class="math inline">\(X\)</span>.</p>
+<p>Consider Graph 3. Here there is no discernible pattern, and the value of Y seems to be unrelated to the value of X.</p>
+<p><strong>- Graph 3</strong></p>
+<p><img src="/module3/MvM/images/No_relationship.png?width=30pc" /></p>
+<p>If <span class="math inline">\(Y\)</span> is not related to <span class="math inline">\(X\)</span> the <strong>Explained Variation component is zero</strong> and all the changes in <span class="math inline">\(Y\)</span> are due to the other variables, that is the <strong>Unexplained Variation</strong>.</p>
+<p>Finally, consider Graphs 4 &amp; 5 below:</p>
+<p>-<strong>Graph 4</strong></p>
+<p><img src="/module3/MvM/images/Yes_75.png?width=30pc" /></p>
+<p>-<strong>Graph 5</strong></p>
+<p><img src="/module3/MvM/images/deterministic_neg.png?width=30pc" /></p>
+<p><em>Graph 4</em> shows a similar picture to <em>Graph 2</em>, the difference being that as the value of <span class="math inline">\(X\)</span> increases the value of <span class="math inline">\(Y\)</span> decreases. The value of <span class="math inline">\(Y\)</span> is influenced by the value of <span class="math inline">\(X\)</span>, so the <strong>Explained Variation is high relative to the Unexplained Variation</strong>. Consider the last graph, <em>Graph 5</em>, which is a deterministic relationship. <strong>The value of <span class="math inline">\(Y\)</span> is completely specified by the value of <span class="math inline">\(X\)</span></strong>. Hence the <strong>Unexplained Variation is zero</strong>.</p>
+<p>Graphs Summary:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Graph 1</th>
+<th>Graph 2</th>
+<th>Graph 3</th>
+<th>Graph 4</th>
+<th>Graph 5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Explained Variation in Y</td>
+<td>All</td>
+<td>High</td>
+<td>Zero</td>
+<td>High</td>
+<td>All</td>
+</tr>
+<tr class="even">
+<td>Unexplained Variation in Y</td>
+<td>Zero</td>
+<td>Low</td>
+<td>All</td>
+<td>Low</td>
+<td>Zero</td>
+</tr>
+</tbody>
+</table>
+<p>In regression the discussion started with the following idea:
+<span class="math display">\[Y = f(X) + e\]</span>
+And to quantify the strength of the link the influence on Y was broken down into two components:
+i. <span class="math display">\[\text{The Total Variation in Y} = \text{Explained Variation} + \text{Unexplained Variation}\]</span></p>
+<p>This presents two issues:</p>
+<ul>
+<li>A: Can a model of the link be made?</li>
+<li>B: Can <strong>The Total Variation in Y</strong>, <strong>Explained Variation</strong> and the <strong>Unexplained Variation</strong> be measured?</li>
+</ul>
+
+<div class="notices note" ><p>The simplest form of connection is a straight-line relationship and the question arises could a straight-line relationship be matched with the information contained in the graphs 1 -5?</p>
+</div>
+
+<ul>
+<li>Clearly it is easy for Graph 1 and Graph 5, the intercept and the gradient can be obtained directly from the graph. The relationship can then be written as:</li>
+</ul>
+<p><span class="math display">\[Y = a + bX\]</span>
+where:</p>
+<ol style="list-style-type: lower-roman">
+<li><p>a is the intercept and</p></li>
+<li><p>b is the gradient</p></li>
+</ol>
+<ul>
+<li>Since the <strong>Explained Variation</strong> is the same as the <strong>Changes in Y</strong> and the <strong>Unexplained Variation</strong> <strong>is zero</strong>, the precise evaluation of these is not necessary.</li>
+</ul>
+<hr />
+<p><strong>Developing a Statistical Model</strong></p>
+<p>For the statistical relationships as shown in <em>Graphs</em> <em>2</em> &amp; <em>4</em>:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Can the intercept and gradient be measured?</p></li>
+<li><p>Can the values of the three quantities <em>The Total Variation in Y</em>, <em>Explained Variation</em> and <em>The Unexplained Variation</em> be measured?</p></li>
+</ol>
+<p>It is sufficient to work out any two since:</p>
+<p><span class="math display">\[\text{The Total Variation in Y} = \text{Explained Variation} + \text{Unexplained Variation}\]</span></p>
+<p>Fitting a line by eye is subjective. It is unlikely that any two analysts will draw exactly the same line, hence the intercept and gradient will be slightly different from one person to the next. What is needed is an agreed method that will provide an estimate of the intercept and the gradient.</p>
+<p>Consider the simple numerical example below:</p>
+<p>Suppose we would like to fit a straight-line relationship to the following data:</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(X\)</span></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(Y\)</span></td>
+<td>7</td>
+<td>8</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>18</td>
+</tr>
+</tbody>
+</table>
+<p>The problem is to use this information to measure <strong>the intercept</strong> and <strong>the gradient</strong> for this data set.</p>
+<p>A simple way to do this is to draw what is considered to be <strong>the line of best fit</strong> by judgement or guesswork! 😁😉</p>
+<p><strong>The intercept</strong> can be read off the graph as approximately <span class="math inline">\(5\)</span>, and <strong>the gradient</strong> can be simply measured since if <span class="math inline">\(X = 0\)</span> then <span class="math inline">\(Y = 5\)</span>, and if <span class="math inline">\(X = 5\)</span> then <span class="math inline">\(Y = 15\)</span>, so for a change in <span class="math inline">\(X\)</span> of <span class="math inline">\(5\)</span> units (from 0 to 5) <span class="math inline">\(Y\)</span> changes by <span class="math inline">\(10\)</span>, from <span class="math inline">\(5\)</span> to <span class="math inline">\(15\)</span>. The definition of <strong>the gradient</strong> is <strong>The change in Y for a unit increase in X</strong> hence the gradient for this data set is <span class="math inline">\(15/5 = 2\)</span>.</p>
+<p><img src="/module3/MvM/_index.en_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>The straight-line relationship obtained by this process is <span class="math display">\[\hat{Y} = 5 + 2*X\]</span>.<br />
+Note, <span class="math inline">\(\hat{Y}\)</span> is a notation for the value of <span class="math inline">\(Y\)</span> as predicted by the straight-line relationship.</p>
+<p>We can add more information about the predicted values of <span class="math inline">\(Y\)</span> by the <em>“estimated”</em> model to our table, so that we have</p>
+<table>
+<thead>
+<tr class="header">
+<th>X</th>
+<th>Y</th>
+<th align="right"><span class="math inline">\(\hat{Y}\)</span></th>
+<th align="right"><span class="math inline">\({Y - \hat{Y}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>7</td>
+<td align="right">7.00</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>8</td>
+<td align="right">9.00</td>
+<td align="right">-1.00</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>12</td>
+<td align="right">11.00</td>
+<td align="right">1.00</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>13</td>
+<td align="right">13.00</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>14</td>
+<td align="right">15.00</td>
+<td align="right">-1.00</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>18</td>
+<td align="right">17.00</td>
+<td align="right">1.00</td>
+</tr>
+</tbody>
+</table>
+<p>Looking at the information contained in the previous plot, the column headed <span class="math inline">\(\hat{Y}\)</span> contains the predicted values of <span class="math inline">\(Y\)</span> for the values of <span class="math inline">\(X\)</span>. For example, the first value of <span class="math inline">\(\hat{Y}\)</span> is when <span class="math inline">\(X = 1\)</span> and <span class="math inline">\(Yp = 5 + 2*X\)</span> so <span class="math inline">\(\hat{Y} = 5 +2*1 = 7\)</span>. The column headed <span class="math inline">\((Y - \hat{Y})\)</span> is the difference between the actual value and the value predicted by the line. For example when <span class="math inline">\(X = 1\)</span>, <span class="math inline">\(Y = 7\)</span> and <span class="math inline">\(\hat{Y} = 7\)</span> so the predicted value lies on the line, as can be seen in the graph. For the value <span class="math inline">\(X = 2\)</span> the actual value lies <span class="math inline">\(1\)</span> unit below the line, as can also be seen from the graph.</p>
+<p>The column <span class="math inline">\((Y - \hat{Y})\)</span> <strong>measures the disagreement between the actual data and the line</strong> and a sensible strategy is to <strong>make this level of disagreement as small as possible</strong>. Referring to the graph on the table above notice that sometimes the actual data value is below the line and sometimes it is above the line, so on average the value will be close to zero. In this particular example the sum of the <span class="math inline">\((Y - \hat{Y})\)</span> values add up to zero (in a more conventional notation <span class="math inline">\(\Sigma(Y - \hat{Y}) = 0\)</span>). The quantity <span class="math inline">\(\Sigma(Y - \hat{Y})\)</span> does not seem to be a satisfactory measure of disagreement, because there are a number of different lines with the property <span class="math inline">\(\Sigma(Y - \hat{Y}) = 0\)</span>.</p>
+<p><strong>A way of obtaining a satisfactory measure of disagreement is to square the individual <span class="math inline">\((Y - \hat{Y})\)</span> values and add them up</strong>. i.e. obtain the quantity <span class="math inline">\(\Sigma(Y - \hat{Y})^2\)</span>. The result is always a positive number since the square of a negative number is positive. If this quantity is then chosen to be as small as possible then the level of disagreement between the actual data points and the fitted line is the least. This provides a criterion for the choice of the best line.</p>
+<p>The quantity <span class="math inline">\(\Sigma(Y - \hat{Y})^2\)</span> can be easily calculated and added to our table</p>
+<table>
+<thead>
+<tr class="header">
+<th>X</th>
+<th>Y</th>
+<th align="right"><span class="math inline">\(\hat{Y}\)</span></th>
+<th align="right"><span class="math inline">\({Y - \hat{Y}}\)</span></th>
+<th align="right"><span class="math inline">\((Y - \hat{Y})^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>7</td>
+<td align="right">7.00</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>8</td>
+<td align="right">9.00</td>
+<td align="right">-1.00</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>12</td>
+<td align="right">11.00</td>
+<td align="right">1.00</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>13</td>
+<td align="right">13.00</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>14</td>
+<td align="right">15.00</td>
+<td align="right">-1.00</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>18</td>
+<td align="right">17.00</td>
+<td align="right">1.00</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>The quantity <span class="math inline">\(\Sigma(Y - \hat{Y})^2\)</span> is a measure of the disagreement between the actual <span class="math inline">\(Y\)</span> values and the values predicted by the line. If this value is chosen to be as small as possible then the disagreement between the actual Y values and the line is the smallest it could possibly be, hence the line is <strong>The line of Best Fit</strong>.</p>
+<p>This procedure of finding the intercept and the gradient of a line that makes the quantity <span class="math inline">\(\Sigma(Y - \hat{Y})^2\)</span> a minimum is called <strong>The Method of Least Squares</strong>.</p>
+
+<div class="notices info" ><p><!-- raw HTML omitted -->The Method of Least Squares<!-- raw HTML omitted --> was developed by <!-- raw HTML omitted -->K. F Gauss (1777 - 1855)<!-- raw HTML omitted --> a German mathematician, Gauss originated the ideas and a Russian mathematician <!-- raw HTML omitted -->A. A. Markov (1856 - 1922)<!-- raw HTML omitted --> developed the method.</p>
+</div>
+
+<p>In R we use the <code>lm( )</code> function to fit linear models as illustrated below.</p>
+<pre class="r"><code>x &lt;- c(1:6)
+y &lt;- c(7, 8, 12, 13, 14, 18)
+plot(x, y, pch = 16, main = &quot;y = f(x) + e&quot;, xlim = c(0.25, 6), ylim = c(0, 20))
+abline(lm(y~x), lwd = 2, lty = 2, col = 2)</code></pre>
+<p><img src="/module3/MvM/_index.en_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>The final issue is to find out how to measure the three quantities:</p>
+<ol style="list-style-type: lower-roman">
+<li>The Total Variation in <span class="math inline">\(Y\)</span></li>
+<li>The Explained Variation</li>
+<li>The Unexplained Variation</li>
+</ol>
+<p>Taking these quantities one at a time they can be measured as follows:</p>
+<p><strong>The Unexplained Variation</strong></p>
+<p>This turns out to be very simple to measure. The quantity: <strong><span class="math inline">\(\Sigma(Y - \hat{Y})^2\)</span> is a measure of the Unexplained Variation</strong>. If the line were a perfect fit to the data, the value predicted by the line and the actual value would be exactly the same and the value of the quantity <span class="math inline">\(\Sigma(Y - \hat{Y})^2\)</span> would be zero. This quantity is a measure of the disagreement between the actual <span class="math inline">\(Y\)</span> values and the predicted values <span class="math inline">\(\hat{Y}\)</span>, which are also known as <strong>the residuals</strong> and are measuring the <strong>Unexplained Variation in <span class="math inline">\(Y\)</span></strong>. For the example used above the value of <span class="math inline">\(\Sigma(Y - \hat{Y})^2\)</span> is <span class="math inline">\(3.77\)</span>.</p>
+<p><strong>The Total Variation in Y</strong></p>
+<p>This is related to the measures of variability (spread) introduced earlier in the course and in particular to the standard deviation (<span class="math inline">\(\sigma\)</span>). To measure <em>The Total Variation in Y</em> requires a measure of spread.</p>
+<p><em>The Total Variation in Y</em> is defined to be the quantity:
+<span class="math inline">\(\Sigma(Y - \bar{Y})^2\)</span>
+Where <span class="math inline">\(\bar{Y}\)</span> is the average value of <span class="math inline">\(Y\)</span> (<span class="math inline">\(\bar{Y} = \Sigma(Y)/n\)</span>).</p>
+<p>In our earlier example <span class="math inline">\(\bar{Y} = 12\)</span>, so we can expand the table to include this calculation</p>
+<table>
+<thead>
+<tr class="header">
+<th>X</th>
+<th>Y</th>
+<th align="right"><span class="math inline">\(\hat{Y}\)</span></th>
+<th align="right"><span class="math inline">\({Y - \hat{Y}}\)</span></th>
+<th align="right"><span class="math inline">\((Y - \hat{Y})^2\)</span></th>
+<th align="right"><span class="math inline">\(\Sigma(Y - \bar{Y})^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>7</td>
+<td align="right">7.00</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">25.00</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>8</td>
+<td align="right">9.00</td>
+<td align="right">-1.00</td>
+<td align="right">1</td>
+<td align="right">16.00</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>12</td>
+<td align="right">11.00</td>
+<td align="right">1.00</td>
+<td align="right">1</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>13</td>
+<td align="right">13.00</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>14</td>
+<td align="right">15.00</td>
+<td align="right">-1.00</td>
+<td align="right">1</td>
+<td align="right">4.00</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>18</td>
+<td align="right">17.00</td>
+<td align="right">1.00</td>
+<td align="right">1</td>
+<td align="right">36.00</td>
+</tr>
+</tbody>
+</table>
+<p>giving <span class="math inline">\(\Sigma(Y - \bar{Y})^2 = 82\)</span>.</p>
+<p><strong>The Explained Variation in Y</strong></p>
+<p>If the line was a perfect fit, then the <span class="math inline">\(Y\)</span> values and the <span class="math inline">\(\hat{Y}\)</span> values would be exactly the same, and the quantity <span class="math inline">\((\hat{Y} - \bar{Y})^2\)</span> would measure <strong>The Total Variation in Y</strong>. If the line is not a perfect match to the actual <span class="math inline">\(Y\)</span> values then this quantity measures <strong>The Explained Variation in Y</strong>.</p>
+<table>
+<colgroup>
+<col width="2%" />
+<col width="2%" />
+<col width="11%" />
+<col width="16%" />
+<col width="24%" />
+<col width="20%" />
+<col width="24%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>X</th>
+<th>Y</th>
+<th align="right"><span class="math inline">\(\hat{Y}\)</span></th>
+<th align="right"><span class="math inline">\({Y - \hat{Y}}\)</span></th>
+<th align="right"><span class="math inline">\((Y - \hat{Y})^2\)</span></th>
+<th align="right"><span class="math inline">\(\Sigma(Y - \bar{Y})^2\)</span></th>
+<th align="right"><span class="math inline">\((\hat{Y} - \bar{Y})^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>7</td>
+<td align="right">7.00</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">25.00</td>
+<td align="right">27.94</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>8</td>
+<td align="right">9.00</td>
+<td align="right">-1.00</td>
+<td align="right">1</td>
+<td align="right">16.00</td>
+<td align="right">10.06</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>12</td>
+<td align="right">11.00</td>
+<td align="right">1.00</td>
+<td align="right">1</td>
+<td align="right">0.00</td>
+<td align="right">1.12</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>13</td>
+<td align="right">13.00</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">1.12</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>14</td>
+<td align="right">15.00</td>
+<td align="right">-1.00</td>
+<td align="right">1</td>
+<td align="right">4.00</td>
+<td align="right">10.06</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>18</td>
+<td align="right">17.00</td>
+<td align="right">1.00</td>
+<td align="right">1</td>
+<td align="right">36.00</td>
+<td align="right">27.94</td>
+</tr>
+</tbody>
+</table>
+<p>incorporating this calculation into the table above will enable us to get <span class="math inline">\((\hat{Y} - \bar{Y})^2 = 78.23\)</span>.</p>
+<hr />
+<p><strong>The coefficient of Determination <span class="math inline">\(R^2\)</span></strong></p>
+<p>We realise that when fitting a regression model we are seeking to find out how much variance is explained, or is accounted for, by the explanatory variable <span class="math inline">\(X\)</span> in an outcome variable <span class="math inline">\(Y\)</span>.</p>
+<p>From the above example the following has been calculated:</p>
+<ol style="list-style-type: lower-roman">
+<li><span class="math inline">\(\text{The Total Variation in }\)</span><span class="math inline">\(Y = 82.00\)</span></li>
+<li><span class="math inline">\(\text{The Explained Variation in }\)</span><span class="math inline">\(Y = 78.23\)</span></li>
+<li><span class="math inline">\(\text{The Unexplained Variation in }\)</span><span class="math inline">\(Y = 3.77\)</span></li>
+</ol>
+<p>Notice the relationship proposed on page 5, given below, is satisfied</p>
+<p><span class="math display">\[\text{The Total Variation in Y = Explained Variation + Unexplained Variation}\]</span></p>
+<pre><code>$$82.00 = 78.23 + 3.77$$</code></pre>
+<p>What do these quantities tell us? They are difficult to interpret because they are expressed in the units of the problem.</p>
+<p>Consider the following ratio:</p>
+<p><span class="math inline">\({\text{The Explained Variation in Y} \over \text{The Total Variation in Y}} = {78.23 \over 82.00} = 0.954\)</span></p>
+<p>This is saying that <span class="math inline">\(0.954\)</span> or <span class="math inline">\(95.4\%\)</span> of the changes in <span class="math inline">\(Y\)</span> are explained by changes in <span class="math inline">\(X\)</span>. This is a useful and useable measure of the effectiveness of the match between the actual <span class="math inline">\(Y\)</span> values and the predicted <span class="math inline">\(Y\)</span> values.</p>
+<p>Reviewing the five scatter prolos (Graphs 1 to 5) it can easily be seen that if the line is a perfect fit to the actual <span class="math inline">\(Y\)</span> values as in <em>Graphs 1 &amp; 5</em> then this ratio will have the value <span class="math inline">\(1\)</span> or <span class="math inline">\(100\%\)</span>.</p>
+<p>If there is no link between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span> then the <em>The Explained Variation</em> is zero hence the ratio will be <span class="math inline">\(0\)</span> or <span class="math inline">\(0\%\)</span>. An example of this is shown in <em>Graph 3</em>.</p>
+<p>The remaining graphs: <em>Graphs 2 &amp; 4</em> show a statistical relationship hence this ratio will lie between <span class="math inline">\(0\)</span> &amp; <span class="math inline">\(1\)</span>. The closer the ratio is to zero the less strong the link is, whilst the closer the ratio is to <span class="math inline">\(1\)</span> the stronger the connection is between <span class="math inline">\(X\)</span> &amp; <span class="math inline">\(Y\)</span>.</p>
+<p><strong>The Ratio:</strong></p>
+<p><span class="math display">\[R^2 = {\text{The Explained Variation in Y} \over \text{The Total Variation in Y}}\]</span></p>
+<p>is called <strong>the Coefficient of Determination</strong>, and usually labelled as <span class="math inline">\(R^2\)</span>, and may be defined as <strong>the proportion of the changes in <span class="math inline">\(Y\)</span> explained by changes in <span class="math inline">\(X\)</span></strong>.</p>
+<p>This ratio is always on the scale <span class="math inline">\(0\)</span> to <span class="math inline">\(1\)</span>, but by convention is usually expressed as a percentage, so is regarded as on the scale <span class="math inline">\(0\)</span> to <span class="math inline">\(100\%\)</span>. The interpretation of this ratio is as follows:</p>
+<p><img src="/module3/MvM/images/R_sq_interp.png?width=30pc" /></p>
+<p>The definition and interpretation of <strong><span class="math inline">\(R^2\)</span></strong> is a very <strong>important tool</strong> in the data analyst’s tool kit <strong>for tracking connections between a measured response variable and a measured explanatory variable</strong>.</p>
+<hr />
+<p><strong>Using Sample Data to Track a connection</strong></p>
+<p>When working with sample data to investigate any relationships that may exist between a measured response variable and a measured explanatory variable, the information contained within the sample is imperfect, so has to be interpreted in the light of sampling error. This is particularly important when interpreting the value of <span class="math inline">\(R^2\)</span> calculated from sample data. The sample R2 value gives a measure of the strength of the connection, and this can sometimes be difficult to interpret particularly if the sample size is small.</p>
+<p>The data analysis methodology as set out earlier, is a procedure that enables you to make judgements from sample data. The methodology requires you to know what specific procedures make up the Initial Data Analysis IDA and how to interpret the results of the IDA to obtain one of three outcomes:</p>
+<ol style="list-style-type: lower-roman">
+<li>No evidence of a connection between the response and the explanatory variable</li>
+<li>Clear evidence of a connection between the response and the explanatory variable</li>
+<li>The IDA is inconclusive and further analysis is required</li>
+</ol>
+<p>If Further Data Analysis, FDA, is required then you need to know what constitutes this further analysis and how to interpret it.</p>
+<p>Finally, if a connection between the response variable and the explanatory variable is detected then a description of the connection is required. In this case the connection needs to be described.</p>
+<p>To demonstrate the data analysis methodology we’ll go back to Share Price Study Case Study.</p>
+<p><strong>Share Price Study Data</strong></p>
+<p>A business analyst is studying share prices of companies from three different business sectors. As part of the study a random sample (n=60) of companies was selected and the following data was collected:</p>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Variable</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Share_Price</strong></td>
+<td>The market value of a company share (£)</td>
+</tr>
+<tr class="even">
+<td><strong>Profit</strong></td>
+<td>Company annual profit (£1.000.000)</td>
+</tr>
+<tr class="odd">
+<td><strong>RD</strong></td>
+<td>Company annual spending on research and development (£1.000)</td>
+</tr>
+<tr class="even">
+<td><strong>Turnover</strong></td>
+<td>Company annual total revenue (£1.000.000)</td>
+</tr>
+<tr class="odd">
+<td><strong>Competition</strong></td>
+<td>A variable coded:</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>- <strong>0</strong> if the company operates in a very competitive market</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>- <strong>1</strong> if the company has a great deal of monopoly power</td>
+</tr>
+<tr class="even">
+<td><strong>Sector</strong></td>
+<td>A variable coded:</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>- <strong>1</strong> if the company operates in the IT business sector</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>- <strong>2</strong> if the company operates in the Finance business sector</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>- <strong>3</strong> if the company operates in the Pharmaceutical business sector</td>
+</tr>
+<tr class="even">
+<td><strong>Type</strong></td>
+<td>A variable coded:</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>- <strong>0</strong> if the company does business mainly in Europe</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>- <strong>1</strong> if the company trades globally</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s start off by investigating the relationship between the variables <code>Share_Price</code> and <code>Profit</code>.</p>
+<p>We will adopt the following notation</p>
+<ul>
+<li><span class="math inline">\(Y: Share\_Price\)</span></li>
+<li><span class="math inline">\(X: Profit\)</span></li>
+</ul>
+<p><span class="math inline">\(\text{Model to be estimated:  } Y = b_0 + b_1X + e\)</span></p>
+<p>We start by accessing data:</p>
+<pre class="r"><code>suppressPackageStartupMessages(library(dplyr))
+# read csv file
+companyd &lt;- read.csv(&quot;https://tanjakec.github.io/mydata/SHARE_PRICE.csv&quot;, header=T)
+# look at the data
+glimpse(companyd)</code></pre>
+<pre><code>## Observations: 60
+## Variables: 7
+## $ Share_Price &lt;int&gt; 880, 862, 850, 840, 838, 825, 808, 806, 801, 799, 783, 77…
+## $ Profit      &lt;dbl&gt; 161.3, 170.5, 140.7, 115.7, 107.9, 138.8, 102.0, 102.7, 1…
+## $ RD          &lt;dbl&gt; 152.6, 118.3, 110.6, 87.2, 75.1, 116.2, 91.3, 100.4, 113.…
+## $ Turnover    &lt;dbl&gt; 320.9, 306.3, 279.5, 193.2, 182.4, 265.2, 212.0, 170.3, 2…
+## $ Competition &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, …
+## $ Sector      &lt;int&gt; 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, …
+## $ Type        &lt;int&gt; 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, …</code></pre>
+<pre class="r"><code># convert into factore type variables
+companyd[, 5] &lt;- as.factor(companyd[, 5])
+companyd[, 6] &lt;- as.factor(companyd[, 6])
+companyd[, 7] &lt;- as.factor(companyd[, 7])
+# glance at data
+summary(companyd)</code></pre>
+<pre><code>##   Share_Price        Profit             RD            Turnover     Competition
+##  Min.   :101.0   Min.   :  2.90   Min.   : 39.20   Min.   : 30.3   0:30       
+##  1st Qu.:501.2   1st Qu.: 59.73   1st Qu.: 75.78   1st Qu.:112.3   1:30       
+##  Median :598.5   Median : 88.85   Median : 90.60   Median :173.5              
+##  Mean   :602.8   Mean   : 84.76   Mean   : 89.64   Mean   :170.2              
+##  3rd Qu.:739.8   3rd Qu.:106.62   3rd Qu.:104.15   3rd Qu.:216.6              
+##  Max.   :880.0   Max.   :170.50   Max.   :152.60   Max.   :323.3              
+##  Sector Type  
+##  1:20   0:30  
+##  2:20   1:30  
+##  3:20         
+##               
+##               
+## </code></pre>
+<pre class="r"><code>glimpse(companyd)</code></pre>
+<pre><code>## Observations: 60
+## Variables: 7
+## $ Share_Price &lt;int&gt; 880, 862, 850, 840, 838, 825, 808, 806, 801, 799, 783, 77…
+## $ Profit      &lt;dbl&gt; 161.3, 170.5, 140.7, 115.7, 107.9, 138.8, 102.0, 102.7, 1…
+## $ RD          &lt;dbl&gt; 152.6, 118.3, 110.6, 87.2, 75.1, 116.2, 91.3, 100.4, 113.…
+## $ Turnover    &lt;dbl&gt; 320.9, 306.3, 279.5, 193.2, 182.4, 265.2, 212.0, 170.3, 2…
+## $ Competition &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, …
+## $ Sector      &lt;fct&gt; 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, …
+## $ Type        &lt;fct&gt; 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, …</code></pre>
+<p>The Initial Data Analysis for investigating a connection between a measured response and a measured explanatory variable requires obtaining a graph of the response against the explanatory variable and to calculate the value of <span class="math inline">\(R^2\)</span> from the sample data.</p>
+<p>The IDA has three possible outcomes:</p>
+<ol style="list-style-type: lower-roman">
+<li>No evidence of a connection between the response and the explanatory variable.</li>
+<li>Clear evidence of a connection between the response and the explanatory variable.</li>
+<li>The IDA is inconclusive and further analysis is required.</li>
+</ol>
+<p>The simplest form of connection is a straight-line relationship and the question arises could a
+straight-line relationship be matched with the information contained in the <em>Graphs</em> <em>1</em> to <em>5</em> discussed earlier?</p>
+<p><img src="/module3/MvM/images/DAM_MvM.png?width=40pc" /></p>
+<p>As part of an informal investigation of the possible relationship between <code>Share_Price</code> and <code>Profit</code>, first we will use R to obtain a scatter plot with the line of the best fit. Rather than every time referring to the name of the data set containing the variables of interest, we will attach our data and refer to the variables directly using only their names (see help for the <code>attach( )</code> function).</p>
+<pre class="r"><code>attach(companyd)
+names(companyd) # shows the names of the variables in the &#39;companyd&#39; data frame</code></pre>
+<pre><code>## [1] &quot;Share_Price&quot; &quot;Profit&quot;      &quot;RD&quot;          &quot;Turnover&quot;    &quot;Competition&quot;
+## [6] &quot;Sector&quot;      &quot;Type&quot;</code></pre>
+<pre class="r"><code>plot(Share_Price ~ Profit, cex = .6, main = &quot;Share Price = f(Profit) + e&quot;)
+abline(lm(Share_Price ~ Profit), lty = 2, col = 2)</code></pre>
+<p><img src="/module3/MvM/_index.en_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<blockquote>
+<p>Let’s go through the code and the functions we have used to produce this graph.</p>
+<ul>
+<li><p>The <code>plot( )</code> function gives a scatterplot of two numerical variables. The first variable listed will be plotted on the horizontal axis and the second on the vertical axis, i.e. you ‘feed’ as the arguments first variable representing X and then variable representing Y: <code>plot( x, y)</code>.
+Considering that we are investigating a relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> in the form of a regression line <span class="math inline">\(Y = b_0 + b1_X + e\)</span>, we specify that in <strong>R</strong> as a formula <code>Y ~ X</code>, which can be read as “<span class="math inline">\(Y\)</span> is modelled as a function of <span class="math inline">\(X\)</span>”. This means that in the <strong>R</strong>’s <code>plot( )</code> function a formula interface can also be used, in which case the response variable <span class="math inline">\(Y\)</span> needs to come before the tilde (<span class="math inline">\(\sim\)</span>) and <span class="math inline">\(X\)</span> variable that will be plotted on the horizontal axis.</p></li>
+<li><p>Next, we fit a <strong>line of the best-fit</strong> through our scatterplot using the <code>abline( )</code> function for the linear model <span class="math inline">\(Y = b_0 + b_1X\)</span> to see how close are the points to the fitted line. The basic R function for <strong>fitting linear models by ordinary least squares</strong> is the <code>lm( )</code>, which stands for <strong>l</strong>inear <strong>m</strong>odel. All we need to feed R with when using the <code>lm( )</code> function is the formula <code>Y~X</code>.</p></li>
+</ul>
+</blockquote>
+<p>The scatterplot shows a fairly strong and reasonably linear relationship between the two variables. In other words, the fit is reasonably good, but it is not perfect and we could do with some more information about it. Let us see what the <code>lm( )</code> function provide as a part of the output.</p>
+<pre class="r"><code>lm(Share_Price ~ Profit)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = Share_Price ~ Profit)
+## 
+## Coefficients:
+## (Intercept)       Profit  
+##     258.924        4.057</code></pre>
+<blockquote>
+<p>First, R displays the fitted model, after which it shows the estimates of the two parameters
+<span class="math inline">\(b_0\)</span> &amp; <span class="math inline">\(b_1\)</span> to which it refers to as coefficients.</p>
+<ul>
+<li>the intercept, <span class="math inline">\(b_0 = 258.924\)</span></li>
+<li>the slope, <span class="math inline">\(b_1= 4.057\)</span></li>
+</ul>
+</blockquote>
+<p>We must now take this estimated model and ask a series of questions to decide whether or not our estimated model is good/bad: that is, we have to subject the fitted model to a set of tests designed to check the validity of the model, which is in effect a test of your, as a modeller, viewpoint/theory.</p>
+<p>Examining the scatterplot, we can see that not all of the points lie on the fitted line <span class="math inline">\(Share\_Price = 258.924 + 4.057Profit\)</span>. To explain how strong the relationship is between the two variables we need to obtain the coefficient of determination known as the <span class="math inline">\(R^2\)</span> parameter.</p>
+<p>The coefficient of determination, <span class="math inline">\(R^2\)</span>, is a single number that measures the extent to which the explanatory variable can explain, or account for, the variability in <span class="math inline">\(Y\)</span> – that is, how well does the explanatory variable explain the variability in, or behaviour of, the phenomenon we are trying to understand.</p>
+<p>Earlier, we saw that <span class="math inline">\(R^2\)</span> is constrained to lie in the following range:</p>
+<p><span class="math display">\[0\%  \text{ &lt;---------- }  R^2  \text{ ----------&gt; }  100\%\]</span></p>
+<p>We realised that the closer <span class="math inline">\(R^2\)</span> is to <span class="math inline">\(100\%\)</span> then the better the model is, and conversely, a value of <span class="math inline">\(R^2\)</span> close to <span class="math inline">\(0\%\)</span> implies a weak/poor model.</p>
+<p>To obtain all of the information about the fitted model we can use the <code>summary( )</code> function as in the following:</p>
+<pre class="r"><code>summary(lm(Share_Price ~ Profit))</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = Share_Price ~ Profit)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -175.513  -74.826    0.107   67.824  141.358 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 258.9243    28.7465   9.007 1.29e-12 ***
+## Profit        4.0567     0.3102  13.077  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 89.98 on 58 degrees of freedom
+## Multiple R-squared:  0.7467, Adjusted R-squared:  0.7424 
+## F-statistic:   171 on 1 and 58 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>So, what have we got here? 🤔</p>
+<p>We will discuss some of the key components of R’s <code>summary( )</code> function for linear regression models.</p>
+<blockquote>
+<ul>
+<li><strong>Call</strong>: shows what function and variables were used to create the model.</li>
+<li><strong>Residuals</strong>: difference between what the model predicted and the actual value of Y. Try to see if you can calculate this ‘residuals’ section by yourself using: <code>summary(Y-model$fitted.values)</code>. 🤓</li>
+<li><strong>Coefficients</strong>:</li>
+<li>estimated parameters for intercept and slope: <span class="math inline">\(b_0\)</span> and <span class="math inline">\(b_1\)</span></li>
+<li>Std. Error is Residual Standard Error divided by the square root of the sum of the square of that particular explanatory variable.</li>
+<li>t value: Estimate divided by Std. Error</li>
+<li>Pr(&gt;|t|): is the value in a t distribution table with the given degrees of freedom.</li>
+</ul>
+
+<div class="notices note" ><p>Note that in the first section we can find statistics relevant to the estimation of the model’s parameters. In the second part of the output we can find statistics related to the overall goodness of the fitted model.</p>
+</div>
+
+<p>The <code>summary(lm( ))</code> produces the standard deviation of the error. We know that standard deviation is the square root of variance. Standard Error is very similar, the only difference is that instead of dividing by <span class="math inline">\(n-1\)</span>, you subtract <span class="math inline">\(n\)</span> minus <span class="math inline">\(1 + k\)</span>, where <span class="math inline">\(k\)</span> is the number of explanatory variables used in the model. See if you can use and adjust the code below to calculate this statistic. 🤓</p>
+<pre><code># Residual Standard Error
+k &lt;- length(model$coefficients) - 1 #Subtract one to ignore intercept
+SSE &lt;- sum(model$residuals^2)
+n &lt;- length(model$residuals)
+sqrt(SSE / (n-(1+k)) ) # Residual Standard Error</code></pre>
+<p>Next is the <em>coefficient of determination</em>, which helps us determine how well the model fits to the data. We have already seen that <span class="math inline">\(R^2\)</span> subtracts the residual error from the variance in Y. The bigger the error, the worse the remaining variance will appear.</p>
+<p>For the time being we will skip <span class="math inline">\(R^2_{adj}\)</span> and point out that it is used for models with multiple variables, to which you will be introduced in the next section.</p>
+<p>Lastly, the <em>F-Statistic</em> is the second “test” that the summary function produces for <code>lm</code> models. The <em>F-Statistic</em> is a “global” test that checks if at least one of your coefficients are nonzero, i.e. when dealing with a simple regression model to check if the model is worthy of further investigation and interpretation.</p>
+</blockquote>
+<p><strong>Model Interpretation:</strong></p>
+<p>To go back to our model interpretation. Earlier, we said after examining the scatter plot that there is a a clear link between <em>Share_Price</em> and <em>Profit</em>. This is confirmed by the value of <span class="math inline">\(R^2 = 74.67\%\)</span>. The interpretation of <span class="math inline">\(R^2\)</span> is suggesting that <span class="math inline">\(74.67\%\)</span> of the changes in <em>Share_Price</em> are explained by changes in <em>Profit</em>. Alternatively, <span class="math inline">\(25.33\%\)</span> of the changes in <em>Share_Price</em> are due to other variables.</p>
+<p>For this example the outcome of the IDA is that there is clear evidence of a link between <em>Share_Price</em> and <em>Profit</em> and the nature of the influence being that as <em>Profit</em> increases <em>Share_Price</em> also increases. It only remains to describe the connection, and discuss how effective the model is, and ask if it can be used to predict <em>Share_Price</em> value from the value of <em>Profit</em>? 🤔</p>
+<hr />
+<p>** Further Data Analysis**</p>
+<p>The adequacy of <span class="math inline">\(R^2\)</span> can be judged both informally and formally using hypothesis testing.
+Like all hypothesis tests, this test is carried out in four stages:</p>
+<ol style="list-style-type: decimal">
+<li>Specify the hypotheses</li>
+<li>Define the test parameters and decision rule</li>
+<li>Examine the sample evidence</li>
+<li>Conclusions</li>
+</ol>
+<p><strong>Stage 1:</strong> Specify the hypotheses (<span class="math inline">\(H_0\)</span> &amp; <span class="math inline">\(H_1\)</span>).</p>
+<p><em>The Coefficient of Determination</em> <span class="math inline">\(R^2\)</span> is a useful quantity. By definition if <span class="math inline">\(R^2 = 0\)</span> then there is no connection between the response variable and the explanatory variable. Conversely if the value of <span class="math inline">\(R^2\)</span> is greater than zero there must be a connection. This enables the formal hypotheses to be defined as:</p>
+<ul>
+<li><span class="math inline">\(H_0 : R^2 = 0\)</span> (There is no relationship between the response and interest and the explanatory variable.)</li>
+<li><span class="math inline">\(H_1 : R^2 &gt; 0\)</span> (There is a relationship between the response and the explanatory variable.)</li>
+</ul>
+<p><strong>Stage 2:</strong> Defining the test parameters and the decision rule.</p>
+<p>The decision rule is based on the <em>F statistic</em>. The <em>F distribution</em> has a shape as shown below:</p>
+<p><img src="/module3/MvM/images/F-dist.png?width=40pc" /></p>
+<p>The value of <span class="math inline">\(F_{crit}\)</span> is the value that divides the distribution with <span class="math inline">\(95\%\)</span> of the area to the left of the <span class="math inline">\(F_{crit}\)</span> ordinate, and <span class="math inline">\(5\%\)</span> to the right. The accepted terminology is <span class="math inline">\(F_{crit}\)</span> but this text will call this quantity <span class="math inline">\(F_{calc}\)</span> to signify it is a quantity obtained from statistical tables.</p>
+<p>The <strong>decision rule</strong> is:</p>
+<ul>
+<li><p>If the value of <span class="math inline">\(F_{calc}\)</span> from the sample data is larger than <span class="math inline">\(F_{crit}\)</span>, then the sample evidence favours the decision that there is a connection between the response variable and the explanatory variable. (i.e. favours <span class="math inline">\(H_1\)</span>.)</p></li>
+<li><p>If the value of <span class="math inline">\(F_{calc}\)</span> is smaller than <span class="math inline">\(F_{crit}\)</span> then the sample evidence is consistent with no connection between the response variable and the explanatory variable. (i.e. favours <span class="math inline">\(H_0\)</span>)</p></li>
+</ul>
+<p>The decision rule can be summarised as:</p>
+<p>If <span class="math inline">\(F_{calc} &lt; F_{crit}\)</span> then favour <span class="math inline">\(H_0\)</span>, whilst if <span class="math inline">\(F_{calc} &gt; F_{crit}\)</span> then favour <span class="math inline">\(H_1\)</span>. This decision rule can be represented graphically as below:</p>
+<p><img src="/module3/MvM/images/F-test.png?width=40pc" /></p>
+<p>The decision rule maybe written as:</p>
+<ul>
+<li>If <span class="math inline">\(F_{calc} &lt; F_{crit}\)</span> then accept <span class="math inline">\(H_0\)</span></li>
+<li>If <span class="math inline">\(F_{calc} &gt; F_{crit}\)</span> then accept <span class="math inline">\(H_1\)</span></li>
+</ul>
+<p>The value of <span class="math inline">\(F_{crit}\)</span> depends on the amount of data in the sample. The <em>Degrees of Freedom</em> (usually abbreviated to <span class="math inline">\(df\)</span>) express this dependence on the sample size. For any given set of sample data, having obtained the <span class="math inline">\(df\)</span> the specific value of <span class="math inline">\(F_{crit}\)</span> can be obtained from Statistical Tables of the <em>F distribution</em>, or simply by using the <code>qf(p, df1, df2)</code> function in R.</p>
+<p><strong>Stage 3: Examining the sample evidence</strong></p>
+<p>For the investigation of the <em>Share_Price</em> vs <em>Profit</em> we plot the scatterplot and obtain the summary of the fitted model: <span class="math inline">\(Share\_Price = b_0 + b_1Profit\)</span></p>
+<pre class="r"><code># create a scatterplot
+plot(Share_Price ~ Profit, cex = .6, main = &quot;Share Price = f(Profit) + e&quot;)
+# fit the model
+model_1 &lt;- lm(Share_Price ~ Profit)
+# add the line of the best fit on the scatterplot
+abline(model_1, lty = 2, col = 2)</code></pre>
+<p><img src="/module3/MvM/_index.en_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code># obtain R_sq of the fitted model
+summary(model_1)$r.squared</code></pre>
+<pre><code>## [1] 0.7467388</code></pre>
+<p>This is a good model explaining almost <span class="math inline">\(3/4\)</span> of the overall variability in the explanatory variable <span class="math inline">\(Y\)</span>. Hence, based on the sample evidence, variable <em>Profit</em>, can explain <span class="math inline">\(74.67\%\)</span> of overall variation in the variable <em>Share_Price</em>.</p>
+
+<div class="notices note" ><p>Note, that if we don’t reject that there is a relationship between the two variables we will obtain full output of the <!-- raw HTML omitted -->summary(lm(model_1))<!-- raw HTML omitted --> function regardless of the need for FDA. If we conclude that there is a clear relationship, we will need the estimates of the parameters to describe it, and if we need further to investigate the significance of the relationship we need relevant statistics for conducting the FDA.</p>
+</div>
+
+<p>In the cases where <span class="math inline">\(R^2 \approx 0\)</span> we will carry out a hypothesis test for which we need <span class="math inline">\(F_{calc}\)</span> from the <code>summary( )</code> function.</p>
+<p>Let us assume that the <span class="math inline">\(R^2\)</span> for the given example <em>Share_Price vs Profit</em> is very small and close to zero. In that case, we cannot simply reject it as a statistically insignificant relationship, as <span class="math inline">\(R^2\)</span> is not zero, but neither can we with confidence accept it as a statistically valid relationship based on the sample evidence we use.</p>
+<p>This step requires the calculation of the <span class="math inline">\(F_{calc}\)</span> value from the sample data, and the determining of the degrees of freedom.</p>
+<pre class="r"><code>summary(model_1)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = Share_Price ~ Profit)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -175.513  -74.826    0.107   67.824  141.358 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 258.9243    28.7465   9.007 1.29e-12 ***
+## Profit        4.0567     0.3102  13.077  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 89.98 on 58 degrees of freedom
+## Multiple R-squared:  0.7467, Adjusted R-squared:  0.7424 
+## F-statistic:   171 on 1 and 58 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p><strong>Stage 4:</strong> Conclusion</p>
+<p>The associated <em>F statistic</em> evaluating the significance of the full model <span class="math inline">\(F_{calc} = 171\)</span> with <span class="math inline">\(df_1=1\)</span> and <span class="math inline">\(df_2=58\)</span>. Thus,</p>
+<pre class="r"><code>F_crit &lt;- qf(0.95, 1, 58)
+F_crit</code></pre>
+<pre><code>## [1] 4.006873</code></pre>
+<p><span class="math inline">\(F_{crit} = 4.01\)</span> and using the decision rule given, we get that</p>
+<p><span class="math display">\[F_{calc}=171 &gt; F_{crit}=4.01\text{ =&gt; accept }H_1\]</span>
+, ie this model is statistically significant and we need to describe it.</p>
+<p><strong>Describe the Relationship</strong></p>
+<p>If the resulting outcome from either the Initial Data Analysis (IDA) or the Further Data Analysis (FDA) is that there is a connection between the response variable and the explanatory variable then the last step is to describe this connection.</p>
+<p>For the data analysis situation Measured v Measured this is simply stating the line of the best fit. This is a description of the connection between the two variables. Additionally the <span class="math inline">\(R^2\)</span> value should be quoted as this gives a measure of how well the data and the line of best fit match.</p>
+<p>The <span class="math inline">\(R^2\)</span> value can be interpreted as a measure of the quality of predictions made from the line of best fit according to the rule of thumb:</p>
+<p><img src="/module3/MvM/images/Prediction_Rsq.png?width=40pc" /></p>
+<p>In our example <em>Share_Price vs Profit</em> we had the following estimations:</p>
+<ul>
+<li><span class="math inline">\(b_0 = 258.9243\)</span></li>
+<li><span class="math inline">\(b_1 = 4.0567\)</span></li>
+</ul>
+<p><span class="math display">\[Share\_Price = 258.9243 + 4.0567 Profit\]</span></p>
+<p>with <span class="math inline">\(R^2 = 74.67\%\)</span>.</p>
+<p><strong>Making predictions</strong></p>
+<p>Can the regression line be used to make predictions about the <em>Share_Price</em> for a company with a given value of the <em>Profit</em>?</p>
+<p>Suppose we have to make a prediction of the <span class="math inline">\(Share\_{Price}\)</span> for company with the <span class="math inline">\(Profit = 137.2\)</span></p>
+<p>The predictions are calculated from the model as follows:</p>
+<p><span class="math display">\[Share\_Price = 258.9243 + 4.0567 \times 137.2000 = 815.5035\]</span>
+Since the <span class="math inline">\(R^2\)</span> value is nearly <span class="math inline">\(75\%\)</span> any predictions about <em>Share_Price</em> made from this model are likely to be of good quality, but there may be some issues with some of these predictions of the <em>Profit</em> values out of the data range used in prediction. The <em>Profit</em> in the given data set range from about <span class="math inline">\(3\)</span> to <span class="math inline">\(170\)</span>. Over this range any prediction is likely to be of good quality since the information in the data is reflecting experience within this range, and the <span class="math inline">\(R^2\)</span> value is nearly <span class="math inline">\(75\%\)</span>.</p>
+<pre class="r"><code>summary(Profit)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    2.90   59.73   88.85   84.76  106.62  170.50</code></pre>
+<p>The <em>Share_Price</em> for the company with the <em>Profit</em> that lies outside the range of experience is not likely to be very reliable, or of much value. These problems are caused by the fact that the information available about the link between <em>Share_Price</em> and <em>Profit</em> is only valid over the range of values that <em>Profit</em> takes in the data. There is no information about the nature of the connection outside this range and any predictions made must be treated with caution.</p>
+<p>In general terms when interpreting a regression model the intercept is of little value, since it is generally out of the range of the data. The gradient term is the more important and the formal definition of the gradient provides the interpretation of this information.</p>
+<p>The <strong>gradient</strong> is defined to be the <strong>change in <span class="math inline">\(Y\)</span> for a unit increase in <span class="math inline">\(X\)</span></strong>. For the model developed the gradient is <span class="math inline">\(4.06\)</span>. This is suggesting for every additional unit increase in <em>Profit</em>, <em>Share_Price</em> increases by <span class="math inline">\(£4.06\)</span>.</p>
+<hr />
+<p><strong>YOUR TURN</strong> 👇</p>
+<ol style="list-style-type: decimal">
+<li><p>Investigate the nature of the relationship in Share Price Study data for <code>Share_Price vs RD</code> and <code>Share_Price vs Turnover</code>.</p></li>
+<li><p>Download The <em>Supermarket</em> data set available at <a href="https://github.com/TanjaKec/mydata" class="uri">https://github.com/TanjaKec/mydata</a> using the following link <a href="https://tanjakec.github.io/mydata/SUPERM.csv" class="uri">https://tanjakec.github.io/mydata/SUPERM.csv</a>.</p></li>
+</ol>
+<p><strong>Crate an Rmd report in which you will:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Give a brief explanation of the following statistical terms:</li>
+</ol>
+<ol style="list-style-type: lower-roman">
+<li>Response Variable<br />
+</li>
+<li>Explanatory variable</li>
+<li>Measured Variable<br />
+</li>
+<li>Attribute Variable</li>
+</ol>
+<ol start="2" style="list-style-type: decimal">
+<li>Provide a brief answer for each of the following questions:</li>
+</ol>
+<ol style="list-style-type: lower-roman">
+<li>What is ‘Data Analysis Methodology’, and why is this needed when working with sample data?</li>
+<li>What are the statistical concepts used to investigate the relationship between a measured
+response variable and an attribute explanatory variable?</li>
+<li>What are the statistical concepts used to investigate the relationship between a measured
+response variable and a measured explanatory variable?</li>
+</ol>
+<ol start="3" style="list-style-type: decimal">
+<li>Undertake the Data Analysis for the Supermarket Data Set to investigate the relationships between the response variable and from your point of view regarded as worth of attention set of explanatory variables. Present your points of views about the nature of the relationships and give a complete explanation, within the data analysis methodology, of this analysis.</li>
+</ol>
+<p><strong>You are expected to bring your report to into the next class.</strong></p>
+<hr />
+<p>© 2020 Tatjana Kecojevic</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/module4/resampling/" title="Resampling"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/module4/clasification/" title="Clasification" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1602924342"></script>
+    <script src="/js/perfect-scrollbar.min.js?1602924342"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1602924342"></script>
+    <script src="/js/jquery.sticky.js?1602924342"></script>
+    <script src="/js/featherlight.min.js?1602924342"></script>
+    <script src="/js/highlight.pack.js?1602924342"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1602924342"></script>
+    <script src="/js/learn.js?1602924342"></script>
+    <script src="/js/hugo-learn.js?1602924342"></script>
+
+    <link href="/mermaid/mermaid.css?1602924342" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1602924342"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105947713-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

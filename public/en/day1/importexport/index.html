@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.60.1" />
+    <meta name="description" content="Documentation for Hugo Learn Theme">
+<meta name="author" content="Mathieu Cornic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>Import Data to R :: Documentation for Hugo Learn Theme</title>
+
+    
+    <link href="/css/nucleus.css?1576058367" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1576058367" rel="stylesheet">
+    <link href="/css/hybrid.css?1576058367" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1576058367" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1576058367" rel="stylesheet">
+    <link href="/css/auto-complete.css?1576058367" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1576058367" rel="stylesheet">
+    <link href="/css/theme.css?1576058367" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1576058367" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1576058367"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/en/day1/importexport/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <!DOCTYPE html>
+<html>
+<body>
+<IMG SRC="/images/logo.png" ALT="DataTeka" WIDTH=100 HEIGHT=100>
+
+</body>
+</html>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1576058367"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1576058367"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/en";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1576058367"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/general/" title="About the course" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/general/">
+          <b>1. </b>About the course
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/general/whatlearn/" title="General Overview" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/general/whatlearn/">
+          General Overview
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/general/instructor/" title="Meet the Instructor" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/general/instructor/">
+          Meet the Instructor
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/general/syllabus/" title="Indicative Syllabus" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/general/syllabus/">
+          Indicative Syllabus
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/day1/" title="Module 1" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/en/day1/">
+          <b>2. </b>Module 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/day1/whatisr/" title="What is R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/day1/whatisr/">
+          What is R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/day1/installr/" title="Install R/RStudio" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/day1/installr/">
+          Install R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/day1/git-and-github/" title="Git and GitHub" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/day1/git-and-github/">
+          Git and GitHub
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/day1/rstudioide/" title="RStudio IDE" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/day1/rstudioide/">
+          RStudio IDE
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/day1/user/" title="How to use R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/day1/user/">
+          How to use R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/day1/datatypes/" title="Data Types" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/day1/datatypes/">
+          Data Types
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/day1/importexport/" title="Import Data to R" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/en/day1/importexport/">
+          Import Data to R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/day3/" title="Module 2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/day3/">
+          <b>4. </b>Module 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/day3/rmarkdown/" title="RMarkdown" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/day3/rmarkdown/">
+          RMarkdown
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/matcornic/hugo-theme-learn"><i class='fab fa-fw fa-github'></i> GitHub repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="/en/showcase"><i class='fas fa-fw fa-camera'></i> Showcases</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://gohugo.io/"><i class='fas fa-fw fa-bookmark'></i> Hugo Documentation</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="en/credits"><i class='fas fa-fw fa-bullhorn'></i> Credits</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/en/day1/importexport/" selected>English</option>
+                    
+                  
+              
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download matcornic/hugo-theme-learn on GitHub">Download</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn" data-icon="octicon-star" data-show-count="true" aria-label="Star matcornic/hugo-theme-learn on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork matcornic/hugo-theme-learn on GitHub">Fork</a>
+
+    <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/day1/ImportExport/_index.en.markdown" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/en/'>Reproducible Research in R</a> > <a href='/en/day1/'>Module 1</a> > Import Data to R
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#the-r-base">the R base</a></li>
+        <li><a href="#importing-excel-files-with-readxl">Importing Excel files with readxl</a></li>
+        <li><a href="#importing-data-using-jsonlite">Importing data using jsonlite</a></li>
+        <li><a href="#other-data-formats">Other data formats</a></li>
+      </ul>
+    </li>
+    <li><a href="#your-turn-">YOUR TURN 👇</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Import Data to R
+            </h1>
+          
+
+        
+
+
+
+
+	<p>It’s the first big hurdle to dealing with data in R.</p>
+<p>You are most likely to have looked at, organised and examined your data files in Excel.</p>
+<p>Opening data in R is fairly simply, but organising it for analysis might take some thought and consideration. You'll guess that it is possible to use the <strong>File | Import Dataset</strong> menu option in RStudio to import your data (to learn more see <a href="https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio">Importing Data with RStudio</a>), however we’re going to do it the proper way with a command.</p>
+<p>R can import all types of data:</p>
+<ul>
+<li>(Tab, Blank space) Delimited Text</li>
+<li>CSV files</li>
+<li>Excel files</li>
+<li>JSON</li>
+<li>SAS</li>
+<li>STATA</li>
+<li>MiniTab</li>
+<li>SPSS&hellip;</li>
+</ul>
+<p>In this section we will show you how to access most commonly used data types. Once you start playing with the data and wrangling it in the way it suits you for your analytical manipulations, you might find it interesting to explore the options for writing data. Here, we are not going to show you how to do it, but rather focus on basic <code>read</code> data functionality in R.</p>
+<h3 id="the-r-base">the R base</h3>
+<p>The simplest data form is a <a href="https://en.wikipedia.org/wiki/Text_file">text file</a>. Text files can be read by any computer operating system and by almost all different kind of statistical programs. Saving data as a text file makes your data highly accessible. If you have a text data file you wish to use, you can easily import it with <strong>the R base</strong> functions <code>read.table()</code></p>
+<p>This reads a file in table format and creates a data frame from it.</p>
+<pre><code># Read tabular data into R
+df_txt &lt;- read.table(file_name.txt, header = FALSE)
+</code></pre><p>There are many packages that let R import all types of data, and we will start by focusing on <code>CSV</code> files as they are the most frequent type.</p>
+<p>Comma separated files are the most common way to save spreadsheets that don’t require a licenced, usually not free program to open. Importing <code>CSV</code> is part of base R and you can use <code>read.csv()</code> function to do so.</p>
+<h5 id="readcsv"><code>read.csv()</code></h5>
+<p>Let us go to <a href="https://data.gov.rs/">https://data.gov.rs/</a> Serbian open data portal. In particular, let us try to access <a href="https://data.gov.rs/sr/datasets/kvalitet-vazduha-2017/">Kvalitet vazduha 2017: pm2.5_2017.csv</a> and import this data to R.</p>
+<p>We are not going to download it onto our local computers, but rather we will import it to R directly from the web using the link provided.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">df_csv <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read.csv</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">http://data.sepa.gov.rs/dataset/ca463c44-fbfa-4de9-9a75-790995bf2830/resource/62983880-6fcd-4c65-b57c-fd4de5c367c8/download/pm2.5_2017.csv&#34;</span>, stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
+<span style="color:#a6e22e">head</span>(df_csv, <span style="color:#ae81ff">10</span>)
+</code></pre></div><pre><code>##        Datum Nis_IZJZ.Nis
+## 1   1.1.2017    132.04583
+## 2   2.1.2017    124.95417
+## 3   3.1.2017     79.92500
+## 4   4.1.2017    107.22500
+## 5   5.1.2017     42.14583
+## 6   6.1.2017     18.12500
+## 7   7.1.2017     25.14167
+## 8   8.1.2017     67.86667
+## 9   9.1.2017     41.41667
+## 10 10.1.2017     55.75417
+</code></pre><p>The other way is to download it and to save it to your working directory.</p>
+<p>Let us download <a href="https://data.gov.rs/sr/datasets/r/f425e6a5-95ae-4e2b-ab73-1d0b293b4522">&ldquo;Kvalitet vazduha 2017-SO2: 2017-SO2.csv&rdquo;</a>
+Make sure you save the file into your R-Project working directory before you ask R to execute the following</p>
+<pre><code>df_csv &lt;- read.csv(&quot;2017-so2.csv&quot;, stringsAsFactors = FALSE, fileEncoding = &quot;latin1&quot;)
+</code></pre>
+<div class="notices info" ><p>Run the above code again, but remove <code>stringsAsFactors</code> argument from the <code>read.csv</code> function or set it to TRUE. Can you tell the difference between now and before? Why do you think we had to use <code>fileEncoding</code> argument?</p>
+</div>
+
+<p>What do you think about this dataset? 🤔</p>
+<h4 id="using-readrreadcsv">Using readr::read_csv()</h4>
+<p><code>readr</code> is a package that reads rectangular data more quickly than <strong>base R</strong> <code>read.cdv()</code>. Another difference from the <code>read.csv()</code> function is that it assumes characters are strings and not factors by default.</p>
+<p>Just so you can see how easy it is to use other packages for importing data into R, the code below illustrates the use of read_csv().</p>
+<pre><code>## If you don't have readr installed yet, uncomment and run the line below
+# install.packages(&quot;readr&quot;)
+library(readr)
+df_csv &lt;- read_csv(&quot;air_quality_by_station.csv&quot;)
+df_csv
+</code></pre>
+<div class="notices note" ><p>Check the <code>readr::read_delim()</code> function for more efficient delimited data file reading.</p>
+</div>
+
+<h3 id="importing-excel-files-with-readxl">Importing Excel files with <code>readxl</code></h3>
+<p>Importing Excel data files is not straightforward as it might contain multiple sheets. We will focus on using the <code>readxl</code> package as it is the most efficient so far.</p>
+
+<div class="notices warning" ><p>To access the data from an Excel sheet you can’t just copy and paste the URL for the file. You have to download the file first.</p>
+</div>
+
+<p>Let us download an Excel data file from <a href="https://data.gov.rs/">data.gov.rs</a> about traffic accidents <a href="https://data.gov.rs/sr/datasets/r/134b2867-8a35-4f00-ac48-1610dca177ec">Подаци о саобраћајним незгодама до 31.08.2019. године за територију свих ПОЛИЦИЈСКИХ УПРАВА и ОПШТИНА</a>.</p>
+<p>If you are unable to open the file in Excel to examine how many sheets the file has, try to read the file in R accessing the first one by specifying it in the <code>read_excel()</code> function as required. As previously, make sure you save the file into your R-Project working directory before you ask R to execute the following:</p>
+<pre><code>## If you don't have readxl installed yet, uncomment the line below and run it 
+#install.packages(&quot;readxl&quot;)
+library(readxl)
+df_xl &lt;- read_excel(&quot;nez-opendata-20199-20190925.xlsx&quot;, sheet = 1)
+</code></pre><p>What do you think?</p>
+
+<div class="notices warning" ><p>People like to make their Excel spreadsheets look &lsquo;pretty&rsquo; with &lsquo;fancy&rsquo; formatting, which could create difficulty when reading them in R.</p>
+</div>
+
+<p>Explore the arguments of the <code>read_excel()</code> function, such as the <code>skip</code> argument through which you can specify a minimum number of rows to skip before reading anything.</p>
+<h3 id="importing-data-using-jsonlite">Importing data using <code>jsonlite</code></h3>
+<p>When accessing JSON file in R using the <code>jsonlite</code> package you need to point to the file by providing the local path if the file is downloaded or by the URL from where it can be accessed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## If you don&#39;t have readxl installed yet, uncomment the line below and run it </span>
+<span style="color:#75715e">#install.packages(&#34;jsonlite&#34;)</span>
+<span style="color:#a6e22e">library</span>(jsonlite)
+my_url <span style="color:#f92672">&lt;-</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">https://data.gov.rs/sr/datasets/r/41c2fe91-4ea1-4a64-b33c-183665ea6ab3&#34;</span>
+polen <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fromJSON</span>(my_url)
+</code></pre></div><p>Check the structure of the <code>polen</code>! 😰</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">str</span>(polen)
+</code></pre></div><pre><code>## List of 4
+##  $ count   : int 26404
+##  $ next    : chr &quot;http://polen.sepa.gov.rs/api/opendata/pollens/?page=2&quot;
+##  $ previous: NULL
+##  $ results :'data.frame':	500 obs. of  4 variables:
+##   ..$ id            : int [1:500] 539 805 1078 1351 1624 1897 2170 2686 2965 3238 ...
+##   ..$ location      : int [1:500] 12 3 4 20 5 10 14 13 17 9 ...
+##   ..$ date          : chr [1:500] &quot;2016-02-01&quot; &quot;2016-02-01&quot; &quot;2016-02-01&quot; &quot;2016-02-01&quot; ...
+##   ..$ concentrations:List of 500
+##   .. ..$ : int [1:4] 3002 3003 3004 3005
+##   .. ..$ : int [1:3] 4649 4650 4651
+##   .. ..$ : int [1:3] 6126 6127 6128
+##   .. ..$ : int(0) 
+##   .. ..$ : int(0) 
+##   .. ..$ : int [1:2] 10767 10768
+##   .. ..$ : int [1:3] 12370 12371 12372
+##   .. ..$ : int [1:2] 15518 15519
+##   .. ..$ : int [1:4] 17422 17423 17424 17425
+##   .. ..$ : int [1:2] 19339 19340
+##   .. ..$ : int [1:4] 21104 21105 21106 21107
+##   .. ..$ : int [1:3] 24123 24124 24125
+##   .. ..$ : int [1:2] 26010 26011
+##   .. ..$ : int 29460
+##   .. ..$ : int [1:2] 1480 1481
+##   .. ..$ : int [1:4] 3006 3007 3008 3009
+##   .. ..$ : int 4652
+##   .. ..$ : int [1:2] 6129 6130
+##   .. ..$ : int(0) 
+##   .. ..$ : int(0) 
+##   .. ..$ : int [1:4] 10769 10770 10771 10772
+##   .. ..$ : int [1:3] 12373 12374 12375
+##   .. ..$ : int [1:5] 15520 15521 15522 15523 15524
+##   .. ..$ : int [1:5] 17426 17427 17428 17429 17430
+##   .. ..$ : int [1:3] 19341 19342 19343
+##   .. ..$ : int [1:3] 21108 21109 21110
+##   .. ..$ : int [1:3] 24126 24127 24128
+##   .. ..$ : int [1:3] 26012 26013 26014
+##   .. ..$ : int [1:3] 29461 29462 29463
+##   .. ..$ : int [1:5] 1482 1483 1484 1485 1486
+##   .. ..$ : int [1:3] 3010 3011 3012
+##   .. ..$ : int [1:3] 4653 4654 4655
+##   .. ..$ : int [1:2] 6131 6132
+##   .. ..$ : int(0) 
+##   .. ..$ : int(0) 
+##   .. ..$ : int [1:3] 10773 10774 10775
+##   .. ..$ : int [1:3] 12376 12377 12378
+##   .. ..$ : int [1:3] 15525 15526 15527
+##   .. ..$ : int [1:4] 17431 17432 17433 17434
+##   .. ..$ : int [1:3] 19344 19345 19346
+##   .. ..$ : int [1:5] 21111 21112 21113 21114 21115
+##   .. ..$ : int [1:6] 24129 24130 24131 24132 24133 24134
+##   .. ..$ : int [1:4] 26015 26016 26017 26018
+##   .. ..$ : int [1:3] 29464 29465 29466
+##   .. ..$ : int [1:3] 1487 1488 1489
+##   .. ..$ : int 3013
+##   .. ..$ : int [1:3] 4656 4657 4658
+##   .. ..$ : int [1:3] 6133 6134 6135
+##   .. ..$ : int(0) 
+##   .. ..$ : int 9357
+##   .. ..$ : int [1:5] 10776 10777 10778 10779 10780
+##   .. ..$ : int [1:3] 12379 12380 12381
+##   .. ..$ : int [1:3] 15528 15529 15530
+##   .. ..$ : int [1:2] 17435 17436
+##   .. ..$ : int [1:3] 19347 19348 19349
+##   .. ..$ : int [1:2] 21116 21117
+##   .. ..$ : int [1:3] 24135 24136 24137
+##   .. ..$ : int [1:3] 26019 26020 26021
+##   .. ..$ : int [1:3] 29467 29468 29469
+##   .. ..$ : int [1:3] 1490 1491 1492
+##   .. ..$ : int 3014
+##   .. ..$ : int [1:2] 4659 4660
+##   .. ..$ : int [1:3] 6136 6137 6138
+##   .. ..$ : int(0) 
+##   .. ..$ : int 9358
+##   .. ..$ : int [1:3] 10781 10782 10783
+##   .. ..$ : int [1:3] 12382 12383 12384
+##   .. ..$ : int 15531
+##   .. ..$ : int [1:3] 17437 17438 17439
+##   .. ..$ : int [1:2] 19350 19351
+##   .. ..$ : int [1:5] 21118 21119 21120 21121 21122
+##   .. ..$ : int [1:3] 24138 24139 24140
+##   .. ..$ : int [1:3] 26022 26023 26024
+##   .. ..$ : int [1:4] 29470 29471 29472 29473
+##   .. ..$ : int [1:3] 1493 1494 1495
+##   .. ..$ : int [1:2] 3015 3016
+##   .. ..$ : int 4661
+##   .. ..$ : int [1:3] 6139 6140 6141
+##   .. ..$ : int 7747
+##   .. ..$ : int 9359
+##   .. ..$ : int [1:3] 10784 10785 10786
+##   .. ..$ : int [1:3] 12385 12386 12387
+##   .. ..$ : int [1:3] 15532 15533 15534
+##   .. ..$ : int [1:3] 17440 17441 17442
+##   .. ..$ : int [1:3] 19352 19353 19354
+##   .. ..$ : int [1:3] 21123 21124 21125
+##   .. ..$ : int [1:4] 24141 24142 24143 24144
+##   .. ..$ : int [1:3] 26025 26026 26027
+##   .. ..$ : int [1:3] 29474 29475 29476
+##   .. ..$ : int [1:5] 1496 1497 1498 1499 1500
+##   .. ..$ : int [1:2] 3017 3018
+##   .. ..$ : int 4662
+##   .. ..$ : int [1:3] 6142 6143 6144
+##   .. ..$ : int(0) 
+##   .. ..$ : int [1:2] 9360 9361
+##   .. ..$ : int [1:3] 10787 10788 10789
+##   .. ..$ : int 12388
+##   .. ..$ : int [1:5] 15535 15536 15537 15538 15539
+##   .. ..$ : int [1:3] 17443 17444 17445
+##   .. .. [list output truncated]
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">names</span>(polen)
+</code></pre></div><pre><code>## [1] &quot;count&quot;    &quot;next&quot;     &quot;previous&quot; &quot;results&quot;
+</code></pre><p>Note that the <code>polen$results</code> is a data frame with a list <code>concentrations</code> inside as its element.</p>
+<p>Ouch! 😳 JSON files are not very neat 😱 They are more than often nested, chained -&gt; you’ve got it: Very Messy! 😫 So, we will leave it there. 😬 If you do need to learn more about reading JSON files in R you can explore the functionality of the <code>jsonlite</code> package further by reading <a href="https://cran.r-project.org/web/packages/jsonlite/vignettes/json-aaquickstart.html">Getting started with JSON and jsonlite</a>. Blog post <a href="https://blog.exploratory.io/working-with-json-data-in-very-simple-way-ad7ebcc0bb89">Working with JSON data in very simple way</a> by <a href="https://blog.exploratory.io/@kanaugust">Kan Nishida</a> provides a great example of how this data format can be used in R.</p>
+<h3 id="other-data-formats">Other data formats</h3>
+<p>To speed up the reading process of txt, csv data files you can use the <code>data.table::fread()</code> function. You should only pass to the function the name of the data file you want to import, and <code>fread()</code> will try to work out the appropriate data structure. Check out this blog post <a href="https://www.r-bloggers.com/getting-data-from-an-online-source/">Getting Data From An Online Source</a> for some more ideas.</p>
+<p>You can use R with appropriate packages to access other data formats. The <code>haven</code> package provides functions for importing SAS, SPSS and Stata file formats or you can use the <code>foreign</code> package for MiniTab portable worksheet data files. Try to look through the help section of the packages you've been introduced to and discover other options.</p>
+
+<div class="notices note" ><p>R packages often include data as a way to provide compelling use cases for the package’s functions. There are also separate packages just with the data. Examples of data packages include <a href="http://hadley.nz">Hadley Wickham’s</a> <a href="https://github.com/hadley/babynames">babynames</a>, <a href="https://github.com/hadley/nycflights13">nycflights13</a>, and <a href="https://github.com/hadley/usdanutrients">usdanutrients</a> packages or <a href="https://jennybryan.org">Jenny Bryan’s</a> <a href="https://github.com/jennybc/gapminder">gapminder</a>.</p>
+</div>
+
+<h2 id="your-turn-">YOUR TURN 👇</h2>
+<ol>
+<li>
+<p>See if you can find data from <a href="https://data.gov.rs/">https://data.gov.rs/</a> about a topic you’re interested in.</p>
+</li>
+<li>
+<p>Have a look at this data set: <a href="https://data.gov.rs/sr/datasets/podatsi-o-saobratshajnim-nezgodama-po-politsijskim-upravama-i-opshtinama/">saobracaj</a>. Think about the questions you can answer based on this data.</p>
+</li>
+</ol>
+<hr>
+<p>© 2019 Tatjana Kecojevic</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/en/day1/datatypes/" title="Data Types"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/en/day3/" title="Module 2" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1576058367"></script>
+    <script src="/js/perfect-scrollbar.min.js?1576058367"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1576058367"></script>
+    <script src="/js/jquery.sticky.js?1576058367"></script>
+    <script src="/js/featherlight.min.js?1576058367"></script>
+    <script src="/js/highlight.pack.js?1576058367"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1576058367"></script>
+    <script src="/js/learn.js?1576058367"></script>
+    <script src="/js/hugo-learn.js?1576058367"></script>
+
+    <link href="/mermaid/mermaid.css?1576058367" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1576058367"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105947713-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

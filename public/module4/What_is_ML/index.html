@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.75.1" />
+    <meta name="description" content="Data Literacy in R">
+<meta name="author" content="Tatjana Kecojevic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>Machine Learning :: Data Literacy in R</title>
+
+    
+    <link href="/css/nucleus.css?1605356619" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1605356619" rel="stylesheet">
+    <link href="/css/hybrid.css?1605356619" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1605356619" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1605356619" rel="stylesheet">
+    <link href="/css/auto-complete.css?1605356619" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1605356619" rel="stylesheet">
+    <link href="/css/theme.css?1605356619" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1605356619" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1605356619"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"> </script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/module4/what_is_ml/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <!DOCTYPE html>
+<html>
+<body>
+<IMG SRC="/images/logo.png" ALT="DataTeka" WIDTH=100 HEIGHT=100>
+
+</body>
+</html>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1605356619"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1605356619"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1605356619"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/general/" title="About the workshop" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/">
+          <b>1. </b>About the workshop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/whatlearn/" title="General Overview" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/whatlearn/">
+          General Overview
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/instructor/" title="Meet the Instructor" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/instructor/">
+          Meet the Instructor
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/syllabus/" title="Indicative Syllabus" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/syllabus/">
+          Indicative Syllabus
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/" title="Module 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/">
+          <b>2. </b>Module 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/whatisr/" title="What is R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/whatisr/">
+          What is R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/installr/" title="Install R/RStudio" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/installr/">
+          Install R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/git-and-github/" title="Git and GitHub" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/git-and-github/">
+          Git and GitHub
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/rstudioide/" title="RStudio IDE" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/rstudioide/">
+          RStudio IDE
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/user/" title="How to use R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/user/">
+          How to use R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/statsconcepts/" title="Basic Stats Concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/statsconcepts/">
+          Basic Stats Concepts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/datatypes/" title="Data Types" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/datatypes/">
+          Data Types
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/importexport/" title="Import Data to R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/importexport/">
+          Import Data to R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module1/rmarkdown/" title="Reproducibility" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module1/rmarkdown/">
+          Reproducibility
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/" title="Module 2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/">
+          <b>3. </b>Module 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/datawrangling/" title="Data Wrangling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/datawrangling/">
+          Data Wrangling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/principlesvisualisation/" title="Principles of Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/principlesvisualisation/">
+          Principles of Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/visualisation/" title="Data Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/visualisation/">
+          Data Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/spatialda/" title="Spatial Data Analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/spatialda/">
+          Spatial Data Analysis
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module3/" title="Module 3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module3/">
+          <b>4. </b>Module 3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module3/damethodology/" title="Data Analysis Methodology" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module3/damethodology/">
+          Data Analysis Methodology
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module3/mva/" title="t-test &amp; one-way ANOVA" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module3/mva/">
+          t-test &amp; one-way ANOVA
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module3/mvm/" title="Regression" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module3/mvm/">
+          Regression
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module4/" title="Module 4" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/module4/">
+          <b>5. </b>Module 4
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module4/what_is_ml/" title="Machine Learning" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/module4/what_is_ml/">
+          Machine Learning
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module4/resampling/" title="Resampling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module4/resampling/">
+          Resampling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module4/mlregression/" title="Multiple Regression" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module4/mlregression/">
+          Multiple Regression
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module4/clasification/" title="Clasification" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module4/clasification/">
+          Clasification
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/" title="Showcases" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/">
+          <b>6. </b>Showcases
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/covid-19/" title="COVID-19" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/covid-19/">
+          COVID-19
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/airpolution/" title="Air Pollution" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/airpolution/">
+          Air Pollution
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/tricks_tips/" title="Tricks and Tips" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/tricks_tips/">
+          Tricks and Tips
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/TanjaKec"><i class='fab fa-fw fa-github'></i>GitHub</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download matcornic/hugo-theme-learn on GitHub">Download</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn" data-icon="octicon-star" data-show-count="true" aria-label="Star matcornic/hugo-theme-learn on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork matcornic/hugo-theme-learn on GitHub">Fork</a>
+
+    <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/module4/What_is_ML/_index.en.html" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Introduction to R</a> > <a href='/module4/'>Module 4</a> > Machine Learning
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Machine Learning
+            </h1>
+          
+
+        
+
+
+
+
+	
+
+
+<p>This section introduces you to fundamental Machine Learning (ML) concepts and algorithms. Empowered by modern computing capabilities and statistical modelling, machine scale analysis can capture hidden values in big data that are otherwise limited to human scale thinking. In 1959, in a paper <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=5392560">Some Studies in Machine Learning Using the Game of Checkers</a> Arthur Samuel used the term <strong><em>machine learning</em></strong> in the game of checkers in the form we know it today: <em>“to verify the fact that a computer can be programmed so that it will learn to play a better game of checkers than can be played by the person who wrote the program”</em>. The paper conveys the process of passing our own methods of learning to a machine as a subfield of statistical computing. It is the application of statistical modelling to obtain a general understanding of the data, to make predictions and to improve performance based on data and empirical information.</p>
+<p><img src="/module4/What_is_ML/images/ml_diagram.png?width=20pc" /></p>
+<p>ML can learn from the data that is processed and analysed and the more data it processes, the more it can learn. But, to create such intelligent machines it is useful to develop an understanding of classical statistics that is the LifeBlood of ML algorithms. Coated by the layers of k-nearest neighbours, linear regression, random forest, naïve bayes… machines can develop the cognitive abilities of today’s Artificial Intelligence (AI).</p>
+<p>Translating the statistical methodologies that can run on machines through coding and programming is another vital part of ML. As such, R is a powerful statistical language for learning an important and desirable ML skill: code writing for statistical modelling. Using R greatly simplifies machine learning. Using R enables us to focus on developing an understanding of how each algorithm can solve a problem, for which we can simply use a written package to quickly generate prediction models on data with a few command lines.</p>
+<p>
+<font color="black" face="Verdana, Geneva, sans-serif" size="+2"><strong>Types of ML</strong></font>
+</p>
+<p>We will touch upon a few of the most popular ML algorithms from a vast set of its algorithmic tools for understanding data. These tools are broadly classified as <strong>supervised</strong> or <strong>unsupervised</strong>. In general, <em>supervised learning</em> involves building a statistical model for estimating or predicting an output based on one or more inputs. There are many examples of their application in pharma and medicine, such as disease identification/diagnosis and personalised treatments, or pricing in business to name a few. With <em>unsupervised learning</em>, there are inputs but no supervising output; nevertheless, we can learn relationships and structure from such data. One of the most popular examples is a recommender system as a reflection of our consumer behaviour. Other examples can be found in biological genomic studies, market research, security, with the most used example being anomaly detection of malicious activity in an organization’s network etc.</p>
+<p><img src="/module4/What_is_ML/images/ML_Types.png?width=40pc" /></p>
+<p>Fuelled by powered computer technologies ML models have evolved considerably in the last decade, advancing into a third category known as <em><strong>reinforcement</strong></em>. Unlike supervised and unsupervised learning, <em>reinforcement learning</em> continuously improves its model advancing from the previous iterations. This differs from the other two categories of ML, which reach an indefinite stage after the model is formulated from the <strong>training</strong> and <strong>test</strong> data segments. Examples can be found in computer gaming, skill acquisition such as real time discussion etc.</p>
+<p>
+<font color="black" face="Verdana, Geneva, sans-serif" size="+1"><strong>Supervised Versus Unsupervised Learning</strong></font>
+</p>
+<p>The majority of data analysis problems fall into one of the two ML categories: <em>supervised</em> or <em>unsupervised</em>. Sometimes we deal with a problem in which for each observation we have a predictor(s) <span class="math inline">\(x_i\)</span>, <span class="math inline">\(i = 1, 2, … n\)</span> there is a response <span class="math inline">\(y_i\)</span>. In those cases, we seek to find a model that reflects the possible relationship between response and predictor(s). The aim is to be able to predict the response values for future observation accurately, with greater understanding of the relationship between the two. In statistical terms, we wish to conduct:</p>
+<ul>
+<li>the prediction of <span class="math inline">\(y\)</span>’s for future values of <span class="math inline">\(x\)</span>’s and</li>
+<li>the inference about the nature of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
+</ul>
+<p>The best known statistical modelling techniques that fall into this ML category that are commonly used are linear regression, logistic regression, Generalised Additive Models (GAM), boosting and Support Vector Machines (SVM).</p>
+<p>To the problems where for each observation <span class="math inline">\(i = 1, 2, … n\)</span> we have a set of measurements <span class="math inline">\(x_i\)</span>, but no associated responses <span class="math inline">\(y_i\)</span> based on which we can “supervise” the analysis to understand the relationship between the variables or between the observations, we referred to as unsupervised learning. Commonly used methodology in this setting is <em>clustering</em>. The goal of cluster analysis is to group the observation in the data set into disjointed clusters of similar samples. It is commonly used in market segmentation where, for example, you need to develop marketing strategies for identified groups of customers clustered into them based on their behaviour.</p>
+<p>Previously, we recognised that when dealing with the measured response variable in statistical modelling we tended to use regression. If, however we have attribute response variables such as defaults on a debt, gender, ethnicity, to name a few, we tend to use classification modelling. In multifactor data analysis, selecting the appropriate statistical modelling technique is not so straightforward as it is in bivariate statistical modelling situations, for which we fit a model based on the type of response variable. Here, we can use logistic regression for the models with binary response attribute variables as it estimates class probabilities, which on the other hand can be thought of as a regression method as well. Methods such as K-nearest neighbours and boosting can be used for both measured and attribute response variables. When dealing with multifactor statistical modelling, we have to think carefully not just about the type of response variable, but most of all about the type of problems we wish to address.</p>
+<p>
+<font color="black" face="Verdana, Geneva, sans-serif" size="+1.5"><strong>Assessing Model Accuracy</strong></font>
+</p>
+<p>Selecting the most efficient approach can be one of the most challenging parts of performing statistical modelling in practice, as the choice of the model that has worked on one data set may not perform as well on another similar data set. Therefore, evaluating the performance of a chosen statistical method is seen as an important part of statistical modelling.</p>
+<p>Through statistical modelling, we are trying to explain and dig deeper into understanding the nature of a process, i.e. phenomena of interest. We describe this phenomenon as an unknown function <span class="math inline">\(f\)</span>. In its related data we annotate as <span class="math inline">\(x\)</span> the information that can explain the problem’s behaviour (this could be a single value or a vector or matrix of values or something more complex) and as <span class="math inline">\(y\)</span> the results of its behaviour (this could also be a single value or something more complex). Mathematically we present this as</p>
+<p><span class="math display">\[y_i = f(x_i)\]</span></p>
+<p>However, there is one more element we need to add to this equation that would make it statistically correct</p>
+<p><span class="math display">\[y_i = f(x_i) + \epsilon_i\]</span></p>
+<p>We refer to this additional element epsilon as an “error” and it depicts the noise, the variation of the <span class="math inline">\(f\)</span>’s behaviour. The standard approach is to adopt the following distribution structure: <span class="math inline">\(\epsilon \sim N(0,\sigma)\)</span>, meaning that the <span class="math inline">\(\epsilon\)</span> value is considered to be normally distributed with a mean of <span class="math inline">\(0\)</span> and some standard deviation <span class="math inline">\(\sigma\)</span>. This implies that negative and positive impacts from this noise are considered equally likely, and that small errors are much more likely than extreme ones.</p>
+<p>To evaluate the performance of a statistical model on a given data set, we commonly monitor the discrepancies between the predicted response values for given observations obtained by the chosen statistical model (<span class="math inline">\(\hat{f}(x_i)\)</span>) and the true response values for these observations (<span class="math inline">\(y_i\)</span>). The most commonly used measure is the <strong>mean squared error</strong> (<strong>MSE</strong>):</p>
+<p><span class="math display">\[MSE =  \frac{1}{n} \sum^{n}_{i=1}(y_i - \hat{f}(x_i))^2\]</span></p>
+<p>It is easy to note that the small <span class="math inline">\(MSE\)</span> will correspond to the model for which the predicted responses (<span class="math inline">\(\hat{f}(x_i)\)</span>) are very close to the true responses (<span class="math inline">\(y_i\)</span>) and large if the true and predicted responses differ significantly.</p>
+<p>In general, a machine learning model aims to make good predictions on new, previously unseen data. However, we don’t have the previously unseen data when experimenting with a new problem. One way of overcoming this obstacle is to split the given data into two subsets:</p>
+<ul>
+<li><strong>training data</strong>: a subset to train a model</li>
+<li><strong>test data</strong>: a subset to test the model</li>
+</ul>
+<p><img src="/module4/What_is_ML/images/training_testing_data.png?width=40pc" /></p>
+<p>The ratio of of two split should be approximately 75/25. This means that <em>training data</em> should account for around 75 percent of the rows in the given data and the other 25 percent of rows is the <em>test data</em>. Good performance on the <em>test data</em> is a useful indicator of good performance on the new data in general, assuming that the test data is sufficiently large and that you don’t take advantage of using the same test data over and over again to make your model look better than it is. Often data is arranged sequentially and it is good practice to randomise the rows in the data set prior to the split, as it helps to avoid bias in the fitted model. The easiest way to split the data into a training and test set is to take a random sample.</p>
+
+<div class="notices tip" ><p>The <!-- raw HTML omitted -->MSE<!-- raw HTML omitted --> above is computed using the <!-- raw HTML omitted -->training data<!-- raw HTML omitted -->, used to fit the model, and as such it would be more correct to refer to it as the <!-- raw HTML omitted -->training<!-- raw HTML omitted --> <!-- raw HTML omitted -->MSE<!-- raw HTML omitted -->.</p>
+</div>
+
+<p>But we have already discussed that we are not really interested how well the model “works training” on the training data, ie. <span class="math inline">\(\hat{f}(x_i) \approx y_i\)</span>. We are more interested in the accuracy of the predictions <span class="math inline">\(\hat{f}(x_0)\)</span> that are obtained when we apply the model to previously unseen test data <span class="math inline">\((x_0, y_0)\)</span>, ie. <span class="math inline">\(\hat{f}(x_0) \approx y_0\)</span>. In other words, we want to chose the model with the lowest <strong><span class="math inline">\(test\)</span></strong> <strong><span class="math inline">\(MSE\)</span></strong> and to do so we need a large enough number of observations in the test data to calculate the <strong>mean square prediction error</strong> for the test observations (<span class="math inline">\(x_0\)</span>, <span class="math inline">\(y_0\)</span>), to which we can refer to as the <strong><span class="math inline">\(test\)</span></strong> <strong><span class="math inline">\(MSE\)</span></strong>.</p>
+<p><span class="math display">\[mean(y_0 - \hat{f}(x_0))^2\]</span></p>
+
+<div class="notices note" ><p>💡 Note that after randomising data we can begin to apply ML to the training data. The remaining test data is put aside and reserved for testing the accuracy of the model.</p>
+</div>
+
+<p>In statistics nothing is black and white. In other words, nothing is straightforward and there are many considerations one needs to take into account when applying statistical modelling. The same applies in this situation. We need to realise that when a given model yields a small training MSE but a large test MSE, we are said to be <strong>overfitting</strong> the data. The statistical model is too ‘preoccupied’ to find patterns in the training data and consequently is modelling the patterns that are caused by random effect, rather than by true features of the unknown function <span class="math inline">\(f\)</span>. When the model overfits the training data, the test MSE will be large because the modelled features that the model identifies in the training data just do not exist in the test data. Saying that, regardless of overfitting occurring or not, we expect the training MSE to be smaller than the test MSE, as most of the statistical models either directly or indirectly seek to minimize the training MSE. We need to be aware that the chosen model needs to be flexible and not rigid and glued to the training data.</p>
+<p><strong>Reducible and Irreducible Error: The Bias-Variance Trade-Off</strong></p>
+<p>MSE is simple to calculate and yet, despite its simplicity, it can provide us with a vital insight into modelling. It consists of two intrinsic components:</p>
+<ul>
+<li>bias</li>
+<li>variance</li>
+</ul>
+<p>that can provide greater enlightenment about how the model works.</p>
+<p>We have talked earlier about <strong>variance</strong> in general, but we have not explained the idea of <strong>bias</strong> in statistical term. Bias is the average difference between the estimator <span class="math inline">\(\hat{y}\)</span> and true value <span class="math inline">\(y\)</span>. Mathematically we write bias as:</p>
+<p><span class="math display">\[E[\hat{y} – y]\]</span></p>
+<p>As it is not squared difference, it can be either positive or negative. Positive or negative bias implies that the model is over or under “predicting”, while the value of zero would indicate that the model is likely to predict too much as it is to predict too little. The latter implies that the model can be completely wrong in its prediction and still provide us with the bias of zero. This implies that bias on its own provides little information about how correct the model is in its prediction.</p>
+<p>Remember that <span class="math inline">\(y = f(x) + \epsilon\)</span> and therefore <span class="math inline">\(\hat{f}\)</span> is not directly approximating <span class="math inline">\(f\)</span>. <span class="math inline">\(\hat{f}\)</span> models <span class="math inline">\(y\)</span> that includes the noise. It can be challenging and in some cases even impossible to meaningfully capture the behaviour of <span class="math inline">\(f\)</span> itself when the noise term is very large. We have discussed earlier that we assess model accuracy using MSE which is calculated by</p>
+<ol style="list-style-type: decimal">
+<li>obtaining the error (i.e. discrepancy between <span class="math inline">\(\hat{f}(x_i)\)</span> and <span class="math inline">\(y_i\)</span>)</li>
+<li>squaring this value (making negative into the positive same, and greater error gets more severe penalty)</li>
+<li>then averaging these results</li>
+</ol>
+<p>The mean of the squared error is the same as the expectation<strong><span class="math inline">\(^*\)</span></strong> of our squared error so we can go ahead and simplify this a slightly:</p>
+<p><span class="math display">\[MSE=E[(y-\hat{f}(x))^2]\]</span>
+Now, we can break this further and write it as
+<span class="math display">\[MSE = E[(f(x)+ \epsilon - \hat{f}(x))^2]\]</span>
+Knowing that computing the expectation of adding two random variables is the same as computing the expectation of each random variable and then adding them up</p>
+<p><span class="math display">\[E[X+Y]=E[X] +E[Y]\]</span>
+and recalling that <span class="math inline">\(\sigma^2\)</span> represent the variance of <span class="math inline">\(\epsilon\)</span>, where the variance is calculated as
+<span class="math display">\[E[X^2]-E[X]^2,\]</span>
+and therefore
+<span class="math display">\[Var(\epsilon) = \sigma^2 = E[\epsilon^2] - E[\epsilon]^2,\]</span>
+with <span class="math inline">\(\epsilon \sim N(0,\sigma)\)</span></p>
+<p><span class="math display">\[E[\epsilon]^2=\mu^2=0^2=0\]</span>
+we get</p>
+<p><span class="math display">\[E[\epsilon^2] = \sigma^2\]</span>
+This helps us to rearranging MSE further and calculate it as</p>
+<p><span class="math display">\[MSE=σ^2+E[−2f(x)\hat{f}(x)+f(x)^2+\hat{f}(x)^2],\]</span></p>
+<p>where <span class="math inline">\(\sigma^2\)</span> is the variance of the noise, ie. <span class="math inline">\(\epsilon\)</span>. This is a “eureka” moment: the variance of the noise in data is an <strong><em>irreducible part</em></strong> of the MSE. Regardless of how good the model is, it can never reduce the MSE to being less than the variance related to the noise, i.e. <strong>error</strong>. This <em>error</em> represents the lack of information in data used to adequately explain everything that can be known about the phenomena being modelled. We should not look at it as a nuisance, as it can often guide us to further explore the problem and look into other factors that might be related to it.</p>
+<p>Knowing that
+<span class="math display">\[Var(X) = E[X^2] - E[X]^2,\]</span>
+we can apply further transformation and break MSE into
+<span class="math display">\[MSE = \sigma^{2}+Var[f(x)-\hat{f}(x)]+E[f(x)-\hat{f}(x)]^2\]</span>
+The term <span class="math inline">\(Var[f(x)-\hat{f}(x)]\)</span> is the <em>variance</em> in the model predictions from the true output values and the last term <span class="math inline">\(E[f(x)-\hat{f}(x)]^2\)</span> is just the <em>bias</em> squared. We mentioned earlier that that unlike variance, bias can be positive or negative, so we square this value in order to make sure it is always positive.</p>
+<p>With this in mind, we realise that MSE consists of:</p>
+<ol style="list-style-type: lower-roman">
+<li>model variance</li>
+<li>model bias and</li>
+<li>irreducible error</li>
+</ol>
+<p><span class="math display">\[\text{Mean Squared Error}=\text{Model Variance} + \text{Model Bias}^2 + \text{Irreducible Error}\]</span></p>
+<p>We come to the conclusion that in order to <strong><em>minimize</em></strong> the <strong>expected test error</strong>, we need to select a statistical model that simultaneously achieves low variance and low bias.</p>
+<blockquote>
+<p>💡 Note that in practice we will never know what the variance <span class="math inline">\(\sigma^2\)</span> of the error <span class="math inline">\(\epsilon\)</span> is, and therefore we will not be able to determine the variance and the bias of the model. However, since <span class="math inline">\(\sigma^2\)</span> is constant, to improve the model we have to decrease either bias or variance.</p>
+</blockquote>
+<p>Testing the model using the test data and observing its bias and variance can help us address some important issues, allowing us to reason with the model. If the model fails to find the <span class="math inline">\(f\)</span> in data and is systematically over or under predicting, this will indicate <strong>underfitting</strong> and it will be reflected through high bias. However, high variance when working with test data indicates the issue of <strong>overfitting</strong>. What happens is that the model has learnt the training data really well and is too close to the data, so much so that it starts to mistake the <span class="math inline">\(f(x) + \epsilon\)</span> for true <span class="math inline">\(f(x)\)</span>.</p>
+<p>
+<font color="black" face="Verdana, Geneva, sans-serif" size="+1"><strong>Simulation Study</strong></font>
+</p>
+<p>To understand these concepts, let us run a small simulation study. We will:</p>
+<ol style="list-style-type: lower-roman">
+<li>simulate a function <span class="math inline">\(f\)</span></li>
+<li>apply the error, i.e. noise sampled from a distribution with a known variance</li>
+</ol>
+<p>To make it very simple and illustrative we will use a linear function <span class="math inline">\(f(x) = 3 + 2x\)</span> to simulate response <span class="math inline">\(y\)</span> with the error <span class="math inline">\(e\thicksim N(\mu =0, \sigma^2 =4)\)</span>, where <span class="math inline">\(x\)</span> is going to be a sequence of numbers between <span class="math inline">\(0\)</span> and <span class="math inline">\(10\)</span> in steps of <span class="math inline">\(0.1\)</span>. We will examine the simulations for the models that over and under estimate the true <span class="math inline">\(f\)</span>, and since it is a linear function we will not have a problem identifying using simple linear regression modelling.</p>
+<p>Let’s start with a simulation in which we will model the true function with <span class="math inline">\(\hat{f}_{1} = 4 + 2x\)</span> and <span class="math inline">\(\hat{f}_{2} = 1 + 2x\)</span>.</p>
+<pre class="r"><code>set.seed(123) ## set the seed of R‘s random number generator
+
+# simulate function f(x) = 3 + 2x
+f &lt;- function(x){
+  3 + 2 * x 
+}
+# generate vector X
+x &lt;- seq(0, 10, by = 0.05)
+# the error term coming from N(mean = 0, variance = 4)
+e &lt;- rnorm(length(x), mean = 0, sd = 2)
+# simulate the response vector Y
+y &lt;- f(x) + e
+
+# plot the simulated data 
+plot(x, y, cex = 0.75, pch = 16, main = &quot;Simulation: 1&quot;) 
+abline(3, 2, col =&quot;gray&quot;, lwd = 2, lty = 1)
+# model fitted to simulated data
+f_hat_1&lt;- function(x){
+  4 + 2 * x
+}
+f_hat_2 &lt;- function(x){
+  1 + 2 * x
+}
+y_bar = mean(y) # average value of the response variable y
+f_hat_3 &lt;- function(x){
+  y_bar
+}
+# add the line representing the fitted model
+abline(1, 2, col = &quot;red&quot;, lwd = 2, lty = 2)
+abline(4, 2, col = &quot;blue&quot;, lwd = 2, lty = 1)
+abline(y_bar, 0, col = &quot;darkgreen&quot;, lwd = 2, lty = 3)
+legend(7.5, 10, legend=c(&quot;f_hat_1&quot;, &quot;f_hat_2&quot;, &quot;f_hat_3&quot;, &quot;f&quot;),
+       col = c(&quot;blue&quot;, &quot;red&quot;, &quot;darkgreen&quot;, &quot;gray&quot;), 
+       lwd = c(2, 2, 2, 2), lty = c(1:3, 1),
+       text.font = 4, bg = &#39;lightyellow&#39;)</code></pre>
+<p><img src="/module4/What_is_ML/_index.en_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>Observing the graph, we notice that <span class="math inline">\(\hat{f}_1\)</span> and <span class="math inline">\(\hat{f}_2\)</span>, depicted in blue and red lines respectively, follow the data nicely, but are also systematically over (in the case of <span class="math inline">\(\hat{f}_1\)</span> and under (in the case of <span class="math inline">\(\hat{f}_2\)</span>) estimating the values. In the simple model <span class="math inline">\(\hat{f}_3\)</span>, the line represents the value <span class="math inline">\(\bar{y}\)</span>, which cuts the data in half.</p>
+<p>As we mentioned earlier, knowing the true function <span class="math inline">\(f\)</span> and the distribution of <span class="math inline">\(\epsilon\)</span> we can calculate:
+- the MSE using the simulated data and the estimated model,
+- the model’s bias and variance which will allow for the calculation of the “theoretical” MSE. This will allow for more detailed illustration about the information contained in the model’s bias and variance.</p>
+<pre class="r"><code># calculate MSE from data
+MSE_data1 = mean((y - f_hat_1(x))^2)
+MSE_data2 = mean((y - f_hat_2(x))^2)
+MSE_data3 = mean((y - f_hat_3(x))^2)
+# model bias 
+bias_1 = mean(f_hat_1(x) - f(x))
+bias_2 = mean(f_hat_2(x) - f(x))
+bias_3 = mean(f_hat_3(x) - f(x))
+# model variance
+var_1 = var(f(x) - f_hat_1(x))
+var_2 = var(f(x) - f_hat_2(x))
+var_3 = var(f(x) - f_hat_3(x))
+# calculate &#39;theoretical&#39; MSE
+MSE_1 = bias_1^2 + var_1 + 2^2
+MSE_2 = bias_2^2 + var_2 + 2^2
+MSE_3 = bias_3^2 + var_3 + 2^2
+for (i in 1:1){
+  cat (c(&quot;==============================================&quot;,&quot;\n&quot;))
+  cat (c(&quot;=============== f_hat_1 ================&quot;,&quot;\n&quot;))
+  cat(c(&quot;MSE_data1 = &quot;, round(MSE_data1, 2),  sep = &#39;\n&#39;))
+  cat(c(&quot;bias_1 = &quot;, bias_1, sep = &#39;\n&#39; ))   
+  cat(c(&quot;variance_1 = &quot;, round(var_1, 2), sep = &#39;\n&#39; ))  
+  cat(c(&quot;MSE_1 = 4 + bias_1^2 + variance_1 = &quot;, MSE_1, sep = &#39;\n&#39; )) 
+  cat(c(&quot;==============================================&quot;,&quot;\n&quot;))
+  cat(c(&quot;=============== f_hat_2 ================&quot;,&quot;\n&quot;))
+  cat(c(&quot;MSE_data2 = &quot;, round(MSE_data2, 2),  sep = &#39;\n&#39;))
+  cat(c(&quot;bias_2 = &quot;, bias_2, sep = &#39;\n&#39; ))   
+  cat(c(&quot;variance_2 = &quot;, round(var_2, 2), sep = &#39;\n&#39; ))  
+  cat(c(&quot;MSE_2 = 4 + bias_2^2 + variance_2 = &quot;, MSE_2, sep = &#39;\n&#39; ))
+  cat(c(&quot;==============================================&quot;,&quot;\n&quot;))
+  cat(c(&quot;=============== f_hat_3 ================&quot;,&quot;\n&quot;))
+  cat(c(&quot;average y = &quot;, round(y_bar, 2),  sep = &#39;\n&#39;))
+  cat(c(&quot;MSE_data3 = &quot;, round(MSE_data3, 2),  sep = &#39;\n&#39;))
+  cat(c(&quot;bias_3 = &quot;, round(bias_3, 2), sep = &#39;\n&#39; ))   
+  cat(c(&quot;variance_3 = &quot;, round(var_3, 2), sep = &#39;\n&#39; ))  
+  cat(c(&quot;MSE_3 = 4 + bias_3^2 + variance_3 = &quot;, round(MSE_3, 2), sep = &#39;\n&#39; ))
+  cat(c(&quot;==============================================&quot;,&quot;\n&quot;))
+}</code></pre>
+<pre><code>## ============================================== 
+## =============== f_hat_1 ================ 
+## MSE_data1 =  4.61 
+## bias_1 =  1 
+## variance_1 =  0 
+## MSE_1 = 4 + bias_1^2 + variance_1 =  5 
+## ============================================== 
+## =============== f_hat_2 ================ 
+## MSE_data2 =  7.64 
+## bias_2 =  -2 
+## variance_2 =  0 
+## MSE_2 = 4 + bias_2^2 + variance_2 =  8 
+## ============================================== 
+## =============== f_hat_3 ================ 
+## average y =  13 
+## MSE_data3 =  36.7 
+## bias_3 =  0 
+## variance_3 =  33.84 
+## MSE_3 = 4 + bias_3^2 + variance_3 =  37.84 
+## ==============================================</code></pre>
+<p><span class="math inline">\(\hat{f}_1\)</span> has a positive bias because it is overestimating data points more often than it is underestimating, but as it does it so consistently in comparison to <span class="math inline">\(f\)</span> that produces variance of zero. In contrast <span class="math inline">\(\hat{f}_2\)</span> has a negative bias as it is underestimating simulated data, but nonetheless it also does it consistently, resulting in zero variance with <span class="math inline">\(f\)</span>.</p>
+<p>Unlike in the previous two model estimates which follow the data points, <span class="math inline">\(\hat{f}_3\)</span> predicts the mean value of data, resulting in no bias since it evenly underestimates and overestimates <span class="math inline">\(f(x)\)</span>. However, the variation in prediction between <span class="math inline">\(f\)</span> and <span class="math inline">\(\hat{f}_3\)</span> is obvious.</p>
+<p>Given that the true function <span class="math inline">\(f\)</span> is linear, by applying simple regression modelling, we should be able to estimate it easily in R using the <span class="math inline">\(lm()\)</span> function.</p>
+<pre class="r"><code># model fitted to simulated data
+f_hat_4&lt;- function(x){
+    lm(y~x)
+}
+# plot the simulated data 
+plot(x, y, cex = 0.75, pch = 16, main = &quot;Simulation: 2&quot;) 
+abline(3, 2, col =&quot;gray&quot;, lwd = 2, lty = 1)
+# add the line representing the fitted model
+abline(lm(y~x), col =&quot;red&quot;, lwd = 2, lty = 3)
+legend(7.5, 8, legend=c(&quot;f_hat_4&quot;, &quot;f&quot;),
+       col = c(&quot;red&quot;, &quot;gray&quot;), 
+       lwd = c(2, 2), lty = c(3, 1),
+       text.font = 4, bg = &#39;lightyellow&#39;)</code></pre>
+<p><img src="/module4/What_is_ML/_index.en_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Since the true function <span class="math inline">\(f\)</span> is a linear model it is not surprising that <span class="math inline">\(\hat{f}_4\)</span> can learn it, resulting in zero values of the model’s bias and variance.</p>
+<pre class="r"><code># calculate MSE from data
+MSE_data4 = mean((y - predict(f_hat_4(x)))^2)
+# model bias 
+bias_4 = mean(predict(f_hat_4(x)) - f(x))
+# model variance
+var_4 = var(f(x) - predict(f_hat_4(x)))
+# calculate &#39;theoretical&#39; MSE
+MSE_4 = bias_4^2 + var_4 + 2^2
+for (i in 1:1){
+  
+  cat (c(&quot;==============================================&quot;,&quot;\n&quot;))
+  cat (c(&quot;=============== f_hat_4 ================&quot;,&quot;\n&quot;))
+  cat(c(&quot;MSE_data4 = &quot;, round(MSE_data4, 2),  sep = &#39;\n&#39;))
+  cat(c(&quot;bias_4 = &quot;, round(bias_4, 2), sep = &#39;\n&#39; ))   
+  cat(c(&quot;variance_4 = &quot;, round(var_4, 2), sep = &#39;\n&#39; ))  
+  cat(c(&quot;MSE_4 = 4 + bias_4^2 + variance_4 = &quot;, round(MSE_4, 2), sep = &#39;\n&#39; ))
+  cat (c(&quot;==============================================&quot;,&quot;\n&quot;))
+}</code></pre>
+<pre><code>## ============================================== 
+## =============== f_hat_4 ================ 
+## MSE_data4 =  3.62 
+## bias_4 =  0 
+## variance_4 =  0 
+## MSE_4 = 4 + bias_4^2 + variance_4 =  4 
+## ==============================================</code></pre>
+<p>We realise that the <span class="math inline">\(MSE\)</span> is more than just a simple error measurement. It is a tool that informs and educates the modeller about the performance of the model being used in the analysis of a problem. It is packed with information that when unwrapped can provide a greater insight into not just the fitted model, but the nature of the problem and its data. It provides you with the desired agility for steering a boat in a sea of data.</p>
+<hr />
+<p><strong><span class="math inline">\(^*\)</span></strong> <em>The Expectation of a Random Variable</em> is the sum of its values weighted by their probability. For example: What is the average toss of a fair six-sided die?</p>
+<p>If the random variable is the top face of a tossed, fair six-sided die, then the probability of die landing on <strong><span class="math inline">\(X\)</span></strong> is</p>
+<p><span class="math display">\[f(x) = \frac{1}{6}\]</span>
+for <span class="math inline">\(x = 1, 2,... 6\)</span>. Therefore, the average toss, i.e. <strong>the expected value</strong> of <strong><span class="math inline">\(X\)</span></strong> is:</p>
+<p><span class="math display">\[E(X) = 1(\frac{1}{6}) + 2(\frac{1}{6}) + 3(\frac{1}{6}) + 4(\frac{1}{6}) + 5(\frac{1}{6}) + 6(\frac{1}{6}) = 3.5\]</span>
+Of course, we do not expect to get a fraction when tossing a die, i.e. we do not expect the toss to be 3.5, but rather an integer number between 1 to 6. So, what the expected value is really saying is what is the expected average of a large number of tosses will be. If we toss a fair, six-side die hundreds of times and calculate the average of the tosses we will not get the exact 3.5 figure, but we will expect it to be close to 3.5. This is a <strong>theoretical average</strong>, not the exact one that is realised.</p>
+<hr />
+<p><strong>YOUR TURN 👇</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Identify a data set from your own work experience or from amongst many available freely on the Internet and describe a problem that can be addressed using this data. Write a brief report describing the identified data and a problem that can be addressed using this data. Discuss further in your report which of the categories of ML would be applicable for the analysis of this problem? Try to justify your thinking.</p></li>
+<li><p>In the simulation study, notice the difference between <span class="math inline">\(MSE\)</span> calculated from the simulated data and the one we obtain by plugging in the values of <span class="math inline">\(\sigma^2\)</span> and estimator’s <span class="math inline">\(bias\)</span> and <span class="math inline">\(variance\)</span>. Try to increase the sample size of the simulation and comment on the changes you may notice (hint: make a change for smaller steps in the <span class="math inline">\(seq()\)</span> function). Can you draw any conclusions; what are they?</p></li>
+</ol>
+<hr />
+<p>© 2020 Tatjana Kecojevic</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/module4/" title="Module 4"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/module4/resampling/" title="Resampling" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1605356619"></script>
+    <script src="/js/perfect-scrollbar.min.js?1605356619"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1605356619"></script>
+    <script src="/js/jquery.sticky.js?1605356619"></script>
+    <script src="/js/featherlight.min.js?1605356619"></script>
+    <script src="/js/highlight.pack.js?1605356619"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1605356619"></script>
+    <script src="/js/learn.js?1605356619"></script>
+    <script src="/js/hugo-learn.js?1605356619"></script>
+
+    <link href="/mermaid/mermaid.css?1605356619" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1605356619"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105947713-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

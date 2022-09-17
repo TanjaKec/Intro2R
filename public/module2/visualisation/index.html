@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.75.1" />
+    <meta name="description" content="Data Literacy in R">
+<meta name="author" content="Tatjana Kecojevic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>Data Visualisation :: Data Literacy in R</title>
+
+    
+    <link href="/css/nucleus.css?1605427046" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1605427046" rel="stylesheet">
+    <link href="/css/hybrid.css?1605427046" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1605427046" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1605427046" rel="stylesheet">
+    <link href="/css/auto-complete.css?1605427046" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1605427046" rel="stylesheet">
+    <link href="/css/theme.css?1605427046" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1605427046" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1605427046"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"> </script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/module2/visualisation/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <!DOCTYPE html>
+<html>
+<body>
+<IMG SRC="/images/logo.png" ALT="DataTeka" WIDTH=100 HEIGHT=100>
+
+</body>
+</html>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1605427046"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1605427046"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1605427046"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/general/" title="About the workshop" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/">
+          <b>1. </b>About the workshop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/whatlearn/" title="General Overview" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/whatlearn/">
+          General Overview
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/instructor/" title="Meet the Instructor" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/instructor/">
+          Meet the Instructor
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/general/syllabus/" title="Indicative Syllabus" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/general/syllabus/">
+          Indicative Syllabus
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/" title="Module 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/">
+          <b>2. </b>Module 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/datawrangling/" title="Data Wrangling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/datawrangling/">
+          Data Wrangling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/whatisr/" title="What is R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/whatisr/">
+          What is R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/installr/" title="Install R/RStudio" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/installr/">
+          Install R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/principlesvisualisation/" title="Principles of Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/principlesvisualisation/">
+          Principles of Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/visualisation/" title="Data Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/visualisation/">
+          Data Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/git-and-github/" title="Git and GitHub" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/git-and-github/">
+          Git and GitHub
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/spatialda/" title="Spatial Data Analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/spatialda/">
+          Spatial Data Analysis
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/rstudioide/" title="RStudio IDE" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/rstudioide/">
+          RStudio IDE
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/user/" title="How to use R?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/user/">
+          How to use R?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/statsconcepts/" title="Basic Stats Concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/statsconcepts/">
+          Basic Stats Concepts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/datatypes/" title="Data Types" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/datatypes/">
+          Data Types
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/importexport/" title="Import Data to R" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/importexport/">
+          Import Data to R
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro2r/rmarkdown/" title="Reproducibility" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro2r/rmarkdown/">
+          Reproducibility
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/" title="Module 2" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/module2/">
+          <b>3. </b>Module 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/datawrangling/" title="Data Wrangling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/datawrangling/">
+          Data Wrangling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/principlesvisualisation/" title="Principles of Visualisation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/principlesvisualisation/">
+          Principles of Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/visualisation/" title="Data Visualisation" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/module2/visualisation/">
+          Data Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/module2/spatialda/" title="Spatial Data Analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/module2/spatialda/">
+          Spatial Data Analysis
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/" title="Showcases" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/">
+          <b>6. </b>Showcases
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/covid-19/" title="COVID-19" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/covid-19/">
+          COVID-19
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/airpolution/" title="Air Pollution" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/airpolution/">
+          Air Pollution
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/showcases/tricks_tips/" title="Tricks and Tips" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/showcases/tricks_tips/">
+          Tricks and Tips
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/TanjaKec"><i class='fab fa-fw fa-github'></i>GitHub</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download matcornic/hugo-theme-learn on GitHub">Download</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn" data-icon="octicon-star" data-show-count="true" aria-label="Star matcornic/hugo-theme-learn on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork matcornic/hugo-theme-learn on GitHub">Fork</a>
+
+    <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/module2/Visualisation/_index.en.html" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Introduction to R</a> > <a href='/module2/'>Module 2</a> > Data Visualisation
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Data Visualisation
+            </h1>
+          
+
+        
+
+
+
+
+	
+
+
+<p>Most of you, if not all, will be familiar with creating graphs in Excel. Software such as Excel has a predefined set of menu options for plotting the data that is the focus of the end result: “pretty graph”. Those types of menus assume data to be in a format ready for plotting, which when you get raw data is hardly the case. You are probably going to have to organise and wrangle your data to make it ready for effective visualisation.</p>
+<p><strong>Grammar of Graphics</strong></p>
+<p>The <a href="http://vita.had.co.nz/papers/layered-grammar.html">grammar of graphics</a> enables a structured way of creating a plot by adding the components as layers, making it look effective and attractive.</p>
+<p>It enables you to specify building blocks of a plot and to combine them to create the graphical display that you want. There are 8 building blocks:</p>
+<ul>
+<li><p>data</p></li>
+<li><p>aesthetic mapping</p></li>
+<li><p>geometric object</p></li>
+<li><p>statistical transformations</p></li>
+<li><p>scales</p></li>
+<li><p>coordinate system</p></li>
+<li><p>position adjustments</p></li>
+<li><p>faceting</p></li>
+</ul>
+<p>Imagine talking about baking a cake and adding a cherry on the top. 🎂🍒 This philosophy has been built into the <a href="https://ggplot2.tidyverse.org/reference/"><code>ggplot</code></a> package by <a href="http://hadley.nz">Hadle Wickham</a> for creating elegant and complex plots in R.</p>
+<hr />
+<p><strong><code>ggplot2</code></strong></p>
+<p>Learning how to use the <code>ggplot2</code> package can be challenging, but the results are highly rewarding and just like R itself, it becomes easier the more you use it.</p>
+
+<div class="notices warning" ><p>Unlike base graphics, ggplot works with dataframes and not individual vectors.</p>
+</div>
+
+<p>The best way to master it is by practising. So let us create a first <code>ggplot</code>. 😃
+What we need to do is the following:</p>
+<ol style="list-style-type: lower-roman">
+<li>Wrangle the data in the format suitable for visualisation.</li>
+<li>“Initialise” a plot with <code>ggplot()</code>:</li>
+</ol>
+<p><strong>ggplot(<span style="color:blue">dataframe</span>, aes(<span style="color:orangered">x = explanatory variable</span>, <span style="color:green">y = response variable</span>))</strong></p>
+<p>This will draw a blank ggplot, even though the x and y are specified. <code>ggplot</code> doesn’t assume the plot you meant to be drawn (a scatterplot). You only specify the data set and columns ie. variables to be used. Also note that <code>aes( )</code> function is used to specify the x and y axes.</p>
+<ul>
+<li><ol start="3" style="list-style-type: lower-roman">
+<li>Add layers with <code>geom_</code> functions:</li>
+</ol></li>
+</ul>
+<p><strong>geom_point()</strong></p>
+<p>We will add points using a <strong>geom layer</strong> called <code>geom_point</code>.</p>
+<pre class="r"><code># load the packages
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(gapminder))
+suppressPackageStartupMessages(library(ggplot2))
+
+# wrangle the data (Can you remember what this code does?)
+gapminder_pipe &lt;- gapminder %&gt;%
+  filter(continent == &quot;Europe&quot; &amp; year ==  2007) %&gt;%
+  mutate(pop_e6 = pop / 1000000)
+
+# plot the data
+ggplot(gapminder_pipe, aes(x = pop_e6, y = lifeExp)) +
+  geom_point(col =&quot;red&quot;)</code></pre>
+<p><img src="/module2/Visualisation/_index.en_files/figure-html/unnamed-chunk-1-1.png" width="768" style="display: block; margin: auto;" /></p>
+
+<div class="notices tip" ><p>🤓💡 <!-- raw HTML omitted -->Tip<!-- raw HTML omitted -->: You can use the following code template to make graphs with <!-- raw HTML omitted -->ggplot2<!-- raw HTML omitted -->:</p>
+</div>
+
+<pre><code>ggplot(data = &lt;DATA&gt;, (mapping = aes(&lt;MAPPINGS&gt;)) + 
+      &lt;GEOM_FUNCTION&gt;()</code></pre>
+<p><strong><span style="color:red">ggplot()</span> gallery</strong>
+Run the following code to see what graphs it will produce.</p>
+<pre class="r"><code>ggplot(data = gapminder, mapping = aes(x = lifeExp), binwidth = 10) +
+  geom_histogram()
+#
+ggplot(data = gapminder, mapping = aes(x = lifeExp)) +
+  geom_density()
+#
+ggplot(data = gapminder, mapping = aes(x = continent, color = continent)) +
+  geom_bar()
+#
+ggplot(data = gapminder, mapping = aes(x = continent, fill = continent)) +
+  geom_bar()</code></pre>
+<hr />
+<p>🗣👥 Confer with your neighbours:
+Does life expectancy depend upon population size?</p>
+<p><span class="math display">\[y = b_0 + b_1 x + e\]</span></p>
+<p>Run this code in your console to fit the model <code>pop</code> vs <code>lifeExp</code>.</p>
+<p>Pay attention to spelling, capitalization, and parentheses!</p>
+<pre class="r"><code>m1 &lt;- lm(gapminder_pipe$lifeExp ~ gapminder_pipe$pop_e6)
+summary(m1)</code></pre>
+<p><strong>Can you answer the question using the output of the fitted model?</strong></p>
+<pre class="r"><code>m1 &lt;- lm(gapminder_pipe$lifeExp ~ gapminder_pipe$pop_e6)
+summary(m1)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = gapminder_pipe$lifeExp ~ gapminder_pipe$pop_e6)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -6.324 -2.562  1.007  2.245  4.277 
+## 
+## Coefficients:
+##                        Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)           77.477421   0.721723 107.351   &lt;2e-16 ***
+## gapminder_pipe$pop_e6  0.008762   0.023779   0.368    0.715    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.025 on 28 degrees of freedom
+## Multiple R-squared:  0.004826,   Adjusted R-squared:  -0.03072 
+## F-statistic: 0.1358 on 1 and 28 DF,  p-value: 0.7153</code></pre>
+<hr />
+<p>👉 Practice ⏰💻: Use gapminder data.</p>
+<p>Does life expectancy depend upon the GDP per capita?</p>
+<ol style="list-style-type: decimal">
+<li><p>Have a glance at the data. (tip: <code>sample_n(df, n)</code>)</p></li>
+<li><p>Produce a scatterplot: what does it tell you?</p></li>
+<li><p>Fit a regression model: is there a relationship? How strong is it?
+Is the relationship linear? What conclusion(s) can you draw?</p></li>
+<li><p>What are the other questions you could ask; could you provide the answers to them?</p></li>
+</ol>
+<p>😃🙌 Solution: code Q1; sample</p>
+<pre class="r"><code>sample_n(gapminder, 30)</code></pre>
+<pre><code>## # A tibble: 30 x 6
+##    country          continent  year lifeExp      pop gdpPercap
+##    &lt;fct&gt;            &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+##  1 Comoros          Africa     1987    54.9   395114     1316.
+##  2 Burkina Faso     Africa     1967    40.7  5127935      795.
+##  3 Saudi Arabia     Asia       1962    45.9  4943029    11626.
+##  4 South Africa     Africa     2002    53.4 44433622     7711.
+##  5 Cote d&#39;Ivoire    Africa     1987    54.7 10761098     2157.
+##  6 Saudi Arabia     Asia       2007    72.8 27601038    21655.
+##  7 Hong Kong, China Asia       2002    81.5  6762476    30209.
+##  8 Spain            Europe     1962    69.7 31158061     5694.
+##  9 Sudan            Africa     2007    58.6 42292929     2602.
+## 10 Finland          Europe     1977    72.5  4738902    15605.
+## # … with 20 more rows</code></pre>
+<p>We will add layers onto this scatterplot: <code>liveExp</code> vs <code>gdpPercap</code>. We want to superimpose regression line of the best fit and non-parametric loess line that depict a possible relationship between the two variables. That means we will have:</p>
+<ul>
+<li>1st layer: <strong>scatterplot</strong></li>
+<li>2nd layer: <strong>line of the best fit</strong></li>
+<li>3rd layer: <strong>loess curve</strong></li>
+</ul>
+<p>😃🙌 Solution: code Q2; Plot the data;</p>
+<pre class="r"><code>ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(alpha = 0.2, shape = 21, fill = &quot;blue&quot;, colour=&quot;black&quot;, size = 5) + # set transparency, shape, colour and size for points
+  geom_smooth(method = &quot;lm&quot;, se = F, col = &quot;maroon3&quot;) + # change the colour of line
+  geom_smooth(method = &quot;loess&quot;, se = F, col = &quot;limegreen&quot;) # change the colour of line</code></pre>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;
+## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="/module2/Visualisation/_index.en_files/figure-html/unnamed-chunk-6-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>😃🙌 Solution: code Q3; simple regression model</p>
+<pre class="r"><code>my.model &lt;- lm(gapminder_pipe$lifeExp ~ gapminder_pipe$gdpPercap)
+summary(my.model)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = gapminder_pipe$lifeExp ~ gapminder_pipe$gdpPercap)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -2.79839 -1.30472  0.00807  1.33443  2.87766 
+## 
+## Coefficients:
+##                           Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)              7.227e+01  6.942e-01 104.113  &lt; 2e-16 ***
+## gapminder_pipe$gdpPercap 2.146e-04  2.514e-05   8.537  2.8e-09 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.598 on 28 degrees of freedom
+## Multiple R-squared:  0.7225, Adjusted R-squared:  0.7125 
+## F-statistic: 72.88 on 1 and 28 DF,  p-value: 2.795e-09</code></pre>
+<hr />
+<p><strong>Playing with the aesthetic:</strong> adding more layers to your <span style="color:red"><code>ggplot()</code></span></p>
+<p>Whenever possible you should strive to make your graph visually appealing and informative as discussed in the previous section <em>Principles of Visualisation</em>.</p>
+<p><strong>To change the title and axis labels use <span style="color:orangered">layer <code>labs</code></span></strong></p>
+<p><strong>labs(<span style="color:blue">title =</span> <span style="color:orangered"> “your title”</span>, <span style="color:blue">subtitle =</span> <span style="color:orangered"> “your subtitle”</span>, <span style="color:blue">y =</span> <span style="color:orangered"> “y label”</span>, <span style="color:blue">x =</span> <span style="color:orangered"> “x label”</span>, <span style="color:blue">caption =</span> <span style="color:orangered"> “graph’s caption”</span>)</strong></p>
+<pre class="r"><code>ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(alpha = 0.2, shape = 20, col = &quot;steelblue&quot;, size = 5) + 
+  geom_smooth(method = &quot;lm&quot;, se = F, col = &quot;maroon3&quot;) + 
+  geom_smooth(method = &quot;loess&quot;, se = F, col = &quot;limegreen&quot;) + 
+ 
+  # give a title an label axes
+  labs(title = &quot;GDP per Capita vs. Population Size&quot;, 
+        x = &quot;population&quot;, y = &quot;Life Exp.&quot;) + 
+  
+  # modify the appearance
+  theme(legend.position = &quot;none&quot;, 
+        panel.border = element_rect(fill = NA, 
+                                    colour = &quot;black&quot;,
+                                    size = .75),
+        plot.title=element_text(hjust=0.5)) + 
+  
+  # add the description
+  geom_text(x = 80000, y = 125, label = &quot;regression line&quot;, col = &quot;maroon3&quot;) +
+  geom_text(x = 90000, y = 75, label = &quot;smooth line&quot;, col = &quot;limegreen&quot;) </code></pre>
+<p><img src="/module2/Visualisation/_index.en_files/figure-html/unnamed-chunk-8-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Note, that we have added text on the plot for the two lines and have edited the plot in terms of legend and its appearance.</p>
+<p>We could also annotate the plot by using:</p>
+<pre><code>annotate(&quot;text&quot;, x = 80000, y = 125 label = &quot;regression line&quot;, color = &quot;maroon3&quot;)</code></pre>
+<p>To learn more about how to modify the appearance of the theme go to <a href="https://ggplot2.tidyverse.org/reference/theme.html">ggplot’s theme page</a>.</p>
+<hr />
+<p><strong>Change the colour of the points to reflect categories of another, third variable.</strong></p>
+<pre class="r"><code>ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  
+  # change the colour of the points to reflect continent it belongs to; set transparency, shape, and size for points
+  geom_point(aes(col = continent), alpha = 0.5, shape = 20, size = 3) + 
+  
+  geom_smooth(method = &quot;lm&quot;, se = F, col = &quot;maroon3&quot;) + 
+  geom_smooth(method = &quot;loess&quot;, se = F, col = &quot;dodgerblue3&quot;) + 
+  labs (title= &quot;GDP per Capita vs. Population Size&quot;, 
+        x = &quot;population&quot;, y = &quot;Life Exp.&quot;) + 
+  theme(legend.position = &quot;right&quot;, 
+        panel.border = element_rect(fill = NA, 
+                                    colour = &quot;black&quot;,
+                                    size = .75),
+        plot.title=element_text(hjust=0.5)) + 
+  geom_text(x = 80000, y = 125, label = &quot;regression line&quot;, col = &quot;maroon3&quot;) + 
+  geom_text(x = 90000, y = 75, label = &quot;smooth line&quot;, col = &quot;dodgerblue3&quot;)</code></pre>
+<p><img src="/module2/Visualisation/_index.en_files/figure-html/unnamed-chunk-9-1.png" width="768" style="display: block; margin: auto;" /></p>
+
+<div class="notices note" ><p>Note that the legend is added automatically. You can remove it by setting the <!-- raw HTML omitted -->legend.position<!-- raw HTML omitted --> to <!-- raw HTML omitted -->none<!-- raw HTML omitted --> from within a <!-- raw HTML omitted -->theme()<!-- raw HTML omitted --> function.</p>
+</div>
+
+<hr />
+<p><strong>Adjust the X and Y axis limits and change the X axis texts and its ticks’ location</strong></p>
+<pre class="r"><code>  ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(aes(col = continent), alpha = 0.5, shape = 20, size = 3) + 
+  geom_smooth(method = &quot;lm&quot;, se = F, col = &quot;maroon3&quot;) + 
+  geom_smooth(method = &quot;loess&quot;, se = F, col = &quot;dodgerblue3&quot;) + 
+  labs (title= &quot;GDP per Capita vs. Population Size&quot;, 
+        x = &quot;population&quot;, y = &quot;Life Exp.&quot;) + 
+  theme(legend.position = &quot;right&quot;, 
+        panel.border = element_rect(fill = NA, 
+                                    colour = &quot;black&quot;,
+                                    size = .75),
+        plot.title=element_text(hjust=0.5)) + 
+  geom_text(x = 48000, y = 90, label = &quot;regression line&quot;, col = &quot;maroon3&quot;) + 
+  geom_text(x = 70000, y = 75, label = &quot;smooth line&quot;, col = &quot;dodgerblue3&quot;) +
+  
+  # change the limits of the x &amp; y axis
+  xlim(c(0, 90000)) + 
+  ylim(c(25, 100)) </code></pre>
+<pre><code>## Warning: Removed 5 rows containing non-finite values (stat_smooth).
+
+## Warning: Removed 5 rows containing non-finite values (stat_smooth).</code></pre>
+<pre><code>## Warning: Removed 5 rows containing missing values (geom_point).</code></pre>
+<pre><code>## Warning: Removed 33 rows containing missing values (geom_smooth).</code></pre>
+<p><img src="/module2/Visualisation/_index.en_files/figure-html/unnamed-chunk-10-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Note that the regression and smooth lines have changed their shapes 😳… all those warnings 😬 What’s going on?! 😲</p>
+
+<div class="notices warning" ><p>When using xlim() and ylim(), the points outside the specified range are deleted and are not considered while drawing the line using <!-- raw HTML omitted -->geom_smooth()<!-- raw HTML omitted -->. This feature might come in handy when you wish to know how the line of best fit would change when some extreme values or outliers are removed.</p>
+</div>
+
+<p>Thankfully, there is another way to change the limits of the axis without deleting the points by simply zooming in to the region of interest. This is done using <code>coord_cartesian()</code>. You can try to replace <code>xlim()</code> and <code>ylim()</code> commands in the previous code chunk with the code below to see what would happen.</p>
+<pre><code>coord_cartesian(xlim = c(0, 90000), ylim = c(25, 100))  # zooming in specified limits of the x &amp; y axis</code></pre>
+<p>You can set the breaks on the x axis and label them by using <code>scale_x_continuous()</code>. Similarly, can you can do it for the y axis?</p>
+<p>Try to play with changing the colour palette. For more options check <a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">Sequential, diverging and qualitative colour scales from colorbrewer.org</a>.</p>
+<p>These are build-in themes which control all non-data display. You should use <code>theme_bw()</code> to have white background or <code>theme_dark()</code> for dark grey. For more build-in themes click <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">here</a>.</p>
+<pre class="r"><code>ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(aes(col = continent), alpha = 0.5, shape = 20, size = 3) + 
+  geom_smooth(method = &quot;lm&quot;, se = F, col = &quot;maroon3&quot;) + 
+  geom_smooth(method = &quot;loess&quot;, se = F, col = &quot;dodgerblue3&quot;) + 
+  labs (title= &quot;GDP per Capita vs. Population Size&quot;, 
+        x = &quot;population&quot;, y = &quot;Life Exp.&quot;) + 
+  theme(legend.position = &quot;right&quot;, 
+        panel.border = element_rect(fill = NA, 
+                                    colour = &quot;black&quot;,
+                                    size = .75),
+        plot.title=element_text(hjust=0.5)) + 
+  geom_text(x = 80000, y = 125, label = &quot;regression line&quot;, col = &quot;maroon3&quot;) + 
+  geom_text(x = 90000, y = 75, label = &quot;smooth line&quot;, col = &quot;dodgerblue3&quot;) +
+  
+  # change breaks and label them 
+  scale_x_continuous(breaks = seq(0, 120000, 20000), labels = c(&quot;0&quot;, &quot;20K&quot;, &quot;40K&quot;, &quot;60K&quot;, &quot;80K&quot;, &quot;100K&quot;, &quot;120K&quot;)) +
+
+  # change color palette
+  scale_colour_brewer(palette = &quot;Set1&quot;) + 
+
+  # white background theme
+  theme_bw()</code></pre>
+<p><img src="/module2/Visualisation/_index.en_files/figure-html/unnamed-chunk-11-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>There is a <code>ggthemes</code> library of themes that willhelp you create stylish ggplot charts used by different journals like the Wall Street Journal or the Economist. See what other themes you can use by going to <a href="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/">this website</a></p>
+<pre class="r"><code>## If you don&#39;t have ggthemes installed yet, uncomment and run the line below
+#install.packages(&quot;ggthemes&quot;)
+library(ggthemes)
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(aes(col = continent), alpha = 0.5, shape = 20, size = 3) + 
+  geom_smooth(method = &quot;lm&quot;, se = F, col = &quot;darkred&quot;) + 
+  geom_smooth(method = &quot;loess&quot;, se = F, col = &quot;darkgreen&quot;) + 
+  labs (title= &quot;GDP per Capita vs. Population Size&quot;, 
+        x = &quot;population&quot;, y = &quot;Life Exp.&quot;) + 
+  theme(legend.position = &quot;right&quot;, 
+        panel.border = element_rect(fill = NA, 
+                                    colour = &quot;black&quot;,
+                                    size = .75),
+        plot.title=element_text(hjust=0.5)) + 
+  geom_text(x = 80000, y = 125, label = &quot;regression line&quot;, col = &quot;darkred&quot;) + 
+  geom_text(x = 90000, y = 75, label = &quot;smooth line&quot;, col = &quot;darkgreen&quot;) +
+  scale_x_continuous(breaks = seq(0, 120000, 20000), labels = c(&quot;0&quot;, &quot;20K&quot;, &quot;40K&quot;, &quot;60K&quot;, &quot;80K&quot;, &quot;100K&quot;, &quot;120K&quot;)) +
+
+  # Wall Street Journal theme
+  scale_colour_wsj() +
+  theme_wsj()</code></pre>
+<p><img src="/module2/Visualisation/_index.en_files/figure-html/unnamed-chunk-12-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>You are ready to make publication-ready visualizations in R. 😎 You can go further and explore for yourself to see if you can produce BBC style ggplot charts like those used in the BBC’s data journalism. Check out the <a href="https://bbc.github.io/rcookbook/">BBC Visual and Data Journalism cookbook for R graphics</a>.</p>
+<hr />
+<p><strong>Lay out panels in a grid</strong></p>
+<p>Sometimes it might be hard to read one panel plot, like the one we have just created in which it is not very easy to see the points of each continent. To make it easier to follow and to understand the information you are trying to depict, it would be more effective to present different categories of the same information in a clear set of multi-panel plots. This is easy to do by applying powerful faceting functions of the <code>ggplot2</code>: <code>facet_wrap()</code> and <code>facet_grid()</code>.</p>
+<pre class="r"><code>ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(aes(col = continent), alpha = 0.5, shape = 20, size = 3) + 
+  geom_smooth(method = &quot;lm&quot;, se = F, col = &quot;darkred&quot;) + 
+  geom_smooth(method = &quot;loess&quot;, se = F, col = &quot;black&quot;) + 
+  labs (title= &quot;GDP per Capita vs. Population Size&quot;, 
+        x = &quot;population&quot;, y = &quot;Life Exp.&quot;) + 
+  theme(legend.position = &quot;right&quot;, 
+        panel.border = element_rect(fill = NA, 
+                                    colour = &quot;black&quot;,
+                                    size = .75),
+        plot.title=element_text(hjust=0.5)) + 
+  scale_x_continuous(breaks = seq(0, 120000, 20000), labels = c(&quot;0&quot;, &quot;20K&quot;, &quot;40K&quot;, &quot;60K&quot;, &quot;80K&quot;, &quot;100K&quot;, &quot;120K&quot;)) +
+  scale_colour_wsj() +
+  theme_wsj() +
+  
+  # forms a matrix of scatterplots for each continent
+  facet_grid(rows = vars(continent))</code></pre>
+<p><img src="/module2/Visualisation/_index.en_files/figure-html/unnamed-chunk-13-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>The main difference between <code>facet_wrap()</code> and <code>facet_grid()</code> is that the former can string together ggplots in different facets using a single variable, while the latter can do it for more than one.</p>
+
+<div class="notices warning" ><p>Try to explore the two functions for yourself and see where it will take you.</p>
+</div>
+
+<hr />
+<p>💪 There is a challenge:</p>
+<ul>
+<li><p><code>dplyr</code>’s <code>group_by()</code> function enables you to group your data. It allows you to create a separate df that splits the original df by a variable.</p></li>
+<li><p><code>boxplot()</code> function produces boxplot(s) of the given (grouped) values.</p></li>
+</ul>
+<p>Knowing about <code>group_by()</code> and <code>boxplot()</code> function and using <code>gapminder</code> data, can you compute the median life expectancy for year 2007 by continent and visualise your result?</p>
+<p>😃🙌 Solution: code</p>
+<p>Let us look at the median life expectancy for each continent</p>
+<pre class="r"><code>gapminder %&gt;%
+    group_by(continent) %&gt;%
+    summarise(lifeExp = median(lifeExp))</code></pre>
+<pre><code>## # A tibble: 5 x 2
+##   continent lifeExp
+##   &lt;fct&gt;       &lt;dbl&gt;
+## 1 Africa       47.8
+## 2 Americas     67.0
+## 3 Asia         61.8
+## 4 Europe       72.2
+## 5 Oceania      73.7</code></pre>
+<p><strong>We are lucky that we live in Serbia, ie. Europe!!!</strong> 😅</p>
+<p>😃🙌 Solution: graph</p>
+<pre class="r"><code># visualise the information
+library(&quot;ggplot2&quot;)
+ggplot(gapminder, aes(x = continent, y = lifeExp)) +
+  geom_boxplot(outlier.colour = &quot;hotpink&quot;) +
+  geom_jitter(position = position_jitter(width = 0.1, height = 0), alpha = .2) +
+  labs (title= &quot;Life Exp. vs. Continent&quot;, 
+        x = &quot;Continent&quot;, y = &quot;Life Exp.&quot;) +
+  theme(legend.position = &quot;none&quot;, 
+        panel.border = element_rect(fill = NA, 
+                                    colour = &quot;black&quot;,
+                                    size = .75),
+        plot.title=element_text(hjust=0.5))</code></pre>
+<p><img src="/module2/Visualisation/_index.en_files/figure-html/unnamed-chunk-15-1.png" width="768" style="display: block; margin: auto;" /></p>
+<hr />
+<p><strong>Case study: NO2 2017 😁</strong></p>
+<p>Let’s try to combine everything we have learnt so far and practise using well known to us <a href="http://data.sepa.gov.rs/dataset/ca463c44-fbfa-4de9-9a75-790995bf2830/resource/74516688-5fb5-47b2-becc-6b6e31a24d80/download/2017-no2.csv">2017-NO2.csv</a> data.</p>
+<p>Remember this?</p>
+<pre class="r"><code>library(tidyr)
+library(forcats)
+no2 &lt;- read.csv(&quot;http://data.sepa.gov.rs/dataset/ca463c44-fbfa-4de9-9a75-790995bf2830/resource/74516688-5fb5-47b2-becc-6b6e31a24d80/download/2017-no2.csv&quot;,
+                stringsAsFactors = FALSE, 
+                fileEncoding = &quot;latin1&quot;)
+new_no2 &lt;- no2 %&gt;%
+  gather(&quot;place&quot;, &quot;no2&quot;, -Datum, factor_key = TRUE) %&gt;% # stack all columns apart from `Datum`
+  mutate(place = fct_recode(place, 
+                            &quot;NS_Spens&quot; = &quot;Novi.Sad.SPENS.NO2&quot;,
+                            &quot;BG_Most&quot; = &quot;Beograd.Mostar.NO2&quot;,
+                            &quot;BG_Vracar&quot; = &quot;Beograd.Vraèar.NO2&quot;, 
+                            &quot;BG_ZelenoBrdo&quot; = &quot;Beograd.Zeleno.brdo.NO2&quot;, 
+                            &quot;KG&quot; = &quot;Kragujevac..NO2&quot;, 
+                            &quot;NI&quot; = &quot;Ni..IZJZ.Ni...NO2&quot;,
+                            &quot;UZ&quot; = &quot;U.ice..NO2&quot;))
+glimpse(new_no2)</code></pre>
+<pre><code>## Rows: 2,555
+## Columns: 3
+## $ Datum &lt;chr&gt; &quot;01.01.2017&quot;, &quot;02.01.2017&quot;, &quot;03.01.2017&quot;, &quot;04.01.2017&quot;, &quot;05.01.…
+## $ place &lt;fct&gt; NS_Spens, NS_Spens, NS_Spens, NS_Spens, NS_Spens, NS_Spens, NS_…
+## $ no2   &lt;dbl&gt; 22.89, 32.94, 14.86, 22.73, 20.89, 10.47, 9.58, 15.99, 14.46, 9…</code></pre>
+<pre class="r"><code>new_no2 %&gt;% 
+  group_by(place) %&gt;% 
+  filter(!is.na(no2)) %&gt;% 
+  summarise(mean_no2 = mean(no2)) %&gt;% # !is.na(): is not NA; omits the missing values
+  ggplot(aes(x = place, y = mean_no2, fill = place)) + # fill: colours each bar differently   
+    geom_bar(stat = &quot;identity&quot;) +
+    xlab(&quot;Place&quot;) + 
+    scale_fill_brewer(palette = &quot;Dark2&quot;) + # colour scheme &quot;Dark2&quot;
+    theme(legend.position=&quot;bottom&quot;, 
+          axis.text.x = element_blank(),
+          axis.ticks.x = element_blank()) # </code></pre>
+<p><img src="/module2/Visualisation/_index.en_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<hr />
+<p><strong>YOUR TURN 👇</strong></p>
+<p>Practise by doing the following set of exercises:</p>
+<ol style="list-style-type: decimal">
+<li><p>Choose a data set from <a href="https://data.gov.rs" class="uri">https://data.gov.rs</a> that is interesting to you. Import the dataset into R and examine what kinds of variables are there. What plots would you recommend using to help people get to know the dataset?</p></li>
+<li><p>Go back to NO2 2017 case study:</p></li>
+</ol>
+<ol style="list-style-type: lower-roman">
+<li><p>What are the questions you can ask based on the available information within the dataset?</p></li>
+<li><p>What plots would you recommend using to help in answering those questions?</p></li>
+<li><p>Create appropriate visualisations for i) &amp; ii)</p></li>
+</ol>
+<hr />
+<p><strong>Useful links:</strong></p>
+<p><a href="https://rstudio.com/resources/webinars/tidyverse-visualization-manipulation-basics-this-introduction-to-the-tidyverse-will-cover-several-best-practices-for-analyzing-data-with-r/">tidyverse, visualization, and manipulation basics</a></p>
+<p><a href="http://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html#introduction">Introduction to R graphics with ggplot2</a></p>
+<p><a href="https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf"><code>gglopt</code> cheat sheet</a></p>
+<p><a href="https://www.data-to-viz.com/">from Data to Viz</a></p>
+<p><a href="http://johnburnmurdoch.github.io/slides/r-ggplot/#/">An example from the Financial Times</a></p>
+<p><a href="https://bbc.github.io/rcookbook/">BBC Visual and Data Journalism cookbook for R graphics</a></p>
+<p><a href="http://johnburnmurdoch.github.io/slides/r-ggplot/#/">ggplot as a creativity engine</a></p>
+<hr />
+<p>© 2020 Tatjana Kecojevic</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/module2/principlesvisualisation/" title="Principles of Visualisation"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/module2/spatialda/" title="Spatial Data Analysis" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1605427046"></script>
+    <script src="/js/perfect-scrollbar.min.js?1605427046"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1605427046"></script>
+    <script src="/js/jquery.sticky.js?1605427046"></script>
+    <script src="/js/featherlight.min.js?1605427046"></script>
+    <script src="/js/highlight.pack.js?1605427046"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1605427046"></script>
+    <script src="/js/learn.js?1605427046"></script>
+    <script src="/js/hugo-learn.js?1605427046"></script>
+
+    <link href="/mermaid/mermaid.css?1605427046" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1605427046"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105947713-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

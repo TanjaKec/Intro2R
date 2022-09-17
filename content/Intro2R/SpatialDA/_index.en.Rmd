@@ -1,0 +1,173 @@
+---
+date: "2016-04-09T16:50:16+02:00"
+title: Spatial Data Analysis
+weight: 12
+---
+
+R has a range of packages which provide functionality for handling spatial data and performing complex spatial analysis operations. Spatial data analysis is no longer reserved just for experts with expensive hardware and software. R has impressive geographic capabilities which anyone with the desire for exploration of geospatial data can use. 
+
+Before we get into geospatial mapping in R, let us introduce some basic ideas about spatial data.
+
+Spatial data comprises of:
+
+- coordinates of the object
+- the coordinates relate to a physical location on Earth: **coordinate reference system** (**CRS**)
+
+There are **two types of CRS**:
+
+1) Geographical
+
+  * specific locations on the surface are defined by a three dimensional model of the Earth 
+  * longitude and latitude
+
+2) Projected
+
+  *	A conversion of the three-dimensional grid onto a two-dimensional plane
+
+According to the storing technique, spatial data is one of two types:
+
+1)	**Raster data**: composed of grid cells identified by row and column. The whole geographic area is divided into groups of individual cells, which represent an image (satellite images).
+
+2)	**Vector data**: composed of points, polylines, and polygons. For example hospitals, houses etc. are represented by points, while rivers, roads, etc., are represented by polylines. Villages and towns are represented by polygons.
+
+When doing spatial analysis you will also deal with attribute data, which contains the relevant information about the spatial data. The analysis will be based on attribute data attached to geospatial data. Such data could be:
+
+* nominal
+* ordinal
+* interval data
+* ratio data
+
+ie. attribute or measured type of data.
+
+**Static Maps: Shape File** 
+
+R has impressive geographic capabilities and can handle different kinds of spatial data file formats including geojson and KML. We will illustrate the use of the ESRI Shapefile format, which stores non-topological geometry and attribute information for the spatial features in a data set. A shapefile consists minimally of a main file, an index file, and a dBASE table.
+
+-	.shp - lists shape and vertices
+-	.shx - has index with offsets
+-	.dbf - relationship file between geometry and attributes (data)
+
+To import an ESRI shapefile into R correctly, all three files must be present in the directory and named the same (except for the file extension).
+
+Let us start by reading a shape file of Serbian districts' boundaries available from [GADM maps and data](https://gadm.org/download_country_v3.html).
+
+First, download the files we will need from the following GitHub repository: <https://github.com/TanjaKec/gadm36_SRB_shp>. Make sure you save the file into your R-Project working directory before you ask R to execute the following
+
+```
+library(ggplot2)
+library(sf)
+
+#pointed to the shape file
+eu <- "eu_countries_simplified.shp"
+
+#used the st_read() function to import it
+eu <- st_read(eu)
+
+# plot the map
+ggplot(eu) + 
+  geom_sf()
+```
+
+![](/module2/SpatialDA/images/plot_eu.png?width=40pc)
+
+This looks good 😃 Next, we want to add some data to it and do some 'colouring'. We will incorporate information about `Cumulative number for 14 days of COVID-19 cases per 100000 on 14-Novov-202' given in "covid_EU.csv" file.  
+
+```
+library(dplyr)
+covid_EU <- read.csv("covid_EU.sc")
+
+
+# tidy up
+# Make the country names correspond to ecdc data 
+bound$country <- gsub(" ", "_", bound$country)
+bound <- bound %>% 
+  mutate(country = fct_recode(country,
+                              "Czechia" = "Czech_Republic",
+                              "North_Macedonia" = "Macedonia"))
+
+# join data from the two data frames  
+my_map <- left_join(bound, covid_EU,
+                    by = c("country" = "country"))
+
+# plot the choropleth
+ggplot(my_map) +
+  geom_sf(aes(fill = Fx14dper100K)) +
+  scale_fill_distiller(direction = 1, name = "Fx14per100K") +
+  scale_fill_viridis_c(option = "magma", begin = 0.1) +
+  labs(title="Cumulative number for 14 days of COVID-19 cases per 100000", caption="Source: ecdc")
+```
+
+![](/module2/SpatialDA/images/plot_covid.png?width=40pc)
+
+
+**Interactive Maps: leaflet**
+
+`Leaflet` is one of the most popular open-source JavaScript libraries for interactive maps that was integrated into R, by a team of people from RStudio. We will illustrate how easy it is to plot a location map using the leaflet package, but you can learn more about this package from the [Leaflet for R](https://rstudio.github.io/leaflet/) website.
+
+The following map pinpoints the Libraries accross Leeds using data available from the U.K. open data portal [data.gov.uk](https://data.gov.uk/dataset/4853a980-0c6d-4d83-9daa-d0441b21f6e1/leeds-libraries)
+
+```{r}
+## If you don't have leaflet installed yet, uncomment and run the line below
+#install.packages("leaflet")
+library(leaflet)
+suppressPackageStartupMessages(library(dplyr))
+
+#Leeds libraries available from #https://data.gov.uk/dataset/4853a980-0c6d-4d83-9daa-d0441b21f6e1/leeds-libraries
+mydata <- read.csv('https://datamillnorth.org/download/leeds-libraries/cfc9f345-4916-4b74-aa9e-cecc78db9075/library%2520locations.csv', 
+                   header=T, 
+                   na.strings=c("","NA"),
+                   stringsAsFactor = FALSE,
+                   fileEncoding = "latin1") 
+# define the corners of the map
+minlat <- min(mydata$Latitude)
+maxlat <- max(mydata$Latitude)
+minlng <- min(mydata$Longitude)
+maxlng <- max(mydata$Longitude)
+
+# Initialize and assign libs as a leaflet object
+libs <- mydata %>% 
+  leaflet() %>% 
+  # add tiles to the leaflet object
+  addTiles() %>%
+  # setting the corners/centre of the map
+  fitBounds(~minlng, ~minlat, ~maxlng, ~maxlat) %>% 
+  # add the markers with the popups 
+  addCircles(lng = ~Longitude, lat = ~Latitude,
+             radius = 150, weight = 10, color = "black",
+             fillColor = "red", fillOpacity = 0.7,  
+             popup = ~paste("<b>", Address.Line.1, "<br>", Postcode , "<br> tel:", Telephone, "<br> email:", Email, "<br>"))
+#print the map
+libs
+```
+
+Here is an interesting website which introduces all kinds of possibilities when creating maps with ['leaflet'](https://maptimeboston.github.io/leaflet-intro/). You should check it out and explore further for yourself.
+
+{{% notice note %}}
+From its original application as a statistical programming language, R has come a long way and has become very powerful in supporting spatial analysis. All R packages include vignettes with explanations of the functions’ syntaxes and often very helpful mini-tutorials that illustrate the practical uses of the functions around related problems. [CRAN Task View for Analysis of Spatial Data ](https://cran.r-project.org/web/views/Spatial.html) provides a list of available libraries in R for geographical mapping that are commonly used when undertaking spatial analysis and mapping projects in R. 
+{{% /notice %}}
+
+
+**YOUR TURN 👇**
+
+Practise by doing the following set of exercises:
+
+1)	Read a shape file of Serbian districts’ boundaries available from [GADM maps and data](https://gadm.org/download_country_v3.html) and plot population per square kilometre available form ‘Serbian_Pop.csv’ used in the exercise.
+
+2)	Create a map pointing out your favourite hang-out places using the leaflet package.
+
+
+
+**useful links:** 
+
+[R for the analysis of spatial or spatio-temporal data (blog)](https://www.r-spatial.org/)
+
+[Geocomputation with R](https://geocompr.robinlovelace.net/): a book on geographic data analysis, visualisation and modelling.
+
+[GADM maps and data](https://gadm.org/download_country_v3.html)
+
+[Creating Interactive Spatial Maps in R Using Leaflet](https://www.earthdatascience.org/courses/earth-analytics/get-data-using-apis/leaflet-r/)
+
+[Thematic Mapping with tmap](https://map-rfun.library.duke.edu/031_thematic_mapping.html)
+
+-----------------------------
+[Creative Commons Attribution-ShareAlike 4.0 International License.](https://creativecommons.org/licenses/by-sa/4.0/)

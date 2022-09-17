@@ -1,0 +1,25 @@
+---
+date: "2016-04-09T16:50:16+02:00"
+title: "Tricks and Tips"
+weight: 3
+---
+
+Here you will find [Xaringan](https://cran.r-project.org/web/packages/xaringan/index.html) presentations illustrating various tricks and tips for working in R. To view them just click on the Xaringan hexagon. 👇😃  
+
+---
+
+**Import Data to R**
+It is the first big hurdle to dealing with data in R. You are most likely to have looked at, organised and examined your data files in Excel. Here is a compendious [Xaringan](https://cran.r-project.org/web/packages/xaringan/index.html) presentation showing how to import `.csv` and `.xlsx` data files into R that will help you get going. 
+
+| description | 👇😃 |
+| --------- | ----------------------- |
+| Import csv and Excel spreadsheet data files: | [![Slides](/Showcases/Tricks_Tips/images/xaringan_icon.png?width=3pc)](https://importdata2r.netlify.app) |
+| plot time series using ggplot2: |  [![Slides](/Showcases/Tricks_Tips/images/xaringan_icon.png?width=3pc)](https://tsggplot.netlify.app/) |
+
+All of this is used in [**COVID-19 Casestudy**](https://dataliteracy.rbind.io/showcases/covid-19/)
+
+
+
+
+-----------------------------
+© 2020 Tatjana Kecojevic
