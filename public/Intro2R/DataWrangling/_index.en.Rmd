@@ -114,7 +114,7 @@ Now we have the `dplyr` package uploaded, let us learn its verbs. 😇
 
 <span style="color:red">    f(x,y)</span>
 
-The "pipe" **passes the result of the *LHS as the 1st operator argument of the function on the RHS**.
+The "pipe" **passes the result of the LHS as the 1st operator argument of the function on the RHS**.
 
 <pre>
 <span style="color:red">3 %>% sum(4)</span>      <==>      <span style="color:red">  sum(3, 4)</span>

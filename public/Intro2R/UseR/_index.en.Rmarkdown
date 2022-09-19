@@ -6,7 +6,7 @@ output:
 weight: 5
 ---
 
-The RStudio window has multiple panes. [RStudio IDE Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf):
+The RStudio window has multiple panes. [RStudio IDE Cheat Sheet](https://ucdavis-bioinformatics-training.github.io/Oct2017-ILRI-Workshop/Cheat_Sheets/rstudio-IDE-cheatsheet.pdf):
 
 ![Red variant](/day1/UseR/images/RStudio1.png?width=40pc)
 

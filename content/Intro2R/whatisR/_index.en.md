@@ -13,7 +13,14 @@ weight: 1
 
 In 1993 Bell Labs gave StatSci (later Insightful Corp.) an exclusive licence to develop and sell the **S** language. Insightful sold its implementation of the **S** language under the product name **S-PLUS**.
 
-You can read more about the [history of S, R, and S-PLUS](https://www.whoishostingthis.com/resources/s-plus/)
+You watch more videos on history of S and R:
+
+- Dalgaard, P. (2020). [A brief history of R and some thoughts about its future.](https://www.youtube.com/watch?v=Uey45MSg8Y4) CelebRation 2020 conference, Copenhagen,
+Denmark.
+- Dalgaard, P. (2018). [What's in a name? 20 years of R release management.](https://livefreeordichotomize.com/2017/09/28/r-release-names/) UseR! Conference, Brisbane, Australia.
+- Peng, R. (2015). [Overview and history of R.](https://www.youtube.com/watch?v=STihTnVSZnI&t=835s)
+- Chamber, J. M (2014). [Interface Efficiency and Big Data](http://datascience.la/john-chambers-user-2014-keynote/). Keynote address at the UseR! conference. Los Angeles, CA.
+- Revolutions. (2014). [John Chambers recounts the history of S and R. An interview by Trevor Hastie.](https://blog.revolutionanalytics.com/2014/01/john-chambers-recounts-the-history-of-s-and-r.html)
 
 ## Then, R was born 😇🎶
 

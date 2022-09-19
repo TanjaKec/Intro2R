@@ -18,7 +18,7 @@ This code is also called commands or functions.
 - In the <span style="color:#FF00FF">**bottom right section**</span> there are tabs to flip through the <span style="color:#FF00FF">Files</span> and folder structure of your computer (like in Finder or Explorer), <span style="color:#FF00FF">Help</span> information etc.
 
 {{% notice tip %}}
-🤓💡: You might find it useful bookmarking the link for [RStudio IDE Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf)!
+🤓💡: You might find it useful bookmarking the link for [RStudio IDE Cheat Sheet](https://ucdavis-bioinformatics-training.github.io/Oct2017-ILRI-Workshop/Cheat_Sheets/rstudio-IDE-cheatsheet.pdf)!
 {{% /notice %}}
 
 -----------------------------
