@@ -4,8 +4,7 @@ title: Introduction to R
 # Introduction to R
 ### Learn to access, organise, analyse and argue with data using R
 
-#### [Tatjana Kecojevic](https://www.linkedin.com/in/tatjana-kecojevic-803704143/), [Myong Sook Kim](https://www.socialsciences.manchester.ac.uk/social-statistics/research/postgraduate-research/current-phd-students/myong-sook-kim/), [Nick Shryane](https://www.socialsciences.manchester.ac.uk/about/people/outstanding-teachers/nick-shryane/), [Wei Zhuang](https://research.manchester.ac.uk/en/persons/wei.zhuang-2-postgrad)
-
+#### [Tatjana Kecojevic](https://research.manchester.ac.uk/en/persons/tatjana-kecojevic), [Nick Shryane](https://www.socialsciences.manchester.ac.uk/about/people/outstanding-teachers/nick-shryane/)
 
 > You have more likely than not heard about the science of data; you may think of a world of clever people typing away at their computers in a language that is alien to you. If you are thinking this, you are not aware of the potential of data literacy to make your life, company, or institution better educated and more insightful and dynamic than your colleagues and competitors. 
 
